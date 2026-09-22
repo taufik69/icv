@@ -47,3 +47,16 @@ export const ArrowRightIcon = (p) => (
     <path d="M5 12h14M13 6l6 6-6 6" />
   </Icon>
 )
+
+export const HeartIcon = (p) => (
+  <Icon {...p}>
+    <path d="M12 20s-8-4.5-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 9c0 6.5-8 11-8 11z" />
+  </Icon>
+)
+
+export const SmileIcon = (p) => (
+  <Icon {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M8.5 14a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01" />
+  </Icon>
+)

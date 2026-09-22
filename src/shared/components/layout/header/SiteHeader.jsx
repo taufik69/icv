@@ -9,7 +9,7 @@ import { Logo } from './Logo'
 
 const MobileMenu = lazy(() => import('./MobileMenu'))
 
-// Full-width bar at the top; on scroll it becomes a floating bar, 96% wide (2% gap each side).
+// Full-width bar at the top; on scroll it becomes a floating bar, 98% wide (1% gap each side, 20px radius).
 // data-floating drives child styles via `group-data-[floating=true]/header:*`.
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -18,8 +18,8 @@ export function SiteHeader() {
 
   const bar = isHome ? 'bg-transparent' : 'bg-secondary'
   const shell = floating
-    ? 'max-w-[96%] bg-secondary/90 shadow-brand ring-1 ring-white/10 backdrop-blur-md'
-    : `max-w-full ${bar}`
+    ? 'max-w-[98%] rounded-2xl bg-secondary/90 shadow-brand ring-1 ring-white/10 backdrop-blur-md'
+    : `max-w-full rounded-none ${bar}`
 
   return (
     <header

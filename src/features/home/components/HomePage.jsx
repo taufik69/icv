@@ -1,3 +1,4 @@
+import { CoursesSection } from './courses/CoursesSection'
 import { Hero } from './hero/Hero'
 import { IntroSection } from './intro/IntroSection'
 
@@ -6,6 +7,7 @@ export function HomePage() {
     <>
       <Hero />
       <IntroSection />
+      <CoursesSection />
     </>
   )
 }
