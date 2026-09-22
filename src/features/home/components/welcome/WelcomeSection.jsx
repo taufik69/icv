@@ -2,7 +2,8 @@ import { welcomeContent as content } from '@/features/home/data/welcomeContent'
 import { Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { WelcomeMedia } from './WelcomeMedia'
 
-const btn = 'btn-shine inline-flex items-center rounded-md px-7 py-3.5 font-heading font-semibold transition'
+const btn =
+  'btn-shine inline-flex flex-1 items-center justify-center rounded-md px-3 py-3.5 text-center font-heading text-sm font-semibold transition sm:flex-none sm:px-7 sm:text-base'
 const variants = {
   primary: 'bg-primary text-on-primary hover:bg-primary-hover hover:text-on-primary',
   outline: 'border-2 border-white/40 text-white hover:border-white hover:text-white',
@@ -24,7 +25,7 @@ export function WelcomeSection() {
         </h2>
         <p className="mt-5 leading-relaxed text-white/75">{content.text}</p>
 
-        <div className="mt-8 flex flex-wrap gap-3">
+        <div className="mt-8 flex gap-3">
           {content.actions.map((a) => (
             <a key={a.href} href={a.href} className={`${btn} ${variants[a.variant]}`}>
               {a.label}

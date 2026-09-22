@@ -17,3 +17,8 @@
 @utility marquee-mask {
   mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
 }
+
+@keyframes slide-in-right {
+  from { translate: 100% 0; }
+  to { translate: 0 0; }
+}

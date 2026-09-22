@@ -12,7 +12,7 @@ export function CoursesSection() {
   const layout = bentoLayout(courses.length)
 
   return (
-    <section aria-labelledby="courses-title" className="bg-surface-muted py-16 md:py-24">
+    <section id="courses" aria-labelledby="courses-title" className="scroll-mt-20 bg-surface-muted py-16 md:py-24">
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 id="courses-title" className="font-condensed text-3xl font-bold uppercase md:text-4xl">

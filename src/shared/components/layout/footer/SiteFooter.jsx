@@ -13,7 +13,7 @@ export function SiteFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer ref={ref} className={`relative overflow-hidden bg-secondary-dark bg-cover bg-bottom ${bg}`}>
+    <footer id="contact" ref={ref} className={`relative overflow-hidden bg-secondary-dark bg-cover bg-bottom ${bg}`}>
       <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/85 via-secondary-dark/55 to-secondary-dark/15" />
       <Container className="relative pt-16 md:pt-20">
         <ContactStrip />
@@ -24,7 +24,7 @@ export function SiteFooter() {
         </div>
       </Container>
       <div className="relative border-t border-white/10">
-        <Container className="flex flex-col gap-2 py-6 text-xs text-white/50 md:flex-row md:items-center md:justify-between">
+        <Container className="flex flex-col gap-2 pt-6 pb-24 text-xs text-white/50 md:pb-6 md:flex-row md:items-center md:justify-between">
           <p>© {year} {legal.entity}. All rights reserved.</p>
           <p className="font-condensed tracking-wider">{legal.ids.join(' · ')}</p>
         </Container>

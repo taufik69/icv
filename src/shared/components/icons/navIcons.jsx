@@ -36,3 +36,15 @@ export const PhoneIcon = (p) => (
     <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2" />
   </Icon>
 )
+
+export const HomeIcon = (p) => (
+  <Icon {...p}>
+    <path d="M3 10.5 12 3l9 7.5M5 9v11h5v-6h4v6h5V9" />
+  </Icon>
+)
+
+export const PenLineIcon = (p) => (
+  <Icon {...p}>
+    <path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z" />
+  </Icon>
+)

@@ -1,4 +1,3 @@
-import { lazy, Suspense, useState } from 'react'
 import { useRouterState } from '@tanstack/react-router'
 import { MenuIcon } from '@/shared/components/icons'
 import { Container } from '@/shared/components/ui'
@@ -7,12 +6,10 @@ import { DesktopNav } from './DesktopNav'
 import { HeaderActions } from './HeaderActions'
 import { Logo } from './Logo'
 
-const MobileMenu = lazy(() => import('./MobileMenu'))
-
 // Full-width bar at the top; on scroll it becomes a floating bar, 98% wide (1% gap each side, 16px radius).
 // data-floating drives child styles via `group-data-[floating=true]/header:*`.
-export function SiteHeader() {
-  const [menuOpen, setMenuOpen] = useState(false)
+// Phones (< md): once scrolled the header slides away — BottomNav takes over navigation.
+export function SiteHeader({ onOpenMenu }) {
   const floating = useScrolled()
   const isHome = useRouterState({ select: (s) => s.location.pathname === '/' })
 
@@ -24,7 +21,7 @@ export function SiteHeader() {
   return (
     <header
       data-floating={floating}
-      className={`group/header fixed inset-x-0 top-0 z-40 transition-[padding] duration-700 ease-in-out ${floating ? 'pt-3' : 'pt-0'}`}
+      className={`group/header fixed inset-x-0 top-0 z-40 transition-[padding,translate,opacity] duration-700 ease-in-out ${floating ? 'pt-3 max-md:pointer-events-none max-md:-translate-y-full max-md:opacity-0' : 'pt-0'}`}
     >
       {isHome && !floating && (
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-secondary-dark/60 to-transparent" />
@@ -39,7 +36,7 @@ export function SiteHeader() {
             <HeaderActions />
             <button
               type="button"
-              onClick={() => setMenuOpen(true)}
+              onClick={onOpenMenu}
               aria-label="Open menu"
               className="grid size-11 place-items-center rounded-md bg-ink-strong/35 text-white backdrop-blur-md group-data-[floating=true]/header:bg-white/15 group-data-[floating=true]/header:hover:bg-white/25 xl:hidden"
             >
@@ -48,11 +45,6 @@ export function SiteHeader() {
           </div>
         </Container>
       </div>
-      {menuOpen && (
-        <Suspense fallback={null}>
-          <MobileMenu onClose={() => setMenuOpen(false)} />
-        </Suspense>
-      )}
     </header>
   )
 }

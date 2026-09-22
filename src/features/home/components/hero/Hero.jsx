@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate flex min-h-[680px] items-end overflow-hidden bg-secondary-dark h-svh"
+      className="relative isolate flex items-end overflow-hidden bg-secondary-dark md:h-svh md:min-h-[680px]"
     >
       <div className="absolute inset-0 -z-10">
         <HeroPoster poster={heroContent.poster} />
@@ -29,7 +29,7 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary/55 to-secondary/35" />
       </div>
 
-      <Container className="grid gap-10 pt-36 pb-14 md:pb-20 lg:grid-cols-[1fr_26rem] lg:items-end">
+      <Container className="grid gap-10 pt-28 pb-12 md:pt-36 md:pb-20 lg:grid-cols-[1fr_26rem] lg:items-end">
         <HeroContent content={heroContent} />
         {/* Two tiles side by side, third card full width underneath */}
         <div className="hidden grid-cols-2 gap-3 md:grid md:max-w-lg lg:max-w-none">

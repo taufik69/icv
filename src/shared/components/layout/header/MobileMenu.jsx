@@ -1,55 +1,64 @@
 // Lazy-loaded (see SiteHeader) — only downloaded when the menu is first opened.
-import { ChevronDownIcon, CloseIcon } from '@/shared/components/icons'
+import { useEffect, useState } from 'react'
+import { CloseIcon, MailIcon, PhoneIcon } from '@/shared/components/icons'
 import { applyLink, mainNav, portalLinks } from '@/shared/config/navigation'
+import { mobileNavIcons } from './mobileNavIcons'
+import { MobileNavGroup } from './MobileNavGroup'
 
-const row = 'flex items-center justify-between py-3 font-heading text-lg text-white'
-
-function MobileGroup({ item }) {
-  if (!item.children) {
-    return (
-      <a href={item.href} className={row}>
-        {item.label}
-      </a>
-    )
-  }
-  return (
-    <details className="group">
-      <summary className={`${row} cursor-pointer list-none`}>
-        {item.label}
-        <ChevronDownIcon className="size-5 transition group-open:rotate-180" />
-      </summary>
-      <ul className="space-y-1 pb-3 pl-3">
-        {item.children.map((child) => (
-          <li key={child.href}>
-            <a href={child.href} className="block py-1.5 text-sm text-white/75 hover:text-primary">
-              {child.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </details>
-  )
-}
+const items = [...mainNav, { label: 'Portal', children: portalLinks }]
 
 export default function MobileMenu({ onClose }) {
+  const [open, setOpen] = useState(null)
+
+  useEffect(() => {
+    const onKey = (e) => e.key === 'Escape' && onClose()
+    const { overflow } = document.body.style
+    document.body.style.overflow = 'hidden'
+    document.addEventListener('keydown', onKey)
+    return () => {
+      document.body.style.overflow = overflow
+      document.removeEventListener('keydown', onKey)
+    }
+  }, [onClose])
+
   return (
-    <div role="dialog" aria-modal="true" aria-label="Menu" className="fixed inset-0 z-50 overflow-y-auto bg-secondary-dark px-6 py-5">
-      <div className="flex justify-end">
-        <button type="button" onClick={onClose} aria-label="Close menu" className="p-2 text-white">
-          <CloseIcon className="size-7" />
-        </button>
+    <div className="fixed inset-0 z-50">
+      <button type="button" aria-label="Close menu" onClick={onClose} className="absolute inset-0 bg-secondary-dark/60 backdrop-blur-sm motion-safe:animate-[fade-in_200ms_ease-out]" />
+      <div role="dialog" aria-modal="true" aria-label="Menu" className="absolute inset-y-0 right-0 flex w-full max-w-sm flex-col bg-secondary shadow-elevated motion-safe:animate-[slide-in-right_300ms_ease-out]">
+        <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+          <img src="/images/icv-logo-white.webp" alt="International College of Victoria" width="240" height="110" className="h-11 w-auto" />
+          <button type="button" onClick={onClose} aria-label="Close menu" className="grid size-10 place-items-center rounded-full bg-white/10 text-white transition hover:bg-white/20">
+            <CloseIcon className="size-5" />
+          </button>
+        </div>
+
+        <nav aria-label="Mobile" className="flex-1 space-y-1 overflow-y-auto px-3 py-4">
+          {items.map((item) => (
+            <MobileNavGroup
+              key={item.label}
+              item={item}
+              Icon={mobileNavIcons[item.label]}
+              open={open === item.label}
+              onToggle={() => setOpen((cur) => (cur === item.label ? null : item.label))}
+              onNavigate={onClose}
+            />
+          ))}
+        </nav>
+
+        <div className="space-y-3 border-t border-white/10 px-5 py-5">
+          <div className="flex gap-2 text-sm">
+            <a href="tel:0399421836" className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white/10 py-2.5 text-white hover:text-primary">
+              <PhoneIcon className="size-4 text-primary" /> Call us
+            </a>
+            <a href="mailto:info@icv.edu.au" className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white/10 py-2.5 text-white hover:text-primary">
+              <MailIcon className="size-4 text-primary" /> Email
+            </a>
+          </div>
+          <a href={applyLink.href} className="btn-shine block rounded-xl bg-primary py-3.5 text-center font-heading font-semibold text-on-primary hover:text-on-primary">
+            {applyLink.label}
+          </a>
+        </div>
       </div>
-      <nav aria-label="Mobile" className="mt-4 divide-y divide-white/10">
-        {[...mainNav, { label: 'Portal', children: portalLinks }].map((item) => (
-          <MobileGroup key={item.label} item={item} />
-        ))}
-      </nav>
-      <a
-        href={applyLink.href}
-        className="btn-shine mt-8 block rounded-md bg-primary py-3 text-center font-heading font-semibold text-on-primary"
-      >
-        {applyLink.label}
-      </a>
     </div>
   )
 }

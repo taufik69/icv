@@ -1,5 +1,6 @@
+// Mobile: two buttons share one row (flex-auto = width follows label, fluid text, never wraps). sm+: natural width.
 const buttonBase =
-  'btn-shine inline-flex items-center rounded-md px-7 py-3.5 font-heading text-sm font-semibold uppercase tracking-wide transition'
+  'btn-shine inline-flex flex-auto items-center justify-center rounded-md px-2.5 py-3 font-heading text-[clamp(0.625rem,2.6vw,0.875rem)] font-semibold whitespace-nowrap uppercase transition sm:flex-none sm:px-7 sm:py-3.5 sm:text-sm sm:tracking-wide'
 const buttonVariants = {
   primary: 'bg-primary text-on-primary shadow-card hover:bg-primary-hover hover:text-on-primary',
   outline: 'bg-white/10 text-white ring-1 ring-white/40 backdrop-blur-md hover:bg-white hover:text-secondary',
@@ -25,7 +26,7 @@ export function HeroContent({ content }) {
       <p className="mt-6 max-w-xl border-l-2 border-primary pl-4 text-base leading-relaxed text-white/85 md:text-lg">
         {content.description}
       </p>
-      <div className="mt-8 flex flex-wrap gap-3">
+      <div className="mt-8 flex gap-2 sm:gap-3">
         {content.actions.map((action) => (
           <a key={action.href} href={action.href} className={`${buttonBase} ${buttonVariants[action.variant]}`}>
             {action.label}
