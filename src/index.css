@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+/* Design tokens (source: design/design-system.source.json, icv.edu.au) */
+@import './styles/tokens/colors.css';
+@import './styles/tokens/typography.css';
+@import './styles/tokens/radius.css';
+@import './styles/tokens/shadows.css';
+@import './styles/animations.css';
+
+@import './styles/base.css';

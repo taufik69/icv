@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0a2449" />
+    <meta
+      name="description"
+      content="International College of Victoria (ICV) is a registered training organisation delivering hands-on training to local and international students."
+    />
+
+    <!-- Hero: poster is the LCP image, fetched before JS runs -->
+    <link
+      rel="preload"
+      as="image"
+      type="image/webp"
+      href="/images/hero-poster-1280.webp"
+      imagesrcset="/images/hero-poster-640.webp 640w, /images/hero-poster-1280.webp 1280w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
+    <link rel="preload" as="image" type="image/webp" href="/images/icv-logo-white.webp" />
+
+    <!-- Warm up Vimeo connections so the background video starts fast -->
+    <link rel="preconnect" href="https://player.vimeo.com" />
+    <link rel="preconnect" href="https://i.vimeocdn.com" />
+    <link rel="preconnect" href="https://f.vimeocdn.com" />
+    <link rel="preconnect" href="https://vod-adaptive-ak.vimeocdn.com" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600;700&family=Roboto+Condensed:wght@400;700&display=swap"
+    />
+    <title>International College of Victoria | ICV</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

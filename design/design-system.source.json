@@ -1,0 +1,463 @@
+{
+  "source": "https://icv.edu.au/",
+  "extractedBy": "PocketUI (pocketui.app)",
+  "colors": [
+    {
+      "hex": "#8cc542",
+      "rgb": "rgb(140, 197, 66)",
+      "hsl": "hsl(86, 53%, 52%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#212121",
+      "rgb": "rgb(33, 33, 33)",
+      "hsl": "hsl(0, 0%, 13%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#0a2449",
+      "rgb": "rgb(10, 36, 73)",
+      "hsl": "hsl(215, 76%, 16%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#505050",
+      "rgb": "rgb(80, 80, 80)",
+      "hsl": "hsl(0, 0%, 31%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#0d6efd",
+      "rgb": "rgb(13, 110, 253)",
+      "hsl": "hsl(216, 98%, 52%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#212529",
+      "rgb": "rgb(33, 37, 41)",
+      "hsl": "hsl(210, 11%, 15%)",
+      "category": "accent"
+    },
+    {
+      "hex": "#6c757d",
+      "rgb": "rgb(108, 117, 125)",
+      "hsl": "hsl(208, 7%, 46%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#dc3545",
+      "rgb": "rgb(220, 53, 69)",
+      "hsl": "hsl(354, 70%, 54%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#198754",
+      "rgb": "rgb(25, 135, 84)",
+      "hsl": "hsl(152, 69%, 31%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#92278f",
+      "rgb": "rgb(146, 39, 143)",
+      "hsl": "hsl(302, 58%, 36%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#cccccc",
+      "rgb": "rgb(204, 204, 204)",
+      "hsl": "hsl(0, 0%, 80%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#dee2e6",
+      "rgb": "rgb(222, 226, 230)",
+      "hsl": "hsl(210, 14%, 89%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f8f9fa",
+      "rgb": "rgb(248, 249, 250)",
+      "hsl": "hsl(210, 17%, 98%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#dddddd",
+      "rgb": "rgb(221, 221, 221)",
+      "hsl": "hsl(0, 0%, 87%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#0dcaf0",
+      "rgb": "rgb(13, 202, 240)",
+      "hsl": "hsl(190, 90%, 50%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#ffc107",
+      "rgb": "rgb(255, 193, 7)",
+      "hsl": "hsl(45, 100%, 51%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#eeeeee",
+      "rgb": "rgb(238, 238, 238)",
+      "hsl": "hsl(0, 0%, 93%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f0f0f0",
+      "rgb": "rgb(240, 240, 240)",
+      "hsl": "hsl(0, 0%, 94%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#06233e",
+      "rgb": "rgb(6, 35, 62)",
+      "hsl": "hsl(209, 82%, 13%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#333333",
+      "rgb": "rgb(51, 51, 51)",
+      "hsl": "hsl(0, 0%, 20%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f4f8fa",
+      "rgb": "rgb(244, 248, 250)",
+      "hsl": "hsl(200, 37%, 97%)",
+      "category": "accent"
+    },
+    {
+      "hex": "#e9ecef",
+      "rgb": "rgb(233, 236, 239)",
+      "hsl": "hsl(210, 16%, 93%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#222222",
+      "rgb": "rgb(34, 34, 34)",
+      "hsl": "hsl(0, 0%, 13%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#00bcd4",
+      "rgb": "rgb(0, 188, 212)",
+      "hsl": "hsl(187, 100%, 42%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#0a58ca",
+      "rgb": "rgb(10, 88, 202)",
+      "hsl": "hsl(216, 91%, 42%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#777777",
+      "rgb": "rgb(119, 119, 119)",
+      "hsl": "hsl(0, 0%, 47%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#444444",
+      "rgb": "rgb(68, 68, 68)",
+      "hsl": "hsl(0, 0%, 27%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f9fafb",
+      "rgb": "rgb(249, 250, 251)",
+      "hsl": "hsl(210, 20%, 98%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#555555",
+      "rgb": "rgb(85, 85, 85)",
+      "hsl": "hsl(0, 0%, 33%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#101010",
+      "rgb": "rgb(16, 16, 16)",
+      "hsl": "hsl(0, 0%, 6%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f5f5f5",
+      "rgb": "rgb(245, 245, 245)",
+      "hsl": "hsl(0, 0%, 96%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#666666",
+      "rgb": "rgb(102, 102, 102)",
+      "hsl": "hsl(0, 0%, 40%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f9f9f9",
+      "rgb": "rgb(249, 249, 249)",
+      "hsl": "hsl(0, 0%, 98%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#e84b3a",
+      "rgb": "rgb(232, 75, 58)",
+      "hsl": "hsl(6, 79%, 57%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#adb5bd",
+      "rgb": "rgb(173, 181, 189)",
+      "hsl": "hsl(210, 11%, 71%)",
+      "category": "accent"
+    },
+    {
+      "hex": "#084298",
+      "rgb": "rgb(8, 66, 152)",
+      "hsl": "hsl(216, 90%, 31%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#41464b",
+      "rgb": "rgb(65, 70, 75)",
+      "hsl": "hsl(210, 7%, 27%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#055160",
+      "rgb": "rgb(5, 81, 96)",
+      "hsl": "hsl(190, 90%, 20%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#141619",
+      "rgb": "rgb(20, 22, 25)",
+      "hsl": "hsl(216, 11%, 9%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#111111",
+      "rgb": "rgb(17, 17, 17)",
+      "hsl": "hsl(0, 0%, 7%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#636464",
+      "rgb": "rgb(99, 100, 100)",
+      "hsl": "hsl(180, 1%, 39%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#f2f2f2",
+      "rgb": "rgb(242, 242, 242)",
+      "hsl": "hsl(0, 0%, 95%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#664d03",
+      "rgb": "rgb(102, 77, 3)",
+      "hsl": "hsl(45, 94%, 21%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#ff6d00",
+      "rgb": "rgb(255, 109, 0)",
+      "hsl": "hsl(26, 100%, 50%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#fc7f0c",
+      "rgb": "rgb(252, 127, 12)",
+      "hsl": "hsl(29, 98%, 52%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#842029",
+      "rgb": "rgb(132, 32, 41)",
+      "hsl": "hsl(355, 61%, 32%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#0f5132",
+      "rgb": "rgb(15, 81, 50)",
+      "hsl": "hsl(152, 69%, 19%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#49687e",
+      "rgb": "rgb(73, 104, 126)",
+      "hsl": "hsl(205, 27%, 39%)",
+      "category": "accent"
+    },
+    {
+      "hex": "#33aaff",
+      "rgb": "rgb(51, 170, 255)",
+      "hsl": "hsl(205, 100%, 60%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#86b7fe",
+      "rgb": "rgb(134, 183, 254)",
+      "hsl": "hsl(216, 98%, 76%)",
+      "category": "primary"
+    },
+    {
+      "hex": "#565e64",
+      "rgb": "rgb(86, 94, 100)",
+      "hsl": "hsl(206, 8%, 36%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#1a1e21",
+      "rgb": "rgb(26, 30, 33)",
+      "hsl": "hsl(206, 12%, 12%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#e1e1e1",
+      "rgb": "rgb(225, 225, 225)",
+      "hsl": "hsl(0, 0%, 88%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#bbbbbb",
+      "rgb": "rgb(187, 187, 187)",
+      "hsl": "hsl(0, 0%, 73%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#999999",
+      "rgb": "rgb(153, 153, 153)",
+      "hsl": "hsl(0, 0%, 60%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#ececec",
+      "rgb": "rgb(236, 236, 236)",
+      "hsl": "hsl(0, 0%, 93%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#b1b1b1",
+      "rgb": "rgb(177, 177, 177)",
+      "hsl": "hsl(0, 0%, 69%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#b2b2b2",
+      "rgb": "rgb(178, 178, 178)",
+      "hsl": "hsl(0, 0%, 70%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#e2e2e2",
+      "rgb": "rgb(226, 226, 226)",
+      "hsl": "hsl(0, 0%, 89%)",
+      "category": "neutral"
+    },
+    {
+      "hex": "#b02a37",
+      "rgb": "rgb(176, 42, 55)",
+      "hsl": "hsl(354, 61%, 43%)",
+      "category": "primary"
+    }
+  ],
+  "fonts": [
+    {
+      "family": "Montserrat",
+      "weights": [],
+      "source": "google-fonts",
+      "googleUrl": "https://fonts.google.com/specimen/Montserrat"
+    },
+    {
+      "family": "FontAwesome",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "Roboto Condensed",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "Flaticon",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "Helvetica Neue",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "fontAwesome",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "museo-sans",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "Open Sans",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "fontawesome",
+      "weights": [],
+      "source": "custom"
+    },
+    {
+      "family": "themify",
+      "weights": [],
+      "source": "custom"
+    }
+  ],
+  "spacing": [
+    "1px",
+    "2px",
+    "3px",
+    "4px",
+    "5px",
+    "6px",
+    "7px",
+    "8px",
+    "9px",
+    "10px",
+    "11px",
+    "12px",
+    "13px",
+    "14px",
+    "15px",
+    "16px",
+    "17px",
+    "18px",
+    "19px",
+    "20px"
+  ],
+  "borderRadii": [
+    "2px",
+    "3px",
+    "4px",
+    "5px",
+    "6px",
+    "8px",
+    "10px",
+    "20px",
+    "24px",
+    "25px"
+  ],
+  "shadows": [
+    "0 0 0 .25rem rgba(13,110,253,.25)",
+    "0 10px 40px rgba(0, 0, 0, 0.1)",
+    "0px 4px 13px -3px #06233E",
+    "0 0 20px rgba(0,0,0,.15)",
+    "rgba(0, 0, 0, .16) 0 5px 40px",
+    "#178fe5 0 1px 3px 0 inset",
+    "0 0 2px rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.24)",
+    "0 0 0 .25rem rgba(25,135,84,.25)"
+  ]
+}

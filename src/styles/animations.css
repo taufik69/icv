@@ -1,0 +1,94 @@
+/* Motion tokens + scroll-linked parallax. All motion is skipped for reduced-motion users. */
+@theme {
+  --animate-float: float 4s ease-in-out infinite;
+  --animate-float-slow: float 6s ease-in-out 1s infinite;
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(-14px);
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes parallax-up {
+  from { translate: 0 90px; }
+  to { translate: 0 -90px; }
+}
+
+@keyframes parallax-down {
+  from { translate: 0 -90px; }
+  to { translate: 0 90px; }
+}
+
+@keyframes bg-drift {
+  from { background-position-y: 0; }
+  to { background-position-y: -220px; }
+}
+
+/*
+ * Scroll-driven parallax (CSS only, no JS). Progressive enhancement:
+ * browsers without animation-timeline simply show static elements.
+ * Uses the `translate` property, so don't combine with Tailwind translate-* utilities.
+ */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .parallax-up {
+      animation: parallax-up linear both;
+      animation-timeline: view();
+    }
+    .parallax-down {
+      animation: parallax-down linear both;
+      animation-timeline: view();
+    }
+    /* Touch/small screens ignore background-attachment: fixed, so drift the bg instead */
+    @media (max-width: 1023px) {
+      .parallax-bg {
+        animation: bg-drift linear both;
+        animation-timeline: view();
+      }
+    }
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/*
+ * Shine sweep for buttons: a light band sweeps across on hover / keyboard focus.
+ * Pseudo-element sits above the button background but below its text (isolation + z-index -1).
+ */
+@utility btn-shine {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(110deg, transparent 30%, rgb(255 255 255 / 0.65) 50%, transparent 70%);
+    transform: translateX(-120%);
+  }
+
+  &:hover::after,
+  &:focus-visible::after {
+    transform: translateX(120%);
+    transition: transform 750ms ease;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &::after {
+      display: none;
+    }
+  }
+}

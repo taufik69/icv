@@ -1,0 +1,14 @@
+/*
+ * Radius scale from source (2,3,4,5,6,8,10,20,24,25px).
+ * Utilities: rounded-xs … rounded-pill.
+ */
+@theme {
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 10px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-pill: 25px;
+}

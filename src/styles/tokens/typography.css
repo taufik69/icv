@@ -1,0 +1,10 @@
+/*
+ * Fonts loaded from Google Fonts in index.html.
+ * museo-sans (Adobe Fonts) is on icv.edu.au but not licensed here — Open Sans stands in.
+ * Utilities: font-sans (body), font-heading, font-condensed.
+ */
+@theme {
+  --font-sans: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+  --font-condensed: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+}

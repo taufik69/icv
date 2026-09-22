@@ -1,0 +1,13 @@
+/*
+ * Shadows from source. Utilities: shadow-card, shadow-soft, shadow-elevated,
+ * shadow-raised, shadow-brand, ring-style focus via shadow-focus / shadow-focus-success.
+ */
+@theme {
+  --shadow-raised: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+  --shadow-card: 0 10px 40px rgba(0, 0, 0, 0.1);
+  --shadow-soft: 0 0 20px rgba(0, 0, 0, 0.15);
+  --shadow-elevated: 0 5px 40px rgba(0, 0, 0, 0.16);
+  --shadow-brand: 0 4px 13px -3px #06233e;
+  --shadow-focus: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+  --shadow-focus-success: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+}

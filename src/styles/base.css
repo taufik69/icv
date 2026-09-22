@@ -1,0 +1,23 @@
+/* Element defaults built on tokens. Spacing uses Tailwind's 4px scale (p-1 = 4px). */
+@layer base {
+  html {
+    @apply bg-surface font-sans text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold text-secondary;
+  }
+
+  a {
+    @apply text-link hover:text-link-hover;
+  }
+
+  :focus-visible {
+    @apply shadow-focus outline-none;
+  }
+}

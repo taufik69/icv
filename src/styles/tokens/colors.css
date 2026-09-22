@@ -1,0 +1,60 @@
+/*
+ * Color tokens → Tailwind utilities: bg-primary, text-ink-muted, border-line, ...
+ * Use these names only. No raw hex in components.
+ */
+@theme {
+  /* Brand */
+  --color-primary: #8cc542; /* ICV green */
+  --color-primary-hover: color-mix(in oklab, #8cc542 85%, black);
+  --color-primary-soft: color-mix(in oklab, #8cc542 14%, white);
+  --color-on-primary: #0a2449; /* text on green (white fails contrast) */
+
+  --color-secondary: #0a2449; /* ICV navy */
+  --color-secondary-dark: #06233e;
+  --color-secondary-muted: #49687e;
+  --color-on-secondary: #ffffff;
+
+  --color-accent: #92278f; /* purple */
+  --color-highlight: #ff6d00; /* orange */
+  --color-highlight-alt: #fc7f0c;
+  --color-coral: #e84b3a;
+  --color-sky: #33aaff;
+
+  /* Text */
+  --color-ink: #212121;
+  --color-ink-strong: #101010;
+  --color-ink-muted: #505050;
+  --color-ink-subtle: #777777;
+  --color-ink-disabled: #999999;
+
+  /* Surfaces */
+  --color-surface: #ffffff;
+  --color-surface-muted: #f4f8fa; /* light blue-grey sections */
+  --color-surface-alt: #f8f9fa;
+  --color-surface-sunken: #eeeeee;
+
+  /* Borders */
+  --color-line: #dee2e6;
+  --color-line-soft: #eeeeee;
+  --color-line-strong: #cccccc;
+
+  /* Links / focus */
+  --color-link: #0d6efd;
+  --color-link-hover: #0a58ca;
+  --color-focus: #86b7fe;
+
+  /* Status (base + soft bg + dark text) */
+  --color-success: #198754;
+  --color-success-soft: #d1e7dd;
+  --color-success-ink: #0f5132;
+  --color-danger: #dc3545;
+  --color-danger-hover: #b02a37;
+  --color-danger-soft: #f8d7da;
+  --color-danger-ink: #842029;
+  --color-warning: #ffc107;
+  --color-warning-soft: #fff3cd;
+  --color-warning-ink: #664d03;
+  --color-info: #0dcaf0;
+  --color-info-soft: #cff4fc;
+  --color-info-ink: #055160;
+}
