@@ -1,6 +1,8 @@
 export const heroContent = {
   eyebrow: 'International College of Victoria',
-  headline: ["Let's find", 'the right course', 'for you.'],
+  headline: ["Let's find the", 'right course', 'for you.'],
+  highlightLine: 1,
+  trust: ['RTO 22581', 'CRICOS 03649A', 'Melbourne, VIC'],
   description:
     'A registered training organisation delivering hands-on training to both local and international students.',
   actions: [
@@ -9,7 +11,13 @@ export const heroContent = {
   ],
   cards: [
     {
-      title: 'Enrol now for our trending courses',
+      title: 'Our Trending Courses',
+      cta: 'Explore courses',
+      href: 'https://icv.edu.au/domestic/',
+      image: '/images/card-trending.webp',
+    },
+    {
+      title: 'Enrol Now',
       cta: 'Apply now',
       href: 'https://icv.edu.au/enquire-now/',
       image: '/images/card-carpentry.webp',

@@ -14,7 +14,7 @@ export function SiteFooter() {
 
   return (
     <footer ref={ref} className={`relative overflow-hidden bg-secondary-dark bg-cover bg-bottom ${bg}`}>
-      <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/95 via-secondary-dark/70 to-secondary-dark/30" />
+      <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/85 via-secondary-dark/55 to-secondary-dark/15" />
       <Container className="relative pt-16 md:pt-20">
         <ContactStrip />
         <div className="grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-[4fr_5fr_4fr] lg:gap-16">

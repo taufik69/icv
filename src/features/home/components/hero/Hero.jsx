@@ -29,11 +29,14 @@ export function Hero() {
         <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary/55 to-secondary/35" />
       </div>
 
-      <Container className="grid gap-10 pt-36 pb-14 md:pb-20 lg:grid-cols-[1fr_24rem] lg:items-end">
+      <Container className="grid gap-10 pt-36 pb-14 md:pb-20 lg:grid-cols-[1fr_26rem] lg:items-end">
         <HeroContent content={heroContent} />
-        <div className="hidden space-y-3 md:grid md:grid-cols-2 md:gap-3 md:space-y-0 lg:grid-cols-1">
-          {heroContent.cards.map((card) => (
-            <HeroCard key={card.href} card={card} />
+        {/* Two tiles side by side, third card full width underneath */}
+        <div className="hidden grid-cols-2 gap-3 md:grid md:max-w-lg lg:max-w-none">
+          {heroContent.cards.map((card, i) => (
+            <div key={card.href} className={i === 2 ? 'col-span-2' : 'h-full'}>
+              <HeroCard card={card} layout={i === 2 ? 'row' : 'tile'} />
+            </div>
           ))}
         </div>
       </Container>

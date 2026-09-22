@@ -8,7 +8,7 @@ export function RootLayout() {
   return (
     <>
       <SiteHeader />
-      <main className="min-h-svh">
+      <main className="min-h-svh overflow-x-clip">
         <Outlet />
       </main>
       <SiteFooter />

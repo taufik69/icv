@@ -1,24 +1,30 @@
-import { SectionEyebrow } from '@/shared/components/ui'
-
 const buttonBase =
-  'btn-shine inline-flex items-center rounded-md px-6 py-3 font-heading text-sm font-semibold uppercase tracking-wide transition'
+  'btn-shine inline-flex items-center rounded-md px-7 py-3.5 font-heading text-sm font-semibold uppercase tracking-wide transition'
 const buttonVariants = {
-  primary: 'bg-primary text-on-primary hover:bg-primary-hover hover:text-on-primary',
-  outline: 'border-2 border-white text-white hover:bg-white hover:text-secondary',
+  primary: 'bg-primary text-on-primary shadow-card hover:bg-primary-hover hover:text-on-primary',
+  outline: 'bg-white/10 text-white ring-1 ring-white/40 backdrop-blur-md hover:bg-white hover:text-secondary',
 }
 
 export function HeroContent({ content }) {
   return (
     <div className="max-w-3xl">
-      <SectionEyebrow tone="light">{content.eyebrow}</SectionEyebrow>
-      <h1 className="mt-6 text-5xl leading-[0.95] font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl xl:text-8xl">
-        {content.headline.map((line) => (
-          <span key={line} className="block">
+      <p className="inline-flex items-center gap-2.5 rounded-full bg-white/10 py-1.5 pr-4 pl-2 font-condensed text-xs tracking-[0.2em] text-white uppercase ring-1 ring-white/20 backdrop-blur-md sm:text-sm">
+        <span className="relative grid size-2.5 place-items-center">
+          <span className="absolute size-full rounded-full bg-primary motion-safe:animate-ping" />
+          <span className="size-2 rounded-full bg-primary" />
+        </span>
+        {content.eyebrow}
+      </p>
+      <h1 className="mt-6 text-5xl leading-[1.02] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+        {content.headline.map((line, i) => (
+          <span key={line} className={`block ${i === content.highlightLine ? 'text-primary' : ''}`}>
             {line}
           </span>
         ))}
       </h1>
-      <p className="mt-6 max-w-xl text-base text-white/85 md:text-lg">{content.description}</p>
+      <p className="mt-6 max-w-xl border-l-2 border-primary pl-4 text-base leading-relaxed text-white/85 md:text-lg">
+        {content.description}
+      </p>
       <div className="mt-8 flex flex-wrap gap-3">
         {content.actions.map((action) => (
           <a key={action.href} href={action.href} className={`${buttonBase} ${buttonVariants[action.variant]}`}>
@@ -26,6 +32,14 @@ export function HeroContent({ content }) {
           </a>
         ))}
       </div>
+      <p className="mt-8 flex flex-wrap gap-x-3 gap-y-1 font-condensed text-xs tracking-widest text-white/60 uppercase sm:text-sm">
+        {content.trust.map((t, i) => (
+          <span key={t} className="flex items-center gap-3">
+            {i > 0 && <span aria-hidden="true" className="size-1 rounded-full bg-primary" />}
+            {t}
+          </span>
+        ))}
+      </p>
     </div>
   )
 }

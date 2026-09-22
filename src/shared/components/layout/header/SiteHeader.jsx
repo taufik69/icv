@@ -9,7 +9,7 @@ import { Logo } from './Logo'
 
 const MobileMenu = lazy(() => import('./MobileMenu'))
 
-// Full-width bar at the top; on scroll it becomes a floating bar, 98% wide (1% gap each side, 20px radius).
+// Full-width bar at the top; on scroll it becomes a floating bar, 98% wide (1% gap each side, 16px radius).
 // data-floating drives child styles via `group-data-[floating=true]/header:*`.
 export function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
