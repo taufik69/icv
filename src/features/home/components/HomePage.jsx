@@ -1,6 +1,7 @@
 import { CoursesSection } from './courses/CoursesSection'
 import { CareersCta } from './cta/CareersCta'
 import { Hero } from './hero/Hero'
+import { LaunchSection } from './launch/LaunchSection'
 import { IntroSection } from './intro/IntroSection'
 import { NewsSection } from './news/NewsSection'
 import { TestimonialsSection } from './testimonials/TestimonialsSection'
@@ -18,6 +19,7 @@ export function HomePage() {
       <WelcomeSection />
       <NewsSection />
       <TestimonialsSection />
+      <LaunchSection />
     </>
   )
 }
