@@ -8,7 +8,8 @@ const categories = {
   ecec: { label: 'Early Childhood Education & Care', Icon: SmileIcon },
 }
 const course = (code, title, audience, category, overview, path, image) => ({
-  code, title, audience, category: categories[category], overview, href: `${ICV}${path}`, image: `/images/${image}.webp`,
+  code, title, audience, category: categories[category], overview, href: `${ICV}${path}`,
+  image: { portrait: `/images/${image}.webp`, wide: `/images/${image}-wide.webp` },
 })
 
 export const coursesContent = {

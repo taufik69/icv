@@ -6,5 +6,7 @@
 @import './styles/tokens/radius.css';
 @import './styles/tokens/shadows.css';
 @import './styles/animations.css';
+@import './styles/marquee.css';
+@import './styles/carousel.css';
 
 @import './styles/base.css';

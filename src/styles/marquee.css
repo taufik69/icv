@@ -1,0 +1,19 @@
+/*
+ * Vertical marquee: a column holds its items twice; translating by -50% loops seamlessly.
+ * Per-column speed via [--marquee-duration:NNs]; reverse with [--marquee-direction:reverse].
+ * Pauses on hover/focus (group) and never runs for reduced-motion users.
+ */
+@keyframes marquee-up {
+  from { translate: 0 0; }
+  to { translate: 0 -50%; }
+}
+
+@utility marquee-up {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: marquee-up var(--marquee-duration, 30s) linear infinite var(--marquee-direction, normal);
+  }
+}
+
+@utility marquee-mask {
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+}

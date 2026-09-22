@@ -1,0 +1,12 @@
+/*
+ * Carousel autoplay timer: the active dot's fill runs this animation; its `animationend`
+ * advances the slide. Pausing the animation (hover / off-screen) therefore pauses autoplay.
+ */
+@theme {
+  --animate-progress-fill: progress-fill var(--progress-duration, 7s) linear forwards;
+
+  @keyframes progress-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+}

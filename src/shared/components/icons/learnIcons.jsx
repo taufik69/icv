@@ -60,3 +60,16 @@ export const SmileIcon = (p) => (
     <path d="M8.5 14a4 4 0 0 0 7 0M9 9.5h.01M15 9.5h.01" />
   </Icon>
 )
+
+export const PresentationIcon = (p) => (
+  <Icon {...p}>
+    <path d="M3 4h18M4 4v10a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V4M12 15v5M8 20h8M8 9h5M8 12h8" />
+  </Icon>
+)
+
+export const CalendarIcon = (p) => (
+  <Icon {...p}>
+    <rect x="3" y="5" width="18" height="16" rx="2" />
+    <path d="M3 10h18M8 3v4M16 3v4" />
+  </Icon>
+)
