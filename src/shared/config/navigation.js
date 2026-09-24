@@ -1,17 +1,22 @@
 const ICV = 'https://icv.edu.au'
+
+// Routes that open with a full-bleed hero: the header starts transparent over them.
+export const heroRoutes = ['/', '/about', '/about/ceo-message', '/about/why-choose-icv', '/about/student-wellbeing', '/about/education-agents', '/about/compliance-reports', '/about/brokers', '/about/testimonials']
+
 const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
 
 export const mainNav = [
   {
     label: 'About Us',
     children: [
-      link('Message from CEO', '/weclome-message-from-ceo/'),
-      link('Why Choose ICV', '/why-choose-icv/'),
-      link('Student Wellbeing Centre', '/student-wellbeing-centre/'),
-      link('Education Agents', '/education-agents/'),
-      link('Compliance and Reports', '/compliance-reports/'),
-      link('Brokers and Subcontractors', '/brokers/'),
-      link('Testimonials', '/testimonials/'),
+      { label: 'About ICV', to: '/about' },
+      { label: 'Message from CEO', to: '/about/ceo-message' },
+      { label: 'Why Choose ICV', to: '/about/why-choose-icv' },
+      { label: 'Student Wellbeing Centre', to: '/about/student-wellbeing' },
+      { label: 'Education Agents', to: '/about/education-agents' },
+      { label: 'Compliance and Reports', to: '/about/compliance-reports' },
+      { label: 'Brokers and Subcontractors', to: '/about/brokers' },
+      { label: 'Testimonials', to: '/about/testimonials' },
     ],
   },
   {

@@ -1,4 +1,5 @@
 import { ChevronDownIcon, ChevronRightIcon } from '@/shared/components/icons'
+import { AppLink } from '@/shared/components/ui'
 
 const rowBase = 'flex w-full items-center gap-3 rounded-2xl px-3 py-3 text-left font-heading text-base font-semibold transition'
 
@@ -31,14 +32,14 @@ export function MobileNavGroup({ item, Icon, open, onToggle, onNavigate }) {
       <div className={`grid transition-[grid-template-rows] duration-300 ease-out ${open ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
         <ul className="overflow-hidden px-3">
           {item.children.map((child) => (
-            <li key={child.href} className="border-t border-white/5 first:border-0">
-              <a href={child.href} onClick={onNavigate} className="group flex items-center gap-3 py-3 pl-13 text-sm text-white/75 hover:text-primary">
+            <li key={child.label} className="border-t border-white/5 first:border-0">
+              <AppLink to={child.to} href={child.href} onClick={onNavigate} className="group flex items-center gap-3 py-3 pl-13 text-sm text-white/75 hover:text-primary aria-[current=page]:font-semibold aria-[current=page]:text-primary">
                 <span className="flex-1">
                   {child.code && <span className="mb-0.5 block font-condensed text-xs tracking-wider text-primary/80">{child.code}</span>}
                   {child.label}
                 </span>
                 <ChevronRightIcon className="size-4 shrink-0 text-white/30 transition group-hover:translate-x-0.5 group-hover:text-primary" />
-              </a>
+              </AppLink>
             </li>
           ))}
         </ul>

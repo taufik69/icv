@@ -1,3 +1,5 @@
+import { AppLink } from '@/shared/components/ui'
+
 // Revealed by the parent `group` on hover or keyboard focus (see NavItem).
 export function NavDropdown({ items, align = 'left' }) {
   return (
@@ -6,10 +8,11 @@ export function NavDropdown({ items, align = 'left' }) {
     >
       <ul className="w-80 rounded-lg bg-surface p-2 shadow-elevated">
         {items.map((item) => (
-          <li key={item.href}>
-            <a
+          <li key={item.label}>
+            <AppLink
+              to={item.to}
               href={item.href}
-              className="block rounded-md px-3 py-2 text-sm text-ink hover:bg-surface-muted hover:text-secondary"
+              className="block rounded-md px-3 py-2 text-sm text-ink hover:bg-surface-muted hover:text-secondary aria-[current=page]:bg-primary-soft aria-[current=page]:font-semibold aria-[current=page]:text-secondary"
             >
               {item.code && (
                 <span className="block font-condensed text-xs tracking-wider text-ink-subtle">
@@ -17,7 +20,7 @@ export function NavDropdown({ items, align = 'left' }) {
                 </span>
               )}
               {item.label}
-            </a>
+            </AppLink>
           </li>
         ))}
       </ul>

@@ -1,6 +1,6 @@
 import { whyChooseContent as content } from '@/features/home/data/whyChooseContent'
 import { ArrowRightIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { AppLink, Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { WhyFeatureCard } from './WhyFeatureCard'
 
 // Text + CTA on the left; staggered 2×2 feature cards on the right (2nd column offset on lg).
@@ -20,13 +20,13 @@ export function WhyChooseSection() {
               <p key={text.slice(0, 24)}>{text}</p>
             ))}
           </div>
-          <a
-            href={content.action.href}
+          <AppLink
+            to={content.action.to}
             className="group btn-shine mt-8 inline-flex items-center gap-2 rounded-md bg-secondary px-7 py-3.5 font-heading font-semibold text-white transition hover:bg-secondary-dark hover:text-white"
           >
             {content.action.label}
             <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-          </a>
+          </AppLink>
         </Reveal>
 
         <ul className="grid gap-5 sm:grid-cols-2 sm:gap-6">

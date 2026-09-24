@@ -1,6 +1,7 @@
 import { useRouterState } from '@tanstack/react-router'
 import { MenuIcon } from '@/shared/components/icons'
 import { Container } from '@/shared/components/ui'
+import { heroRoutes } from '@/shared/config/navigation'
 import { useScrolled } from '@/shared/hooks/useScrolled'
 import { DesktopNav } from './DesktopNav'
 import { HeaderActions } from './HeaderActions'
@@ -11,9 +12,9 @@ import { Logo } from './Logo'
 // Phones (< md): once scrolled the header slides away — BottomNav takes over navigation.
 export function SiteHeader({ onOpenMenu }) {
   const floating = useScrolled()
-  const isHome = useRouterState({ select: (s) => s.location.pathname === '/' })
+  const overHero = useRouterState({ select: (s) => heroRoutes.includes(s.location.pathname) })
 
-  const bar = isHome ? 'bg-transparent' : 'bg-secondary'
+  const bar = overHero ? 'bg-transparent' : 'bg-secondary'
   const shell = floating
     ? 'max-w-[98%] rounded-2xl bg-secondary/90 shadow-brand ring-1 ring-white/10 backdrop-blur-md'
     : `max-w-full rounded-none ${bar}`
@@ -23,7 +24,7 @@ export function SiteHeader({ onOpenMenu }) {
       data-floating={floating}
       className={`group/header fixed inset-x-0 top-0 z-40 transition-[padding,translate,opacity] duration-700 ease-in-out ${floating ? 'pt-3 max-md:pointer-events-none max-md:-translate-y-full max-md:opacity-0' : 'pt-0'}`}
     >
-      {isHome && !floating && (
+      {overHero && !floating && (
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-secondary-dark/60 to-transparent" />
       )}
       <div className={`relative mx-auto transition-all duration-700 ease-in-out ${shell}`}>

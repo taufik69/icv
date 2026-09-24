@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router'
 
 export function Logo() {
   return (
-    <Link to="/" aria-label="International College of Victoria — home" className="shrink-0">
+    <Link to="/" activeOptions={{ exact: true }} aria-label="International College of Victoria — home" className="shrink-0">
       <img
         src="/images/icv-logo-white.webp"
         alt="International College of Victoria"

@@ -1,10 +1,8 @@
-import { StarIcon } from '@/shared/components/icons'
+import { StarRating } from '@/shared/components/ui'
 import { reviewSummary as r } from '@/shared/config/footer'
 import { FooterHeading } from './FooterHeading'
 
 export function FooterReviews() {
-  const full = Math.floor(r.rating)
-
   return (
     <div>
       <FooterHeading>Reviews</FooterHeading>
@@ -12,11 +10,7 @@ export function FooterReviews() {
         <p className="text-sm font-semibold text-white">{r.name}</p>
         <div className="mt-2 flex items-center gap-2">
           <span className="font-heading text-3xl font-bold text-white">{r.rating}</span>
-          <span className="flex text-warning" aria-label={`${r.rating} out of 5 stars`}>
-            {Array.from({ length: 5 }, (_, i) => (
-              <StarIcon key={i} className={`size-4 ${i < full ? '' : 'opacity-40'}`} />
-            ))}
-          </span>
+          <StarRating rating={r.rating} />
         </div>
         <p className="mt-1 text-sm text-white/60">Based on {r.count} Google reviews</p>
         <div className="mt-4 flex flex-wrap gap-2">

@@ -10,7 +10,7 @@ export function NewsMarqueeColumn({ posts, className = '' }) {
       {posts.map((post) => (
         <NewsCard key={post.href} post={post} className="w-[80%] shrink-0 snap-start md:w-auto" />
       ))}
-      <div aria-hidden="true" className="hidden flex-col gap-5 md:flex motion-reduce:hidden">
+      <div aria-hidden="true" className="hidden flex-col gap-5 md:flex md:motion-reduce:hidden">
         {posts.map((post) => (
           <NewsCard key={post.href} post={post} hidden />
         ))}

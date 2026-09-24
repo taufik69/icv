@@ -9,13 +9,13 @@ export const contactCards = [
 ]
 
 export const quickLinks = [
-  ['Home', `${ICV}/`], ['Compliance & Reports', `${ICV}/compliance-reports/`], ['Fee Schedule', `${ICV}/fee-schedule/`],
+  ['Home', '/'], ['About Us', '/about'], ['Compliance & Reports', '/about/compliance-reports'], ['Fee Schedule', `${ICV}/fee-schedule/`],
   ['Forms', `${ICV}/forms/`], ['Policies and Procedures', `${ICV}/policies-and-procedures-2/`],
   ['Information For Students', `${ICV}/information-for-students-2/`], ['USI', 'https://www.usi.gov.au/about-us'],
-  ['DHA', 'https://www.homeaffairs.gov.au/'], ['Brokers & Subcontractors', `${ICV}/brokers/`],
+  ['DHA', 'https://www.homeaffairs.gov.au/'], ['Brokers & Subcontractors', '/about/brokers'],
   ['Online Service Standards', `${ICV}/online-service-standards/`], ['RPL', `${ICV}/rpl/`],
   ['Blog', `${ICV}/blog/`], ['Contact Us', `${ICV}/contact/`],
-].map(([label, href]) => ({ label, href }))
+].map(([label, href]) => (href.startsWith('/') ? { label, to: href } : { label, href }))
 
 export const reviewSummary = {
   name: 'International College of Victoria (ICV)',

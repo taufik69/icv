@@ -1,19 +1,17 @@
 import { introContent } from '@/features/home/data/introContent'
 import { Container } from '@/shared/components/ui'
-import { useInView } from '@/shared/hooks/useInView'
+import { useDoodleBackground } from '@/shared/hooks/useDoodleBackground'
 import { IntroHeader } from './IntroHeader'
 import { StudyShowcase } from './StudyShowcase'
 
-// Doodle bg is requested only when the section nears the viewport.
-// Desktop: background-attachment fixed. Mobile: scroll-driven drift (see animations.css).
 export function IntroSection() {
-  const [ref, nearView] = useInView({ rootMargin: '300px 0px' })
+  const [ref, doodle] = useDoodleBackground()
 
   return (
     <section
       ref={ref}
       aria-labelledby="intro-title"
-      className={`parallax-bg relative overflow-hidden bg-surface bg-auto bg-repeat py-16 md:py-24 lg:bg-fixed ${nearView ? 'bg-[url(/images/doodle-bg.webp)]' : ''}`}
+      className={`relative overflow-hidden bg-surface py-16 md:py-24 ${doodle}`}
     >
       {/* Parallax decor: moves at a different speed from the content while scrolling */}
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
