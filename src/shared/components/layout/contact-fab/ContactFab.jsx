@@ -34,7 +34,7 @@ export function ContactFab() {
   }, [open])
 
   return (
-    <div ref={ref} className="fixed right-4 bottom-24 z-40 size-14 md:right-6 md:bottom-6">
+    <div ref={ref} className="fixed right-4 bottom-28 z-40 size-14 md:right-6 md:bottom-6">
       <div className={`absolute inset-0 ${closing ? 'motion-safe:animate-[fab-spin-close_550ms_linear]' : ''}`}>
         {contactActions.map((action, i) => (
           <FabItem key={action.label} action={action} point={points[i]} index={i} open={open} />

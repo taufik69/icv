@@ -1,25 +1,22 @@
-const base =
-  'flex h-11 min-w-11 items-center justify-center rounded-full px-3 transition-colors duration-200 active:scale-95'
-
-// Icon-only tab that expands to show its label when active (grid-cols 0fr → 1fr animation).
+// Tab: icon over a small label. Active tab = green pill behind the icon + green label.
 export function BottomNavItem({ item, active, onClick, href }) {
   const { Icon, label } = item
   const Tag = href ? 'a' : 'button'
-  const state = active ? 'bg-primary text-on-primary' : 'text-white/70 hover:bg-white/10 hover:text-white'
 
   return (
     <Tag
       {...(href ? { href } : { type: 'button' })}
       onClick={onClick}
-      aria-label={label}
       aria-current={active ? 'page' : undefined}
-      className={`${base} ${state}`}
+      className="group flex flex-1 flex-col items-center gap-0.5 rounded-full py-1 transition active:scale-95"
     >
-      <Icon className="size-5 shrink-0" />
       <span
-        className={`grid transition-[grid-template-columns,margin] duration-300 ease-out ${active ? 'ml-2 grid-cols-[1fr]' : 'ml-0 grid-cols-[0fr]'}`}
+        className={`grid h-8 w-12 place-items-center rounded-full transition duration-300 ${active ? 'bg-primary text-on-primary shadow-card' : 'text-white/75 group-hover:bg-white/10 group-hover:text-white'}`}
       >
-        <span className="overflow-hidden font-heading text-xs font-semibold whitespace-nowrap">{label}</span>
+        <Icon className="size-5" />
+      </span>
+      <span className={`font-heading text-[0.7rem] leading-none font-semibold transition ${active ? 'text-primary' : 'text-white/70'}`}>
+        {label}
       </span>
     </Tag>
   )
