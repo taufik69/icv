@@ -7,7 +7,7 @@ import { DesktopNav } from './DesktopNav'
 import { HeaderActions } from './HeaderActions'
 import { Logo } from './Logo'
 
-// Full-width bar at the top; on scroll it becomes a light floating bar, 98% wide (1% gap each side, 16px radius).
+// Full-width bar at the top; on scroll it becomes a light floating bar, 98% wide (1% gap each side, pill shape).
 // data-floating drives child styles via `group-data-[floating=true]/header:*`.
 // Phones (< md): once scrolled the header slides away — BottomNav takes over navigation.
 export function SiteHeader({ onOpenMenu }) {
@@ -16,7 +16,7 @@ export function SiteHeader({ onOpenMenu }) {
 
   const bar = overHero ? 'bg-transparent' : 'bg-secondary'
   const shell = floating
-    ? 'max-w-[98%] rounded-2xl bg-surface/95 shadow-elevated ring-1 ring-line-soft backdrop-blur-md'
+    ? 'max-w-[98%] rounded-full bg-surface/95 shadow-elevated ring-1 ring-line-soft backdrop-blur-md'
     : `max-w-full rounded-none ${bar}`
 
   return (

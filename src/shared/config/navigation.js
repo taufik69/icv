@@ -1,4 +1,25 @@
-import { GlobeIcon, GraduationCapIcon, HomeIcon, PhoneIcon, PlaneIcon } from '@/shared/components/icons'
+import {
+  BadgeCheckIcon,
+  BookOpenIcon,
+  BriefcaseIcon,
+  ChatIcon,
+  CoinsIcon,
+  FileTextIcon,
+  GlobeIcon,
+  GraduationCapIcon,
+  HeartIcon,
+  HomeIcon,
+  InfoIcon,
+  LayoutGridIcon,
+  PhoneIcon,
+  PlaneIcon,
+  PresentationIcon,
+  ScaleIcon,
+  ShieldCheckIcon,
+  StarIcon,
+  UsersIcon,
+} from '@/shared/components/icons'
+import { domesticCourses, internationalCourses } from './courseNav'
 
 const ICV = 'https://icv.edu.au'
 
@@ -7,68 +28,60 @@ const ICV = 'https://icv.edu.au'
 const heroSections = ['/about', '/student-info', '/domestic', '/international', '/contact']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
-const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
-
 export const mainNav = [
   {
     label: 'About Us',
     Icon: HomeIcon,
     children: [
-      { label: 'About ICV', to: '/about' },
-      { label: 'Message from CEO', to: '/about/ceo-message' },
-      { label: 'Why Choose ICV', to: '/about/why-choose-icv' },
-      { label: 'Student Wellbeing Centre', to: '/about/student-wellbeing' },
-      { label: 'Education Agents', to: '/about/education-agents' },
-      { label: 'Compliance and Reports', to: '/about/compliance-reports' },
-      { label: 'Brokers and Subcontractors', to: '/about/brokers' },
-      { label: 'Testimonials', to: '/about/testimonials' },
+      { label: 'About ICV', to: '/about', Icon: InfoIcon },
+      { label: 'Message from CEO', to: '/about/ceo-message', Icon: ChatIcon },
+      { label: 'Why Choose ICV', to: '/about/why-choose-icv', Icon: BadgeCheckIcon },
+      { label: 'Student Wellbeing Centre', to: '/about/student-wellbeing', Icon: HeartIcon },
+      { label: 'Education Agents', to: '/about/education-agents', Icon: UsersIcon },
+      { label: 'Compliance and Reports', to: '/about/compliance-reports', Icon: ShieldCheckIcon },
+      { label: 'Brokers and Subcontractors', to: '/about/brokers', Icon: BriefcaseIcon },
+      { label: 'Testimonials', to: '/about/testimonials', Icon: StarIcon },
+    ],
+  },
+  {
+    label: 'Courses',
+    Icon: BookOpenIcon,
+    passive: true, // its links duplicate Domestic / International, so it never shows as the current section
+    children: [
+      { label: 'Domestic Courses', to: '/domestic', Icon: GlobeIcon },
+      { label: 'International Courses', to: '/international', Icon: PlaneIcon },
+      { label: 'All Courses', to: '/', hash: 'courses', Icon: LayoutGridIcon },
     ],
   },
   {
     label: 'Student Info',
     Icon: GraduationCapIcon,
     children: [
-      { label: 'Fee Schedule – 2026', to: '/student-info/fee-schedule' },
-      { label: 'Policies and Procedures', to: '/student-info/policies' },
-      { label: 'Forms', to: '/student-info/forms' },
-      { label: 'Online Service Standards', to: '/student-info/online-service-standards' },
-      { label: 'RPL', to: '/student-info/rpl' },
-      { label: 'International Student Information', to: '/student-info/international-students' },
-      { label: 'ESOS Framework', to: '/student-info/esos-framework' },
+      { label: 'Fee Schedule – 2026', to: '/student-info/fee-schedule', Icon: CoinsIcon },
+      { label: 'Policies and Procedures', to: '/student-info/policies', Icon: ScaleIcon },
+      { label: 'Forms', to: '/student-info/forms', Icon: FileTextIcon },
+      { label: 'Online Service Standards', to: '/student-info/online-service-standards', Icon: PresentationIcon },
+      { label: 'RPL', to: '/student-info/rpl', Icon: BadgeCheckIcon },
+      { label: 'International Student Information', to: '/student-info/international-students', Icon: PlaneIcon },
+      { label: 'ESOS Framework', to: '/student-info/esos-framework', Icon: ShieldCheckIcon },
     ],
   },
   {
     label: 'Domestic',
     Icon: GlobeIcon,
-    children: [
-      { label: 'Domestic', to: '/domestic' },
-      { label: 'Certificate IV in Building and Construction', to: '/domestic/cert-iv-building-and-construction', code: 'CPC40120' },
-      { label: 'Diploma of Building and Construction (Building)', to: '/domestic/diploma-of-building-and-construction', code: 'CPC50220' },
-      { label: 'Prepare to work safely in the construction industry', to: '/domestic/white-card', code: 'CPCWHS1001' },
-      { label: 'Certificate III in Early Childhood Education and Care', to: '/domestic/cert-iii-early-childhood', code: 'CHC30125' },
-      { label: 'Diploma of Early Childhood Education and Care', to: '/domestic/diploma-of-early-childhood', code: 'CHC50125' },
-      { label: 'Certificate IV in Ageing Support', to: '/domestic/cert-iv-ageing-support', code: 'CHC43015' },
-      link('Certificate III in Individual Support', '/chc33021-certificate-iii-in-individual-support-ageing-and-disability/', 'CHC33021'),
-    ],
+    children: domesticCourses,
   },
   {
     label: 'International',
     Icon: PlaneIcon,
-    children: [
-      { label: 'International', to: '/international' },
-      { label: 'Certificate III in Carpentry', to: '/international/certificate-iii-in-carpentry', code: 'CPC30220' },
-      { label: 'Certificate III in Stonemasonry', to: '/international/certificate-iii-in-stonemasonry', code: 'CPC32320' },
-      { label: 'Graduate Diploma in Management (Learning)', to: '/international/graduate-diploma-in-management-learning', code: 'BSB80120' },
-      { label: 'Certificate IV in Building and Construction', to: '/international/cert-iv-building-and-construction', code: 'CPC40120' },
-      { label: 'Diploma of Building and Construction (Building)', to: '/international/diploma-of-building-and-construction', code: 'CPC50220' },
-    ],
+    children: internationalCourses,
   },
   { label: 'Contact Us', to: '/contact', Icon: PhoneIcon },
 ]
 
 export const portalLinks = [
-  { label: 'Student Login', href: 'https://admin.axcelerate.com.au/learnerPortal/' },
-  { label: 'Trainer Login', href: 'https://admin.axcelerate.com.au/management/' },
+  { label: 'Student Login', href: 'https://admin.axcelerate.com.au/learnerPortal/', Icon: GraduationCapIcon },
+  { label: 'Trainer Login', href: 'https://admin.axcelerate.com.au/management/', Icon: PresentationIcon },
 ]
 
 export const applyLink = { label: 'Apply Now', href: `${ICV}/enquire-now/` }

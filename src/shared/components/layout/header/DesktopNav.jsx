@@ -11,7 +11,7 @@ export function DesktopNav({ floating }) {
       {floating && <Divider className="mr-2" />}
       {mainNav.map((item, i) => (
         <Fragment key={item.label}>
-          {floating && i === 3 && <Divider className="mx-1" />}
+          {floating && i === 4 && <Divider className="mx-1" />}
           <NavItem item={item} floating={floating} />
         </Fragment>
       ))}

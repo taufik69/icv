@@ -6,7 +6,7 @@ import { applyLink, mainNav, portalLabel, portalLinks } from '@/shared/config/na
 import { MobileNavGroup } from './MobileNavGroup'
 
 const items = [...mainNav, { label: portalLabel, Icon: UserIcon, children: portalLinks }]
-const isActive = (item, path) => item.to === path || !!item.children?.some((c) => c.to === path)
+const isActive = (item, path) => item.to === path || (!item.passive && !!item.children?.some((c) => !c.hash && c.to === path))
 const pill = 'flex flex-1 items-center justify-center gap-2 rounded-xl bg-white/10 py-2.5 text-white transition hover:bg-white/15 hover:text-primary'
 
 // Navy drawer: desktop nav icons, Portal as the last group, current section highlighted with its group open.

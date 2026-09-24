@@ -44,6 +44,7 @@ export function MobileNavGroup({ item, active, open, onToggle, onNavigate }) {
               <AppLink
                 to={child.to}
                 href={child.href}
+                hash={child.hash}
                 onClick={onNavigate}
                 className="group flex items-center gap-3 rounded-xl py-2.5 pr-3 pl-14 text-sm text-white/75 transition hover:bg-white/5 hover:text-primary aria-[current=page]:bg-white/10 aria-[current=page]:font-semibold aria-[current=page]:text-primary"
               >

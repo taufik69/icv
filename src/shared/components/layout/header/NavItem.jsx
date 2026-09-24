@@ -41,7 +41,7 @@ export function NavItem({ item, floating }) {
   const { Icon } = item
   // Active when the current page is this link or one of its internal children.
   const active = useRouterState({
-    select: (s) => item.to === s.location.pathname || !!item.children?.some((c) => c.to === s.location.pathname),
+    select: (s) => item.to === s.location.pathname || (!item.passive && !!item.children?.some((c) => !c.hash && c.to === s.location.pathname)),
   })
   const s = floating ? styles.float : styles.top
   const cls = `${base} ${active ? s.on : s.idle}`
