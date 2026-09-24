@@ -5,12 +5,12 @@ import { preconnect } from '@/shared/lib/preconnect'
 const VideoModal = lazy(() => import('@/shared/components/media/VideoModal'))
 const warmUp = () => preconnect('https://www.youtube-nocookie.com', 'https://www.google.com')
 
-// Portrait card with offset frame; opens the YouTube video in a lightbox (lazy chunk).
+// Landscape card below lg, portrait beside the copy on lg+; offset frame; opens the YouTube video in a lightbox (lazy chunk).
 export function VideoCard({ video }) {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="relative mx-auto w-full max-w-sm">
+    <div className="relative mx-auto w-full max-w-2xl lg:max-w-md">
       <div className="absolute inset-0 -m-3 rounded-3xl border-4 border-primary/60" />
       <span className="absolute -top-8 left-1/2 size-3 rounded-full bg-primary motion-safe:animate-float" />
       <span className="absolute -bottom-10 left-1/2 size-2 rounded-full bg-secondary/40 motion-safe:animate-float-slow" />
@@ -21,7 +21,7 @@ export function VideoCard({ video }) {
         onPointerEnter={warmUp}
         onFocus={warmUp}
         aria-label={`Play video: ${video.title}`}
-        className="group relative block aspect-4/5 w-full cursor-pointer overflow-hidden rounded-2xl bg-secondary-dark shadow-elevated"
+        className="group relative block aspect-16/10 w-full lg:aspect-4/5 cursor-pointer overflow-hidden rounded-2xl bg-secondary-dark shadow-elevated"
       >
         <img
           {...video.image}
