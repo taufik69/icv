@@ -14,7 +14,7 @@ export function TestimonialsSection() {
       aria-labelledby="testimonials-title"
       className={`relative overflow-hidden bg-secondary-dark bg-cover bg-center py-20 md:py-28 lg:bg-fixed ${bg}`}
     >
-      <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/80 via-secondary-dark/55 to-secondary-dark/85" />
+      <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/45 via-secondary-dark/10 to-secondary-dark/50" />
       <Container className="relative">
         <Reveal className="text-center">
           <h2 id="testimonials-title" className="font-condensed text-2xl font-bold text-white uppercase sm:text-3xl md:text-4xl">

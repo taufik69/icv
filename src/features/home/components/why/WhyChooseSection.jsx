@@ -12,10 +12,10 @@ export function WhyChooseSection() {
       <Container className="relative grid items-center gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16">
         <Reveal from="left">
           <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
-          <h2 id="why-title" className="mt-5 text-3xl leading-tight sm:text-4xl md:text-5xl">
+          <h2 id="why-title" className="mt-5 text-3xl leading-tight capitalize sm:text-4xl md:text-5xl">
             {content.title} <span className="text-primary-hover">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-ink-muted">
+          <div className="mt-6 space-y-4 text-justify leading-relaxed text-ink-muted hyphens-auto">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

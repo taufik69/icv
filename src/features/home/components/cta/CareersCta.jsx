@@ -17,8 +17,7 @@ export function CareersCta() {
       aria-labelledby="careers-cta-title"
       className={`relative isolate overflow-hidden bg-secondary-dark bg-cover bg-center py-20 md:py-28 ${bg}`}
     >
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-secondary-dark/85" />
-      <span aria-hidden="true" className="absolute -top-32 -right-32 -z-10 size-96 rounded-full bg-primary/20 blur-3xl" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-secondary-dark/92" />
 
       <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:gap-16">
         <Reveal from="left">

@@ -21,7 +21,7 @@ export function WelcomeSection() {
         className="order-last px-5 py-12 md:px-8 md:py-16 lg:order-none lg:ml-auto lg:w-full lg:max-w-[40rem] lg:py-24 lg:pr-16"
       >
         <SectionEyebrow tone="light">{content.eyebrow}</SectionEyebrow>
-        <h2 id="welcome-title" className="mt-5 text-2xl leading-tight text-white sm:text-3xl md:text-4xl">
+        <h2 id="welcome-title" className="mt-5 text-2xl leading-tight capitalize text-white sm:text-3xl md:text-4xl">
           {content.title} <span className="text-primary">{content.highlight}</span>
         </h2>
         <p className="mt-5 leading-relaxed text-white/75">{content.text}</p>
