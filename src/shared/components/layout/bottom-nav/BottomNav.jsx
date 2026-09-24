@@ -5,7 +5,7 @@ import { BottomNavItem } from './BottomNavItem'
 
 const SECTIONS = bottomNavItems.filter((i) => i.section).map((i) => i.section)
 
-// Floating glass tab bar, phones only (< md), centred with 1rem gaps (max 24rem). On the home page the active
+// Full-width tab bar docked to the bottom edge (safe-area aware), phones only (< md). On the home page the active
 // tab follows scroll position (scroll-spy); elsewhere no tab is lit. "Menu" opens the same drawer as the header hamburger.
 export function BottomNav({ menuOpen, onOpenMenu }) {
   const navigate = useNavigate()
@@ -24,7 +24,7 @@ export function BottomNav({ menuOpen, onOpenMenu }) {
   return (
     <nav
       aria-label="Quick navigation"
-      className="fixed inset-x-0 bottom-[max(0.75rem,env(safe-area-inset-bottom))] z-40 mx-auto flex w-[calc(100%-2rem)] max-w-sm items-center justify-between gap-0.5 rounded-3xl bg-secondary/90 px-1.5 py-2 shadow-elevated ring-1 ring-white/15 backdrop-blur-xl md:hidden motion-safe:animate-[fade-in_400ms_ease-out]"
+      className="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-0.5 border-t border-white/10 bg-secondary/95 px-2 pt-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-elevated backdrop-blur-xl md:hidden motion-safe:animate-[fade-in_400ms_ease-out]"
     >
       {bottomNavItems.map((item) => (
         <BottomNavItem

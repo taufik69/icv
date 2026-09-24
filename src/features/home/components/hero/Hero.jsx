@@ -25,8 +25,8 @@ export function Hero() {
             <HeroVideo video={heroContent.video} containerRef={sectionRef} />
           </Suspense>
         )}
-        {/* Content sits at the bottom (phones: pb-40 clears BottomNav + ContactFab). Scrim: clear at the top so the photo/video is the subject, deep navy at the bottom behind the text */}
-        <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary-dark/45 via-45% to-transparent" />
+        {/* Content sits at the bottom (phones: pb-40 clears BottomNav + ContactFab). Scrim: clear at the top so the photo/video is the subject, deep navy at the bottom behind the text (phones: the navy reaches higher, via-70%, since the copy takes more of the height) */}
+        <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary-dark/45 via-70% to-transparent md:via-45%" />
       </div>
 
       <Container className="grid gap-10 pt-28 pb-40 md:pt-32 md:pb-20 lg:grid-cols-[1fr_22rem] lg:items-end">
