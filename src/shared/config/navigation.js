@@ -1,8 +1,10 @@
+import { GlobeIcon, GraduationCapIcon, HomeIcon, PhoneIcon, PlaneIcon } from '@/shared/components/icons'
+
 const ICV = 'https://icv.edu.au'
 
 // Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
 // the header starts transparent over them.
-const heroSections = ['/about', '/student-info', '/domestic', '/international']
+const heroSections = ['/about', '/student-info', '/domestic', '/international', '/contact']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
@@ -10,6 +12,7 @@ const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
 export const mainNav = [
   {
     label: 'About Us',
+    Icon: HomeIcon,
     children: [
       { label: 'About ICV', to: '/about' },
       { label: 'Message from CEO', to: '/about/ceo-message' },
@@ -23,6 +26,7 @@ export const mainNav = [
   },
   {
     label: 'Student Info',
+    Icon: GraduationCapIcon,
     children: [
       { label: 'Fee Schedule – 2026', to: '/student-info/fee-schedule' },
       { label: 'Policies and Procedures', to: '/student-info/policies' },
@@ -35,6 +39,7 @@ export const mainNav = [
   },
   {
     label: 'Domestic',
+    Icon: GlobeIcon,
     children: [
       { label: 'Domestic', to: '/domestic' },
       { label: 'Certificate IV in Building and Construction', to: '/domestic/cert-iv-building-and-construction', code: 'CPC40120' },
@@ -48,6 +53,7 @@ export const mainNav = [
   },
   {
     label: 'International',
+    Icon: PlaneIcon,
     children: [
       { label: 'International', to: '/international' },
       { label: 'Certificate III in Carpentry', to: '/international/certificate-iii-in-carpentry', code: 'CPC30220' },
@@ -57,7 +63,7 @@ export const mainNav = [
       { label: 'Diploma of Building and Construction (Building)', to: '/international/diploma-of-building-and-construction', code: 'CPC50220' },
     ],
   },
-  { label: 'Contact Us', href: `${ICV}/contact/` },
+  { label: 'Contact Us', to: '/contact', Icon: PhoneIcon },
 ]
 
 export const portalLinks = [
@@ -66,3 +72,4 @@ export const portalLinks = [
 ]
 
 export const applyLink = { label: 'Apply Now', href: `${ICV}/enquire-now/` }
+export const portalLabel = 'Portal'

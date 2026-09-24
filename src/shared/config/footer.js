@@ -14,7 +14,7 @@ export const quickLinks = [
   ['Information For Students', '/student-info/international-students'], ['USI', 'https://www.usi.gov.au/about-us'],
   ['DHA', 'https://www.homeaffairs.gov.au/'], ['Brokers & Subcontractors', '/about/brokers'],
   ['Online Service Standards', '/student-info/online-service-standards'], ['RPL', '/student-info/rpl'],
-  ['Blog', `${ICV}/blog/`], ['Contact Us', `${ICV}/contact/`],
+  ['Blog', `${ICV}/blog/`], ['Contact Us', '/contact'],
 ].map(([label, href]) => (href.startsWith('/') ? { label, to: href } : { label, href }))
 
 export const reviewSummary = {

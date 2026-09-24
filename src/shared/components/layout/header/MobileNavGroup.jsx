@@ -15,10 +15,10 @@ function GroupIcon({ Icon, active }) {
 export function MobileNavGroup({ item, Icon, open, onToggle, onNavigate }) {
   if (!item.children) {
     return (
-      <a href={item.href} onClick={onNavigate} className={`${rowBase} text-white hover:bg-white/5 hover:text-white`}>
+      <AppLink to={item.to} href={item.href} onClick={onNavigate} className={`${rowBase} text-white hover:bg-white/5 hover:text-white`}>
         <GroupIcon Icon={Icon} />
         {item.label}
-      </a>
+      </AppLink>
     )
   }
 
