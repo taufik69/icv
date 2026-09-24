@@ -7,10 +7,10 @@ export function CareersCta() {
     <section aria-labelledby="careers-cta-title" className="bg-secondary py-20 md:py-24">
       <Container>
         <Reveal className="mx-auto max-w-5xl text-center">
-          <h2 id="careers-cta-title" className="font-condensed text-2xl font-bold text-white uppercase md:text-3xl">
+          <h2 id="careers-cta-title" className="font-condensed text-xl font-bold text-white uppercase sm:text-2xl md:text-3xl">
             {content.title}
           </h2>
-          <p className="mt-3 font-condensed text-lg leading-snug font-bold text-primary md:text-2xl">
+          <p className="mt-3 font-condensed text-base leading-snug font-bold text-primary sm:text-lg md:text-2xl">
             {content.subtitle}
           </p>
           <span aria-hidden="true" className="mx-auto mt-5 block h-0.5 w-24 bg-primary" />

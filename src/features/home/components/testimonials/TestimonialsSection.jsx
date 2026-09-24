@@ -17,7 +17,7 @@ export function TestimonialsSection() {
       <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/80 via-secondary-dark/55 to-secondary-dark/85" />
       <Container className="relative">
         <Reveal className="text-center">
-          <h2 id="testimonials-title" className="font-condensed text-3xl font-bold text-white uppercase md:text-4xl">
+          <h2 id="testimonials-title" className="font-condensed text-2xl font-bold text-white uppercase sm:text-3xl md:text-4xl">
             {content.title} <span className="text-primary">{content.highlight}</span>
           </h2>
           <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full bg-primary" />

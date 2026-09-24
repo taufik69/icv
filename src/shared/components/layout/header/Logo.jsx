@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 
-const size = 'h-12 w-auto transition-all duration-700 ease-in-out md:h-14 group-data-[floating=true]/header:h-10 md:group-data-[floating=true]/header:h-11'
+const size = 'h-12 w-auto transition-all duration-700 ease-in-out md:h-14 group-data-[floating=true]/header:h-11 md:group-data-[floating=true]/header:h-12'
 
 // White-lettered logo over banners; navy-lettered version crossfades in on the light floating bar.
 export function Logo() {

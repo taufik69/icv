@@ -16,7 +16,7 @@ export function HeroContent({ content }) {
         </span>
         {content.eyebrow}
       </p>
-      <h1 className="mt-6 text-5xl leading-[1.02] font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+      <h1 className="mt-6 text-4xl leading-[1.05] min-[400px]:text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
         {content.headline.map((line, i) => (
           <span key={line} className={`block ${i === content.highlightLine ? 'text-primary' : ''}`}>
             {line}

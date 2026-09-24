@@ -7,7 +7,7 @@ export function SectionNav({ sections, ids, numbered = true }) {
 
   return (
     <nav aria-label="On this page" className="min-w-0 lg:sticky lg:top-28">
-      <ol className="-mx-5 flex snap-x gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] lg:mx-0 lg:flex-col lg:gap-1 lg:overflow-visible lg:rounded-3xl lg:bg-surface lg:p-3 lg:shadow-card lg:ring-1 lg:ring-line-soft">
+      <ol className="-mx-5 flex snap-x scroll-px-5 gap-2 overflow-x-auto px-5 pb-2 [scrollbar-width:none] lg:mx-0 lg:flex-col lg:gap-1 lg:overflow-visible lg:rounded-3xl lg:bg-surface lg:p-3 lg:shadow-card lg:ring-1 lg:ring-line-soft">
         {sections.map((s, i) => {
           const on = active === s.id
           return (

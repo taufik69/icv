@@ -43,7 +43,7 @@ export function CourseCard({ course, featured = false }) {
 
         <div className={featured ? 'max-w-lg' : ''}>
           <p className="font-condensed text-sm tracking-wider text-primary">{course.code}</p>
-          <h3 className={`mt-1 leading-snug font-semibold text-white ${featured ? 'text-2xl md:text-3xl' : 'text-lg'}`}>
+          <h3 className={`mt-1 leading-snug font-semibold text-white ${featured ? 'text-xl sm:text-2xl md:text-3xl' : 'text-lg'}`}>
             {course.title}
           </h3>
           <p className="mt-1 text-xs text-white/70">{label}</p>

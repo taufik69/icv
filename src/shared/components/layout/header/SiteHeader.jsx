@@ -32,14 +32,14 @@ export function SiteHeader({ onOpenMenu }) {
           className={`flex items-center gap-4 transition-[padding] duration-700 ease-in-out ${floating ? 'py-2' : 'py-3 md:py-4'}`}
         >
           <Logo />
-          <DesktopNav />
+          <DesktopNav floating={floating} />
           <div className="ml-auto flex items-center gap-2 xl:ml-0">
             <HeaderActions />
             <button
               type="button"
               onClick={onOpenMenu}
               aria-label="Open menu"
-              className="grid size-11 place-items-center rounded-md bg-ink-strong/35 text-white backdrop-blur-md group-data-[floating=true]/header:rounded-full group-data-[floating=true]/header:bg-secondary group-data-[floating=true]/header:hover:bg-secondary-dark xl:hidden"
+              className="grid size-11 place-items-center rounded-full text-white ring-1 ring-white/40 transition hover:bg-white/10 group-data-[floating=true]/header:ring-0 group-data-[floating=true]/header:bg-secondary group-data-[floating=true]/header:hover:bg-secondary-dark xl:hidden"
             >
               <MenuIcon />
             </button>

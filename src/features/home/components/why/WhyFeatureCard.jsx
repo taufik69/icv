@@ -4,7 +4,7 @@ export function WhyFeatureCard({ feature: { title, text, Icon }, index }) {
     <div className="group relative h-full overflow-hidden rounded-2xl border border-line-soft bg-surface p-6 shadow-raised transition duration-500 hover:-translate-y-1 hover:border-secondary hover:bg-secondary hover:shadow-brand md:p-7">
       <span
         aria-hidden="true"
-        className="absolute top-4 right-5 font-heading text-5xl font-extrabold text-surface-sunken transition duration-500 group-hover:text-white/10"
+        className="absolute top-4 right-5 font-heading text-4xl font-extrabold md:text-5xl text-surface-sunken transition duration-500 group-hover:text-white/10"
       >
         {String(index + 1).padStart(2, '0')}
       </span>

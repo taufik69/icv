@@ -9,7 +9,7 @@ export function LaunchSection() {
       <Container className="grid items-center gap-14 lg:grid-cols-[7fr_5fr] lg:gap-20">
         <Reveal from="left">
           <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
-          <h2 id="launch-title" className="mt-5 text-3xl leading-tight md:text-5xl">
+          <h2 id="launch-title" className="mt-5 text-2xl leading-tight sm:text-3xl md:text-5xl">
             {content.title} <span className="text-primary-hover">{content.highlight}</span>
           </h2>
           <div className="mt-6 space-y-3 leading-relaxed text-ink-muted">

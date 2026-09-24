@@ -4,6 +4,7 @@ import { Container, Reveal } from '@/shared/components/ui'
 import { contactCards } from '@/shared/config/footer'
 
 // Address / Phone Number / Email Address cards overlapping the banner's bottom edge. Every line is a link.
+// Tablets (md–lg) stack the icon above the text so three narrow columns keep a readable line length.
 export function ContactCards() {
   const cards = contactCards.map((c) => (c.title === 'Email address' ? { ...c, lines: [...c.lines, contactContent.website] } : c))
 
@@ -13,8 +14,8 @@ export function ContactCards() {
         <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {cards.map(({ title, Icon, lines }, i) => (
             <Reveal as="li" key={title} delay={i * 100}>
-              <div className="group flex h-full items-start gap-4 rounded-3xl bg-surface p-6 shadow-elevated ring-1 ring-line-soft transition duration-500 hover:-translate-y-1 hover:ring-primary">
-                <span className="grid size-14 shrink-0 place-items-center rounded-2xl bg-secondary text-primary transition duration-500 group-hover:rotate-6 group-hover:bg-primary group-hover:text-on-primary">
+              <div className="group flex h-full items-start gap-4 rounded-3xl bg-surface p-6 md:flex-col md:p-5 lg:flex-row lg:p-6 shadow-elevated ring-1 ring-line-soft transition duration-500 hover:-translate-y-1 hover:ring-primary">
+                <span className="grid size-14 shrink-0 md:size-12 lg:size-14 place-items-center rounded-2xl bg-secondary text-primary transition duration-500 group-hover:rotate-6 group-hover:bg-primary group-hover:text-on-primary">
                   <Icon className="size-6" />
                 </span>
                 <div className="min-w-0">

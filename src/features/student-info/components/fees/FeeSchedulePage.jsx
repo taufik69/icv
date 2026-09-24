@@ -16,7 +16,7 @@ export function FeeSchedulePage() {
       <PageHero id="fees-title" current="Fee Schedule – 2026" {...content.hero} />
       <section ref={ref} aria-label="Fees and Charges for 2026" className={`relative overflow-hidden bg-surface py-20 md:py-28 ${doodle}`}>
         <Container>
-          <Reveal from="zoom" className="mx-auto max-w-3xl rounded-3xl bg-surface p-8 text-center shadow-elevated ring-1 ring-line-soft md:p-14">
+          <Reveal from="zoom" className="mx-auto max-w-3xl rounded-3xl bg-surface p-6 text-center sm:p-8 shadow-elevated ring-1 ring-line-soft md:p-14">
             <span className="mx-auto grid size-20 place-items-center rounded-3xl bg-secondary text-primary shadow-brand">
               <CoinsIcon className="size-10" />
             </span>
@@ -38,11 +38,11 @@ export function FeeSchedulePage() {
               href={action.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="group btn-shine mt-10 inline-flex items-center gap-3 rounded-md bg-primary px-8 py-4 font-heading text-lg font-semibold text-on-primary shadow-card transition hover:bg-primary-hover hover:text-on-primary"
+              className="group btn-shine mt-10 inline-flex w-full items-center justify-between gap-3 rounded-md bg-primary px-5 py-4 text-left font-heading text-base sm:w-auto sm:justify-center sm:px-8 sm:text-lg font-semibold text-on-primary shadow-card transition hover:bg-primary-hover hover:text-on-primary"
             >
-              {action.label}
-              <span className="rounded-md bg-secondary/10 px-2 py-0.5 font-condensed text-xs tracking-wider">{fileType(action.href)}</span>
-              <ArrowUpRightIcon className="size-5 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              <span className="min-w-0 flex-1 sm:flex-none">{action.label}</span>
+              <span className="rounded-md bg-secondary/10 px-2 py-0.5 shrink-0 font-condensed text-xs tracking-wider">{fileType(action.href)}</span>
+              <ArrowUpRightIcon className="size-5 shrink-0 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
           </Reveal>
         </Container>

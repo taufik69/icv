@@ -1,14 +1,18 @@
-// Lazy-loaded (see SiteHeader) — only downloaded when the menu is first opened.
+// Lazy-loaded (see RootLayout) — only downloaded when the menu is first opened.
 import { useEffect, useState } from 'react'
-import { CloseIcon, MailIcon, PhoneIcon } from '@/shared/components/icons'
-import { applyLink, mainNav, portalLinks } from '@/shared/config/navigation'
-import { mobileNavIcons } from './mobileNavIcons'
+import { useRouterState } from '@tanstack/react-router'
+import { ArrowRightIcon, CloseIcon, MailIcon, PhoneIcon, UserIcon } from '@/shared/components/icons'
+import { applyLink, mainNav, portalLabel, portalLinks } from '@/shared/config/navigation'
 import { MobileNavGroup } from './MobileNavGroup'
 
-const items = [...mainNav, { label: 'Portal', children: portalLinks }]
+const items = [...mainNav, { label: portalLabel, Icon: UserIcon, children: portalLinks }]
+const isActive = (item, path) => item.to === path || !!item.children?.some((c) => c.to === path)
+const pill = 'flex flex-1 items-center justify-center gap-2 rounded-xl bg-white/10 py-2.5 text-white transition hover:bg-white/15 hover:text-primary'
 
+// Navy drawer: desktop nav icons, Portal as the last group, current section highlighted with its group open.
 export default function MobileMenu({ onClose }) {
-  const [open, setOpen] = useState(null)
+  const path = useRouterState({ select: (s) => s.location.pathname })
+  const [open, setOpen] = useState(() => items.find((i) => i.children && isActive(i, path))?.label ?? null)
 
   useEffect(() => {
     const onKey = (e) => e.key === 'Escape' && onClose()
@@ -37,7 +41,7 @@ export default function MobileMenu({ onClose }) {
             <MobileNavGroup
               key={item.label}
               item={item}
-              Icon={mobileNavIcons[item.label]}
+              active={isActive(item, path)}
               open={open === item.label}
               onToggle={() => setOpen((cur) => (cur === item.label ? null : item.label))}
               onNavigate={onClose}
@@ -47,15 +51,16 @@ export default function MobileMenu({ onClose }) {
 
         <div className="space-y-3 border-t border-white/10 px-5 py-5">
           <div className="flex gap-2 text-sm">
-            <a href="tel:0399421836" className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white/10 py-2.5 text-white hover:text-primary">
+            <a href="tel:0399421836" className={pill}>
               <PhoneIcon className="size-4 text-primary" /> Call us
             </a>
-            <a href="mailto:info@icv.edu.au" className="flex flex-1 items-center justify-center gap-2 rounded-xl bg-white/10 py-2.5 text-white hover:text-primary">
+            <a href="mailto:info@icv.edu.au" className={pill}>
               <MailIcon className="size-4 text-primary" /> Email
             </a>
           </div>
-          <a href={applyLink.href} className="btn-shine block rounded-xl bg-primary py-3.5 text-center font-heading font-semibold text-on-primary hover:text-on-primary">
+          <a href={applyLink.href} className="group btn-shine flex items-center justify-center gap-2 rounded-2xl bg-primary py-3.5 font-heading font-semibold text-on-primary shadow-card hover:bg-primary-hover hover:text-on-primary">
             {applyLink.label}
+            <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
           </a>
         </div>
       </div>

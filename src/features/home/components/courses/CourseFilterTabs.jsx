@@ -7,7 +7,7 @@ export function CourseFilterTabs({ filters, active, onChange }) {
           type="button"
           aria-pressed={active === filter.id}
           onClick={() => onChange(filter.id)}
-          className={`rounded-full px-4 py-2 font-heading text-sm font-semibold transition sm:px-6 ${active === filter.id ? 'bg-secondary text-white shadow-brand' : 'text-ink-muted hover:text-secondary'}`}
+          className={`rounded-full px-3.5 py-2 font-heading text-xs font-semibold whitespace-nowrap transition sm:px-6 sm:text-sm ${active === filter.id ? 'bg-secondary text-white shadow-brand' : 'text-ink-muted hover:text-secondary'}`}
         >
           {filter.label}
         </button>

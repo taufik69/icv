@@ -14,7 +14,7 @@ export function NewsSection() {
       <Container className="grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16">
         <Reveal from="left">
           <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
-          <h2 id="news-title" className="mt-5 text-4xl leading-tight md:text-5xl">
+          <h2 id="news-title" className="mt-5 text-3xl leading-tight sm:text-4xl md:text-5xl">
             {content.title} <span className="text-primary-hover">{content.highlight}</span>
           </h2>
           <p className="mt-4 max-w-md leading-relaxed text-ink-muted">{content.intro}</p>
