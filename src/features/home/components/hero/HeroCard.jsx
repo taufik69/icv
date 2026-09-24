@@ -1,13 +1,12 @@
 import { ArrowUpRightIcon } from '@/shared/components/icons'
 
-// `tile`: photo on top (used for the two cards side by side); `row`: photo beside the text.
-export function HeroCard({ card, layout = 'row' }) {
-  const tile = layout === 'tile'
-
+// One quick-link row in the hero panel: small thumbnail, title, and a round arrow that fills green on hover.
+export function HeroCard({ card }) {
   return (
     <a
       href={card.href}
-      className={`group flex h-full gap-3 rounded-xl border border-white/20 bg-white/15 p-2 text-white backdrop-blur-md transition hover:-translate-y-0.5 hover:bg-white/25 hover:text-white ${tile ? 'flex-col' : 'items-center gap-4'}`}
+      aria-label={`${card.title} – ${card.cta}`}
+      className="group flex items-center gap-4 rounded-xl p-2.5 text-white transition hover:bg-white/10 hover:text-white"
     >
       <img
         src={card.image}
@@ -16,15 +15,12 @@ export function HeroCard({ card, layout = 'row' }) {
         height="200"
         loading="lazy"
         decoding="async"
-        className={`shrink-0 rounded-lg object-cover ${tile ? 'aspect-16/10 w-full' : 'size-16 lg:size-18'}`}
+        className="size-12 shrink-0 rounded-lg object-cover"
       />
-      <div className={`flex min-w-0 flex-col gap-1 ${tile ? 'px-2 pb-2' : 'pr-2'}`}>
-        <p className="font-heading leading-snug font-semibold">{card.title}</p>
-        <span className="flex items-center gap-1 font-heading text-sm font-semibold text-primary">
-          {card.cta}
-          <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </span>
-      </div>
+      <span className="min-w-0 flex-1 font-heading text-base leading-snug font-semibold">{card.title}</span>
+      <span className="grid size-8 shrink-0 place-items-center rounded-full text-white/70 ring-1 ring-white/25 transition group-hover:bg-primary group-hover:text-on-primary group-hover:ring-primary">
+        <ArrowUpRightIcon className="size-4" />
+      </span>
     </a>
   )
 }

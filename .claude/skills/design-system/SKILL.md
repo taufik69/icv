@@ -24,9 +24,10 @@ Source scrape: `design/design-system.source.json` (icv.edu.au). **Never use raw 
 Green is a fill color, never body text on white.
 
 ## Typography
-- `font-sans` Open Sans — body (default on `html`).
-- `font-heading` Montserrat — h1–h6 (auto, bold, navy via `base.css`), buttons, nav.
-- `font-condensed` Roboto Condensed — labels/eyebrows.
+The whole site uses **Roboto Condensed**; all three utilities map to it (kept as roles, not families).
+- `font-sans` — body (default on `html`).
+- `font-heading` — h1–h6 (auto, bold, navy via `base.css`), buttons, nav.
+- `font-condensed` — labels/eyebrows.
 
 ## Radius
 `rounded-xs` 2 · `sm` 4 · `md` 6 · `lg` 8 · `xl` 10 (cards) · `2xl` 20 · `3xl` 24 (hero panels) · `rounded-pill` 25 (buttons)

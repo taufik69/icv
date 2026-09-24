@@ -1,8 +1,7 @@
 export const heroContent = {
   eyebrow: 'International College of Victoria',
-  headline: ["Let's find the", 'right course', 'for you.'],
+  headline: ['Welcome to ', 'ICV'],
   highlightLine: 1,
-  trust: ['RTO 22581', 'CRICOS 03649A', 'Melbourne, VIC'],
   description:
     'A registered training organisation delivering hands-on training to both local and international students.',
   actions: [

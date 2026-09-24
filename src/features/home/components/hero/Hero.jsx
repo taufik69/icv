@@ -16,7 +16,7 @@ export function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative isolate flex items-end overflow-hidden bg-secondary-dark md:h-svh md:min-h-[680px]"
+      className="relative isolate flex min-h-svh items-end overflow-hidden bg-secondary-dark"
     >
       <div className="absolute inset-0 -z-10">
         <HeroPoster poster={heroContent.poster} />
@@ -25,20 +25,22 @@ export function Hero() {
             <HeroVideo video={heroContent.video} containerRef={sectionRef} />
           </Suspense>
         )}
-        {/* Navy scrim keeps white text readable over any frame */}
-        <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary/55 to-secondary/35" />
+        {/* Content sits at the bottom (phones: pb-40 clears BottomNav + ContactFab). Scrim: clear at the top so the photo/video is the subject, deep navy at the bottom behind the text */}
+        <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary-dark/45 via-45% to-transparent" />
       </div>
 
-      <Container className="grid gap-10 pt-28 pb-12 md:pt-36 md:pb-20 lg:grid-cols-[1fr_26rem] lg:items-end">
+      <Container className="grid gap-10 pt-28 pb-40 md:pt-32 md:pb-20 lg:grid-cols-[1fr_22rem] lg:items-end">
         <HeroContent content={heroContent} />
-        {/* Two tiles side by side, third card full width underneath */}
-        <div className="hidden grid-cols-2 gap-3 md:grid md:max-w-lg lg:max-w-none">
-          {heroContent.cards.map((card, i) => (
-            <div key={card.href} className={i === 2 ? 'col-span-2' : 'h-full'}>
-              <HeroCard card={card} layout={i === 2 ? 'row' : 'tile'} />
-            </div>
-          ))}
-        </div>
+        {/* One quiet glass panel of quick links (md+) */}
+        <nav aria-label="Quick links" className="hidden rounded-2xl bg-white/10 p-1.5 ring-1 ring-white/15 backdrop-blur-md md:block md:max-w-sm lg:max-w-none">
+          <ul className="divide-y divide-white/10">
+            {heroContent.cards.map((card) => (
+              <li key={card.href}>
+                <HeroCard card={card} />
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Container>
     </section>
   )
