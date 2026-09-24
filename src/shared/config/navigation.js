@@ -1,7 +1,9 @@
 const ICV = 'https://icv.edu.au'
 
-// Routes that open with a full-bleed hero: the header starts transparent over them.
-export const heroRoutes = ['/', '/about', '/about/ceo-message', '/about/why-choose-icv', '/about/student-wellbeing', '/about/education-agents', '/about/compliance-reports', '/about/brokers', '/about/testimonials']
+// Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
+// the header starts transparent over them.
+const heroSections = ['/about', '/student-info']
+export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
 
@@ -22,13 +24,13 @@ export const mainNav = [
   {
     label: 'Student Info',
     children: [
-      link('Fee Schedule – 2025', '/fee-schedule/'),
-      link('Policies and Procedures', '/policies-and-procedures-2/'),
-      link('Forms', '/forms/'),
-      link('Online Service Standards', '/online-service-standards/'),
-      link('RPL', '/rpl/'),
-      link('International Student Information', '/information-for-students-2/'),
-      link('ESOS Framework', '/international-student-information/'),
+      { label: 'Fee Schedule – 2026', to: '/student-info/fee-schedule' },
+      { label: 'Policies and Procedures', to: '/student-info/policies' },
+      { label: 'Forms', to: '/student-info/forms' },
+      { label: 'Online Service Standards', to: '/student-info/online-service-standards' },
+      { label: 'RPL', to: '/student-info/rpl' },
+      { label: 'International Student Information', to: '/student-info/international-students' },
+      { label: 'ESOS Framework', to: '/student-info/esos-framework' },
     ],
   },
   {

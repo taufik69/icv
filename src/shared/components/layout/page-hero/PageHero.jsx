@@ -2,7 +2,7 @@ import { Container, SectionEyebrow } from '@/shared/components/ui'
 import { Breadcrumbs } from './Breadcrumbs'
 
 // Inner-page banner: full-bleed photo (the page's LCP image) under a navy scrim, breadcrumb, h1, lead.
-// Add the route to `heroRoutes` (shared/config/navigation.js) so the header starts transparent over it.
+// Routes under `heroSections` (shared/config/navigation.js) get a transparent header over this banner.
 // `children` render below the lead (e.g. a stats strip).
 export function PageHero({ id, eyebrow, title, highlight, lead, image, trail, current, children }) {
   return (

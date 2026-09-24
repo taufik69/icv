@@ -1,7 +1,7 @@
 import { useRouterState } from '@tanstack/react-router'
 import { MenuIcon } from '@/shared/components/icons'
 import { Container } from '@/shared/components/ui'
-import { heroRoutes } from '@/shared/config/navigation'
+import { hasHeroBanner } from '@/shared/config/navigation'
 import { useScrolled } from '@/shared/hooks/useScrolled'
 import { DesktopNav } from './DesktopNav'
 import { HeaderActions } from './HeaderActions'
@@ -12,7 +12,7 @@ import { Logo } from './Logo'
 // Phones (< md): once scrolled the header slides away — BottomNav takes over navigation.
 export function SiteHeader({ onOpenMenu }) {
   const floating = useScrolled()
-  const overHero = useRouterState({ select: (s) => heroRoutes.includes(s.location.pathname) })
+  const overHero = useRouterState({ select: (s) => hasHeroBanner(s.location.pathname) })
 
   const bar = overHero ? 'bg-transparent' : 'bg-secondary'
   const shell = floating

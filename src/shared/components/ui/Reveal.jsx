@@ -10,13 +10,14 @@ const offsets = {
 
 // Fades children in (sliding from `from`) when scrolled into view.
 // No motion for reduced-motion users.
-export function Reveal({ children, delay = 0, from = 'up', className = '', as: Tag = 'div' }) {
+export function Reveal({ children, delay = 0, from = 'up', className = '', as: Tag = 'div', ...props }) {
   const [ref, inView] = useInView()
   const state = inView ? 'translate-0 scale-100 opacity-100' : `motion-safe:opacity-0 ${offsets[from]}`
 
   return (
     <Tag
       ref={ref}
+      {...props}
       className={`motion-safe:transition motion-safe:duration-700 motion-safe:ease-out ${delays[delay]} ${state} ${className}`}
     >
       {children}

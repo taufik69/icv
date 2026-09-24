@@ -1,0 +1,7 @@
+export { FormsPage } from './components/documents/FormsPage'
+export { PoliciesPage } from './components/documents/PoliciesPage'
+export { FeeSchedulePage } from './components/fees/FeeSchedulePage'
+export { StandardsPage } from './components/standards/StandardsPage'
+export { RplPage } from './components/rpl/RplPage'
+export { IntlPage } from './components/intl/IntlPage'
+export { EsosPage } from './components/esos/EsosPage'

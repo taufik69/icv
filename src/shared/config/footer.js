@@ -9,11 +9,11 @@ export const contactCards = [
 ]
 
 export const quickLinks = [
-  ['Home', '/'], ['About Us', '/about'], ['Compliance & Reports', '/about/compliance-reports'], ['Fee Schedule', `${ICV}/fee-schedule/`],
-  ['Forms', `${ICV}/forms/`], ['Policies and Procedures', `${ICV}/policies-and-procedures-2/`],
-  ['Information For Students', `${ICV}/information-for-students-2/`], ['USI', 'https://www.usi.gov.au/about-us'],
+  ['Home', '/'], ['About Us', '/about'], ['Compliance & Reports', '/about/compliance-reports'], ['Fee Schedule', '/student-info/fee-schedule'],
+  ['Forms', '/student-info/forms'], ['Policies and Procedures', '/student-info/policies'],
+  ['Information For Students', '/student-info/international-students'], ['USI', 'https://www.usi.gov.au/about-us'],
   ['DHA', 'https://www.homeaffairs.gov.au/'], ['Brokers & Subcontractors', '/about/brokers'],
-  ['Online Service Standards', `${ICV}/online-service-standards/`], ['RPL', `${ICV}/rpl/`],
+  ['Online Service Standards', '/student-info/online-service-standards'], ['RPL', '/student-info/rpl'],
   ['Blog', `${ICV}/blog/`], ['Contact Us', `${ICV}/contact/`],
 ].map(([label, href]) => (href.startsWith('/') ? { label, to: href } : { label, href }))
 
