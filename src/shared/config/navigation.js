@@ -2,7 +2,7 @@ const ICV = 'https://icv.edu.au'
 
 // Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
 // the header starts transparent over them.
-const heroSections = ['/about', '/student-info', '/domestic']
+const heroSections = ['/about', '/student-info', '/domestic', '/international']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
@@ -48,13 +48,13 @@ export const mainNav = [
   },
   {
     label: 'International',
-    href: `${ICV}/international/`,
     children: [
-      link('Certificate III in Carpentry', '/certificate-iii-in-carpentry-international/', 'CPC30220'),
-      link('Certificate III in Stonemasonry', '/cpc32320-certificate-iii-in-stonemasonry/', 'CPC32320'),
-      link('Graduate Diploma in Management (Learning)', '/diploma-in-management-learning/', 'BSB80120'),
-      link('Certificate IV in Building and Construction', '/cpc40120-certificate-iv-in-building-and-construction-int/', 'CPC40120'),
-      link('Diploma of Building and Construction (Building)', '/building-and-construction-course-international-student/', 'CPC50220'),
+      { label: 'International', to: '/international' },
+      { label: 'Certificate III in Carpentry', to: '/international/certificate-iii-in-carpentry', code: 'CPC30220' },
+      { label: 'Certificate III in Stonemasonry', to: '/international/certificate-iii-in-stonemasonry', code: 'CPC32320' },
+      { label: 'Graduate Diploma in Management (Learning)', to: '/international/graduate-diploma-in-management-learning', code: 'BSB80120' },
+      { label: 'Certificate IV in Building and Construction', to: '/international/cert-iv-building-and-construction', code: 'CPC40120' },
+      { label: 'Diploma of Building and Construction (Building)', to: '/international/diploma-of-building-and-construction', code: 'CPC50220' },
     ],
   },
   { label: 'Contact Us', href: `${ICV}/contact/` },
