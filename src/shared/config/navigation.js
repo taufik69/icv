@@ -2,7 +2,7 @@ const ICV = 'https://icv.edu.au'
 
 // Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
 // the header starts transparent over them.
-const heroSections = ['/about', '/student-info']
+const heroSections = ['/about', '/student-info', '/domestic']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 const link = (label, path, code) => ({ label, href: `${ICV}${path}`, code })
@@ -35,14 +35,14 @@ export const mainNav = [
   },
   {
     label: 'Domestic',
-    href: `${ICV}/domestic/`,
     children: [
-      link('Certificate IV in Building and Construction', '/certificate-4-building-and-construction/', 'CPC40120'),
-      link('Diploma of Building and Construction (Building)', '/diploma-of-building-and-construction-building/', 'CPC50220'),
-      link('Prepare to work safely in the construction industry', '/prepare-to-work-safely-in-the-construction-industry/', 'CPCWHS1001'),
-      link('Certificate III in Early Childhood Education and Care', '/certificate-iii-in-early-childhood-education-and-care/', 'CHC30125'),
-      link('Diploma of Early Childhood Education and Care', '/diploma-of-early-childhood-education-and-care-2/', 'CHC50125'),
-      link('Certificate IV in Ageing Support', '/certificate-iv-in-ageing-support/', 'CHC43015'),
+      { label: 'Domestic', to: '/domestic' },
+      { label: 'Certificate IV in Building and Construction', to: '/domestic/cert-iv-building-and-construction', code: 'CPC40120' },
+      { label: 'Diploma of Building and Construction (Building)', to: '/domestic/diploma-of-building-and-construction', code: 'CPC50220' },
+      { label: 'Prepare to work safely in the construction industry', to: '/domestic/white-card', code: 'CPCWHS1001' },
+      { label: 'Certificate III in Early Childhood Education and Care', to: '/domestic/cert-iii-early-childhood', code: 'CHC30125' },
+      { label: 'Diploma of Early Childhood Education and Care', to: '/domestic/diploma-of-early-childhood', code: 'CHC50125' },
+      { label: 'Certificate IV in Ageing Support', to: '/domestic/cert-iv-ageing-support', code: 'CHC43015' },
       link('Certificate III in Individual Support', '/chc33021-certificate-iii-in-individual-support-ageing-and-disability/', 'CHC33021'),
     ],
   },

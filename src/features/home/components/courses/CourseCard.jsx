@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from '@/shared/components/icons'
+import { AppLink } from '@/shared/components/ui'
 
 const audienceStyles = {
   domestic: 'bg-primary text-on-primary',
@@ -14,7 +15,8 @@ export function CourseCard({ course, featured = false }) {
   const { Icon, label } = course.category
 
   return (
-    <a
+    <AppLink
+      to={course.to}
       href={course.href}
       className="group relative block aspect-3/4 h-full overflow-hidden rounded-2xl bg-secondary-dark shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-elevated focus-visible:-translate-y-1.5 sm:aspect-auto"
     >
@@ -58,6 +60,6 @@ export function CourseCard({ course, featured = false }) {
           </div>
         </div>
       </div>
-    </a>
+    </AppLink>
   )
 }

@@ -1,4 +1,5 @@
 export { NotFound } from './NotFound'
 export { PageContainer } from './PageContainer'
+export { Breadcrumbs } from './page-hero/Breadcrumbs'
 export { PageHero } from './page-hero/PageHero'
 export { RootLayout } from './RootLayout'
