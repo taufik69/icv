@@ -21,7 +21,7 @@ export function Parts({ parts, tone = 'light' }) {
   const strong = tone === 'dark' ? 'text-white' : 'text-ink'
 
   return parts.map((part, i) => {
-    if (typeof part === 'string') return <p key={i} className={`mt-4 leading-relaxed first:mt-0 ${text}`}>{part}</p>
+    if (typeof part === 'string') return <p key={i} className={`mt-4 leading-relaxed first:mt-0 max-md:text-justify max-md:hyphens-auto ${text}`}>{part}</p>
     if (part.heading) return <h4 key={i} className={`mt-6 font-heading text-lg font-bold ${tone === 'dark' ? 'text-white' : 'text-secondary'}`}>{part.heading}</h4>
     if (part.sep) return <p key={i} className="my-4 flex items-center gap-3 font-condensed text-sm font-bold tracking-[0.3em] text-primary-hover"><span className="h-px flex-1 bg-line" />{part.sep}<span className="h-px flex-1 bg-line" /></p>
     if (part.more) {

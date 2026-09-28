@@ -14,7 +14,7 @@ export function EmploymentSection({ employment }) {
           <SectionEyebrow tone="light">
             <span id="employment-title">{employment.title}</span>
           </SectionEyebrow>
-          <p className="mt-6 text-lg leading-relaxed text-white/80">{intro}</p>
+          <p className="mt-6 text-lg leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{intro}</p>
         </Reveal>
         <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {jobs.chips.map((job, i) => (

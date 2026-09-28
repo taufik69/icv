@@ -15,7 +15,7 @@ export function WelcomeSection({ welcome, enquire }) {
           <SectionEyebrow>{welcome.eyebrow}</SectionEyebrow>
           <h2 id="welcome-title" className="mt-5 text-3xl leading-tight md:text-5xl">{welcome.title}</h2>
           {(welcome.paragraphs ?? [welcome.text]).map((t) => (
-            <p key={t.slice(0, 24)} className="mt-6 text-lg leading-relaxed text-ink-muted">{t}</p>
+            <p key={t.slice(0, 24)} className="mt-6 text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{t}</p>
           ))}
           <AppLink href={enquire.href} className="group btn-shine mt-9 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary">
             {enquire.label}

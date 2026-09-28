@@ -11,7 +11,7 @@ export function PlacementCard({ placement }) {
       <article className="rounded-3xl bg-secondary p-6 text-white shadow-brand md:p-10">
         {placement.title && <h3 className="font-condensed text-xl font-bold tracking-[0.2em] text-primary">{placement.title}</h3>}
         {placement.lead && <p className="mt-4 font-heading text-xl font-semibold text-white">{placement.lead}</p>}
-        <p className="mt-4 leading-relaxed text-white/80">{first}</p>
+        <p className="mt-4 leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{first}</p>
 
         <details className="group mt-2">
           <summary className="flex w-fit cursor-pointer list-none items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/20 [&::-webkit-details-marker]:hidden">

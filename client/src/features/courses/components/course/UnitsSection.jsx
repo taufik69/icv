@@ -54,7 +54,7 @@ export function UnitsSection({ units, image }) {
           </div>
           </>
           )}
-          {units.note && <p className="mt-6 rounded-2xl border-l-4 border-primary bg-primary-soft px-5 py-4 leading-relaxed text-secondary">{units.note}</p>}
+          {units.note && <p className="mt-6 rounded-2xl border-l-4 border-primary bg-primary-soft px-5 py-4 leading-relaxed text-secondary max-md:text-justify max-md:hyphens-auto">{units.note}</p>}
         </Reveal>
       </Container>
     </section>

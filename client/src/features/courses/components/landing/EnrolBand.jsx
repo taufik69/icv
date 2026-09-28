@@ -9,7 +9,7 @@ export function EnrolBand({ enrol }) {
       <Container className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <Reveal from="left">
           <h2 id="enrol-title" className="font-heading text-4xl leading-tight font-extrabold text-white md:text-6xl">{enrol.title}</h2>
-          <p className="mt-6 max-w-lg text-xl leading-relaxed text-white/80">{enrol.subtitle}</p>
+          <p className="mt-6 max-w-lg text-xl leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{enrol.subtitle}</p>
           <AppLink href={enrol.action.href} className="group btn-shine mt-9 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary">
             {enrol.action.label}
             <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
