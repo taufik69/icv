@@ -19,7 +19,7 @@ export function ReportCard({ report: { category, title, text, meta, href, Icon }
       </div>
 
       <h3 className="relative mt-6 text-2xl leading-snug">{title}</h3>
-      <p className="relative mt-3 flex-1 leading-relaxed text-ink-muted">{text}</p>
+      <p className="relative mt-3 flex-1 leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{text}</p>
 
       <dl className="relative mt-6 grid grid-cols-3 divide-x divide-line-soft rounded-2xl bg-surface-muted py-3">
         {meta.map((m) => (

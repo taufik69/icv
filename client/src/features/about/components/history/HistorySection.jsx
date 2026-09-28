@@ -17,7 +17,7 @@ export function HistorySection() {
           <h2 id="history-title" className="mt-5 text-3xl leading-tight md:text-5xl">
             {content.title} <span className="text-primary-hover">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-ink-muted">
+          <div className="mt-6 space-y-4 leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

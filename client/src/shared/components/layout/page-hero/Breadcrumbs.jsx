@@ -8,10 +8,10 @@ const Separator = () => (
   </li>
 )
 
-// Glass pill trail: Home › ...trail › current. `trail` = [{ label, to }].
+// Glass pill trail: Home › ...trail › current. `trail` = [{ label, to }]. Hidden on phones (md+ only).
 export function Breadcrumbs({ trail = [], current }) {
   return (
-    <nav aria-label="Breadcrumb">
+    <nav aria-label="Breadcrumb" className="hidden md:block">
       <ol className="inline-flex flex-wrap items-center gap-2 rounded-2xl bg-white/10 px-4 py-2.5 font-condensed text-sm leading-none tracking-wider text-white/70 uppercase ring-1 ring-white/15 backdrop-blur-md">
         <li className="flex">
           <Link to="/" activeOptions={{ exact: true }} className="inline-flex items-center gap-1.5 text-white/70 transition hover:text-primary">

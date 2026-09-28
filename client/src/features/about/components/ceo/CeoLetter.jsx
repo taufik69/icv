@@ -10,7 +10,7 @@ export function CeoLetter({ letter, profile }) {
         {letter.title}
       </h2>
 
-      <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink-muted">
+      <div className="mt-8 space-y-5 text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">
         <p className="font-heading text-xl font-semibold text-secondary">{letter.greeting}</p>
         <p className="font-semibold text-ink">{letter.intro}</p>
         {letter.paragraphs.map((text) => (
@@ -20,7 +20,7 @@ export function CeoLetter({ letter, profile }) {
 
       <CeoQuote quote={letter.quote} />
 
-      <p className="text-lg leading-relaxed text-ink-muted">{letter.closing}</p>
+      <p className="text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{letter.closing}</p>
 
       <footer className="mt-10 flex items-center gap-4 border-t border-line-soft pt-8">
         <img

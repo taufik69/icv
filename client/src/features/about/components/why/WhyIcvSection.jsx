@@ -34,7 +34,7 @@ export function WhyIcvSection() {
           <h2 id="why-icv-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
             {content.title} <span className="text-primary">{content.highlight}</span>
           </h2>
-          <p className="mt-5 max-w-xl leading-relaxed text-white/75">{content.text}</p>
+          <p className="mt-5 max-w-xl leading-relaxed text-white/75 max-md:text-justify max-md:hyphens-auto">{content.text}</p>
 
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {content.points.map((point, i) => (

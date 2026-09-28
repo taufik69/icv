@@ -19,7 +19,7 @@ export function CourseHero({ course }) {
 
       <Container className="flex min-h-[34rem] flex-col justify-end pt-32 pb-14 md:min-h-[40rem] md:pt-40 md:pb-20">
         <Breadcrumbs trail={[{ label: MARKETS[course.market], to: `/${course.market}` }]} current={course.code} />
-        <div className="mt-8 max-w-3xl motion-safe:animate-[fade-in_700ms_ease-out]">
+        <div className="max-w-3xl md:mt-8 motion-safe:animate-[fade-in_700ms_ease-out]">
           <div className="flex flex-wrap gap-2">
             <span className="rounded-md bg-primary px-3 py-1 font-heading text-sm font-bold text-on-primary">{course.code}</span>
             <span className="rounded-md bg-white/10 px-3 py-1 font-condensed text-sm tracking-[0.15em] text-white uppercase ring-1 ring-white/20 backdrop-blur-md">{course.category}</span>

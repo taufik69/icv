@@ -2,7 +2,7 @@
 export function CeoQuote({ quote }) {
   return (
     <figure className="my-10">
-      <p className="mb-4 text-lg leading-relaxed text-ink-muted">{quote.lead}</p>
+      <p className="mb-4 text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{quote.lead}</p>
       <div className="relative overflow-hidden rounded-2xl bg-secondary p-7 shadow-brand md:p-9">
         <span aria-hidden="true" className="absolute -top-6 right-4 font-heading text-9xl leading-none font-extrabold text-white/5">
           &rdquo;

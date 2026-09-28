@@ -25,7 +25,7 @@ export function CounsellorSection() {
           <h2 id="counsellor-title" className="mt-5 text-3xl leading-tight md:text-5xl">
             Meet <span className="text-primary-hover">{content.name}</span>
           </h2>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-muted">
+          <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

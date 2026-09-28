@@ -18,7 +18,7 @@ export function CareerSection() {
           <h2 id="career-title" className="mt-5 text-3xl leading-tight md:text-5xl">
             {content.title} <span className="text-primary-hover">{content.highlight}</span>
           </h2>
-          <p className="mt-6 leading-relaxed text-ink-muted">{content.paragraphs[0]}</p>
+          <p className="mt-6 leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{content.paragraphs[0]}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {content.services.map((service) => (
               <li key={service} className="flex items-start gap-3 rounded-xl bg-surface px-4 py-3 text-sm font-medium text-ink shadow-raised ring-1 ring-line-soft transition hover:ring-primary">
@@ -27,7 +27,7 @@ export function CareerSection() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 border-l-4 border-primary pl-4 leading-relaxed font-medium text-secondary">{content.paragraphs[1]}</p>
+          <p className="mt-8 border-l-4 border-primary pl-4 leading-relaxed font-medium text-secondary max-md:text-justify max-md:hyphens-auto">{content.paragraphs[1]}</p>
         </Reveal>
       </Container>
     </section>

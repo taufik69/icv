@@ -16,7 +16,7 @@ export function WellbeingSection() {
           <h2 id="wellbeing-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
             {content.title} <span className="text-primary">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-white/75">
+          <div className="mt-6 space-y-4 leading-relaxed text-white/75 max-md:text-justify max-md:hyphens-auto">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

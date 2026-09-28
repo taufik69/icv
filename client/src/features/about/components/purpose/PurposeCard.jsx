@@ -25,7 +25,7 @@ export function PurposeCard({ item, layout }) {
           <span aria-hidden="true" className="h-0.5 w-8 bg-primary transition-all duration-500 group-hover:w-14" />
           {item.label}
         </h3>
-        <div className="mt-5 space-y-4 leading-relaxed text-ink-muted">
+        <div className="mt-5 space-y-4 leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">
           {item.paragraphs.map((text) => (
             <p key={text.slice(0, 24)}>{text}</p>
           ))}

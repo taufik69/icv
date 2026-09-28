@@ -14,7 +14,7 @@ export function AccreditationSection() {
             <h2 id="accreditation-title" className="mt-5 text-2xl leading-snug md:text-4xl">
               {content.title}
             </h2>
-            <p className="mt-4 leading-relaxed text-ink-muted">{content.text}</p>
+            <p className="mt-4 leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{content.text}</p>
             <img
               src={content.logo.src}
               alt={content.logo.alt}

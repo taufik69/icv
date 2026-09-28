@@ -7,7 +7,7 @@ export function ValueCard({ item: { title, text, Icon } }) {
       </span>
       <div>
         <h3 className="text-lg text-white transition-colors duration-500 group-hover:text-on-primary">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-white/70 transition-colors duration-500 group-hover:text-on-primary/80">
+        <p className="mt-2 text-sm leading-relaxed text-white/70 max-md:text-justify max-md:hyphens-auto transition-colors duration-500 group-hover:text-on-primary/80">
           {text}
         </p>
       </div>

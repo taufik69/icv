@@ -17,7 +17,7 @@ export function ReviewCard({ review, index }) {
       </div>
 
       {review.text ? (
-        <p className="mt-5 leading-relaxed text-ink">{review.text}</p>
+        <p className="mt-5 leading-relaxed text-ink max-md:text-justify max-md:hyphens-auto">{review.text}</p>
       ) : (
         <p className="mt-5 font-heading text-lg font-semibold text-secondary">Left a 5-star rating on Google.</p>
       )}

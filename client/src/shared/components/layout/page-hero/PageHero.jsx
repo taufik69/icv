@@ -22,7 +22,7 @@ export function PageHero({ id, eyebrow, title, highlight, lead, image, trail, cu
 
       <Container className="pt-32 pb-12 md:pt-44 md:pb-16">
         <Breadcrumbs trail={trail} current={current} />
-        <div className="mt-8 max-w-3xl motion-safe:animate-[fade-in_700ms_ease-out]">
+        <div className="max-w-3xl md:mt-8 motion-safe:animate-[fade-in_700ms_ease-out]">
           {eyebrow && <SectionEyebrow tone="light">{eyebrow}</SectionEyebrow>}
           <h1 id={id} className={`${eyebrow ? 'mt-5' : ''} text-4xl leading-tight text-white md:text-6xl`}>
             {title} {highlight && <span className="text-primary">{highlight}</span>}

@@ -31,7 +31,7 @@ export function GallerySection() {
             <h2 id="gallery-title" className="mt-5 text-3xl leading-tight text-white md:text-4xl">
               {content.title} <span className="text-primary">{content.highlight}</span>
             </h2>
-            <p className="mt-4 leading-relaxed text-white/80">{content.text}</p>
+            <p className="mt-4 leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{content.text}</p>
           </div>
         </Reveal>
       </Container>
