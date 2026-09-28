@@ -1,6 +1,6 @@
 // External destinations shared by the domestic pages (as linked on icv.edu.au).
 export const links = {
-  enquire: 'https://icv.edu.au/enquire-now/',
+  enquire: '/enquire-now',
   enrol: 'https://enrol.icv.edu.au/',
   uploads: 'https://icv.edu.au/wp-content/uploads',
 }

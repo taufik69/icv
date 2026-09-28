@@ -18,7 +18,7 @@ export const heroContent = {
     {
       title: 'Enrol Now',
       cta: 'Apply now',
-      href: 'https://icv.edu.au/enquire-now/',
+      href: '/enquire-now',
       image: '/images/card-carpentry.webp',
     },
     {

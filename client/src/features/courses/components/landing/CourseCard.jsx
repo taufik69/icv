@@ -19,10 +19,10 @@ export function CourseCard({ course, apply }) {
         </h3>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{course.text}</p>
         <div className="mt-6 flex items-center justify-between gap-3 border-t border-line-soft pt-5">
-          <a href={apply.href} className="btn-shine relative z-10 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 font-heading text-xs font-semibold tracking-wider text-white transition hover:bg-primary hover:text-on-primary">
+          <AppLink href={apply.href} className="btn-shine relative z-10 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 font-heading text-xs font-semibold tracking-wider text-white transition hover:bg-primary hover:text-on-primary">
             {apply.label}
             <ArrowUpRightIcon className="size-3.5" />
-          </a>
+          </AppLink>
           <span aria-hidden="true" className="grid size-10 place-items-center rounded-full bg-surface-muted text-secondary transition group-hover:bg-primary group-hover:text-on-primary">
             <ArrowRightIcon className="size-4 transition group-hover:translate-x-0.5" />
           </span>

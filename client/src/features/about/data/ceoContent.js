@@ -44,6 +44,6 @@ export const ceoLetter = {
 export const ceoCta = {
   title: 'Where are you going next?',
   text: 'Take the first step towards your dream career with nationally recognised training in Melbourne.',
-  primary: { label: 'Enquire now', href: 'https://icv.edu.au/enquire-now/' },
+  primary: { label: 'Enquire now', href: '/enquire-now' },
   secondary: { label: 'About ICV', to: '/about' },
 }

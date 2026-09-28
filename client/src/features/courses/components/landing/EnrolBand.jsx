@@ -1,5 +1,5 @@
 import { ArrowUpRightIcon, CheckCircleIcon } from '@/shared/components/icons'
-import { Container, Reveal } from '@/shared/components/ui'
+import { AppLink, Container, Reveal } from '@/shared/components/ui'
 
 // Navy band: big "risk free" statement on the left, launch-your-career checklist card on the right.
 export function EnrolBand({ enrol }) {
@@ -10,10 +10,10 @@ export function EnrolBand({ enrol }) {
         <Reveal from="left">
           <h2 id="enrol-title" className="font-heading text-4xl leading-tight font-extrabold text-white md:text-6xl">{enrol.title}</h2>
           <p className="mt-6 max-w-lg text-xl leading-relaxed text-white/80">{enrol.subtitle}</p>
-          <a href={enrol.action.href} className="group btn-shine mt-9 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary">
+          <AppLink href={enrol.action.href} className="group btn-shine mt-9 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary">
             {enrol.action.label}
             <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+          </AppLink>
         </Reveal>
         <Reveal from="right" delay={100}>
           <div className="rounded-3xl bg-white/5 p-6 ring-1 ring-white/10 backdrop-blur-md md:p-9">

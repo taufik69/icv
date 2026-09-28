@@ -16,13 +16,13 @@ export function CeoCta() {
             <p className="mt-3 leading-relaxed text-white/75">{content.text}</p>
           </div>
           <div className="relative flex flex-wrap gap-3">
-            <a
+            <AppLink
               href={content.primary.href}
               className="group btn-shine inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary"
             >
               {content.primary.label}
               <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-            </a>
+            </AppLink>
             <AppLink
               to={content.secondary.to}
               className="btn-shine inline-flex items-center rounded-md px-7 py-3.5 font-heading font-semibold text-white ring-1 ring-white/30 transition hover:bg-white/10 hover:text-white"

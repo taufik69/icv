@@ -1,7 +1,9 @@
+import { AppLink } from '@/shared/components/ui'
+
 // Tab: icon over a small label. Active tab = green pill behind the icon + green label.
 export function BottomNavItem({ item, active, onClick, href }) {
   const { Icon, label } = item
-  const Tag = href ? 'a' : 'button'
+  const Tag = href ? AppLink : 'button'
 
   return (
     <Tag

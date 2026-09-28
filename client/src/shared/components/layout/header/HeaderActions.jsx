@@ -1,3 +1,4 @@
+import { AppLink } from '@/shared/components/ui'
 import { ArrowRightIcon, UserIcon } from '@/shared/components/icons'
 import { applyLink, portalLabel, portalLinks } from '@/shared/config/navigation'
 import { NavDropdown } from './NavDropdown'
@@ -6,13 +7,13 @@ import { NavDropdown } from './NavDropdown'
 export function HeaderActions() {
   return (
     <div className="hidden items-center gap-2.5 md:flex">
-      <a
+      <AppLink
         href={applyLink.href}
         className="group btn-shine inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2.5 font-heading text-sm font-semibold whitespace-nowrap text-on-primary transition hover:bg-primary-hover hover:text-on-primary group-data-[floating=true]/header:shadow-card"
       >
         {applyLink.label}
         <ArrowRightIcon className="size-4 transition group-hover:translate-x-0.5" />
-      </a>
+      </AppLink>
       <div className="group relative">
         <button
           type="button"

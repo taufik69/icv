@@ -47,7 +47,7 @@ export const whyContent = {
     { label: 'Multicultural diversity', Icon: HeartIcon },
     { label: 'Industry partnerships', Icon: BriefcaseIcon },
   ],
-  action: { label: 'Join now', href: 'https://icv.edu.au/enquire-now/' },
+  action: { label: 'Join now', href: '/enquire-now' },
 }
 
 export const accreditationContent = {

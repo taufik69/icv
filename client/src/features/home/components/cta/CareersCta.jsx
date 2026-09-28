@@ -28,13 +28,13 @@ export function CareersCta() {
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">{content.subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-            <a
+            <AppLink
               href={content.action.href}
               className="group btn-shine inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 font-heading text-sm font-bold text-on-primary uppercase shadow-card transition hover:bg-primary-hover hover:text-on-primary md:text-base"
             >
               {content.action.label}
               <ArrowRightIcon className="size-4 shrink-0 transition group-hover:translate-x-1" />
-            </a>
+            </AppLink>
             <AppLink
               to={content.secondary.to}
               hash={content.secondary.hash}

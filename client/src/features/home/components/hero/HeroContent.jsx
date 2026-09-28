@@ -1,3 +1,4 @@
+import { AppLink } from '@/shared/components/ui'
 // Mobile: two buttons share one row (flex-auto = width follows label, fluid text, never wraps). sm+: natural width.
 const buttonBase =
   'btn-shine inline-flex flex-auto items-center justify-center rounded-md px-2.5 py-3 font-heading text-[clamp(0.625rem,2.6vw,0.875rem)] font-semibold whitespace-nowrap uppercase transition sm:flex-none sm:px-7 sm:py-3.5 sm:text-sm sm:tracking-wide'
@@ -25,9 +26,9 @@ export function HeroContent({ content }) {
       </p>
       <div className="mt-8 flex gap-2 sm:gap-3">
         {content.actions.map((action) => (
-          <a key={action.href} href={action.href} className={`${buttonBase} ${buttonVariants[action.variant]}`}>
+          <AppLink key={action.href} href={action.href} className={`${buttonBase} ${buttonVariants[action.variant]}`}>
             {action.label}
-          </a>
+          </AppLink>
         ))}
       </div>
     </div>

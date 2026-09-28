@@ -3,7 +3,7 @@ import { Link } from '@tanstack/react-router'
 import { ChevronRightIcon, HomeIcon } from '@/shared/components/icons'
 
 const Separator = () => (
-  <li aria-hidden="true">
+  <li aria-hidden="true" className="flex">
     <ChevronRightIcon className="size-3.5 text-primary" />
   </li>
 )
@@ -12,8 +12,8 @@ const Separator = () => (
 export function Breadcrumbs({ trail = [], current }) {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="inline-flex flex-wrap items-center gap-2 rounded-2xl bg-white/10 px-4 py-2 font-condensed text-sm tracking-wider text-white/70 uppercase ring-1 ring-white/15 backdrop-blur-md">
-        <li>
+      <ol className="inline-flex flex-wrap items-center gap-2 rounded-2xl bg-white/10 px-4 py-2.5 font-condensed text-sm leading-none tracking-wider text-white/70 uppercase ring-1 ring-white/15 backdrop-blur-md">
+        <li className="flex">
           <Link to="/" activeOptions={{ exact: true }} className="inline-flex items-center gap-1.5 text-white/70 transition hover:text-primary">
             <HomeIcon className="size-4" />
             Home

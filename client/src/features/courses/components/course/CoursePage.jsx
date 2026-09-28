@@ -1,5 +1,6 @@
 import { Container } from '@/shared/components/ui'
 import { Parts } from '../common/Parts'
+import { CourseContext } from '../../lib/courseContext'
 import { CourseCta } from './CourseCta'
 import { CourseHero } from './CourseHero'
 import { CriteriaSection } from './CriteriaSection'
@@ -19,7 +20,7 @@ export function CoursePage({ course }) {
   const placementInDetails = placement && !placement.title
 
   return (
-    <>
+    <CourseContext value={course}>
       <CourseHero course={course} />
       <OverviewSection course={course} />
       {course.funding && <FundingBand funding={course.funding} />}
@@ -42,6 +43,6 @@ export function CoursePage({ course }) {
       {course.rpl && <RplSection rpl={course.rpl} image={images.rpl} />}
       {course.employment && <EmploymentSection employment={course.employment} />}
       {course.cta && <CourseCta cta={course.cta} image={images.cta} />}
-    </>
+    </CourseContext>
   )
 }

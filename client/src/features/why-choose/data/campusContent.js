@@ -32,6 +32,6 @@ export const scholarshipContent = {
     { label: 'Scholarships', value: '2024 & 2025 intakes', Icon: CoinsIcon },
     { label: 'Open to', value: 'Local & International', Icon: GraduationCapIcon },
   ],
-  action: { label: 'Enquire now', href: 'https://icv.edu.au/enquire-now/' },
+  action: { label: 'Enquire now', href: '/enquire-now' },
   feesLink: { label: 'View fee schedule', href: 'https://icv.edu.au/fee-schedule/' },
 }

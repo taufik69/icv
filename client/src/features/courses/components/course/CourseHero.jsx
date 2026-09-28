@@ -1,6 +1,7 @@
 import { ArrowUpRightIcon } from '@/shared/components/icons'
 import { Breadcrumbs } from '@/shared/components/layout'
 import { Container } from '@/shared/components/ui'
+import { ActionLink } from '../common/ActionLink'
 
 const MARKETS = { domestic: 'Domestic', international: 'International' }
 const btn = 'group btn-shine inline-flex items-center gap-2 rounded-md px-7 py-3.5 font-heading font-semibold transition'
@@ -30,9 +31,7 @@ export function CourseHero({ course }) {
               {primary.label}
               <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </a>
-            <a href={secondary.href} className={`${btn} text-white ring-1 ring-white/40 hover:bg-white/10 hover:text-white`}>
-              {secondary.label}
-            </a>
+            <ActionLink action={secondary} className={`${btn} text-white ring-1 ring-white/40 hover:bg-white/10 hover:text-white`} />
           </div>
         </div>
       </Container>

@@ -1,6 +1,6 @@
 import { whyContent as content } from '@/features/about/data/aboutContent'
 import { ArrowRightIcon, MapPinIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { AppLink, Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { WhyPoint } from './WhyPoint'
 
 // Navy band: copy + 6 highlights on the left, student photo bleeding off the right edge (stacked on top below lg).
@@ -42,13 +42,13 @@ export function WhyIcvSection() {
             ))}
           </ul>
 
-          <a
+          <AppLink
             href={content.action.href}
             className="group btn-shine mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary"
           >
             {content.action.label}
             <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-          </a>
+          </AppLink>
         </Reveal>
       </Container>
     </section>

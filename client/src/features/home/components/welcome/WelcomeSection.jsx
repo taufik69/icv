@@ -1,5 +1,5 @@
 import { welcomeContent as content } from '@/features/home/data/welcomeContent'
-import { Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { AppLink, Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { WelcomeMedia } from './WelcomeMedia'
 
 // Mobile: one row, width follows label, fluid text, never wraps.
@@ -28,9 +28,9 @@ export function WelcomeSection() {
 
         <div className="mt-8 flex gap-2 sm:gap-3">
           {content.actions.map((a) => (
-            <a key={a.href} href={a.href} className={`${btn} ${variants[a.variant]}`}>
+            <AppLink key={a.href} href={a.href} className={`${btn} ${variants[a.variant]}`}>
               {a.label}
-            </a>
+            </AppLink>
           ))}
         </div>
 

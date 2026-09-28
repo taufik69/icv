@@ -1,9 +1,10 @@
+import { AppLink } from '@/shared/components/ui'
 import { ArrowUpRightIcon } from '@/shared/components/icons'
 
 // One quick-link row in the hero panel: small thumbnail, title, and a round arrow that fills green on hover.
 export function HeroCard({ card }) {
   return (
-    <a
+    <AppLink
       href={card.href}
       aria-label={`${card.title} – ${card.cta}`}
       className="group flex items-center gap-4 rounded-xl p-2.5 text-white transition hover:bg-white/10 hover:text-white"
@@ -21,6 +22,6 @@ export function HeroCard({ card }) {
       <span className="grid size-8 shrink-0 place-items-center rounded-full text-white/70 ring-1 ring-white/25 transition group-hover:bg-primary group-hover:text-on-primary group-hover:ring-primary">
         <ArrowUpRightIcon className="size-4" />
       </span>
-    </a>
+    </AppLink>
   )
 }

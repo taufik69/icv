@@ -1,4 +1,5 @@
 import { ArrowUpRightIcon } from '@/shared/components/icons'
+import { ActionLink } from '../common/ActionLink'
 
 // "AT A GLANCE" facts as a navy card: label / value rows with dividers, then the page's two actions.
 export function GlanceCard({ glance, actions }) {
@@ -17,15 +18,15 @@ export function GlanceCard({ glance, actions }) {
       </dl>
       <div className="grid gap-2 p-5 pt-3 sm:grid-cols-2">
         {actions.map((a, i) => (
-          <a
+          <ActionLink
             key={a.label}
-            href={a.href}
+            action={a}
             {...(i === 0 ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             className={`btn-shine inline-flex items-center justify-center gap-2 rounded-xl px-4 py-3 font-heading text-sm font-semibold transition ${i === 0 ? 'bg-primary text-on-primary hover:bg-primary-hover hover:text-on-primary' : 'bg-white/10 text-white ring-1 ring-white/20 hover:bg-white/20 hover:text-white'}`}
           >
             {a.label}
             {i === 0 && <ArrowUpRightIcon className="size-4" />}
-          </a>
+          </ActionLink>
         ))}
       </div>
     </aside>

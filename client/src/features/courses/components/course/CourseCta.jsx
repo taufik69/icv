@@ -1,5 +1,6 @@
 import { ArrowUpRightIcon } from '@/shared/components/icons'
 import { Container, Reveal } from '@/shared/components/ui'
+import { ActionLink } from '../common/ActionLink'
 
 // Closing band: course photo under a navy scrim, big headline, fine print, and the page's final actions.
 export function CourseCta({ cta, image }) {
@@ -18,15 +19,15 @@ export function CourseCta({ cta, image }) {
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             {cta.actions.map((a, i) => (
-              <a
+              <ActionLink
                 key={a.label}
-                href={a.href}
+                action={a}
                 {...(a.href.endsWith('.pdf') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 className={`group btn-shine inline-flex items-center gap-2 rounded-md px-7 py-3.5 font-heading font-semibold transition ${i === 0 ? 'bg-primary text-on-primary hover:bg-primary-hover hover:text-on-primary' : 'text-white ring-1 ring-white/40 hover:bg-white/10 hover:text-white'}`}
               >
                 {a.label}
                 <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </a>
+              </ActionLink>
             ))}
           </div>
         </Reveal>

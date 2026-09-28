@@ -4,7 +4,7 @@
       {
         "matcher": "Edit|Write|MultiEdit",
         "hooks": [
-          { "type": "command", "command": "node scripts/check-lines.js 1>/dev/null || exit 2" }
+          { "type": "command", "command": "cd \"$CLAUDE_PROJECT_DIR/client\" && node scripts/check-lines.js 1>/dev/null || exit 2" }
         ]
       }
     ]

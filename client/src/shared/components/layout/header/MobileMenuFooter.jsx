@@ -1,3 +1,4 @@
+import { AppLink } from '@/shared/components/ui'
 import { ArrowRightIcon, MailIcon, PhoneIcon } from '@/shared/components/icons'
 import { applyLink } from '@/shared/config/navigation'
 
@@ -13,13 +14,13 @@ export function MobileMenuFooter() {
       <a href="mailto:info@icv.edu.au" aria-label="Email us" className={round}>
         <MailIcon className="size-5" />
       </a>
-      <a
+      <AppLink
         href={applyLink.href}
         className="group btn-shine flex h-13 flex-1 items-center justify-center gap-2 rounded-2xl bg-primary font-heading font-bold text-on-primary shadow-card transition active:scale-[0.98] hover:bg-primary-hover hover:text-on-primary"
       >
         {applyLink.label}
         <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-      </a>
+      </AppLink>
     </div>
   )
 }
