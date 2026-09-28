@@ -42,14 +42,9 @@ export function ApplyForm({ form }) {
         <ApplySelect {...field('heard')} label="How did you hear about us?" options={heardChoices} className="sm:col-span-2" />
       </FormGroup>
 
-      {form.failed && (
-        <p role="alert" className="rounded-xl bg-danger-soft px-4 py-3 text-sm text-danger-ink">
-          Your application wasn't sent. Check your connection and try again, or call us on 03 9942 1836.
-        </p>
-      )}
       <div className="flex justify-end border-t border-line-soft pt-6">
-        <button type="submit" disabled={form.sending} className="btn-shine w-full rounded-pill bg-primary px-8 py-3 font-heading font-semibold text-on-primary transition hover:bg-primary-hover disabled:opacity-60 sm:w-auto">
-          {form.sending ? 'Sending…' : 'Submit application'}
+        <button type="submit" className="btn-shine w-full rounded-pill bg-primary px-8 py-3 font-heading font-semibold text-on-primary transition hover:bg-primary-hover sm:w-auto">
+          Submit application
         </button>
       </div>
     </form>

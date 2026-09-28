@@ -29,3 +29,6 @@ client/src/routeTree.gen.js
 .early.coverage
 # env files
 .env
+
+# Backend is not deployed yet (UI-only demo on Vercel)
+server/

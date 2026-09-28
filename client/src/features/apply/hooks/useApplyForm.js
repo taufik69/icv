@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { validateApplication } from '../lib/validateApplication'
-import { useSubmitApplication } from './useSubmitApplication'
 
 const EMPTY = {
   studentType: '', firstName: '', lastName: '', email: '', phone: '', dob: '',
@@ -8,12 +7,12 @@ const EMPTY = {
 }
 
 // Form state for one application. `initial` pre-fills fields (e.g. the course from ?course=).
-// Errors show after the first submit attempt; a valid form is sent to the API.
+// Errors show after the first submit attempt. UI only: a valid form just shows the success state (nothing is sent).
 export function useApplyForm(initial) {
   const [values, setValues] = useState(() => ({ ...EMPTY, ...initial }))
   const [errors, setErrors] = useState({})
   const [tried, setTried] = useState(false)
-  const mutation = useSubmitApplication()
+  const [sent, setSent] = useState(false)
 
   const set = (key) => (e) => {
     const next = { ...values, [key]: e.target.value }
@@ -28,8 +27,9 @@ export function useApplyForm(initial) {
     setErrors(found)
     const first = Object.keys(found)[0]
     if (first) return e.currentTarget.querySelector(`[name="${first}"]`)?.focus()
-    mutation.mutate(values)
+    setSent(true)
+    e.currentTarget.closest('section')?.scrollIntoView({ behavior: 'smooth', block: 'start' }) // keep the success message in view
   }
 
-  return { values, errors, set, submit, sending: mutation.isPending, sent: mutation.isSuccess, failed: mutation.isError }
+  return { values, errors, set, submit, sent }
 }
