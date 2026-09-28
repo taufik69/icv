@@ -1,7 +1,11 @@
 import { courseOptions, heardOptions } from '../data/applyOptions'
 import { ApplyField } from './ApplyField'
+import { ApplySelect } from './ApplySelect'
 import { FormGroup } from './FormGroup'
 import { StudentTypeChoice } from './StudentTypeChoice'
+
+const courseChoices = courseOptions.map((c) => ({ value: c.code, label: c.title, badge: c.code, group: c.group }))
+const heardChoices = heardOptions.map((o) => ({ value: o, label: o }))
 
 // Fields and order follow the live icv.edu.au "Course Enquiry" form.
 export function ApplyForm({ form }) {
@@ -33,15 +37,9 @@ export function ApplyForm({ form }) {
       </FormGroup>
 
       <FormGroup title="Your course">
-        <ApplyField {...field('course')} as="select" label="What course are you interested in?" className="sm:col-span-2">
-          <option value="">Please select</option>
-          {courseOptions.map((c) => <option key={c.code} value={c.code}>{c.code} - {c.title}</option>)}
-        </ApplyField>
+        <ApplySelect {...field('course')} label="What course are you interested in?" options={courseChoices} className="sm:col-span-2" />
         <ApplyField {...field('message')} as="textarea" label="Anything else we should know?" className="sm:col-span-2" />
-        <ApplyField {...field('heard')} as="select" label="How did you hear about us?" className="sm:col-span-2">
-          <option value="">Please select</option>
-          {heardOptions.map((o) => <option key={o}>{o}</option>)}
-        </ApplyField>
+        <ApplySelect {...field('heard')} label="How did you hear about us?" options={heardChoices} className="sm:col-span-2" />
       </FormGroup>
 
       {form.failed && (

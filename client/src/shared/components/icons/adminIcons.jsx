@@ -53,3 +53,9 @@ export const GripIcon = (p) => (
     <circle cx="9" cy="18" r="1" /><circle cx="15" cy="18" r="1" />
   </Icon>
 )
+
+export const CheckIcon = (p) => (
+  <Icon {...p}>
+    <path d="m5 12.5 4.5 4.5L19 7.5" />
+  </Icon>
+)
