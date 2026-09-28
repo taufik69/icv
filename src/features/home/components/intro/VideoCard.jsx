@@ -32,15 +32,16 @@ export function VideoCard({ video }) {
           className="size-full object-cover transition duration-700 group-hover:scale-105"
         />
         <span className="absolute inset-0 bg-linear-to-t from-secondary-dark/85 via-secondary-dark/10 to-transparent" />
-        <span className="absolute top-1/2 left-1/2 grid size-16 -translate-1/2 place-items-center">
-          <span className="absolute inset-0 rounded-full bg-primary/60 motion-safe:animate-ping" />
-          <span className="relative grid size-16 place-items-center rounded-full bg-primary text-white shadow-elevated transition group-hover:scale-110">
-            <PlayIcon className="ml-0.5 size-7" />
+        {/* Play button + label as one centred stack, so they never overlap on the short landscape card (phones). */}
+        <span className="absolute inset-0 flex flex-col items-center justify-center gap-3 sm:gap-4">
+          <span className="relative grid size-12 place-items-center sm:size-16">
+            <span className="absolute inset-0 rounded-full bg-primary/60 motion-safe:animate-ping" />
+            <span className="relative grid size-full place-items-center rounded-full bg-primary text-white shadow-elevated transition group-hover:scale-110">
+              <PlayIcon className="ml-0.5 size-5 sm:size-7" />
+            </span>
           </span>
-        </span>
-        <span className="absolute inset-x-0 bottom-5 flex justify-center">
-          <span className="flex items-center gap-2 rounded-full bg-white px-5 py-2 font-heading text-sm font-semibold text-secondary shadow-card transition group-hover:gap-3">
-            <PlayIcon className="size-3.5 text-primary" />
+          <span className="flex items-center gap-2 rounded-full bg-white px-4 py-1.5 font-heading text-xs font-semibold text-secondary shadow-card transition group-hover:gap-3 sm:px-5 sm:py-2 sm:text-sm">
+            <PlayIcon className="size-3 text-primary sm:size-3.5" />
             {video.label}
           </span>
         </span>

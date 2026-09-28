@@ -9,8 +9,8 @@ import { MobileNavGroup } from './MobileNavGroup'
 const items = [...mainNav, { label: portalLabel, Icon: UserIcon, children: portalLinks }]
 const isActive = (item, path) => item.to === path || (!item.passive && !!item.children?.some((c) => !c.hash && c.to === path))
 
-// Full-height navy sheet (full width on phones, 28rem max): logo + close, accordion groups with icons
-// (current section's group open and its tile green), Portal last, call / email / Apply pinned at the bottom.
+// Full-height navy sheet (full width on phones, 28rem max): logo + close, flat divided rows with line icons
+// (current section: green left bar, its group open), Portal last, call / email / Apply pinned at the bottom.
 export default function MobileMenu({ onClose }) {
   const path = useRouterState({ select: (s) => s.location.pathname })
   const [open, setOpen] = useState(() => items.find((i) => i.children && isActive(i, path))?.label ?? null)
@@ -38,7 +38,7 @@ export default function MobileMenu({ onClose }) {
         </div>
 
         <p className="px-6 pt-2 pb-2 font-condensed text-xs font-bold tracking-[0.25em] text-white/40 uppercase">Menu</p>
-        <nav aria-label="Mobile" className="flex-1 space-y-1.5 overflow-y-auto overscroll-contain px-3 pb-6">
+        <nav aria-label="Mobile" className="flex-1 divide-y divide-white/10 overflow-y-auto overscroll-contain border-y border-white/10 pb-2">
           {items.map((item) => (
             <MobileNavGroup
               key={item.label}

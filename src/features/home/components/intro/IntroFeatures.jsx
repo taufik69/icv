@@ -13,7 +13,7 @@ export function IntroFeatures({ points }) {
             </span>
             <div className="min-w-0">
               <h3 className="text-base leading-snug font-semibold sm:text-lg">{title}</h3>
-              <p className="mt-1 text-xs leading-relaxed text-ink-muted sm:mt-1.5 sm:text-sm">{text}</p>
+              <p className="mt-1 text-justify text-xs leading-relaxed text-ink-muted hyphens-auto sm:mt-1.5 sm:text-sm">{text}</p>
             </div>
           </li>
         ))}
