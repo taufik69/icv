@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { Button } from '@/shared/components/ui'
+import { Button, BrandLogo } from '@/shared/components/ui'
 import { EyeIcon, LockIcon, MailIcon } from '@/shared/components/icons'
 import { InputField } from '../course-form/fields/InputField'
 
@@ -7,7 +7,7 @@ import { InputField } from '../course-form/fields/InputField'
 export function LoginForm() {
   return (
     <div className="w-full max-w-sm">
-      <img src="/images/icv-logo-dark.webp" alt="International College of Victoria" width="240" height="110" className="mb-10 h-12 w-auto lg:hidden" />
+      <BrandLogo className="mb-10 text-[0.6875rem] text-secondary lg:hidden" />
       <h1 className="text-3xl">Sign in to course admin</h1>
       <p className="mt-2 text-ink-muted">Use your ICV staff email.</p>
 

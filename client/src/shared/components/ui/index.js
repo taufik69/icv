@@ -1,4 +1,5 @@
 export { AppLink } from './AppLink'
+export { BrandLogo } from './BrandLogo'
 export { Button } from './Button'
 export { Card } from './Card'
 export { ContactCta } from './ContactCta'
