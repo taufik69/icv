@@ -1,9 +1,8 @@
 import { introContent } from '@/features/home/data/introContent'
-import { Container, Reveal } from '@/shared/components/ui'
+import { Container } from '@/shared/components/ui'
 import { useDoodleBackground } from '@/shared/hooks/useDoodleBackground'
-import { IntroFeatures } from './IntroFeatures'
 import { IntroHeader } from './IntroHeader'
-import { VideoCard } from './VideoCard'
+import { StudyShowcase } from './StudyShowcase'
 
 export function IntroSection() {
   const [ref, doodle] = useDoodleBackground()
@@ -23,14 +22,8 @@ export function IntroSection() {
       </div>
 
       <Container className="relative">
-        {/* lg: copy + pathway cards | video. Below lg: stacked, video under the cards. */}
-        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,26rem)] lg:gap-16">
-          <IntroHeader content={introContent} />
-          <Reveal from="zoom" className="px-3">
-            <VideoCard video={introContent.video} />
-          </Reveal>
-        </div>
-        <IntroFeatures points={introContent.points} />
+        <IntroHeader content={introContent} />
+        <StudyShowcase content={introContent} />
       </Container>
     </section>
   )

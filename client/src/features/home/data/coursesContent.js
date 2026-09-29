@@ -22,7 +22,7 @@ export const coursesContent = {
     { id: 'domestic', label: 'Domestic' },
     { id: 'international', label: 'International' },
   ],
-  viewAll: { label: 'View all courses', to: '/domestic' },
+  viewAll: { label: 'View all courses', to: '/courses' },
   courses: [
     course('CPC30220', 'Certificate III in Carpentry', 'international', 'building',
       'This qualification provides a trade outcome in carpentry, covering work in residential and commercial applications.',

@@ -23,7 +23,7 @@ import { domesticCourses, internationalCourses } from './courseNav'
 
 // Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
 // the header starts transparent over them.
-const heroSections = ['/about', '/student-info', '/domestic', '/international', '/contact', '/enquire-now']
+const heroSections = ['/about', '/student-info', '/courses', '/domestic', '/international', '/contact', '/enquire-now']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 export const mainNav = [
@@ -48,7 +48,7 @@ export const mainNav = [
     children: [
       { label: 'Domestic Courses', to: '/domestic', Icon: GlobeIcon },
       { label: 'International Courses', to: '/international', Icon: PlaneIcon },
-      { label: 'All Courses', to: '/', hash: 'courses', Icon: LayoutGridIcon },
+      { label: 'All Courses', to: '/courses', Icon: LayoutGridIcon },
     ],
   },
   {
