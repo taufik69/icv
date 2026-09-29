@@ -33,9 +33,9 @@ export function FinderCard({ course, marketName, saved, onToggleSave }) {
       <SaveButton title={course.title} saved={saved} onToggle={onToggleSave} />
 
       <div className="flex flex-1 flex-col p-5">
-        <p className="flex flex-wrap items-baseline gap-x-2 text-xs">
+        <p className="flex items-baseline justify-between gap-3 text-xs">
           <span className="font-semibold tracking-wide text-secondary-muted uppercase">{course.area}</span>
-          <span className="text-ink-subtle">{course.level}</span>
+          <span className="shrink-0 text-ink-subtle">{course.level}</span>
         </p>
         <h3 className="mt-2 text-lg leading-snug font-bold text-secondary">
           <AppLink to={course.to} href={course.href} className="text-secondary after:absolute after:inset-0 hover:text-secondary">

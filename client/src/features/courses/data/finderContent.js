@@ -1,5 +1,8 @@
+import { BookOpenIcon, CalendarIcon, ClockIcon, CoinsIcon, SparklesIcon } from '@/shared/components/icons'
+
 // Copy for the course finder at /courses.
 export const finderContent = {
+  badge: 'Course finder',
   title: 'Find your course',
   lead: 'Nationally recognised qualifications for domestic and international students. Search by name or code, then narrow the list with the filters.',
   searchLabel: 'Search courses',
@@ -17,12 +20,13 @@ export const finderContent = {
     { key: 'delivery', label: 'Delivery mode', variant: 'chips' },
     { key: 'length', label: 'Course length', variant: 'chips' },
   ],
+  sortLabel: 'Sort by',
   sorts: [
-    { id: 'recommended', label: 'Recommended' },
-    { id: 'title', label: 'Name, A to Z' },
-    { id: 'fee', label: 'Lowest fee' },
-    { id: 'shortest', label: 'Shortest first' },
-    { id: 'longest', label: 'Longest first' },
+    { value: 'recommended', label: 'Recommended', hint: 'Our suggested order', Icon: SparklesIcon },
+    { value: 'title', label: 'Name, A to Z', hint: 'Alphabetical by course name', Icon: BookOpenIcon },
+    { value: 'fee', label: 'Lowest fee', hint: 'Cheapest headline fee first', Icon: CoinsIcon },
+    { value: 'shortest', label: 'Shortest first', hint: 'Quickest to finish', Icon: ClockIcon },
+    { value: 'longest', label: 'Longest first', hint: 'Most in-depth first', Icon: CalendarIcon },
   ],
   marketNames: { domestic: 'Domestic', international: 'International' },
   saved: 'Saved',

@@ -1,5 +1,5 @@
 import { ChevronDownIcon } from '@/shared/components/icons'
-import { useListbox } from '../hooks/useListbox'
+import { useListbox } from '@/shared/hooks/useListbox'
 import { SelectOption } from './SelectOption'
 
 const trigger = 'mt-1.5 flex w-full items-center gap-3 rounded-xl border border-line bg-surface px-3.5 py-2.5 text-left transition hover:border-line-strong focus:border-primary-hover focus:shadow-focus-success focus:outline-none aria-expanded:border-primary-hover aria-expanded:shadow-focus-success'

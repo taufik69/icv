@@ -28,3 +28,10 @@ export const BookmarkIcon = (p) => (
     <path d="M6 3h12v18l-6-4-6 4z" />
   </Icon>
 )
+
+export const CompassIcon = (p) => (
+  <Icon {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="m15.5 8.5-2 5-5 2 2-5z" />
+  </Icon>
+)

@@ -1,4 +1,5 @@
-import { BookmarkIcon, ChevronDownIcon } from '@/shared/components/icons'
+import { BookmarkIcon } from '@/shared/components/icons'
+import { SortMenu } from './SortMenu'
 
 const control = 'inline-flex h-10 cursor-pointer items-center gap-2 rounded-full px-4 text-sm font-medium ring-1 transition'
 
@@ -21,17 +22,7 @@ export function ResultsBar({ content, finder, total }) {
         <span className="max-sm:sr-only">{content.saved}</span>
         <span className={`tabular-nums ${finder.savedOnly ? 'text-white/70' : 'text-ink-subtle'}`}>{count}</span>
       </button>
-      <label className="relative">
-        <span className="sr-only">Sort courses</span>
-        <select
-          value={finder.filters.sort}
-          onChange={(e) => finder.set('sort', e.target.value)}
-          className={`${control} appearance-none bg-white pr-9 text-secondary ring-line outline-none focus-visible:ring-2 focus-visible:ring-secondary`}
-        >
-          {content.sorts.map((s) => <option key={s.id} value={s.id}>{s.label}</option>)}
-        </select>
-        <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 text-secondary-muted" />
-      </label>
+      <SortMenu label={content.sortLabel} options={content.sorts} value={finder.filters.sort} onChange={(v) => finder.set('sort', v)} />
     </div>
   )
 }
