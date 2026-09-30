@@ -11,7 +11,7 @@ export function CounsellorPortrait({ content }) {
       <div className="absolute inset-x-4 bottom-4 flex items-center justify-between gap-3 rounded-2xl bg-white/15 px-5 py-4 ring-1 ring-white/25 backdrop-blur-md">
         <div>
           <p className="font-heading text-xl font-bold text-white">{content.name}</p>
-          <p className="font-condensed text-xs tracking-[0.2em] text-white/80 uppercase">{content.role}</p>
+          <p className="font-condensed text-xs tracking-[0.2em] text-white/90 uppercase">{content.role}</p>
         </div>
         <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-secondary transition duration-500 group-hover:scale-110">
           <HeartIcon className="size-5" />

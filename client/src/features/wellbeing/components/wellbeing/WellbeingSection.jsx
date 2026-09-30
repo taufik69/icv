@@ -14,9 +14,9 @@ export function WellbeingSection() {
         <Reveal from="left">
           <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="wellbeing-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-white/75">{content.highlight}</span>
+            {content.title} <span className="text-white/90">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-white/75">
+          <div className="mt-6 space-y-4 leading-relaxed text-white/90">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

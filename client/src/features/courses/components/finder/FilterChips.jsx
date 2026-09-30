@@ -19,7 +19,7 @@ export function FilterChips({ options, selected, onToggle }) {
             }`}
           >
             {value}
-            <span className={`text-xs tabular-nums ${on ? 'text-white/90' : 'text-secondary-muted'}`}>{count}</span>
+            <span className={`text-xs tabular-nums ${on ? 'text-white/95' : 'text-secondary-muted'}`}>{count}</span>
           </button>
         )
       })}

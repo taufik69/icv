@@ -5,13 +5,13 @@
 export const navItemStyles = {
   edge: {
     base: 'group/item relative flex h-full items-center gap-1 px-3.5 font-heading text-[0.9375rem] whitespace-nowrap transition-colors duration-300',
-    top: { idle: 'font-medium text-white/80 hover:text-white', on: 'font-semibold text-white', hover: 'bg-white/40' },
-    float: { idle: 'font-medium text-secondary/70 hover:text-secondary', on: 'font-semibold text-secondary', hover: 'bg-secondary/25' },
+    top: { idle: 'font-medium text-white/90 hover:text-white', on: 'font-semibold text-white', hover: 'bg-white/40' },
+    float: { idle: 'font-medium text-secondary/85 hover:text-secondary', on: 'font-semibold text-secondary', hover: 'bg-secondary/25' },
     dropdown: 'pt-2',
   },
   classic: {
     base: 'group/item relative flex items-center gap-2 rounded-pill py-2 font-heading text-sm font-medium whitespace-nowrap transition duration-300',
-    top: { idle: 'px-3 text-white/85 text-shadow-sm hover:text-white', on: 'px-3 text-white text-shadow-sm', hover: 'bg-white/70', onLine: 'bg-primary', inset: 'inset-x-3' },
+    top: { idle: 'px-3 text-white/95 text-shadow-sm hover:text-white', on: 'px-3 text-white text-shadow-sm', hover: 'bg-white/70', onLine: 'bg-primary', inset: 'inset-x-3' },
     // Floating bar is narrower (and the wordmark wider than the old one), so items tighten up there.
     float: { idle: 'px-2.5 text-secondary hover:bg-surface-muted', on: 'bg-primary-soft px-2.5 font-semibold text-secondary', hover: 'bg-primary-hover', onLine: 'bg-primary-hover', inset: 'inset-x-2.5' },
     dropdown: 'pt-3 group-data-[floating=true]/header:pt-6',

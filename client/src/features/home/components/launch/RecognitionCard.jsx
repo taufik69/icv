@@ -9,7 +9,7 @@ export function RecognitionCard({ recognition }) {
         <dl className="mt-6 grid grid-cols-2 gap-3">
           {recognition.ids.map((id) => (
             <div key={id.label} className="rounded-lg bg-white/8 px-4 py-3 ring-1 ring-white/10">
-              <dt className="font-condensed text-xs tracking-widest text-white/60 uppercase">{id.label}</dt>
+              <dt className="font-condensed text-xs tracking-widest text-white/80 uppercase">{id.label}</dt>
               <dd className="font-heading text-xl font-bold text-white">{id.value}</dd>
             </div>
           ))}

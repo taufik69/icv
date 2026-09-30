@@ -38,7 +38,7 @@ export default function MobileMenu({ onClose }) {
           </button>
         </div>
 
-        <p className="px-6 pt-2 pb-2 font-condensed text-xs font-bold tracking-[0.25em] text-white/40 uppercase">Menu</p>
+        <p className="px-6 pt-2 pb-2 font-condensed text-xs font-bold tracking-[0.25em] text-white/80 uppercase">Menu</p>
         <nav aria-label="Mobile" className="flex-1 divide-y divide-white/10 overflow-y-auto overscroll-contain border-y border-white/10 pb-2">
           {items.map((item) => (
             <MobileNavGroup

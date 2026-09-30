@@ -24,7 +24,7 @@ export function NewsCard({ post, hidden = false, className = '' }) {
         <h3 className="mt-2 line-clamp-2 text-base leading-snug font-semibold transition-colors group-hover:text-secondary-muted">
           {post.title}
         </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-secondary/80">{post.excerpt}</p>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-secondary/90">{post.excerpt}</p>
       </div>
     </a>
   )

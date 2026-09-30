@@ -5,7 +5,7 @@ export function WhyPoint({ point: { label, Icon }, delay }) {
   return (
     <Reveal as="li" delay={delay}>
       <div className="group flex h-full items-center gap-4 rounded-2xl bg-white/5 px-4 py-4 ring-1 ring-white/10 transition duration-300 hover:-translate-y-0.5 hover:bg-white/10 hover:ring-white/30">
-        <span className="grid size-11 shrink-0 place-items-center rounded-full bg-white/10 text-white/85 transition duration-300 group-hover:bg-white group-hover:text-secondary">
+        <span className="grid size-11 shrink-0 place-items-center rounded-full bg-white/10 text-white/95 transition duration-300 group-hover:bg-white group-hover:text-secondary">
           <Icon className="size-5" />
         </span>
         <span className="font-heading text-sm font-semibold text-white md:text-base">{label}</span>

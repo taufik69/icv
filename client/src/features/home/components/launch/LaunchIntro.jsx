@@ -12,7 +12,7 @@ export function LaunchIntro({ content }) {
         <h2 id="launch-title" className="text-3xl leading-tight text-white capitalize md:text-4xl">
           {content.title} {content.highlight}
         </h2>
-        <div className="mt-5 space-y-3 leading-relaxed text-white/80">
+        <div className="mt-5 space-y-3 leading-relaxed text-white/90">
           {content.paragraphs.map((t) => (
             <p key={t.slice(0, 20)}>{t}</p>
           ))}

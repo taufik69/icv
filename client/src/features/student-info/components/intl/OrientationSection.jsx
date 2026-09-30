@@ -2,7 +2,7 @@ import { orientationSection as content } from '@/features/student-info/data/intl
 import { CheckCircleIcon, PhoneIcon } from '@/shared/components/icons'
 import { DocSection } from '../common/DocSection'
 
-const Paras = ({ items }) => items.map((t) => <p key={t.slice(0, 24)} className="mt-4 leading-relaxed text-secondary/80">{t}</p>)
+const Paras = ({ items }) => items.map((t) => <p key={t.slice(0, 24)} className="mt-4 leading-relaxed text-secondary/90">{t}</p>)
 
 function CheckGrid({ title, items }) {
   return (
@@ -39,7 +39,7 @@ export function OrientationSection() {
                 <PhoneIcon className="size-4" />
               </span>
               <span>
-                <span className="block text-sm text-white/75">{c.name}</span>
+                <span className="block text-sm text-white/90">{c.name}</span>
                 <span className="block font-heading text-lg font-bold">{c.phone}</span>
               </span>
             </a>

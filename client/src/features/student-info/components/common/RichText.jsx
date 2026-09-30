@@ -1,5 +1,5 @@
 // A paragraph made of segments: plain strings, or { text, href } for an inline link (tel: stays in-tab, others open new tab).
-export function RichText({ parts, className = 'leading-relaxed text-secondary/80' }) {
+export function RichText({ parts, className = 'leading-relaxed text-secondary/90' }) {
   return (
     <p className={className}>
       {parts.map((part, i) =>

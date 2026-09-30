@@ -26,9 +26,9 @@ export function Sidebar() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block truncate font-heading text-sm font-semibold text-white">{staffUser.name}</span>
-            <span className="block truncate text-xs text-white/55">{staffUser.email}</span>
+            <span className="block truncate text-xs text-white/85">{staffUser.email}</span>
           </span>
-          <Link to="/dashboard/login" aria-label="Sign out" className="grid size-8 place-items-center rounded-lg text-white/60 hover:bg-white/10 hover:text-white">
+          <Link to="/dashboard/login" aria-label="Sign out" className="grid size-8 place-items-center rounded-lg text-white/80 hover:bg-white/10 hover:text-white">
             <LogOutIcon className="size-4" />
           </Link>
         </div>

@@ -7,7 +7,7 @@ export function RplOverview() {
   return (
     <DocSection section={content}>
       <p className="mt-6 border-l-4 border-secondary pl-5 font-heading text-xl leading-snug font-semibold text-secondary md:text-2xl">{content.lead}</p>
-      <p className="mt-6 leading-relaxed text-secondary/80">{content.text}</p>
+      <p className="mt-6 leading-relaxed text-secondary/90">{content.text}</p>
 
       <h3 className="mt-10 text-lg">{content.qualitiesTitle}</h3>
       <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -24,10 +24,10 @@ export function RplOverview() {
         {content.principles.map((p) => (
           <div key={p.label} className="rounded-2xl bg-secondary p-6 shadow-brand">
             <p className="flex items-center gap-3 font-heading text-lg font-bold text-white">
-              <BadgeCheckIcon className="size-6 text-white/80" />
+              <BadgeCheckIcon className="size-6 text-white/90" />
               {p.label}
             </p>
-            <p className="mt-3 leading-relaxed text-white/75">{p.text}</p>
+            <p className="mt-3 leading-relaxed text-white/90">{p.text}</p>
           </div>
         ))}
       </div>

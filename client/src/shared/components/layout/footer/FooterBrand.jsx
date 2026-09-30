@@ -5,8 +5,8 @@ export function FooterBrand() {
   return (
     <div>
       <BrandLogo className="text-[0.875rem] text-white" />
-      <p className="mt-6 text-sm leading-relaxed text-white/60">{legal.acknowledgement}</p>
-      <p className="mt-3 text-sm leading-relaxed text-white/60">{legal.welcome}</p>
+      <p className="mt-6 text-sm leading-relaxed text-white/80">{legal.acknowledgement}</p>
+      <p className="mt-3 text-sm leading-relaxed text-white/80">{legal.welcome}</p>
       <ul className="mt-6 flex gap-2">
         {socialLinks.map(({ label, href, Icon }) => (
           <li key={label}>

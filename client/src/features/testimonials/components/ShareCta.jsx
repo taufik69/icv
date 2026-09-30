@@ -18,7 +18,7 @@ export function ShareCta() {
           <h2 id="share-title" className="mt-5 text-3xl leading-tight md:text-5xl">
             {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-md leading-relaxed text-secondary/80">{content.text}</p>
+          <p className="mx-auto mt-4 max-w-md leading-relaxed text-secondary/90">{content.text}</p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a

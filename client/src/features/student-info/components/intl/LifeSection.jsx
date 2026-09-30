@@ -12,7 +12,7 @@ export function LifeSection() {
   return (
     <DocSection section={content}>
       <div className="mt-6 grid gap-8 xl:grid-cols-[3fr_2fr]">
-        <div className="space-y-4 leading-relaxed text-secondary/80">
+        <div className="space-y-4 leading-relaxed text-secondary/90">
           {content.paragraphs.map((text) => (
             <p key={text.slice(0, 24)}>{withBold(text, 'Lalor')}</p>
           ))}

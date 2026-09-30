@@ -18,7 +18,7 @@ export function TestimonialsSection() {
       <Container className="relative">
         <Reveal className="text-center">
           <h2 id="testimonials-title" className="font-condensed text-2xl font-bold text-white uppercase sm:text-3xl md:text-4xl">
-            {content.title} <span className="text-white/70">{content.highlight}</span>
+            {content.title} <span className="text-white/85">{content.highlight}</span>
           </h2>
           <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full bg-white/40" />
         </Reveal>

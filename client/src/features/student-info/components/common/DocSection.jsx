@@ -16,7 +16,7 @@ export function DocSection({ section, number, children }) {
           {section.title}
         </h2>
       </div>
-      {section.intro && <p className="mt-5 text-base leading-relaxed md:text-lg text-secondary/80">{section.intro}</p>}
+      {section.intro && <p className="mt-5 text-base leading-relaxed md:text-lg text-secondary/90">{section.intro}</p>}
       {section.items?.length > 0 && (
         <div className="mt-6 grid gap-4">
           {section.items.map((item) => (

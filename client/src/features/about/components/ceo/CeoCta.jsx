@@ -13,7 +13,7 @@ export function CeoCta() {
             <h2 id="ceo-cta-title" className="text-3xl leading-tight text-white md:text-4xl">
               {content.title}
             </h2>
-            <p className="mt-3 leading-relaxed text-white/90">{content.text}</p>
+            <p className="mt-3 leading-relaxed text-white/95">{content.text}</p>
           </div>
           <div className="relative flex flex-wrap gap-3">
             <AppLink

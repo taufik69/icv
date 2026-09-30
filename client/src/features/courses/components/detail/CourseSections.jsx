@@ -24,7 +24,7 @@ export function CourseSections({ tabs }) {
                   onClick={go(id)}
                   aria-current={on ? 'true' : undefined}
                   className={`group inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold whitespace-nowrap transition-[color,background-color,scale] duration-300 ease-out active:scale-95 ${
-                    on ? 'text-white hover:text-white' : 'text-secondary/85 hover:bg-surface-muted hover:text-secondary'
+                    on ? 'text-white hover:text-white' : 'text-secondary/95 hover:bg-surface-muted hover:text-secondary'
                   }`}
                 >
                   <Icon className={`size-4 transition ${on ? 'text-white' : 'text-secondary-muted group-hover:text-secondary'}`} />

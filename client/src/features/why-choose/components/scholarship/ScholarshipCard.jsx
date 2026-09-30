@@ -18,9 +18,9 @@ export function ScholarshipCard({ content }) {
       <dl className="mt-8 space-y-3">
         {content.highlights.map(({ label, value, Icon }) => (
           <div key={label} className="flex items-center gap-4 rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
-            <Icon className="size-5 shrink-0 text-white/70" />
+            <Icon className="size-5 shrink-0 text-white/85" />
             <div className="flex flex-col-reverse">
-              <dt className="font-condensed text-xs tracking-[0.2em] text-white/60 uppercase">{label}</dt>
+              <dt className="font-condensed text-xs tracking-[0.2em] text-white/80 uppercase">{label}</dt>
               <dd className="font-heading font-semibold text-white">{value}</dd>
             </div>
           </div>

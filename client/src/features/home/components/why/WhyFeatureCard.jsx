@@ -18,7 +18,7 @@ export function WhyFeatureCard({ feature: { title, text, Icon }, index }) {
         aria-hidden="true"
         className="mt-2 block h-0.5 w-8 bg-secondary/30 transition-all group-hover:bg-white/50 duration-500 group-hover:w-16"
       />
-      <p className="relative mt-3 text-sm leading-relaxed text-secondary/80 transition-colors duration-500 group-hover:text-white/85">
+      <p className="relative mt-3 text-sm leading-relaxed text-secondary/90 transition-colors duration-500 group-hover:text-white/95">
         {text}
       </p>
     </div>

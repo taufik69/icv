@@ -11,7 +11,7 @@ export function WhyChooseBlock({ why }) {
         <Reveal from="left">
           <h2 id="why-choose-title" className="text-3xl leading-tight md:text-5xl">{why.title}</h2>
           <span aria-hidden="true" className="mt-5 block h-1 w-16 rounded-pill bg-secondary" />
-          <div className="mt-6 space-y-4 leading-relaxed text-secondary/90">
+          <div className="mt-6 space-y-4 leading-relaxed text-secondary">
             {why.paragraphs.map((t) => (
               <p key={t.slice(0, 24)}>{t}</p>
             ))}

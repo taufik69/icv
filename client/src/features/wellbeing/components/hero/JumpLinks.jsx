@@ -15,7 +15,7 @@ export function JumpLinks({ links }) {
               className="group inline-flex items-center gap-2 rounded-pill bg-white/10 px-4 py-2 font-heading text-sm font-semibold text-white ring-1 ring-white/20 backdrop-blur-md transition hover:bg-white hover:text-secondary hover:ring-white"
             >
               {link.label}
-              <ChevronDownIcon className="size-4 text-white/70 transition group-hover:translate-y-0.5 group-hover:text-secondary" />
+              <ChevronDownIcon className="size-4 text-white/85 transition group-hover:translate-y-0.5 group-hover:text-secondary" />
             </Link>
           </li>
         ))}

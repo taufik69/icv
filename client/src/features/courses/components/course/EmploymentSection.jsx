@@ -20,7 +20,7 @@ export function EmploymentSection({ employment }) {
           <SectionEyebrow tone="light" accent="muted">
             <span id="employment-title">{employment.title}</span>
           </SectionEyebrow>
-          <p className="mt-5 text-lg leading-relaxed text-white/90">{intro}</p>
+          <p className="mt-5 text-lg leading-relaxed text-white/95">{intro}</p>
         </Reveal>
         <ul className={`mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 ${cols}`}>
           {titles.map((job, i) => (

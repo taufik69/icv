@@ -19,7 +19,7 @@ export function ReportCard({ report: { category, title, text, meta, href, Icon }
       </div>
 
       <h3 className="relative mt-6 text-2xl leading-snug">{title}</h3>
-      <p className="relative mt-3 flex-1 leading-relaxed text-secondary/80">{text}</p>
+      <p className="relative mt-3 flex-1 leading-relaxed text-secondary/90">{text}</p>
 
       <dl className="relative mt-6 grid grid-cols-3 divide-x divide-line-soft rounded-2xl bg-surface-muted py-3">
         {meta.map((m) => (
@@ -33,7 +33,7 @@ export function ReportCard({ report: { category, title, text, meta, href, Icon }
       <div className="relative mt-6 flex flex-wrap gap-3">
         <a href={href} target="_blank" rel="noopener noreferrer" className={`${btn} bg-secondary text-white hover:bg-secondary-dark hover:text-white`}>
           View report
-          <ArrowUpRightIcon className="size-4 text-white/80" />
+          <ArrowUpRightIcon className="size-4 text-white/90" />
           <span className="sr-only">(PDF, opens in a new tab)</span>
         </a>
         <a href={href} download className={`${btn} text-secondary ring-1 ring-line-strong hover:bg-secondary hover:text-white hover:ring-secondary`}>

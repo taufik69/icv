@@ -15,7 +15,7 @@ export function ScholarshipSection() {
           <h2 id="scholarship-title" className="mt-5 text-3xl leading-tight md:text-5xl">
             {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <p className="mt-6 leading-relaxed text-secondary/80">{content.text}</p>
+          <p className="mt-6 leading-relaxed text-secondary/90">{content.text}</p>
           <ul className="mt-8 grid gap-4 sm:grid-cols-2">
             {content.pillars.map((pillar) => (
               <li key={pillar.title}>

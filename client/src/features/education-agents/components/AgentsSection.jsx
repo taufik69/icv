@@ -22,7 +22,7 @@ export function AgentsSection() {
           </div>
           <p className="rounded-2xl bg-secondary px-5 py-3 text-white shadow-brand">
             <span className="font-heading text-3xl font-extrabold text-white">{agents.length}</span>
-            <span className="ml-2 font-condensed text-xs tracking-[0.2em] text-white/70 uppercase">Agents listed</span>
+            <span className="ml-2 font-condensed text-xs tracking-[0.2em] text-white/85 uppercase">Agents listed</span>
           </p>
         </Reveal>
 

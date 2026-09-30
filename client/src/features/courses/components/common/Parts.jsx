@@ -24,7 +24,7 @@ function Item({ item, link }) {
 
 export function Parts({ parts, tone = 'light', accent = 'green' }) {
   const a = accents[accent]
-  const text = tone === 'dark' ? 'text-white/90' : 'text-secondary/90'
+  const text = tone === 'dark' ? 'text-white/95' : 'text-secondary'
   const strong = tone === 'dark' ? 'text-white' : 'text-secondary'
 
   return parts.map((part, i) => {

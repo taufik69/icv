@@ -11,13 +11,13 @@ export function EnrolCard({ course, content }) {
 
   return (
     <div className="rounded-3xl bg-white p-6 shadow-elevated ring-1 ring-line">
-      <p className="text-sm text-secondary/85">{content.priceLabel}</p>
+      <p className="text-sm text-secondary/95">{content.priceLabel}</p>
       <p className="mt-1 font-heading text-4xl leading-none font-bold text-secondary">{fee.amount}</p>
-      <p className="mt-2 text-sm text-secondary/85">
+      <p className="mt-2 text-sm text-secondary/95">
         {fee.basis === 'tuition' ? 'Tuition fee' : 'Fee for service'}
         {fee.note && <span className="block text-xs text-secondary-muted">Tuition: {fee.note}</span>}
       </p>
-      <p className="mt-3 text-sm text-secondary/85">
+      <p className="mt-3 text-sm text-secondary/95">
         {content.intakeLabel}: <span className="font-semibold text-secondary">{course.intake}</span>
       </p>
 
@@ -46,7 +46,7 @@ export function EnrolCard({ course, content }) {
         </div>
       </div>
 
-      <ul className="mt-6 space-y-2 border-t border-line pt-5 text-sm text-secondary/85">
+      <ul className="mt-6 space-y-2 border-t border-line pt-5 text-sm text-secondary/95">
         {content.badges.map((text, i) => {
           const Icon = i ? BadgeCheckIcon : ShieldCheckIcon
           return (

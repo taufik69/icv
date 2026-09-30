@@ -17,7 +17,7 @@ export function NewsSection() {
           <h2 id="news-title" className="mt-5 text-3xl leading-tight capitalize sm:text-4xl md:text-5xl">
             {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <p className="mt-4 max-w-md leading-relaxed text-secondary/80">{content.intro}</p>
+          <p className="mt-4 max-w-md leading-relaxed text-secondary/90">{content.intro}</p>
           <div className="mt-10">
             <NewsFeatured post={content.featured} />
           </div>

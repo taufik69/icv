@@ -18,7 +18,7 @@ export function OfferCard({ item: { title, text, to, hash, Icon }, index }) {
         <Icon className="size-7" />
       </span>
       <h3 className="relative mt-7 text-xl leading-snug text-secondary">{title}</h3>
-      <p className="relative mt-3 flex-1 leading-relaxed text-secondary/80">{text}</p>
+      <p className="relative mt-3 flex-1 leading-relaxed text-secondary/90">{text}</p>
       <span className="mt-6 inline-flex items-center gap-2 font-heading text-sm font-semibold text-secondary transition group-hover:gap-3 group-hover:text-secondary-muted">
         Explore
         <ArrowRightIcon className="size-4" />

@@ -13,11 +13,11 @@ export function StudentTypeFilter({ content, finder }) {
               aria-pressed={on}
               onClick={() => finder.set('market', id)}
               className={`flex cursor-pointer flex-col items-center rounded-lg px-1 py-2 text-sm font-medium transition ${
-                on ? 'bg-secondary text-white' : 'text-secondary/85 hover:bg-surface-muted hover:text-secondary'
+                on ? 'bg-secondary text-white' : 'text-secondary/95 hover:bg-surface-muted hover:text-secondary'
               }`}
             >
               {label}
-              <span className={`text-xs tabular-nums ${on ? 'text-white/90' : 'text-secondary-muted'}`}>{finder.markets[id]}</span>
+              <span className={`text-xs tabular-nums ${on ? 'text-white/95' : 'text-secondary-muted'}`}>{finder.markets[id]}</span>
             </button>
           )
         })}

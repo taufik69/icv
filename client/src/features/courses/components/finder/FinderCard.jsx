@@ -53,7 +53,7 @@ export function FinderCard({ course, marketName, saved, onToggleSave }) {
         <div className="mt-auto pt-5">
           <div className="min-h-13">
           {fee.amount && (
-            <p className="text-sm text-secondary/85">
+            <p className="text-sm text-secondary/95">
               From <span className="font-heading text-2xl font-bold text-secondary">{fee.amount}</span> {fee.basis}
             </p>
           )}

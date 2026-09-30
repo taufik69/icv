@@ -15,7 +15,7 @@ export function WhyChooseSection() {
           <h2 id="why-title" className="mt-5 text-3xl leading-tight capitalize sm:text-4xl md:text-5xl">
             {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 text-justify leading-relaxed text-secondary/80 hyphens-auto">
+          <div className="mt-6 space-y-4 text-justify leading-relaxed text-secondary/90 hyphens-auto">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

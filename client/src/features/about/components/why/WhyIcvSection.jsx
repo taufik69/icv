@@ -32,9 +32,9 @@ export function WhyIcvSection() {
         <Reveal from="left" className="lg:pointer-events-auto lg:w-7/12 lg:pr-12">
           <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="why-icv-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-white/75">{content.highlight}</span>
+            {content.title} <span className="text-white/90">{content.highlight}</span>
           </h2>
-          <p className="mt-5 max-w-xl leading-relaxed text-white/90">{content.text}</p>
+          <p className="mt-5 max-w-xl leading-relaxed text-white/95">{content.text}</p>
 
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {content.points.map((point, i) => (

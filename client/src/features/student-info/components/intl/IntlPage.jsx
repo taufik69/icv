@@ -19,16 +19,16 @@ export function IntlPage() {
       <LifeSection />
       <DocSection section={transportSection}>
         {transportSection.paragraphs.map((t) => (
-          <p key={t.slice(0, 24)} className="mt-4 leading-relaxed text-secondary/80">{t}</p>
+          <p key={t.slice(0, 24)} className="mt-4 leading-relaxed text-secondary/90">{t}</p>
         ))}
       </DocSection>
       <DocSection section={costSection}>
-        <p className="mt-4 text-lg leading-relaxed text-secondary/80">{costSection.text}</p>
+        <p className="mt-4 text-lg leading-relaxed text-secondary/90">{costSection.text}</p>
         <a href={costSection.action.href} target="_blank" rel="noopener noreferrer" className={btn}>
           {costSection.action.label}
           <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </a>
-        <p className="mt-6 leading-relaxed text-secondary/80">
+        <p className="mt-6 leading-relaxed text-secondary/90">
           {handbook.text[0]}
           <a href={handbook.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary underline decoration-secondary/30 decoration-2 underline-offset-4 hover:text-secondary-muted">
             {handbook.text[1]}
@@ -37,7 +37,7 @@ export function IntlPage() {
       </DocSection>
       <OrientationSection />
       <DocSection section={linksSection}>
-        <p className="mt-4 leading-relaxed text-secondary/80">{linksSection.intro}</p>
+        <p className="mt-4 leading-relaxed text-secondary/90">{linksSection.intro}</p>
         <LinkCards links={linksSection.links} />
       </DocSection>
     </DocLayout>

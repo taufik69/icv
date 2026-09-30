@@ -14,13 +14,13 @@ export function CourseTags({ summary, markets, marketNames }) {
         <span className={`size-2 rounded-full ${tone.dot}`} />
         {summary.area}
       </span>
-      <span className={`${pill} bg-white/10 text-white/90 ring-white/20`}>{summary.level}</span>
+      <span className={`${pill} bg-white/10 text-white/95 ring-white/20`}>{summary.level}</span>
       <span aria-hidden="true" className="mx-1 hidden h-5 w-px bg-white/20 sm:block" />
       {markets.map((m) => {
         const Icon = m === 'international' ? GlobeIcon : UserIcon
         return (
-          <span key={m} className={`${pill} bg-white/10 text-white/90 ring-white/20`}>
-            <Icon className="size-3.5 text-white/90" />
+          <span key={m} className={`${pill} bg-white/10 text-white/95 ring-white/20`}>
+            <Icon className="size-3.5 text-white/95" />
             {marketNames[m]}
           </span>
         )

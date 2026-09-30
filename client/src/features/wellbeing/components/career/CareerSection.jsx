@@ -18,7 +18,7 @@ export function CareerSection() {
           <h2 id="career-title" className="mt-5 text-3xl leading-tight md:text-5xl">
             {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <p className="mt-6 leading-relaxed text-secondary/80">{content.paragraphs[0]}</p>
+          <p className="mt-6 leading-relaxed text-secondary/90">{content.paragraphs[0]}</p>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {content.services.map((service) => (
               <li key={service} className="flex items-start gap-3 rounded-xl bg-surface px-4 py-3 text-sm font-medium text-secondary shadow-raised ring-1 ring-line-soft transition hover:ring-secondary/30">

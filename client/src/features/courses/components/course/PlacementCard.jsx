@@ -9,13 +9,13 @@ export function PlacementCard({ placement }) {
   return (
     <Reveal className="mt-6">
       <article className="rounded-3xl bg-secondary p-6 text-white shadow-brand md:p-10">
-        {placement.title && <h3 className="font-condensed text-xl font-bold tracking-[0.2em] text-white/90">{placement.title}</h3>}
+        {placement.title && <h3 className="font-condensed text-xl font-bold tracking-[0.2em] text-white/95">{placement.title}</h3>}
         {placement.lead && <p className="mt-4 font-heading text-xl font-semibold text-white">{placement.lead}</p>}
-        <p className="mt-4 leading-relaxed text-white/90">{first}</p>
+        <p className="mt-4 leading-relaxed text-white/95">{first}</p>
 
         <details className="group mt-2">
           <summary className="flex w-fit cursor-pointer list-none items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/20 [&::-webkit-details-marker]:hidden">
-            <ChevronDownIcon className="size-4 text-white/90 transition group-open:rotate-180" />
+            <ChevronDownIcon className="size-4 text-white/95 transition group-open:rotate-180" />
             Read More
           </summary>
           <div className="mt-2">

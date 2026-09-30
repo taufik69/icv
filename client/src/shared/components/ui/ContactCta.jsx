@@ -15,7 +15,7 @@ export function ContactCta({ id, content, className = 'bg-surface pb-20 md:pb-28
             <h2 id={id} className="text-3xl leading-tight md:text-4xl">
               {content.title}
             </h2>
-            <p className="mt-3 leading-relaxed text-secondary/80">{content.text}</p>
+            <p className="mt-3 leading-relaxed text-secondary/90">{content.text}</p>
           </div>
           <div className="relative flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             {content.actions.map(({ label, href, kind }) => {
@@ -26,7 +26,7 @@ export function ContactCta({ id, content, className = 'bg-surface pb-20 md:pb-28
                   href={href}
                   className="btn-shine inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-6 py-3.5 font-heading font-semibold text-white shadow-brand transition hover:bg-secondary-dark hover:text-white"
                 >
-                  <Icon className="size-4 text-white/80" />
+                  <Icon className="size-4 text-white/90" />
                   {label}
                 </a>
               )

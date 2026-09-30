@@ -18,7 +18,7 @@ export function CourseCard({ course, apply }) {
             {course.title}
           </AppLink>
         </h3>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary/90">{course.text}</p>
+        <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary">{course.text}</p>
         <div className="mt-6 flex items-center justify-between gap-3 border-t border-line-soft pt-5">
           <AppLink href={apply.href} className="btn-shine relative z-10 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 font-heading text-xs font-semibold tracking-wider text-white transition hover:bg-secondary-dark hover:text-white">
             {apply.label}

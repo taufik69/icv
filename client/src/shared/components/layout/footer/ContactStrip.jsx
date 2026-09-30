@@ -10,7 +10,7 @@ export function ContactStrip() {
             <Icon className="size-5" />
           </span>
           <div className="min-w-0">
-            <p className="font-condensed text-xs tracking-[0.2em] text-white/50 uppercase">{title}</p>
+            <p className="font-condensed text-xs tracking-[0.2em] text-white/85 uppercase">{title}</p>
             <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
               {lines.map((l, i) => (
                 <span key={l.href} className="flex items-center gap-3">

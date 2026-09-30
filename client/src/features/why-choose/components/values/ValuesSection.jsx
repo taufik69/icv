@@ -13,7 +13,7 @@ export function ValuesSection() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="values-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-white/75">{content.highlight}</span>
+            {content.title} <span className="text-white/90">{content.highlight}</span>
           </h2>
         </Reveal>
 

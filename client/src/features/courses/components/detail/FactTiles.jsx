@@ -13,8 +13,8 @@ export function FactTiles({ summary, labels }) {
     <dl className="grid grid-cols-2 gap-3 md:grid-cols-4">
       {facts.map(({ Icon, label, value }) => (
         <div key={label} className="rounded-2xl bg-white/8 p-4 ring-1 ring-white/15 backdrop-blur-md">
-          <dt className="flex items-center gap-2 text-xs text-white/90">
-            <Icon className="size-4 text-white/90" />
+          <dt className="flex items-center gap-2 text-xs text-white/95">
+            <Icon className="size-4 text-white/95" />
             {label}
           </dt>
           <dd className="mt-1.5 font-heading text-base font-semibold text-white">{value}</dd>

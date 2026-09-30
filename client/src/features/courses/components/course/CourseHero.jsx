@@ -26,7 +26,7 @@ export function CourseHero({ course }) {
             <span className="rounded-md bg-white/10 px-3 py-1 font-condensed text-sm tracking-[0.15em] text-white uppercase ring-1 ring-white/20 backdrop-blur-md">{course.category}</span>
           </div>
           <h1 id="course-title" className="mt-5 text-4xl leading-tight text-white md:text-6xl">{course.title}</h1>
-          {course.tagline && <p className="mt-4 font-heading text-xl font-semibold text-white/90 md:text-2xl">{course.tagline}</p>}
+          {course.tagline && <p className="mt-4 font-heading text-xl font-semibold text-white/95 md:text-2xl">{course.tagline}</p>}
           <div className="mt-9 flex flex-wrap gap-3">
             <a href={primary.href} target="_blank" rel="noopener noreferrer" className={`${btn} bg-primary text-on-primary hover:bg-primary-hover hover:text-on-primary`}>
               {primary.label}

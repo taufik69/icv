@@ -19,7 +19,7 @@ export function HeroCard({ card }) {
         className="size-12 shrink-0 rounded-lg object-cover"
       />
       <span className="min-w-0 flex-1 font-heading text-base leading-snug font-semibold">{card.title}</span>
-      <span className="grid size-8 shrink-0 place-items-center rounded-full text-white/70 ring-1 ring-white/25 transition group-hover:bg-white group-hover:text-secondary group-hover:ring-white">
+      <span className="grid size-8 shrink-0 place-items-center rounded-full text-white/85 ring-1 ring-white/25 transition group-hover:bg-white group-hover:text-secondary group-hover:ring-white">
         <ArrowUpRightIcon className="size-4" />
       </span>
     </AppLink>

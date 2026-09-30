@@ -15,7 +15,7 @@ Source scrape: `design/design-system.source.json` (icv.edu.au). **Never use raw 
 | Text on green | `text-on-primary` (navy — white fails contrast) | #0a2449 |
 | Brand navy | `bg-secondary` `bg-secondary-dark` `text-secondary` | #0a2449 / #06233e |
 | Accents | `accent` (purple) `highlight` (orange) `coral` `sky` | |
-| Text | `text-ink` `text-ink-strong` `text-ink-muted` `text-ink-subtle` | #212121 → #777 |
+| Text | `text-ink` `text-ink-strong` `text-ink-muted` `text-ink-subtle` | #212121 → #5c5c5c |
 | Surfaces | `bg-surface` `bg-surface-muted` (#f4f8fa sections) `bg-surface-alt` | |
 | Borders | `border-line` `border-line-soft` `border-line-strong` | |
 | Links | `text-link` `hover:text-link-hover` | |

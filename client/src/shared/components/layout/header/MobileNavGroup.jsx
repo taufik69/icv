@@ -7,7 +7,7 @@ import { MobileNavLink } from './MobileNavLink'
 const row = 'relative flex w-full items-center gap-4 px-5 py-4 text-left font-heading text-base font-medium text-white transition active:bg-white/10'
 const Bar = () => <span aria-hidden="true" className="absolute inset-y-2 left-0 w-1 rounded-r-full bg-primary" />
 const Chevron = ({ Icon, className = '' }) => (
-  <span className={`grid size-7 shrink-0 place-items-center rounded-full bg-white/10 text-white/70 transition duration-300 ${className}`}>
+  <span className={`grid size-7 shrink-0 place-items-center rounded-full bg-white/10 text-white/85 transition duration-300 ${className}`}>
     <Icon className="size-4" />
   </span>
 )
@@ -19,7 +19,7 @@ export function MobileNavGroup({ item, active, open, onToggle, onNavigate }) {
   // Selected = the current section, or the group the user just opened: green bar, green icon, soft highlight.
   const on = active || open
   const tone = on ? 'bg-white/5' : 'hover:bg-white/5'
-  const icon = <Icon className={`size-6 shrink-0 stroke-[1.5] ${on ? 'text-primary' : 'text-white/85'}`} />
+  const icon = <Icon className={`size-6 shrink-0 stroke-[1.5] ${on ? 'text-primary' : 'text-white/95'}`} />
 
   if (!item.children) {
     return (

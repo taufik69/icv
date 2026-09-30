@@ -29,7 +29,7 @@ export function StatementCard({ content }) {
       <dl className="mx-auto mt-12 grid max-w-md grid-cols-2 gap-4">
         {content.counts.map((c) => (
           <div key={c.label} className="flex flex-col-reverse rounded-2xl bg-secondary px-6 py-5 shadow-brand">
-            <dt className="font-condensed text-xs tracking-[0.2em] text-white/75 uppercase">{c.label}</dt>
+            <dt className="font-condensed text-xs tracking-[0.2em] text-white/90 uppercase">{c.label}</dt>
             <dd className="font-heading text-5xl leading-none font-extrabold text-white md:text-6xl">{c.value}</dd>
           </div>
         ))}

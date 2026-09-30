@@ -11,7 +11,7 @@ export function GlanceCard({ glance, actions }) {
       <dl className="divide-y divide-white/10 px-7">
         {glance.map(([label, value]) => (
           <div key={label} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] items-baseline gap-4 py-3.5">
-            <dt className="text-sm text-white/90">{label}</dt>
+            <dt className="text-sm text-white/95">{label}</dt>
             <dd className="text-right font-heading font-semibold text-white">{value}</dd>
           </div>
         ))}

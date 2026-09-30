@@ -19,7 +19,7 @@ export function RplStep({ step, index, last }) {
             <ChevronDownIcon className="size-5 text-secondary group-open:text-white" />
           </span>
         </summary>
-        <div className="space-y-3 px-4 pb-6 leading-relaxed text-secondary/80 sm:px-5 md:px-6">
+        <div className="space-y-3 px-4 pb-6 leading-relaxed text-secondary/90 sm:px-5 md:px-6">
           {step.paragraphs.map((text) => (
             <p key={text.slice(0, 32)}>{text}</p>
           ))}

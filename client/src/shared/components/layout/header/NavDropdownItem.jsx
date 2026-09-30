@@ -11,7 +11,7 @@ export function NavDropdownItem({ item, onClick }) {
       href={item.href}
       hash={item.hash}
       onClick={onClick}
-      className="group/row flex items-center gap-3 rounded-xl px-2.5 py-2.5 text-sm text-white/85 transition duration-200 hover:bg-white/10 hover:text-white aria-[current=page]:bg-white/10 aria-[current=page]:text-primary"
+      className="group/row flex items-center gap-3 rounded-xl px-2.5 py-2.5 text-sm text-white/95 transition duration-200 hover:bg-white/10 hover:text-white aria-[current=page]:bg-white/10 aria-[current=page]:text-primary"
     >
       {Icon && (
         <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/10 text-white ring-1 ring-white/15 transition duration-200 group-hover/row:bg-primary group-hover/row:text-on-primary group-hover/row:ring-primary group-aria-[current=page]/row:bg-primary group-aria-[current=page]/row:text-on-primary group-aria-[current=page]/row:ring-primary">

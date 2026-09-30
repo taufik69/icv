@@ -12,11 +12,11 @@ export function CourseCta({ cta, image }) {
       <div aria-hidden="true" className="absolute inset-x-0 top-0 -z-10 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
       <Container>
         <Reveal from="zoom" className="mx-auto max-w-3xl">
-          {cta.title && <p className="mb-4 font-condensed text-lg font-bold tracking-[0.25em] text-white/90 uppercase">{cta.title}</p>}
+          {cta.title && <p className="mb-4 font-condensed text-lg font-bold tracking-[0.25em] text-white/95 uppercase">{cta.title}</p>}
           <h2 id="cta-title" className="font-heading text-4xl leading-tight font-extrabold text-white md:text-6xl">{cta.headline}</h2>
           <div className="mt-6 space-y-2">
             {cta.lines.map((line) => (
-              <p key={line} className="leading-relaxed text-white/90">{line}</p>
+              <p key={line} className="leading-relaxed text-white/95">{line}</p>
             ))}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">

@@ -9,7 +9,7 @@ export function TestimonialContent({ review }) {
           <span aria-hidden="true" className="block font-heading text-6xl leading-none text-secondary/20">“</span>
           <h3 className="-mt-3 text-xl leading-tight md:text-3xl">{review.headline}</h3>
         </div>
-        <blockquote className="text-sm leading-relaxed text-secondary/80 md:text-base">{review.quote}</blockquote>
+        <blockquote className="text-sm leading-relaxed text-secondary/90 md:text-base">{review.quote}</blockquote>
         <figcaption>
           <ReviewAuthor review={review} />
         </figcaption>

@@ -44,7 +44,7 @@ export function WelcomeSection({ welcome, enquire }) {
           </h2>
           <div className="mt-7 max-w-xl space-y-4 border-l-2 border-secondary/15 pl-5">
             {paragraphs.map((t, i) => (
-              <p key={t.slice(0, 24)} className={i === 0 ? 'text-lg leading-relaxed font-medium text-secondary' : 'leading-relaxed text-secondary/90'}>
+              <p key={t.slice(0, 24)} className={i === 0 ? 'text-lg leading-relaxed font-medium text-secondary' : 'leading-relaxed text-secondary'}>
                 {t}
               </p>
             ))}

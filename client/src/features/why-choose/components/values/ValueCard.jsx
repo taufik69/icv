@@ -9,7 +9,7 @@ export function ValueCard({ item: { title, text, Icon } }) {
       </span>
       <div>
         <h3 className="text-xl leading-snug text-white">{title}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-white/75">{text}</p>
+        <p className="mt-2 text-sm leading-relaxed text-white/90">{text}</p>
       </div>
     </PlusCard>
   )

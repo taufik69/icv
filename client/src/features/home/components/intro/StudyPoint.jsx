@@ -14,7 +14,7 @@ export function StudyPoint({ point: { title, text, Icon }, side }) {
           aria-hidden="true"
           className={`mt-1.5 block h-0.5 w-8 rounded-full bg-secondary/30 transition-all duration-300 group-hover:w-16 ${mirrored ? 'lg:ml-auto' : ''}`}
         />
-        <p className="mt-2 text-sm leading-relaxed text-secondary/80">{text}</p>
+        <p className="mt-2 text-sm leading-relaxed text-secondary/90">{text}</p>
       </div>
     </div>
   )

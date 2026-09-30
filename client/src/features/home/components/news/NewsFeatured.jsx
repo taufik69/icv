@@ -20,7 +20,7 @@ export function NewsFeatured({ post }) {
       </div>
       <NewsDate date={post.date} className="mt-5" />
       <h3 className="mt-2 text-xl leading-snug font-semibold md:text-2xl">{post.title}</h3>
-      <p className="mt-3 line-clamp-3 leading-relaxed text-secondary/80">{post.excerpt}</p>
+      <p className="mt-3 line-clamp-3 leading-relaxed text-secondary/90">{post.excerpt}</p>
       <span className="mt-4 inline-flex items-center gap-2 font-heading font-semibold text-secondary">
         Read more
         <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />

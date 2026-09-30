@@ -21,9 +21,9 @@ export function RegistrationBand() {
               const [label, ...rest] = id.split(' ')
               return (
                 <li key={id} className="flex items-center gap-3 rounded-2xl bg-white/5 px-5 py-4 ring-1 ring-white/10 transition hover:bg-white/10 hover:ring-white/30">
-                  <BadgeCheckIcon className="size-6 shrink-0 text-white/80" />
+                  <BadgeCheckIcon className="size-6 shrink-0 text-white/90" />
                   <div>
-                    <p className="font-condensed text-xs tracking-[0.2em] text-white/60 uppercase">{label}</p>
+                    <p className="font-condensed text-xs tracking-[0.2em] text-white/80 uppercase">{label}</p>
                     <p className="font-heading font-bold text-white">{rest.join(' ')}</p>
                   </div>
                 </li>

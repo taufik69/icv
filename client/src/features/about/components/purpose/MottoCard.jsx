@@ -18,7 +18,7 @@ export function MottoCard({ motto }) {
       <blockquote className="-mt-6 font-heading text-3xl leading-tight font-bold text-white md:text-4xl">
         {motto.quote}
       </blockquote>
-      <figcaption className="mt-6 inline-flex items-center gap-3 font-condensed text-sm tracking-[0.2em] text-white/80 uppercase">
+      <figcaption className="mt-6 inline-flex items-center gap-3 font-condensed text-sm tracking-[0.2em] text-white/90 uppercase">
         <span aria-hidden="true" className="h-0.5 w-8 bg-white/40" />
         {motto.caption}
       </figcaption>
