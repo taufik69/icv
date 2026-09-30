@@ -1,29 +1,28 @@
-import { PlusCard } from '@/shared/components/ui'
 import { contactCards } from '@/shared/config/footer'
 
-// Contact row at the top of the footer as blueprint bento cards (dashed outline, corner pluses):
-// icon tile, small label, then each line as a link.
+// Minimal contact row at the top of the footer: outline icon, small label, value(s) side by side.
 export function ContactStrip() {
   return (
-    <ul className="grid gap-6 border-b border-white/10 pb-12 md:grid-cols-3">
+    <ul className="grid gap-8 border-b border-white/10 pb-12 md:grid-cols-3 md:gap-10">
       {contactCards.map(({ title, Icon, lines }) => (
-        <PlusCard as="li" key={title} className="flex min-h-40 flex-col justify-between gap-6">
-          <span className="grid size-11 place-items-center rounded-xl bg-white/10 text-white transition group-hover/plus:bg-white group-hover/plus:text-secondary">
+        <li key={title} className="flex items-start gap-4">
+          <span className="grid size-11 shrink-0 place-items-center rounded-full text-primary ring-1 ring-white/20">
             <Icon className="size-5" />
           </span>
           <div className="min-w-0">
-            <p className="font-condensed text-xs tracking-[0.2em] text-white/75 uppercase">{title}</p>
-            {lines.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="mt-1 block font-heading text-lg font-semibold break-words text-white underline-offset-4 transition hover:text-white hover:underline"
-              >
-                {l.label}
-              </a>
-            ))}
+            <p className="font-condensed text-xs tracking-[0.2em] text-white/50 uppercase">{title}</p>
+            <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+              {lines.map((l, i) => (
+                <span key={l.href} className="flex items-center gap-3">
+                  {i > 0 && <span aria-hidden="true" className="h-4 w-px bg-white/25" />}
+                  <a href={l.href} className="whitespace-nowrap text-white transition hover:text-primary">
+                    {l.label}
+                  </a>
+                </span>
+              ))}
+            </p>
           </div>
-        </PlusCard>
+        </li>
       ))}
     </ul>
   )
