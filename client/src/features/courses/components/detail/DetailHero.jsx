@@ -1,8 +1,7 @@
 import { Breadcrumbs } from '@/shared/components/layout'
-import { Container } from '@/shared/components/ui'
+import { BlueprintGrid, Container } from '@/shared/components/ui'
 import { CourseTags } from './CourseTags'
 import { FactTiles } from './FactTiles'
-import { GridBeams } from './GridBeams'
 
 // Full-bleed course photo under a navy scrim (same language as the site's PageHero) and a faint blueprint
 // grid with dots at the crossings, fading out from the top-left, with light beams running along its lines; sits under the
@@ -24,11 +23,7 @@ export function DetailHero({ course, summary, markets, content }) {
       />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-r from-secondary-dark via-secondary-dark/90 to-secondary/60" />
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-secondary-dark/80 to-transparent" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 mask-radial-from-25% mask-radial-to-85% mask-radial-at-top-left">
-        <div className="absolute inset-0 bg-[linear-gradient(var(--color-white)_1px,transparent_1px),linear-gradient(90deg,var(--color-white)_1px,transparent_1px)] bg-size-[48px_48px] opacity-[0.07]" />
-        <div className="absolute inset-0 bg-[radial-gradient(var(--color-white)_1.5px,transparent_1.5px)] bg-size-[48px_48px] bg-position-[-23.5px_-23.5px] opacity-30" />
-        <GridBeams />
-      </div>
+      <BlueprintGrid />
 
       <Container className="grid grid-cols-1 gap-x-12 pt-32 pb-12 md:pt-40 lg:grid-cols-[minmax(0,1fr)_22rem] lg:pb-16">
         <div className="min-w-0 motion-safe:animate-[panel-in_600ms_ease-out]">

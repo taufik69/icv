@@ -13,11 +13,11 @@ export function HistorySection() {
           <HistoryMedia image={content.image} badge={content.badge} />
         </Reveal>
         <Reveal from="right" delay={100}>
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="history-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 leading-relaxed text-ink-muted">
+          <div className="mt-6 space-y-4 leading-relaxed text-secondary/80">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

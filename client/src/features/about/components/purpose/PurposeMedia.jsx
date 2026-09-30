@@ -44,14 +44,14 @@ export function PurposeMedia({ image, video, className }) {
         <Photo image={image} />
         <span aria-hidden="true" className="absolute inset-0 bg-secondary-dark/35 transition duration-500 group-hover/play:bg-secondary-dark/20" />
         <span className="absolute top-1/2 left-1/2 grid size-18 -translate-1/2 place-items-center">
-          <span className="absolute inset-0 rounded-full bg-primary/60 motion-safe:animate-ping" />
-          <span className="relative grid size-18 place-items-center rounded-full bg-primary text-white shadow-elevated ring-4 ring-white/30 transition group-hover/play:scale-110">
+          <span className="absolute inset-0 rounded-full bg-white/50 motion-safe:animate-ping" />
+          <span className="relative grid size-18 place-items-center rounded-full bg-white text-secondary shadow-elevated ring-4 ring-white/30 transition group-hover/play:scale-110">
             <PlayIcon className="ml-1 size-8" />
           </span>
         </span>
         <span className="absolute inset-x-0 bottom-5 flex justify-center">
           <span className="flex items-center gap-2 rounded-full bg-white px-5 py-2 font-heading text-sm font-semibold text-secondary shadow-card">
-            <PlayIcon className="size-3.5 text-primary" />
+            <PlayIcon className="size-3.5 text-secondary" />
             {video.label}
           </span>
         </span>

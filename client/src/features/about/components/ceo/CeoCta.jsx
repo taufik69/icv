@@ -8,12 +8,12 @@ export function CeoCta() {
     <section aria-labelledby="ceo-cta-title" className="bg-surface py-16 md:py-20">
       <Container>
         <Reveal className="relative flex flex-col items-start gap-8 overflow-hidden rounded-3xl bg-secondary p-8 shadow-brand md:flex-row md:items-center md:justify-between md:p-12">
-          <span aria-hidden="true" className="pointer-events-none absolute -top-24 -right-16 size-72 rounded-full bg-primary/25 blur-3xl" />
+          <span aria-hidden="true" className="pointer-events-none absolute -top-24 -right-16 size-72 rounded-full bg-white/8 blur-3xl" />
           <div className="relative max-w-xl">
             <h2 id="ceo-cta-title" className="text-3xl leading-tight text-white md:text-4xl">
               {content.title}
             </h2>
-            <p className="mt-3 leading-relaxed text-white/75">{content.text}</p>
+            <p className="mt-3 leading-relaxed text-white/90">{content.text}</p>
           </div>
           <div className="relative flex flex-wrap gap-3">
             <AppLink

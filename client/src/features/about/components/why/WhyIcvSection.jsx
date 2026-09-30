@@ -23,18 +23,18 @@ export function WhyIcvSection() {
         />
         <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-secondary to-transparent to-40% lg:bg-linear-to-r lg:to-30%" />
         <span className="absolute right-5 bottom-5 flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 font-heading text-sm font-semibold text-white ring-1 ring-white/30 backdrop-blur-md">
-          <MapPinIcon className="size-4 text-primary" />
+          <MapPinIcon className="size-4 text-white" />
           {image.caption}
         </span>
       </div>
 
       <Container className="relative py-16 md:py-24 lg:pointer-events-none">
         <Reveal from="left" className="lg:pointer-events-auto lg:w-7/12 lg:pr-12">
-          <SectionEyebrow tone="light">{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="why-icv-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-primary">{content.highlight}</span>
+            {content.title} <span className="text-white/75">{content.highlight}</span>
           </h2>
-          <p className="mt-5 max-w-xl leading-relaxed text-white/75">{content.text}</p>
+          <p className="mt-5 max-w-xl leading-relaxed text-white/90">{content.text}</p>
 
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {content.points.map((point, i) => (

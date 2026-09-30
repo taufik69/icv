@@ -1,4 +1,5 @@
 export { AppLink } from './AppLink'
+export { BlueprintGrid } from './BlueprintGrid'
 export { BrandLogo } from './BrandLogo'
 export { Button } from './Button'
 export { Card } from './Card'

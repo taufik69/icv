@@ -7,10 +7,10 @@ export function HeroStats({ stats }) {
           key={stat.label}
           className={`flex flex-col-reverse gap-1 px-5 py-5 md:px-7 md:py-6 ${i > 0 ? 'md:border-l md:border-white/10' : ''} ${i > 1 ? 'border-t border-white/10 md:border-t-0' : ''} ${i % 2 === 1 ? 'border-l border-white/10' : ''}`}
         >
-          <dt className="font-condensed text-xs tracking-[0.2em] text-white/60 uppercase">{stat.label}</dt>
+          <dt className="font-condensed text-xs tracking-[0.2em] text-white/75 uppercase">{stat.label}</dt>
           <dd className="font-heading text-2xl font-bold text-white md:text-4xl">
             {stat.value}
-            <span aria-hidden="true" className="ml-1 inline-block size-2 rounded-full bg-primary align-top" />
+            <span aria-hidden="true" className="ml-1 inline-block size-2 rounded-full bg-white/40 align-top" />
           </dd>
         </div>
       ))}

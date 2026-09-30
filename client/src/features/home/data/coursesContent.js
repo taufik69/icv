@@ -9,8 +9,8 @@ const categories = {
 }
 const course = (code, title, audience, category, overview, path, image) => ({
   code, title, audience, category: categories[category], overview,
-  // Pages rebuilt in this app are internal routes; the rest still link to icv.edu.au.
-  ...(/^\/(domestic|international)\//.test(path) ? { to: path } : { href: `${ICV}${path}` }),
+  // Rebuilt courses open their course detail page (/courses/$market/$slug); the rest still link to icv.edu.au.
+  ...(/^\/(domestic|international)\//.test(path) ? { to: `/courses${path}` } : { href: `${ICV}${path}` }),
   image: { portrait: `/images/${image}.webp`, wide: `/images/${image}-wide.webp` },
 })
 
