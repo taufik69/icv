@@ -50,7 +50,7 @@ export function PageHero({
 
       <Container className="pt-32 pb-12 md:pt-44 md:pb-16">
         <Breadcrumbs trail={trail} current={current} />
-        <div className="mt-8 max-w-3xl motion-safe:animate-[fade-in_700ms_ease-out]">
+        <div className="max-w-3xl md:mt-8 motion-safe:animate-[fade-in_700ms_ease-out]">
           {eyebrow && (
             <SectionEyebrow tone="light" accent={accent}>
               {eyebrow}

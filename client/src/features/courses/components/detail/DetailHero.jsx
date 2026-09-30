@@ -28,7 +28,7 @@ export function DetailHero({ course, summary, markets, content }) {
       <Container className="grid grid-cols-1 gap-x-12 pt-32 pb-12 md:pt-40 lg:grid-cols-[minmax(0,1fr)_22rem] lg:pb-16">
         <div className="min-w-0 motion-safe:animate-[panel-in_600ms_ease-out]">
           <Breadcrumbs trail={content.crumbs} current={course.title} />
-          <div className="mt-8">
+          <div className="md:mt-8">
             <CourseTags summary={summary} markets={markets} marketNames={content.marketNames} />
           </div>
           <h1 id="course-title" className="mt-5 text-4xl leading-[1.05] font-bold text-white md:text-5xl lg:text-6xl">{course.title}</h1>
