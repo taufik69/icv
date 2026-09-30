@@ -18,10 +18,10 @@ export function AgentsSection() {
             <h2 id="agents-title" className="mt-5 text-3xl leading-tight md:text-5xl">
               {content.title}
             </h2>
-            <p className="mt-3 font-condensed text-sm tracking-[0.2em] text-primary-hover uppercase">{content.subtitle}</p>
+            <p className="mt-3 font-condensed text-sm tracking-[0.2em] text-secondary-muted uppercase">{content.subtitle}</p>
           </div>
           <p className="rounded-2xl bg-secondary px-5 py-3 text-white shadow-brand">
-            <span className="font-heading text-3xl font-extrabold text-primary">{agents.length}</span>
+            <span className="font-heading text-3xl font-extrabold text-white">{agents.length}</span>
             <span className="ml-2 font-condensed text-xs tracking-[0.2em] text-white/70 uppercase">Agents listed</span>
           </p>
         </Reveal>

@@ -10,7 +10,7 @@ export function RatingCard({ summary, fiveStar, total }) {
           <StarIcon className="size-3.5 text-warning" />
           Google rating
         </h2>
-        <a href={summary.allHref} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-secondary underline-offset-4 hover:text-primary-hover hover:underline">
+        <a href={summary.allHref} target="_blank" rel="noopener noreferrer" className="text-sm font-semibold text-secondary underline-offset-4 hover:text-secondary-muted hover:underline">
           View on Google
         </a>
       </div>
@@ -34,7 +34,7 @@ export function RatingCard({ summary, fiveStar, total }) {
         </div>
         <div role="img" className="mt-3 flex gap-1.5" aria-label={`${fiveStar} of ${total} recent reviews are 5 stars`}>
           {Array.from({ length: total }, (_, i) => (
-            <span key={i} className={`h-2.5 flex-1 rounded-pill ${i < fiveStar ? 'bg-primary' : 'bg-surface-muted'}`} />
+            <span key={i} className={`h-2.5 flex-1 rounded-pill ${i < fiveStar ? 'bg-secondary' : 'bg-surface-muted'}`} />
           ))}
         </div>
       </div>
