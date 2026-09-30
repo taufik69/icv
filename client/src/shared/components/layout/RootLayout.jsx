@@ -10,13 +10,13 @@ const MobileMenu = lazy(() => import('@/shared/components/layout/header/MobileMe
 
 // Header is fixed; pages own their layout. Non-hero pages wrap content in PageContainer.
 // The mobile menu drawer is owned here so both the header hamburger and BottomNav open it.
-// The staff dashboard has its own chrome, so it skips the site header, footer and floating buttons.
+// The staff dashboard and the portal sign-in have their own chrome, so they skip the site header, footer and floating buttons.
 export function RootLayout() {
   const [menuOpen, setMenuOpen] = useState(false)
-  const isDashboard = useRouterState({ select: (s) => s.location.pathname.startsWith('/dashboard') })
+  const isBare = useRouterState({ select: (s) => s.location.pathname.startsWith('/dashboard') || s.location.pathname === '/portal' })
   const openMenu = () => setMenuOpen(true)
 
-  if (isDashboard) return <Outlet />
+  if (isBare) return <Outlet />
 
   return (
     <>
