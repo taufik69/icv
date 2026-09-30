@@ -1,38 +1,50 @@
 import { BriefcaseIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { Container, PlusCard, Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { Parts } from '../common/Parts'
 
-// Navy band: intro, job titles as a grid of icon tiles, then any trailing copy (e.g. exit points).
+// The intro card spans as many rows as the job cards take (two per row at lg). Full strings for Tailwind.
+const introRows = ['lg:row-span-1', 'lg:row-span-1', 'lg:row-span-2', 'lg:row-span-3', 'lg:row-span-4']
+
+// Navy band as a blueprint bento: tall intro card | job title cards (two per row, an odd last one spans both),
+// then trailing copy (e.g. exit points) in a full-width card. Cards: dashed outline + corner pluses.
 export function EmploymentSection({ employment }) {
   const [intro, jobs, ...rest] = employment.parts
+  const titles = jobs.chips
+  const rows = introRows[Math.min(Math.ceil(titles.length / 2), 4)]
 
   return (
     <section aria-labelledby="employment-title" className="relative isolate overflow-hidden bg-secondary py-16 md:py-24">
       <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -right-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl" />
       <Container>
-        <Reveal className="max-w-3xl">
-          <SectionEyebrow tone="light" accent="muted">
-            <span id="employment-title">{employment.title}</span>
-          </SectionEyebrow>
-          <p className="mt-6 text-lg leading-relaxed text-white/90">{intro}</p>
-        </Reveal>
-        <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {jobs.chips.map((job, i) => (
-            <Reveal as="li" key={job} delay={(i % 3) * 100}>
-              <div className="group flex h-full items-center gap-4 rounded-2xl bg-white/5 p-4 ring-1 ring-white/10 transition hover:-translate-y-0.5 hover:bg-white/10 hover:ring-white/30">
-                <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-white/10 text-white/90 transition group-hover:bg-white group-hover:text-secondary">
+        <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <Reveal as="li" className={`sm:col-span-2 lg:col-span-1 ${rows}`}>
+            <PlusCard className="flex h-full flex-col justify-between gap-8 md:p-8">
+              <SectionEyebrow tone="light" accent="muted" className="self-start">
+                <span id="employment-title">{employment.title}</span>
+              </SectionEyebrow>
+              <p className="text-lg leading-relaxed text-white/90">{intro}</p>
+            </PlusCard>
+          </Reveal>
+          {titles.map((job, i) => (
+            <Reveal as="li" key={job} delay={(i % 2) * 100} className={i === titles.length - 1 && titles.length % 2 ? 'lg:col-span-2' : ''}>
+              <PlusCard className="flex h-full min-h-36 flex-col justify-between gap-6">
+                <span className="grid size-11 place-items-center rounded-xl bg-white/10 text-white transition group-hover/plus:bg-white group-hover/plus:text-secondary">
                   <BriefcaseIcon className="size-5" />
                 </span>
-                <span className="font-heading font-semibold text-white">{job}</span>
-              </div>
+                <h3 className="text-xl leading-snug text-white">{job}</h3>
+              </PlusCard>
             </Reveal>
           ))}
+          {rest.length > 0 && (
+            <Reveal as="li" className="sm:col-span-2 lg:col-span-3">
+              <PlusCard className="md:p-8">
+                <div className="max-w-3xl [&>h4:first-child]:mt-0">
+                  <Parts parts={rest} tone="dark" />
+                </div>
+              </PlusCard>
+            </Reveal>
+          )}
         </ul>
-        {rest.length > 0 && (
-          <div className="mt-10 max-w-3xl">
-            <Parts parts={rest} tone="dark" />
-          </div>
-        )}
       </Container>
     </section>
   )
