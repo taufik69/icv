@@ -3,13 +3,14 @@ import { AppLink } from '@/shared/components/ui'
 
 // One submenu row: icon tile (fills green on hover / when current), label with optional course code,
 // and a chevron that slides in on hover. `aria-current` (set by AppLink) drives the active styles.
-export function NavDropdownItem({ item }) {
+export function NavDropdownItem({ item, onClick }) {
   const { Icon } = item
   return (
     <AppLink
       to={item.to}
       href={item.href}
       hash={item.hash}
+      onClick={onClick}
       className="group/row flex items-center gap-3 rounded-xl px-2.5 py-2.5 text-sm text-white/85 transition duration-200 hover:bg-white/10 hover:text-white aria-[current=page]:bg-white/10 aria-[current=page]:text-primary"
     >
       {Icon && (

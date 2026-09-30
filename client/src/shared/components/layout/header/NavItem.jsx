@@ -2,6 +2,7 @@ import { useRouterState } from '@tanstack/react-router'
 import { ChevronDownIcon } from '@/shared/components/icons'
 import { AppLink } from '@/shared/components/ui'
 import { NavDropdown } from './NavDropdown'
+import { useDropdownDismiss } from './useDropdownDismiss'
 
 // Class sets are picked in JS from the header state (not with group-data variants), so the top-of-page
 // styles can never leak onto the light floating bar.
@@ -43,6 +44,7 @@ export function NavItem({ item, floating }) {
   const active = useRouterState({
     select: (s) => item.to === s.location.pathname || (!item.passive && !!item.children?.some((c) => !c.hash && c.to === s.location.pathname)),
   })
+  const { closed, dismiss, reset } = useDropdownDismiss()
   const s = floating ? styles.float : styles.top
   const cls = `${base} ${active ? s.on : s.idle}`
   const inner = (
@@ -63,14 +65,28 @@ export function NavItem({ item, floating }) {
     )
   }
 
+  // A parent with its own page (About Us, Domestic, International) is a link; the rest only open the menu.
+  const chevron = `size-4 opacity-70 transition ${closed ? '' : 'group-hover:rotate-180 group-focus-within:rotate-180'}`
+  const trigger = (
+    <>
+      {inner}
+      <ChevronDownIcon className={chevron} />
+      {underline}
+    </>
+  )
+
   return (
-    <div className="group relative">
-      <button type="button" aria-haspopup="true" className={cls}>
-        {inner}
-        <ChevronDownIcon className="size-4 opacity-70 transition group-hover:rotate-180 group-focus-within:rotate-180" />
-        {underline}
-      </button>
-      <NavDropdown items={item.children} />
+    <div className="group relative" onMouseLeave={reset}>
+      {item.to ? (
+        <AppLink to={item.to} aria-haspopup="true" onClick={dismiss} className={cls}>
+          {trigger}
+        </AppLink>
+      ) : (
+        <button type="button" aria-haspopup="true" className={cls}>
+          {trigger}
+        </button>
+      )}
+      <NavDropdown items={item.children} closed={closed} onItemClick={dismiss} />
     </div>
   )
 }

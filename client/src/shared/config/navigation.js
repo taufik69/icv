@@ -28,6 +28,7 @@ export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => 
 export const mainNav = [
   {
     label: 'About Us',
+    to: '/about',
     Icon: HomeIcon,
     children: [
       { label: 'About ICV', to: '/about', Icon: InfoIcon },
@@ -56,11 +57,13 @@ export const mainNav = [
   },
   {
     label: 'Domestic',
+    to: '/domestic',
     Icon: GlobeIcon,
     children: domesticCourses,
   },
   {
     label: 'International',
+    to: '/international',
     Icon: PlaneIcon,
     children: internationalCourses,
   },
