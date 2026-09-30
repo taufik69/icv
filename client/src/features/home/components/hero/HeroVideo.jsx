@@ -14,8 +14,8 @@ function buildSrc({ vimeoId, hash }) {
     playsinline: '1',
     autopause: '0',
     dnt: '1',
-    // Smaller rendition on phones starts faster
-    quality: window.innerWidth < 768 ? '540p' : '1080p',
+    // No fixed `quality`: adaptive streaming starts on a small rendition and steps up, so the first frame
+    // arrives fast and playback doesn't stall (a forced 1080p had to buffer before it could start).
   })
   return `https://player.vimeo.com/video/${vimeoId}?${params}`
 }

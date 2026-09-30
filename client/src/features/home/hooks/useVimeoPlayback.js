@@ -20,6 +20,7 @@ export function useVimeoPlayback(iframeRef, containerRef, trimEnd = 0) {
 
   useEffect(() => {
     let ready = false
+    let seeking = false // one jump back per loop: repeat seeks while the first is in flight made the video stall
     let visible = true
     const post = (method, value) =>
       iframeRef.current?.contentWindow?.postMessage(JSON.stringify({ method, value }), ORIGIN)
@@ -34,7 +35,11 @@ export function useVimeoPlayback(iframeRef, containerRef, trimEnd = 0) {
       }
       if (PLAYING_EVENTS.has(data?.event)) setIsPlaying(true)
       const { seconds, duration } = data?.data ?? {}
-      if (trimEnd && duration && seconds >= duration - trimEnd) post('setCurrentTime', 0)
+      if (!trimEnd || !duration) return
+      if (seconds >= duration - trimEnd) {
+        if (!seeking) post('setCurrentTime', 0)
+        seeking = true
+      } else if (seconds < duration - trimEnd - 1) seeking = false
     }
     window.addEventListener('message', onMessage)
 
