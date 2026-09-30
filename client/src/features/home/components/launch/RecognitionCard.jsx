@@ -1,27 +1,31 @@
-// White card holding the official AQF / NRT logos (they're artwork on white) + ID tiles.
+import { PlusCard } from '@/shared/components/ui'
+
+// Wide cell: title + RTO/CRICOS ids on the navy card, official AQF / NRT logos on a white plate (they're artwork on white).
 export function RecognitionCard({ recognition }) {
   return (
-    <div className="relative rounded-3xl bg-surface p-6 shadow-card ring-1 ring-line-soft md:p-10">
-      <span aria-hidden="true" className="absolute -top-3 -right-3 -z-10 size-full rounded-3xl bg-secondary/6" />
-      <p className="font-condensed text-sm tracking-[0.2em] text-secondary-muted uppercase">Accredited</p>
-      <h3 className="mt-2 text-2xl leading-snug">{recognition.title}</h3>
-      <img
-        src={recognition.image}
-        alt={recognition.alt}
-        width="600"
-        height="160"
-        loading="lazy"
-        decoding="async"
-        className="mt-8 h-auto w-full"
-      />
-      <div className="mt-8 grid grid-cols-2 gap-3">
-        {recognition.ids.map((id) => (
-          <div key={id.label} className="rounded-2xl bg-surface-muted px-4 py-3">
-            <p className="font-condensed text-xs tracking-widest text-secondary-muted uppercase">{id.label}</p>
-            <p className="font-heading text-xl font-bold text-secondary">{id.value}</p>
-          </div>
-        ))}
+    <PlusCard className="grid h-full items-center gap-6 md:grid-cols-[1fr_1.1fr] md:p-8">
+      <div>
+        <h3 className="text-xl leading-snug text-white md:text-2xl">{recognition.title}</h3>
+        <dl className="mt-6 grid grid-cols-2 gap-3">
+          {recognition.ids.map((id) => (
+            <div key={id.label} className="rounded-lg bg-white/8 px-4 py-3 ring-1 ring-white/10">
+              <dt className="font-condensed text-xs tracking-widest text-white/60 uppercase">{id.label}</dt>
+              <dd className="font-heading text-xl font-bold text-white">{id.value}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
-    </div>
+      <div className="rounded-lg bg-white p-5">
+        <img
+          src={recognition.image}
+          alt={recognition.alt}
+          width="600"
+          height="160"
+          loading="lazy"
+          decoding="async"
+          className="h-auto w-full"
+        />
+      </div>
+    </PlusCard>
   )
 }

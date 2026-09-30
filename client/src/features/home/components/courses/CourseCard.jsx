@@ -11,7 +11,8 @@ const reveal =
 // Image card that fills its bento cell (sm+) or keeps a 3:4 ratio in the mobile carousel.
 // Hover (mouse only) reveals the overview + CTA; touch devices always see them.
 // Featured (2×2) cards show the overview permanently and use larger type.
-export function CourseCard({ course, featured = false }) {
+// Compact (single lg cell) cards drop the overview on lg so the CTA always fits.
+export function CourseCard({ course, featured = false, compact = false }) {
   const { Icon, label } = course.category
 
   return (
@@ -51,8 +52,8 @@ export function CourseCard({ course, featured = false }) {
 
           <div className={reveal}>
             <div className="overflow-hidden">
-              {!featured && <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-white/90">{course.overview}</p>}
-              <span className="btn-shine mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-heading text-sm font-semibold text-secondary">
+              {!featured && <p className={`mt-3 line-clamp-2 text-sm leading-relaxed text-white/90 ${compact ? 'lg:hidden' : ''}`}>{course.overview}</p>}
+              <span className="btn-shine mt-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-heading text-sm font-semibold text-secondary">
                 View course
                 <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
               </span>

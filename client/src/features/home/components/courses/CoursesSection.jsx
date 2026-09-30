@@ -31,7 +31,7 @@ export function CoursesSection() {
           {courses.map((course, i) => (
             <li key={course.code + course.title} className={`w-[80%] shrink-0 snap-start sm:w-auto ${layout[i].span}`}>
               <Reveal delay={(i % 4) * 100} className="h-full">
-                <CourseCard course={course} featured={layout[i].featured} />
+                <CourseCard course={course} featured={layout[i].featured} compact={layout[i].compact} />
               </Reveal>
             </li>
           ))}

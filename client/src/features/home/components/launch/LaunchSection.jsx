@@ -1,41 +1,36 @@
 import { launchContent as content } from '@/features/home/data/launchContent'
-import { ArrowRightIcon, CheckCircleIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { Container, Reveal } from '@/shared/components/ui'
+import { BenefitCard } from './BenefitCard'
+import { LaunchIntro } from './LaunchIntro'
 import { RecognitionCard } from './RecognitionCard'
 
+// Navy blueprint bento (same language as the course Employment section):
+// lg:  intro | benefits (two per row, compact; an odd last one spans both)
+//      intro | recognition (full width of the right column)
+// Below lg everything stacks: intro, benefits (two per row from sm), recognition.
 export function LaunchSection() {
+  const odd = content.benefits.length % 2 === 1
+  const last = content.benefits.length - 1
+
   return (
-    <section aria-labelledby="launch-title" className="bg-surface pt-20 pb-16 md:pt-28 md:pb-20">
-      <Container className="grid items-center gap-14 lg:grid-cols-[7fr_5fr] lg:gap-20">
-        <Reveal from="left">
-          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
-          <h2 id="launch-title" className="mt-5 text-2xl leading-tight capitalize sm:text-3xl md:text-5xl">
-            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
-          </h2>
-          <div className="mt-6 space-y-3 leading-relaxed text-secondary/80">
-            {content.paragraphs.map((t) => (
-              <p key={t.slice(0, 20)}>{t}</p>
-            ))}
-          </div>
-          <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-            {content.benefits.map((b) => (
-              <li key={b} className="flex items-start gap-3 rounded-xl bg-surface-alt px-4 py-3 text-sm font-medium text-secondary ring-1 ring-line-soft">
-                <CheckCircleIcon className="mt-px size-5 shrink-0 text-secondary-muted" />
-                {b}
-              </li>
+    <section aria-labelledby="launch-title" className="relative isolate overflow-hidden bg-secondary py-16 md:py-24">
+      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -left-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl" />
+      <Container className="grid grid-cols-1 gap-6 lg:grid-cols-[5fr_7fr]">
+        <Reveal from="left" className="h-full">
+          <LaunchIntro content={content} />
+        </Reveal>
+        <div className="grid min-w-0 grid-cols-1 content-start gap-6">
+          <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {content.benefits.map((b, i) => (
+              <Reveal as="li" key={b.text} delay={(i % 2) * 100} className={odd && i === last ? 'sm:col-span-2' : ''}>
+                <BenefitCard benefit={b} />
+              </Reveal>
             ))}
           </ul>
-          <a
-            href={content.action.href}
-            className="group btn-shine mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary"
-          >
-            {content.action.label}
-            <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-          </a>
-        </Reveal>
-        <Reveal from="right" delay={100}>
-          <RecognitionCard recognition={content.recognition} />
-        </Reveal>
+          <Reveal>
+            <RecognitionCard recognition={content.recognition} />
+          </Reveal>
+        </div>
       </Container>
     </section>
   )

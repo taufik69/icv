@@ -9,7 +9,7 @@ const BIG = { span: 'sm:col-span-2 lg:row-span-2', featured: true }
 const TALL = { span: 'lg:row-span-2', featured: false }
 const WIDE = { span: 'lg:col-span-2', featured: false }
 const FULL = { span: 'lg:col-span-4', featured: false }
-const ONE = { span: '', featured: false }
+const ONE = { span: '', featured: false, compact: true } // single 17rem lg cell: no room for the overview
 
 const patterns = {
   8: [BIG, TALL, ONE, ONE, ONE, ONE, BIG, WIDE],

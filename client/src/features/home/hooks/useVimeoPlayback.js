@@ -14,7 +14,8 @@ function parse(data) {
 // Talks to the Vimeo iframe via postMessage (no player SDK needed):
 // - reports `isPlaying` once real frames are rolling, so the poster can fade out
 // - pauses the video while the hero is off-screen to save CPU / bandwidth
-export function useVimeoPlayback(iframeRef, containerRef) {
+// - skips the last `trimEnd` seconds by jumping back to the start
+export function useVimeoPlayback(iframeRef, containerRef, trimEnd = 0) {
   const [isPlaying, setIsPlaying] = useState(false)
 
   useEffect(() => {
@@ -32,6 +33,8 @@ export function useVimeoPlayback(iframeRef, containerRef) {
         if (!visible) post('pause')
       }
       if (PLAYING_EVENTS.has(data?.event)) setIsPlaying(true)
+      const { seconds, duration } = data?.data ?? {}
+      if (trimEnd && duration && seconds >= duration - trimEnd) post('setCurrentTime', 0)
     }
     window.addEventListener('message', onMessage)
 
@@ -45,7 +48,7 @@ export function useVimeoPlayback(iframeRef, containerRef) {
       window.removeEventListener('message', onMessage)
       observer.disconnect()
     }
-  }, [iframeRef, containerRef])
+  }, [iframeRef, containerRef, trimEnd])
 
   return isPlaying
 }
