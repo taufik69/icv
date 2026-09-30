@@ -5,7 +5,7 @@ import { Spinner } from '@/shared/components/ui'
 const markets = ['domestic', 'international']
 
 // Course finder. ?market=domestic|international opens on that tab.
-export const Route = createFileRoute('/courses')({
+export const Route = createFileRoute('/courses/')({
   validateSearch: (search) => ({ market: markets.includes(search.market) ? search.market : undefined }),
   loader: async () => (await loadCatalogue()).map(summariseCourse),
   pendingComponent: Spinner,

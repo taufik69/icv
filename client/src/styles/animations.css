@@ -61,6 +61,11 @@
   to { opacity: 1; }
 }
 
+@keyframes panel-in { /* course detail tab panels: new content rises in softly */
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
+}
+
 /*
  * Shine sweep for buttons: a light band sweeps across on hover / keyboard focus.
  * Pseudo-element sits above the button background but below its text (isolation + z-index -1).

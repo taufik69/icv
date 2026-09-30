@@ -71,7 +71,7 @@ export function summariseCourse(course) {
     fee,
     feeValue: Number(fee.amount?.replace(/[^\d.]/g, '')) || 0,
     image: course.images.hero,
-    ...(course.href ? { href: course.href } : { to: `/${course.market}/${course.slug}` }),
+    ...(course.href ? { href: course.href } : { to: `/courses/${course.market}/${course.slug}` }),
     enquire: `/enquire-now?course=${toFormCode(course.code)}`,
   }
 }

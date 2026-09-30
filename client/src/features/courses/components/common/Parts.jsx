@@ -3,12 +3,18 @@ import { CheckCircleIcon, ChevronDownIcon } from '@/shared/components/icons'
 // Renders course copy "parts": string = paragraph, { list }, { chips }, { heading }, { sep: 'AND' | 'OR' },
 // { more: parts, label } = collapsible block (native <details>).
 // List items may be strings or { before?, text, href, after? } for an inline link.
-function Item({ item }) {
+// `accent` picks the highlight colour: 'green' (course pages) or 'navy' (course finder detail pages).
+const accents = {
+  green: { icon: 'text-primary-hover', chip: 'bg-primary-soft text-secondary ring-primary/25', link: 'decoration-primary hover:text-primary-hover' },
+  navy: { icon: 'text-secondary-muted', chip: 'bg-surface-muted text-secondary ring-line', link: 'decoration-secondary/40 hover:text-secondary' },
+}
+
+function Item({ item, link }) {
   if (typeof item === 'string') return item
   return (
     <>
       {item.before}
-      <a href={item.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary underline decoration-primary decoration-2 underline-offset-4 hover:text-primary-hover">
+      <a href={item.href} target="_blank" rel="noopener noreferrer" className={`font-semibold text-secondary underline decoration-2 underline-offset-4 ${link}`}>
         {item.text}
       </a>
       {item.after}
@@ -16,7 +22,8 @@ function Item({ item }) {
   )
 }
 
-export function Parts({ parts, tone = 'light' }) {
+export function Parts({ parts, tone = 'light', accent = 'green' }) {
+  const a = accents[accent]
   const text = tone === 'dark' ? 'text-white/75' : 'text-ink-muted'
   const strong = tone === 'dark' ? 'text-white' : 'text-ink'
 
@@ -29,10 +36,10 @@ export function Parts({ parts, tone = 'light' }) {
         <details key={i} className="group mt-4 rounded-2xl bg-surface-muted/70 ring-1 ring-line-soft open:bg-surface open:shadow-raised">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-4 py-3 font-heading text-sm font-semibold text-secondary [&::-webkit-details-marker]:hidden">
             {part.label}
-            <ChevronDownIcon className="size-4 text-primary-hover transition group-open:rotate-180" />
+            <ChevronDownIcon className={`size-4 transition group-open:rotate-180 ${a.icon}`} />
           </summary>
           <div className="px-4 pb-4">
-            <Parts parts={part.more} tone={tone} />
+            <Parts parts={part.more} tone={tone} accent={accent} />
           </div>
         </details>
       )
@@ -41,7 +48,7 @@ export function Parts({ parts, tone = 'light' }) {
       return (
         <ul key={i} className="mt-4 flex flex-wrap gap-2">
           {part.chips.map((c) => (
-            <li key={c} className={`rounded-pill px-4 py-2 font-heading text-sm font-semibold ring-1 ${tone === 'dark' ? 'bg-white/10 text-white ring-white/15' : 'bg-primary-soft text-secondary ring-primary/25'}`}>{c}</li>
+            <li key={c} className={`rounded-pill px-4 py-2 font-heading text-sm font-semibold ring-1 ${tone === 'dark' ? 'bg-white/10 text-white ring-white/15' : a.chip}`}>{c}</li>
           ))}
         </ul>
       )
@@ -50,8 +57,8 @@ export function Parts({ parts, tone = 'light' }) {
       <ul key={i} className="mt-4 grid gap-2.5">
         {part.list.map((item, j) => (
           <li key={j} className={`flex items-start gap-3 leading-relaxed ${strong}`}>
-            <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-primary-hover" />
-            <span><Item item={item} /></span>
+            <CheckCircleIcon className={`mt-0.5 size-5 shrink-0 ${a.icon}`} />
+            <span><Item item={item} link={a.link} /></span>
           </li>
         ))}
       </ul>

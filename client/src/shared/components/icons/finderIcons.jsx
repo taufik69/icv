@@ -35,3 +35,9 @@ export const CompassIcon = (p) => (
     <path d="m15.5 8.5-2 5-5 2 2-5z" />
   </Icon>
 )
+
+export const SendIcon = (p) => (
+  <Icon {...p}>
+    <path d="M21 3 10 14M21 3l-7 18-4-7-7-4z" />
+  </Icon>
+)
