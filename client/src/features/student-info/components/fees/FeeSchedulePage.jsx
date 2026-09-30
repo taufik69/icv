@@ -13,23 +13,23 @@ export function FeeSchedulePage() {
 
   return (
     <>
-      <PageHero id="fees-title" current="Fee Schedule – 2026" {...content.hero} />
+      <PageHero accent="muted" grid id="fees-title" current="Fee Schedule – 2026" {...content.hero} />
       <section ref={ref} aria-label="Fees and Charges for 2026" className={`relative overflow-hidden bg-surface py-20 md:py-28 ${doodle}`}>
         <Container>
           <Reveal from="zoom" className="mx-auto max-w-3xl rounded-3xl bg-surface p-6 text-center sm:p-8 shadow-elevated ring-1 ring-line-soft md:p-14">
-            <span className="mx-auto grid size-20 place-items-center rounded-3xl bg-secondary text-primary shadow-brand">
+            <span className="mx-auto grid size-20 place-items-center rounded-3xl bg-secondary text-white shadow-brand">
               <CoinsIcon className="size-10" />
             </span>
-            <p className="mt-8 text-xl leading-relaxed text-ink md:text-2xl">
+            <p className="mt-8 text-xl leading-relaxed text-secondary md:text-2xl">
               {before}
-              <a href={action.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary underline decoration-primary decoration-4 underline-offset-4 hover:text-primary-hover">
+              <a href={action.href} target="_blank" rel="noopener noreferrer" className="font-semibold text-secondary underline decoration-secondary/30 decoration-4 underline-offset-4 hover:text-secondary-muted">
                 here
               </a>
               {after}
             </p>
             <ul className="mt-6 flex flex-wrap justify-center gap-2">
               {content.audiences.map((a) => (
-                <li key={a} className="rounded-pill bg-primary-soft px-4 py-1.5 font-heading text-sm font-semibold text-secondary">
+                <li key={a} className="rounded-pill bg-secondary/6 px-4 py-1.5 font-heading text-sm font-semibold text-secondary">
                   {a}
                 </li>
               ))}

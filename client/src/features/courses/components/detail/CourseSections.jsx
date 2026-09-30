@@ -9,10 +9,10 @@ export function CourseSections({ tabs }) {
   return (
     <div>
       <nav aria-label="Course sections" className="sticky top-22 z-20 -mx-5 bg-surface-muted/85 px-5 py-3 backdrop-blur-md md:top-24 md:mx-0 md:bg-transparent md:p-0 md:backdrop-blur-none">
-        <ul ref={listRef} className="relative flex gap-1 overflow-x-auto rounded-full bg-white p-1.5 shadow-card ring-1 ring-line [scrollbar-width:none] [--tab-w:0px] [--tab-x:0px]">
+        <ul ref={listRef} className="relative flex gap-1 overflow-x-auto rounded-full bg-white p-1.5 shadow-card ring-1 ring-line [scrollbar-width:none] [--ind-w:0px] [--ind-x:0px]">
           <li
             aria-hidden="true"
-            className="pointer-events-none absolute top-1.5 bottom-1.5 left-0 w-(--tab-w) translate-x-(--tab-x) rounded-full bg-secondary shadow-brand transition-[translate,width] duration-500 ease-[cubic-bezier(0.3,0.9,0.3,1)] motion-reduce:transition-none"
+            className="pointer-events-none absolute top-1.5 bottom-1.5 left-0 w-(--ind-w) translate-x-(--ind-x) rounded-full bg-secondary shadow-brand transition-[translate,width] duration-500 ease-[cubic-bezier(0.3,0.9,0.3,1)] motion-reduce:transition-none"
           />
           {tabs.map(({ id, label, Icon, count }) => {
             const on = id === active

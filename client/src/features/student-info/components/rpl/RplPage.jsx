@@ -17,9 +17,9 @@ export function RplPage() {
       <RplOverview />
       <DocSection section={rplGuide} />
       <DocSection section={rplFees}>
-        <p className="mt-5 text-lg leading-relaxed text-ink-muted">
+        <p className="mt-5 text-lg leading-relaxed text-secondary/80">
           {before}
-          <Link to="/student-info/fee-schedule" className="font-semibold text-secondary underline decoration-primary decoration-2 underline-offset-4 hover:text-primary-hover">
+          <Link to="/student-info/fee-schedule" className="font-semibold text-secondary underline decoration-secondary/30 decoration-2 underline-offset-4 hover:text-secondary-muted">
             {linkText}
           </Link>
           {after}

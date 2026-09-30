@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
-import { smoothScrollTo } from '../lib/smoothScrollTo'
-import { useTabIndicator } from './useTabIndicator'
+import { useSlidingIndicator } from '@/shared/hooks/useSlidingIndicator'
+import { smoothScrollTo } from '@/shared/lib/smoothScrollTo'
 
 const SPY_LINE = 200 // px from the top: just under the site header + sticky tab bar
 
@@ -38,7 +38,7 @@ export function useCourseTabs(ids) {
     if (list && tab) list.scrollTo({ left: tab.parentElement.offsetLeft - list.clientWidth / 2 + tab.clientWidth / 2, behavior: 'smooth' })
   }, [active])
 
-  useTabIndicator(listRef, tabRefs, active)
+  useSlidingIndicator(listRef, tabRefs, active)
 
   const go = (id) => (e) => {
     e.preventDefault()
