@@ -1,7 +1,8 @@
 import { ArrowRightIcon, ArrowUpRightIcon } from '@/shared/components/icons'
 import { AppLink } from '@/shared/components/ui'
 
-// Photo card: whole card opens the course (stretched title link); "APPLY NOW" sits above it as its own link.
+// Photo card: whole card opens the course detail page (/courses/$market/$slug, via the stretched title link);
+// "APPLY NOW" sits above it as its own link.
 export function CourseCard({ course, apply }) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-3xl bg-surface shadow-card ring-1 ring-line-soft transition duration-500 hover:-translate-y-1 hover:shadow-elevated hover:ring-secondary/30">
@@ -13,13 +14,13 @@ export function CourseCard({ course, apply }) {
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl leading-snug">
-          <AppLink to={course.to} href={course.href} className="text-secondary after:absolute after:inset-0 hover:text-secondary">
+          <AppLink to={course.to && `/courses${course.to}`} href={course.href} className="text-secondary after:absolute after:inset-0 hover:text-secondary">
             {course.title}
           </AppLink>
         </h3>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-secondary/80">{course.text}</p>
         <div className="mt-6 flex items-center justify-between gap-3 border-t border-line-soft pt-5">
-          <AppLink href={apply.href} className="btn-shine relative z-10 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 font-heading text-xs font-semibold tracking-wider text-white transition hover:bg-primary hover:text-on-primary">
+          <AppLink href={apply.href} className="btn-shine relative z-10 inline-flex items-center gap-2 rounded-md bg-secondary px-4 py-2 font-heading text-xs font-semibold tracking-wider text-white transition hover:bg-secondary-dark hover:text-white">
             {apply.label}
             <ArrowUpRightIcon className="size-3.5" />
           </AppLink>
