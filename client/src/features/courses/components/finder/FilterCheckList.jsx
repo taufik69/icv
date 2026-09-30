@@ -19,7 +19,13 @@ export function FilterCheckList({ options, selected, onToggle }) {
                 {checked && <CheckIcon className="size-3" strokeWidth="3" />}
               </span>
               <span className="min-w-0 flex-1">{value}</span>
-              <span className="text-xs text-ink-subtle tabular-nums">{count}</span>
+              <span
+                className={`grid size-6 shrink-0 place-items-center rounded-md text-xs font-semibold tabular-nums transition ${
+                  checked ? 'bg-secondary text-white' : count ? 'bg-secondary/8 text-secondary-muted' : 'bg-secondary/4 text-ink-disabled'
+                }`}
+              >
+                {count}
+              </span>
             </label>
           </li>
         )

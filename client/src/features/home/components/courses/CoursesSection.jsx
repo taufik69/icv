@@ -18,8 +18,8 @@ export function CoursesSection() {
           <h2 id="courses-title" className="font-condensed text-2xl font-bold uppercase sm:text-3xl md:text-4xl">
             {content.title}
           </h2>
-          <p className="mt-3 text-base leading-relaxed text-ink-muted md:text-lg">{content.subtitle}</p>
-          <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full bg-primary" />
+          <p className="mt-3 text-base leading-relaxed text-secondary/80 md:text-lg">{content.subtitle}</p>
+          <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full bg-secondary" />
         </Reveal>
 
         <div className="mt-8 flex justify-center">

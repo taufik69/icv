@@ -19,7 +19,7 @@ export function StudyShowcase({ content }) {
   return (
     <div className="mt-16 md:mt-20">
       <Reveal className="text-center">
-        <SectionEyebrow>{content.studyTitle}</SectionEyebrow>
+        <SectionEyebrow accent="muted">{content.studyTitle}</SectionEyebrow>
       </Reveal>
       <div className="mt-14 grid items-center gap-x-10 gap-y-14 sm:grid-cols-2 lg:grid-cols-[1fr_minmax(0,24rem)_1fr] lg:gap-x-14">
         <PointColumn points={content.points.left} side="left" />

@@ -8,19 +8,19 @@ export function LaunchSection() {
     <section aria-labelledby="launch-title" className="bg-surface pt-20 pb-16 md:pt-28 md:pb-20">
       <Container className="grid items-center gap-14 lg:grid-cols-[7fr_5fr] lg:gap-20">
         <Reveal from="left">
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="launch-title" className="mt-5 text-2xl leading-tight capitalize sm:text-3xl md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-3 leading-relaxed text-ink-muted">
+          <div className="mt-6 space-y-3 leading-relaxed text-secondary/80">
             {content.paragraphs.map((t) => (
               <p key={t.slice(0, 20)}>{t}</p>
             ))}
           </div>
           <ul className="mt-8 grid gap-3 sm:grid-cols-2">
             {content.benefits.map((b) => (
-              <li key={b} className="flex items-start gap-3 rounded-xl bg-surface-alt px-4 py-3 text-sm font-medium text-ink ring-1 ring-line-soft">
-                <CheckCircleIcon className="mt-px size-5 shrink-0 text-primary-hover" />
+              <li key={b} className="flex items-start gap-3 rounded-xl bg-surface-alt px-4 py-3 text-sm font-medium text-secondary ring-1 ring-line-soft">
+                <CheckCircleIcon className="mt-px size-5 shrink-0 text-secondary-muted" />
                 {b}
               </li>
             ))}

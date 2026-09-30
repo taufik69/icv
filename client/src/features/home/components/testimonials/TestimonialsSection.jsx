@@ -14,13 +14,13 @@ export function TestimonialsSection() {
       aria-labelledby="testimonials-title"
       className={`relative overflow-hidden bg-secondary-dark bg-cover bg-center py-20 md:py-28 lg:bg-fixed ${bg}`}
     >
-      <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/45 via-secondary-dark/10 to-secondary-dark/50" />
+      <div aria-hidden="true" className="absolute inset-0 bg-linear-to-b from-secondary-dark/90 via-secondary-dark/75 to-secondary-dark/90" />
       <Container className="relative">
         <Reveal className="text-center">
           <h2 id="testimonials-title" className="font-condensed text-2xl font-bold text-white uppercase sm:text-3xl md:text-4xl">
-            {content.title} <span className="text-primary">{content.highlight}</span>
+            {content.title} <span className="text-white/70">{content.highlight}</span>
           </h2>
-          <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full bg-primary" />
+          <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-full bg-white/40" />
         </Reveal>
         <Reveal delay={100} className="mt-12">
           <TestimonialCarousel reviews={content.reviews} />

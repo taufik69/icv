@@ -11,8 +11,8 @@ export function VideoCard({ video }) {
 
   return (
     <div className="relative mx-auto w-full max-w-sm">
-      <div className="absolute inset-0 -m-3 rounded-3xl border-4 border-primary/60" />
-      <span className="absolute -top-8 left-1/2 size-3 rounded-full bg-primary motion-safe:animate-float" />
+      <div className="absolute inset-0 -m-3 rounded-3xl border-4 border-secondary/12" />
+      <span className="absolute -top-8 left-1/2 size-3 rounded-full bg-secondary/30 motion-safe:animate-float" />
       <span className="absolute -bottom-10 left-1/2 size-2 rounded-full bg-secondary/40 motion-safe:animate-float-slow" />
 
       <button
@@ -33,14 +33,14 @@ export function VideoCard({ video }) {
         />
         <span className="absolute inset-0 bg-linear-to-t from-secondary-dark/85 via-secondary-dark/10 to-transparent" />
         <span className="absolute top-1/2 left-1/2 grid size-16 -translate-1/2 place-items-center">
-          <span className="absolute inset-0 rounded-full bg-primary/60 motion-safe:animate-ping" />
-          <span className="relative grid size-16 place-items-center rounded-full bg-primary text-white shadow-elevated transition group-hover:scale-110">
+          <span className="absolute inset-0 rounded-full bg-white/50 motion-safe:animate-ping" />
+          <span className="relative grid size-16 place-items-center rounded-full bg-white text-secondary shadow-elevated transition group-hover:scale-110">
             <PlayIcon className="ml-0.5 size-7" />
           </span>
         </span>
         <span className="absolute inset-x-0 bottom-5 flex justify-center">
           <span className="flex items-center gap-2 rounded-full bg-white px-5 py-2 font-heading text-sm font-semibold text-secondary shadow-card transition group-hover:gap-3">
-            <PlayIcon className="size-3.5 text-primary" />
+            <PlayIcon className="size-3.5 text-secondary" />
             {video.label}
           </span>
         </span>

@@ -20,11 +20,11 @@ export function WelcomeSection() {
         from="left"
         className="order-last px-5 py-12 md:px-8 md:py-16 lg:order-none lg:ml-auto lg:w-full lg:max-w-[40rem] lg:py-24 lg:pr-16"
       >
-        <SectionEyebrow tone="light">{content.eyebrow}</SectionEyebrow>
+        <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
         <h2 id="welcome-title" className="mt-5 text-2xl leading-tight capitalize text-white sm:text-3xl md:text-4xl">
-          {content.title} <span className="text-primary">{content.highlight}</span>
+          {content.title} <span className="text-white/70">{content.highlight}</span>
         </h2>
-        <p className="mt-5 leading-relaxed text-white/75">{content.text}</p>
+        <p className="mt-5 leading-relaxed text-white/90">{content.text}</p>
 
         <div className="mt-8 flex gap-2 sm:gap-3">
           {content.actions.map((a) => (
@@ -36,8 +36,8 @@ export function WelcomeSection() {
 
         <ul className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-white/10 pt-6">
           {content.facts.map(({ label, Icon }) => (
-            <li key={label} className="flex items-center gap-2 font-condensed text-sm tracking-wide text-white/80">
-              <Icon className="size-4 text-primary" />
+            <li key={label} className="flex items-center gap-2 font-condensed text-sm tracking-wide text-white/90">
+              <Icon className="size-4 text-white/70" />
               {label}
             </li>
           ))}

@@ -10,18 +10,18 @@ const buttonVariants = {
 export function HeroContent({ content }) {
   return (
     <div className="max-w-3xl">
-      <p className="flex items-center gap-3 font-condensed text-xs tracking-[0.25em] text-white/75 uppercase sm:text-sm">
-        <span aria-hidden="true" className="h-0.5 w-8 rounded-pill bg-primary" />
+      <p className="flex items-center gap-3 font-condensed text-xs tracking-[0.25em] text-white/90 uppercase sm:text-sm">
+        <span aria-hidden="true" className="h-0.5 w-8 rounded-pill bg-white/60" />
         {content.eyebrow}
       </p>
       <h1 className="mt-4 text-4xl leading-tight font-bold text-white sm:text-5xl lg:text-6xl">
         {content.headline.map((line, i) => (
-          <span key={line} className={`${i === content.highlightLine ? 'text-primary' : ''}`}>
+          <span key={line} className={`${i === content.highlightLine ? 'text-white/75' : ''}`}>
             {line}
           </span>
         ))}
       </h1>
-      <p className="mt-5 max-w-md text-base leading-relaxed text-white/80 md:text-lg">
+      <p className="mt-5 max-w-md text-base leading-relaxed text-white/90 md:text-lg">
         {content.description}
       </p>
       <div className="mt-8 flex gap-2 sm:gap-3">

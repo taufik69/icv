@@ -2,7 +2,7 @@ import { ArrowRightIcon } from '@/shared/components/icons'
 import { AppLink } from '@/shared/components/ui'
 
 const audienceStyles = {
-  domestic: 'bg-primary text-on-primary',
+  domestic: 'bg-secondary text-white ring-1 ring-white/30',
   international: 'bg-white text-secondary',
 }
 const reveal =
@@ -42,16 +42,16 @@ export function CourseCard({ course, featured = false }) {
         </div>
 
         <div className={featured ? 'max-w-lg' : ''}>
-          <p className="font-condensed text-sm tracking-wider text-primary">{course.code}</p>
+          <p className="font-condensed text-sm tracking-wider text-white/80">{course.code}</p>
           <h3 className={`mt-1 leading-snug font-semibold text-white ${featured ? 'text-xl sm:text-2xl md:text-3xl' : 'text-lg'}`}>
             {course.title}
           </h3>
-          <p className="mt-1 text-xs text-white/70">{label}</p>
-          {featured && <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">{course.overview}</p>}
+          <p className="mt-1 text-xs text-white/85">{label}</p>
+          {featured && <p className="mt-3 text-sm leading-relaxed text-white/90 md:text-base">{course.overview}</p>}
 
           <div className={reveal}>
             <div className="overflow-hidden">
-              {!featured && <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-white/80">{course.overview}</p>}
+              {!featured && <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-white/90">{course.overview}</p>}
               <span className="btn-shine mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-heading text-sm font-semibold text-secondary">
                 View course
                 <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />

@@ -29,7 +29,9 @@ export function CourseDetailPage({ course, summary, catalogue }) {
       content: (
         <>
           {course.images.overview && <OverviewPhoto image={course.images.overview} />}
-          <Parts parts={course.overview.paragraphs} accent="navy" />
+          <div className="text-justify hyphens-auto">
+            <Parts parts={course.overview.paragraphs} accent="navy" />
+          </div>
         </>
       ),
     },

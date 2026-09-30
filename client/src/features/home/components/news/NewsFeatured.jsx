@@ -14,13 +14,13 @@ export function NewsFeatured({ post }) {
           decoding="async"
           className="size-full object-cover transition duration-700 group-hover:scale-105"
         />
-        <span className="absolute top-4 left-4 rounded-full bg-primary px-3 py-1 font-condensed text-xs font-bold tracking-wider text-on-primary uppercase">
+        <span className="absolute top-4 left-4 rounded-full bg-secondary px-3 py-1 font-condensed text-xs font-bold tracking-wider text-white uppercase">
           Featured
         </span>
       </div>
       <NewsDate date={post.date} className="mt-5" />
       <h3 className="mt-2 text-xl leading-snug font-semibold md:text-2xl">{post.title}</h3>
-      <p className="mt-3 line-clamp-3 leading-relaxed text-ink-muted">{post.excerpt}</p>
+      <p className="mt-3 line-clamp-3 leading-relaxed text-secondary/80">{post.excerpt}</p>
       <span className="mt-4 inline-flex items-center gap-2 font-heading font-semibold text-secondary">
         Read more
         <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />

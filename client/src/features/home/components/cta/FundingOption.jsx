@@ -20,17 +20,17 @@ export function FundingOption({ option }) {
           decoding="async"
           className="size-full object-cover transition duration-700 group-hover:scale-110"
         />
-        <span className="absolute bottom-1.5 left-1.5 grid size-8 place-items-center rounded-lg bg-primary text-on-primary shadow-card">
+        <span className="absolute bottom-1.5 left-1.5 grid size-8 place-items-center rounded-lg bg-white text-secondary shadow-card">
           <Icon className="size-4" />
         </span>
       </span>
       <span className="min-w-0 flex-1">
-        <span className="inline-block rounded-pill bg-primary/20 px-2.5 py-0.5 font-condensed whitespace-nowrap text-xs font-bold tracking-wider text-primary uppercase">
+        <span className="inline-block rounded-pill bg-white/15 px-2.5 py-0.5 font-condensed whitespace-nowrap text-xs font-bold tracking-wider text-white uppercase">
           {option.tag}
         </span>
         <span className="mt-1.5 block font-heading text-lg leading-snug font-bold sm:text-xl">{option.title}</span>
       </span>
-      <span className="mr-2 grid size-10 shrink-0 place-items-center rounded-full ring-1 ring-white/30 transition duration-300 group-hover:bg-primary group-hover:text-on-primary group-hover:ring-primary">
+      <span className="mr-2 grid size-10 shrink-0 place-items-center rounded-full ring-1 ring-white/30 transition duration-300 group-hover:bg-white group-hover:text-secondary group-hover:ring-white">
         <ArrowRightIcon className="size-4 transition group-hover:translate-x-0.5" />
       </span>
     </AppLink>

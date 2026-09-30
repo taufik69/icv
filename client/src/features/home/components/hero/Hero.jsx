@@ -27,6 +27,8 @@ export function Hero() {
         )}
         {/* Content sits at the bottom (phones: pb-40 clears BottomNav + ContactFab). Scrim: clear at the top so the photo/video is the subject, deep navy at the bottom behind the text (phones: the navy reaches higher, via-70%, since the copy takes more of the height) */}
         <div className="absolute inset-0 bg-linear-to-t from-secondary-dark via-secondary-dark/45 via-70% to-transparent md:via-45%" />
+        <div className="absolute inset-0 bg-linear-to-r from-secondary-dark/60 via-secondary-dark/20 via-50% to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-secondary-dark/55 to-transparent" />
       </div>
 
       <Container className="grid gap-10 pt-28 pb-40 md:pt-32 md:pb-20 lg:grid-cols-[1fr_22rem] lg:items-end">
