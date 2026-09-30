@@ -1,21 +1,17 @@
-import { Fragment } from 'react'
 import { mainNav } from '@/shared/config/navigation'
 import { NavItem } from './NavItem'
 
-const Divider = ({ className = '' }) => <span aria-hidden="true" className={`h-6 w-px bg-line ${className}`} />
-
-// xl+: centred row. On the floating bar hairline dividers separate logo | pages | International & Contact | actions.
+// xl+: one centred capsule holding the text-only items — frosted glass over the hero / navy bar,
+// a soft grey track inside the light floating bar. The current section is a solid pill (see NavItem).
 export function DesktopNav({ floating }) {
+  const capsule = floating ? 'bg-surface-muted ring-line-soft' : 'bg-white/8 ring-white/15 backdrop-blur-md'
   return (
-    <nav aria-label="Main" className="hidden flex-1 items-center justify-center gap-1 xl:flex">
-      {floating && <Divider className="mr-2" />}
-      {mainNav.map((item, i) => (
-        <Fragment key={item.label}>
-          {floating && i === 4 && <Divider className="mx-1" />}
-          <NavItem item={item} floating={floating} />
-        </Fragment>
-      ))}
-      {floating && <Divider className="ml-2" />}
+    <nav aria-label="Main" className="hidden flex-1 justify-center xl:flex">
+      <div className={`flex items-center gap-0.5 rounded-pill p-1 ring-1 transition-colors duration-700 ${capsule}`}>
+        {mainNav.map((item) => (
+          <NavItem key={item.label} item={item} floating={floating} />
+        ))}
+      </div>
     </nav>
   )
 }
