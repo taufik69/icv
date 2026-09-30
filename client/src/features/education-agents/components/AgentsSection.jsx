@@ -14,7 +14,7 @@ export function AgentsSection() {
       <Container>
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+            <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
             <h2 id="agents-title" className="mt-5 text-3xl leading-tight md:text-5xl">
               {content.title}
             </h2>

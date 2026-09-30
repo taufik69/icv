@@ -19,7 +19,7 @@ export function CampusPhoto({ image }) {
         />
         <span aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-secondary/60 via-transparent to-transparent" />
         <span className="absolute bottom-5 left-5 flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 font-heading text-sm font-semibold text-white ring-1 ring-white/30 backdrop-blur-md">
-          <MapPinIcon className="size-4 text-primary" />
+          <MapPinIcon className="size-4 text-white" />
           {image.caption}
         </span>
       </div>

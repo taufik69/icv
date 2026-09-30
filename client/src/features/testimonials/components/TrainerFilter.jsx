@@ -13,7 +13,7 @@ export function TrainerFilter({ trainers, counts, total, active, onChange }) {
         return (
           <button key={label} type="button" aria-pressed={selected} onClick={() => onChange(key)} className={`${chip} ${selected ? on : off}`}>
             {label}
-            <span className={`grid min-w-6 place-items-center rounded-pill px-1.5 text-xs ${selected ? 'bg-primary text-on-primary' : 'bg-surface-muted text-ink-subtle'}`}>
+            <span className={`grid min-w-6 place-items-center rounded-pill px-1.5 text-xs ${selected ? 'bg-primary text-on-primary' : 'bg-surface-muted text-secondary-muted'}`}>
               {count}
             </span>
           </button>

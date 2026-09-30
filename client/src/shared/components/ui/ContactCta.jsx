@@ -9,13 +9,13 @@ export function ContactCta({ id, content, className = 'bg-surface pb-20 md:pb-28
   return (
     <section aria-labelledby={id} className={className}>
       <Container>
-        <Reveal className="relative flex flex-col gap-8 overflow-hidden rounded-3xl bg-primary-soft p-8 ring-1 ring-primary/30 md:flex-row md:items-center md:justify-between md:p-12">
-          <span aria-hidden="true" className="pointer-events-none absolute -top-16 -right-16 size-56 rounded-full bg-primary/25 blur-3xl" />
+        <Reveal className="relative flex flex-col gap-8 overflow-hidden rounded-3xl bg-secondary/5 p-8 ring-1 ring-secondary/15 md:flex-row md:items-center md:justify-between md:p-12">
+          <span aria-hidden="true" className="pointer-events-none absolute -top-16 -right-16 size-56 rounded-full bg-secondary/8 blur-3xl" />
           <div className="relative max-w-xl">
             <h2 id={id} className="text-3xl leading-tight md:text-4xl">
               {content.title}
             </h2>
-            <p className="mt-3 leading-relaxed text-ink-muted">{content.text}</p>
+            <p className="mt-3 leading-relaxed text-secondary/80">{content.text}</p>
           </div>
           <div className="relative flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
             {content.actions.map(({ label, href, kind }) => {
@@ -26,7 +26,7 @@ export function ContactCta({ id, content, className = 'bg-surface pb-20 md:pb-28
                   href={href}
                   className="btn-shine inline-flex items-center justify-center gap-2 rounded-md bg-secondary px-6 py-3.5 font-heading font-semibold text-white shadow-brand transition hover:bg-secondary-dark hover:text-white"
                 >
-                  <Icon className="size-4 text-primary" />
+                  <Icon className="size-4 text-white/80" />
                   {label}
                 </a>
               )

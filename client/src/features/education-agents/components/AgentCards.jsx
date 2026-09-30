@@ -13,7 +13,7 @@ export function AgentCards({ agents }) {
             <p className="font-heading text-lg font-bold text-secondary">
               {agent.givenName} {agent.lastName}
             </p>
-            <p className="mt-1 flex items-center gap-2 text-sm text-ink-muted">
+            <p className="mt-1 flex items-center gap-2 text-sm text-secondary/80">
               <BriefcaseIcon className="size-4 shrink-0 text-primary-hover" />
               {agent.company}
             </p>

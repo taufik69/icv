@@ -17,7 +17,7 @@ export function ReviewCard({ review, index }) {
       </div>
 
       {review.text ? (
-        <p className="mt-5 leading-relaxed text-ink">{review.text}</p>
+        <p className="mt-5 leading-relaxed text-secondary">{review.text}</p>
       ) : (
         <p className="mt-5 font-heading text-lg font-semibold text-secondary">Left a 5-star rating on Google.</p>
       )}
@@ -28,7 +28,7 @@ export function ReviewCard({ review, index }) {
         </span>
         <div className="min-w-0 flex-1">
           <p className="truncate font-heading font-bold text-secondary">{review.name}</p>
-          <p className="text-xs text-ink-subtle">
+          <p className="text-xs text-secondary-muted">
             <time>{review.date}</time> · via Google
           </p>
         </div>

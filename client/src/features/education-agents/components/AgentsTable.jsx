@@ -27,7 +27,7 @@ export function AgentsTable({ columns, agents, caption }) {
               <td className="px-7 py-5 font-heading font-semibold text-secondary">{agent.givenName}</td>
               <td className="px-7 py-5 font-heading font-semibold text-secondary">{agent.lastName}</td>
               <td className="px-7 py-5">
-                <span className="inline-flex items-center gap-3 text-ink">
+                <span className="inline-flex items-center gap-3 text-secondary">
                   <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary-hover">
                     <BriefcaseIcon className="size-4" />
                   </span>

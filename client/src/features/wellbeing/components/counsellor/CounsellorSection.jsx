@@ -21,11 +21,11 @@ export function CounsellorSection() {
         </Reveal>
 
         <Reveal from="right" delay={100}>
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="counsellor-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            Meet <span className="text-primary-hover">{content.name}</span>
+            Meet <span className="text-secondary-muted">{content.name}</span>
           </h2>
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-muted">
+          <div className="mt-6 space-y-4 text-lg leading-relaxed text-secondary/80">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

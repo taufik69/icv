@@ -32,9 +32,9 @@ export function FeaturedQuote({ featured }) {
         </span>
         <span className="min-w-0 flex-1">
           <span className="block font-heading font-bold text-secondary">{featured.name}</span>
-          <span className="block text-sm text-ink-muted">{featured.course}</span>
+          <span className="block text-sm text-secondary/80">{featured.course}</span>
         </span>
-        <span className="hidden rounded-pill bg-surface-muted px-3 py-1 text-xs font-semibold text-ink-muted ring-1 ring-line-soft sm:inline-block">
+        <span className="hidden rounded-pill bg-surface-muted px-3 py-1 text-xs font-semibold text-secondary/80 ring-1 ring-line-soft sm:inline-block">
           Google · {featured.date}
         </span>
       </figcaption>
