@@ -1,13 +1,14 @@
 import { CompassIcon } from '@/shared/components/icons'
-import { Container } from '@/shared/components/ui'
+import { BlueprintGrid, Container } from '@/shared/components/ui'
 
-// Deep navy band under the transparent header: badge, title + lead, and study-area shortcuts
+// Deep navy band under the transparent header (animated blueprint grid like the other page heroes): badge, title + lead, and study-area shortcuts
 // that apply the Study area filter in one tap.
 export function FinderHero({ content, finder }) {
   const areas = finder.facets.area
 
   return (
     <section aria-labelledby="finder-title" className="relative isolate overflow-hidden bg-secondary-dark pt-32 pb-12 text-white md:pt-40 md:pb-16">
+      <BlueprintGrid />
       <Container>
         <p className="mb-5 inline-flex items-center gap-2 rounded-full bg-white/8 py-1.5 pr-4 pl-3 text-xs font-semibold tracking-[0.2em] text-white/90 uppercase ring-1 ring-white/15">
           <CompassIcon className="size-4 text-primary" />
