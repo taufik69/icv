@@ -32,7 +32,7 @@ export function DetailHero({ course, summary, markets, content }) {
             <CourseTags summary={summary} markets={markets} marketNames={content.marketNames} />
           </div>
           <h1 id="course-title" className="mt-5 text-4xl leading-[1.05] font-bold text-white md:text-5xl lg:text-6xl">{course.title}</h1>
-          <p className="mt-5 line-clamp-3 max-w-2xl text-lg leading-relaxed text-white/75">{course.tagline ?? course.overview.paragraphs[0]}</p>
+          <p className="mt-5 line-clamp-3 max-w-2xl text-lg leading-relaxed text-white/90">{course.tagline ?? course.overview.paragraphs[0]}</p>
           <div className="mt-8">
             <FactTiles summary={summary} labels={content.facts} />
           </div>

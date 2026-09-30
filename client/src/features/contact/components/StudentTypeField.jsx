@@ -10,9 +10,9 @@ export function StudentTypeField({ label, options, value, error, onChange }) {
         {options.map((opt) => (
           <label
             key={opt}
-            className={`flex cursor-pointer items-center gap-3 rounded-xl px-4 py-3 font-medium ring-1 transition has-focus-visible:ring-2 has-focus-visible:ring-primary ${value === opt ? 'bg-primary-soft text-secondary ring-primary' : 'bg-surface-muted text-ink ring-line-soft hover:ring-primary/50'}`}
+            className={`flex cursor-pointer items-center gap-3 rounded-xl px-4 py-3 font-medium ring-1 transition has-focus-visible:ring-2 has-focus-visible:ring-secondary/40 ${value === opt ? 'bg-secondary/6 text-secondary ring-secondary' : 'bg-surface-muted text-secondary ring-line-soft hover:ring-secondary/30'}`}
           >
-            <input type="radio" name="studentType" value={opt} checked={value === opt} onChange={onChange} className="size-4 accent-primary-hover" />
+            <input type="radio" name="studentType" value={opt} checked={value === opt} onChange={onChange} className="size-4 accent-secondary" />
             {opt}
           </label>
         ))}

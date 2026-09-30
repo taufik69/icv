@@ -8,7 +8,7 @@ export function SearchBar({ content, finder, onOpenFilters }) {
     <div className="flex gap-3">
       <div className="relative min-w-0 flex-1">
         <label htmlFor="course-search" className="sr-only">{content.searchLabel}</label>
-        <SearchIcon className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-ink-subtle" />
+        <SearchIcon className="pointer-events-none absolute top-1/2 left-4 size-5 -translate-y-1/2 text-secondary-muted" />
         <input
           id="course-search"
           type="search"
@@ -16,14 +16,14 @@ export function SearchBar({ content, finder, onOpenFilters }) {
           onChange={(e) => finder.set('q', e.target.value)}
           placeholder={content.searchPlaceholder}
           autoComplete="off"
-          className="h-14 w-full rounded-2xl bg-white pr-12 pl-12 text-base text-ink ring-1 ring-line outline-none text-ellipsis placeholder:text-ink-subtle focus-visible:ring-2 focus-visible:ring-secondary [&::-webkit-search-cancel-button]:hidden"
+          className="h-14 w-full rounded-2xl bg-white pr-12 pl-12 text-base text-secondary ring-1 ring-line outline-none text-ellipsis placeholder:text-secondary-muted focus-visible:ring-2 focus-visible:ring-secondary [&::-webkit-search-cancel-button]:hidden"
         />
         {q && (
           <button
             type="button"
             onClick={() => finder.set('q', '')}
             aria-label="Clear search"
-            className="absolute top-1/2 right-3 grid size-8 -translate-y-1/2 cursor-pointer place-items-center rounded-full text-ink-subtle transition hover:bg-surface-sunken hover:text-ink"
+            className="absolute top-1/2 right-3 grid size-8 -translate-y-1/2 cursor-pointer place-items-center rounded-full text-secondary-muted transition hover:bg-surface-sunken hover:text-secondary"
           >
             <CloseIcon className="size-4" />
           </button>

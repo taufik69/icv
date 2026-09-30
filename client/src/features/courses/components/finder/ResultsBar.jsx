@@ -9,7 +9,7 @@ export function ResultsBar({ content, finder, total }) {
 
   return (
     <div className="flex flex-wrap items-center gap-3">
-      <p aria-live="polite" className="mr-auto text-sm text-ink-muted">
+      <p aria-live="polite" className="mr-auto text-sm text-secondary/85">
         <span className="font-heading text-lg font-bold text-secondary">{finder.results.length}</span> of {total} courses
       </p>
       <button
@@ -20,7 +20,7 @@ export function ResultsBar({ content, finder, total }) {
       >
         <BookmarkIcon className="size-4" fill={finder.savedOnly ? 'currentColor' : 'none'} />
         <span className="max-sm:sr-only">{content.saved}</span>
-        <span className={`tabular-nums ${finder.savedOnly ? 'text-white/70' : 'text-ink-subtle'}`}>{count}</span>
+        <span className={`tabular-nums ${finder.savedOnly ? 'text-white/90' : 'text-secondary-muted'}`}>{count}</span>
       </button>
       <SortMenu label={content.sortLabel} options={content.sorts} value={finder.filters.sort} onChange={(v) => finder.set('sort', v)} />
     </div>

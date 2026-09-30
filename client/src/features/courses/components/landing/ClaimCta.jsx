@@ -11,16 +11,16 @@ export function ClaimCta({ claim }) {
           <h2 id="claim-title" className="font-heading text-3xl leading-tight font-extrabold md:text-5xl">{claim.title}</h2>
           <AppLink href={claim.action.href} className="group btn-shine mt-8 inline-flex items-center gap-2 rounded-md bg-secondary px-8 py-3.5 font-heading font-semibold text-white shadow-brand transition hover:bg-secondary-dark hover:text-white">
             {claim.action.label}
-            <ArrowUpRightIcon className="size-4 text-white/80 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            <ArrowUpRightIcon className="size-4 text-white/90 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </AppLink>
-          <p className="mt-8 text-secondary/80">{claim.contactLead}</p>
+          <p className="mt-8 text-secondary/90">{claim.contactLead}</p>
           <a href={claim.phone.href} className="mt-2 inline-flex items-center gap-3 font-heading text-3xl font-extrabold text-secondary hover:text-secondary-muted md:text-4xl">
             <span className="grid size-12 place-items-center rounded-full bg-secondary text-white">
               <PhoneIcon className="size-5" />
             </span>
             {claim.phone.label}
           </a>
-          <p className="mt-2 text-secondary/80">{claim.contactTail}</p>
+          <p className="mt-2 text-secondary/90">{claim.contactTail}</p>
         </Reveal>
       </Container>
     </section>

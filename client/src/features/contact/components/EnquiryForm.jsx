@@ -17,7 +17,7 @@ export function EnquiryForm() {
   return (
     <form noValidate onSubmit={submit} aria-labelledby="enquiry-title" className="rounded-3xl bg-surface p-6 shadow-card ring-1 ring-line-soft md:p-10">
       <h2 id="enquiry-title" className="text-3xl leading-tight md:text-4xl">{form.title}</h2>
-      <span aria-hidden="true" className="mt-4 block h-1 w-16 rounded-pill bg-primary" />
+      <span aria-hidden="true" className="mt-4 block h-1 w-16 rounded-pill bg-secondary" />
 
       <div className="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2">
         {text('firstName', 'text', 'given-name')}

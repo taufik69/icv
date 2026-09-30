@@ -10,7 +10,7 @@ export function StudySection({ study }) {
       <Container>
         <Reveal className="mx-auto max-w-3xl text-center">
           <h2 id="study-title" className="text-3xl leading-tight md:text-4xl">{study.title}</h2>
-          <p className="mt-5 text-lg leading-relaxed text-secondary/80">{study.text}</p>
+          <p className="mt-5 text-lg leading-relaxed text-secondary/90">{study.text}</p>
         </Reveal>
         <ul className="mt-12 grid grid-cols-1 gap-5 md:grid-cols-3">
           {study.links.map((link, i) => {

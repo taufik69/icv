@@ -24,8 +24,8 @@ function Item({ item, link }) {
 
 export function Parts({ parts, tone = 'light', accent = 'green' }) {
   const a = accents[accent]
-  const text = tone === 'dark' ? 'text-white/75' : 'text-secondary/80'
-  const strong = tone === 'dark' ? 'text-white' : 'text-ink'
+  const text = tone === 'dark' ? 'text-white/90' : 'text-secondary/90'
+  const strong = tone === 'dark' ? 'text-white' : 'text-secondary'
 
   return parts.map((part, i) => {
     if (typeof part === 'string') return <p key={i} className={`mt-4 leading-relaxed first:mt-0 ${text}`}>{part}</p>

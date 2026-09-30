@@ -8,7 +8,7 @@ export function FilterCheckList({ options, selected, onToggle }) {
         const checked = selected.includes(value)
         return (
           <li key={value}>
-            <label className={`flex cursor-pointer items-center gap-3 rounded-lg px-2 py-1.5 text-sm transition hover:bg-white ${count || checked ? 'text-ink' : 'text-ink-disabled'}`}>
+            <label className={`flex cursor-pointer items-center gap-3 rounded-lg px-2 py-1.5 text-sm transition hover:bg-white ${count || checked ? 'text-secondary' : 'text-ink-disabled'}`}>
               <input type="checkbox" checked={checked} onChange={() => onToggle(value)} className="peer sr-only" />
               <span
                 aria-hidden="true"

@@ -35,7 +35,7 @@ export function FinderCard({ course, marketName, saved, onToggleSave }) {
       <div className="flex flex-1 flex-col p-5">
         <p className="flex items-baseline justify-between gap-3 text-xs">
           <span className="font-semibold tracking-wide text-secondary-muted uppercase">{course.area}</span>
-          <span className="shrink-0 text-ink-subtle">{course.level}</span>
+          <span className="shrink-0 text-secondary-muted">{course.level}</span>
         </p>
         <h3 className="mt-2 text-lg leading-snug font-bold text-secondary">
           <AppLink to={course.to} href={course.href} className="text-secondary after:absolute after:inset-0 hover:text-secondary">
@@ -53,11 +53,11 @@ export function FinderCard({ course, marketName, saved, onToggleSave }) {
         <div className="mt-auto pt-5">
           <div className="min-h-13">
           {fee.amount && (
-            <p className="text-sm text-ink-muted">
+            <p className="text-sm text-secondary/85">
               From <span className="font-heading text-2xl font-bold text-secondary">{fee.amount}</span> {fee.basis}
             </p>
           )}
-          {fee.note && <p className="mt-0.5 text-xs text-ink-subtle">Tuition: {fee.note}</p>}
+          {fee.note && <p className="mt-0.5 text-xs text-secondary-muted">Tuition: {fee.note}</p>}
           </div>
 
           <div className="relative z-10 mt-4 flex gap-2">

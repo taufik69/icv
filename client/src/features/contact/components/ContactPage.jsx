@@ -14,7 +14,7 @@ export function ContactPage() {
 
   return (
     <>
-      <PageHero id="contact-title" current={hero.title} title={hero.title} image={hero.image}>
+      <PageHero accent="muted" grid id="contact-title" current={hero.title} title={hero.title} image={hero.image}>
         <div className="h-8 md:h-12" />
       </PageHero>
       <ContactCards />

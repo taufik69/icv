@@ -12,9 +12,9 @@ const Separator = () => (
 export function Breadcrumbs({ trail = [], current }) {
   return (
     <nav aria-label="Breadcrumb">
-      <ol className="inline-flex flex-wrap items-center gap-2 rounded-2xl bg-white/10 px-4 py-2.5 font-condensed text-sm leading-none tracking-wider text-white/70 uppercase ring-1 ring-white/15 backdrop-blur-md">
+      <ol className="inline-flex flex-wrap items-center gap-2 rounded-2xl bg-white/10 px-4 py-2.5 font-condensed text-sm leading-none tracking-wider text-white/90 uppercase ring-1 ring-white/15 backdrop-blur-md">
         <li className="flex">
-          <Link to="/" activeOptions={{ exact: true }} className="inline-flex items-center gap-1.5 text-white/70 transition hover:text-primary">
+          <Link to="/" activeOptions={{ exact: true }} className="inline-flex items-center gap-1.5 text-white/90 transition hover:text-primary">
             <HomeIcon className="size-4" />
             Home
           </Link>
@@ -23,7 +23,7 @@ export function Breadcrumbs({ trail = [], current }) {
           <Fragment key={crumb.to}>
             <Separator />
             <li>
-              <Link to={crumb.to} activeOptions={{ exact: true }} className="text-white/70 transition hover:text-primary">
+              <Link to={crumb.to} activeOptions={{ exact: true }} className="text-white/90 transition hover:text-primary">
                 {crumb.label}
               </Link>
             </li>

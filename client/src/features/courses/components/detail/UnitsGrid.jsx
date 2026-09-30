@@ -25,7 +25,7 @@ export function UnitsGrid({ units }) {
                 <span className="font-condensed font-semibold tracking-wide text-secondary">{u.code}</span>
                 <span className={`rounded-full px-2 py-0.5 font-medium ${tone.tag}`}>{u.type}</span>
               </p>
-              <p className="mt-1.5 text-sm leading-snug text-ink">{u.title}</p>
+              <p className="mt-1.5 text-sm leading-snug text-secondary">{u.title}</p>
             </div>
           </li>
         )

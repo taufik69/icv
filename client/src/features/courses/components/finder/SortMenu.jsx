@@ -20,7 +20,7 @@ export function SortMenu({ label, options, value, onChange }) {
         onKeyDown={onTriggerKeyDown}
         className="inline-flex h-10 cursor-pointer items-center gap-2 rounded-full bg-white pr-3 pl-4 text-sm ring-1 ring-line transition hover:ring-secondary/40 aria-expanded:ring-2 aria-expanded:ring-secondary"
       >
-        <span className="text-ink-subtle max-sm:hidden">{label}</span>
+        <span className="text-secondary-muted max-sm:hidden">{label}</span>
         <span className="font-semibold text-secondary">{selected.label}</span>
         <ChevronDownIcon className={`size-4 text-secondary-muted transition ${open ? 'rotate-180' : ''}`} />
       </button>
@@ -52,8 +52,8 @@ export function SortMenu({ label, options, value, onChange }) {
                   <Icon className="size-4" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className={`block text-sm ${isSelected ? 'font-semibold text-secondary' : 'text-ink'}`}>{text}</span>
-                  <span className="block text-xs text-ink-subtle">{hint}</span>
+                  <span className={`block text-sm ${isSelected ? 'font-semibold text-secondary' : 'text-secondary'}`}>{text}</span>
+                  <span className="block text-xs text-secondary-muted">{hint}</span>
                 </span>
                 <CheckIcon className={`size-4 shrink-0 text-secondary ${isSelected ? '' : 'invisible'}`} />
               </li>

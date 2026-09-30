@@ -24,13 +24,13 @@ export function CourseSections({ tabs }) {
                   onClick={go(id)}
                   aria-current={on ? 'true' : undefined}
                   className={`group inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-semibold whitespace-nowrap transition-[color,background-color,scale] duration-300 ease-out active:scale-95 ${
-                    on ? 'text-white hover:text-white' : 'text-ink-muted hover:bg-surface-muted hover:text-secondary'
+                    on ? 'text-white hover:text-white' : 'text-secondary/85 hover:bg-surface-muted hover:text-secondary'
                   }`}
                 >
-                  <Icon className={`size-4 transition ${on ? 'text-white' : 'text-ink-subtle group-hover:text-secondary'}`} />
+                  <Icon className={`size-4 transition ${on ? 'text-white' : 'text-secondary-muted group-hover:text-secondary'}`} />
                   {label}
                   {count != null && (
-                    <span className={`rounded-full px-1.5 py-0.5 text-xs tabular-nums transition ${on ? 'bg-white/15 text-white' : 'bg-surface-muted text-ink-subtle'}`}>{count}</span>
+                    <span className={`rounded-full px-1.5 py-0.5 text-xs tabular-nums transition ${on ? 'bg-white/15 text-white' : 'bg-surface-muted text-secondary-muted'}`}>{count}</span>
                   )}
                 </a>
               </li>

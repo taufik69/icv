@@ -7,7 +7,7 @@ export const internationalContent = {
   hero: { ...domesticContent.hero, title: 'International' },
   enquire: domesticContent.enquire,
   welcome: {
-    eyebrow: 'WLCOME TO',
+    eyebrow: 'WELCOME TO',
     title: 'INTERNATIONAL COLLEGE OF VICTORIA',
     paragraphs: [
       'International College of Victoria (ICV) is a leading registered training organisation delivering hands-on training to both local and international students from Certificate III to Diploma courses across various industry sectors.',

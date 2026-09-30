@@ -26,7 +26,7 @@ export function ActiveFilters({ content, finder }) {
           <CloseIcon className="size-3.5" />
         </button>
       ))}
-      <button type="button" onClick={finder.clear} className="cursor-pointer px-2 text-sm font-medium text-ink-muted underline underline-offset-4 hover:text-secondary">
+      <button type="button" onClick={finder.clear} className="cursor-pointer px-2 text-sm font-medium text-secondary/85 underline underline-offset-4 hover:text-secondary">
         Clear all
       </button>
     </div>

@@ -20,7 +20,7 @@ export function CourseTags({ summary, markets, marketNames }) {
         const Icon = m === 'international' ? GlobeIcon : UserIcon
         return (
           <span key={m} className={`${pill} bg-white/10 text-white/90 ring-white/20`}>
-            <Icon className="size-3.5 text-white/70" />
+            <Icon className="size-3.5 text-white/90" />
             {marketNames[m]}
           </span>
         )

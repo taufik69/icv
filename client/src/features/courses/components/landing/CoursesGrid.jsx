@@ -1,9 +1,18 @@
 import { useState } from 'react'
 import { Container, Reveal } from '@/shared/components/ui'
+import { finderContent } from '../../data/finderContent'
+import { useSavedCourses } from '../../hooks/useSavedCourses'
+import { FinderCard } from '../finder/FinderCard'
 import { CourseCard } from './CourseCard'
 
-// Optional category filter chips (scroll sideways on phones) over a 1 → 2 → 3 column card grid.
-export function CoursesGrid({ content }) {
+const summaryFor = (summaries, course) => summaries?.[course.to?.slice(1)]
+// Four cards sit in one row (xl) or 2 × 2 instead of leaving a lone card on a second row of three.
+const columns = (count) => (count === 4 ? 'sm:grid-cols-2 xl:grid-cols-4' : 'sm:grid-cols-2 lg:grid-cols-3')
+
+// Optional category filter chips (scroll sideways on phones) over a 1 → 2 → 3 column card grid. Courses with a
+// loaded summary use the course finder card (facts, fee, save, View course → detail page); others the photo card.
+export function CoursesGrid({ content, summaries }) {
+  const saved = useSavedCourses()
   const [filter, setFilter] = useState('all')
   const shown = filter === 'all' ? content.items : content.items.filter((c) => c.category === filter)
   const hasFilters = content.filters?.length > 0
@@ -32,14 +41,26 @@ export function CoursesGrid({ content }) {
         </div>
         )}
 
-        <ul aria-live="polite" className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {shown.map((course, i) => (
-            <li key={course.code} className="motion-safe:animate-[fade-in_400ms_ease-out_both]">
-              <Reveal delay={(i % 3) * 100} className="h-full">
-                <CourseCard course={course} apply={content.apply} />
-              </Reveal>
-            </li>
-          ))}
+        <ul aria-live="polite" className={`mt-10 grid grid-cols-1 gap-6 ${columns(shown.length)}`}>
+          {shown.map((course, i) => {
+            const summary = summaryFor(summaries, course)
+            return (
+              <li key={course.code} className="motion-safe:animate-[fade-in_400ms_ease-out_both]">
+                <Reveal delay={(i % 3) * 100} className="h-full">
+                  {summary ? (
+                    <FinderCard
+                      course={summary}
+                      marketName={finderContent.marketNames[summary.market]}
+                      saved={saved.isSaved(summary.id)}
+                      onToggleSave={() => saved.toggle(summary.id)}
+                    />
+                  ) : (
+                    <CourseCard course={course} apply={content.apply} />
+                  )}
+                </Reveal>
+              </li>
+            )
+          })}
         </ul>
       </Container>
     </section>

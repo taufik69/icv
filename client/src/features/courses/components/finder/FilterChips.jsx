@@ -14,12 +14,12 @@ export function FilterChips({ options, selected, onToggle }) {
               on
                 ? 'bg-secondary text-white ring-secondary'
                 : count
-                  ? 'bg-white text-ink ring-line hover:ring-secondary/40'
+                  ? 'bg-white text-secondary ring-line hover:ring-secondary/40'
                   : 'bg-white text-ink-disabled ring-line-soft'
             }`}
           >
             {value}
-            <span className={`text-xs tabular-nums ${on ? 'text-white/70' : 'text-ink-subtle'}`}>{count}</span>
+            <span className={`text-xs tabular-nums ${on ? 'text-white/90' : 'text-secondary-muted'}`}>{count}</span>
           </button>
         )
       })}
