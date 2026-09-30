@@ -1,30 +1,42 @@
-import { BriefcaseIcon } from '@/shared/components/icons'
-import { Container, PlusCard, Reveal, SectionEyebrow } from '@/shared/components/ui'
-import { Parts } from '../common/Parts'
+import { BriefcaseIcon } from "@/shared/components/icons";
+import {
+  Container,
+  PlusCard,
+  Reveal,
+  SectionEyebrow,
+} from "@/shared/components/ui";
+import { Parts } from "../common/Parts";
 
 // lg column count per number of job cards, picked so rows come out full (full strings for Tailwind).
-const lgCols = { 1: 'lg:grid-cols-1', 2: 'lg:grid-cols-2', 4: 'lg:grid-cols-4', 8: 'lg:grid-cols-4' }
+const lgCols = {
+  1: "lg:grid-cols-1",
+  2: "lg:grid-cols-2",
+  4: "lg:grid-cols-4",
+  8: "lg:grid-cols-4",
+};
 
 // Navy band: centred "Employment pathways" eyebrow + intro line on top, then one blueprint box per job title
 // (dashed outline + corner pluses), then trailing copy (e.g. exit points) in a full-width box.
 export function EmploymentSection({ employment }) {
-  const [intro, jobs, ...rest] = employment.parts
-  const titles = jobs.chips
-  const cols = lgCols[titles.length] ?? 'lg:grid-cols-3'
+  const [intro, jobs, ...rest] = employment.parts;
+  const titles = jobs.chips;
+  const cols = lgCols[titles.length] ?? "lg:grid-cols-3";
 
   return (
-    <section aria-labelledby="employment-title" className="relative isolate overflow-hidden bg-secondary py-16 md:py-24">
-      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -right-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl" />
+    <section
+      aria-labelledby="employment-title"
+      className="relative isolate overflow-hidden bg-secondary py-16 md:py-24"
+    >
+      <span
+        aria-hidden="true"
+        className="parallax-up pointer-events-none absolute -top-24 -right-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl"
+      />
       <Container>
         <Reveal className="mx-auto max-w-2xl text-center">
           <SectionEyebrow tone="light" accent="muted">
             <span id="employment-title">{employment.title}</span>
           </SectionEyebrow>
-<<<<<<< HEAD
-          <p className="mt-6 text-lg leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{intro}</p>
-=======
           <p className="mt-5 text-lg leading-relaxed text-white/95">{intro}</p>
->>>>>>> devlopement
         </Reveal>
         <ul className={`mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 ${cols}`}>
           {titles.map((job, i) => (
@@ -49,5 +61,5 @@ export function EmploymentSection({ employment }) {
         )}
       </Container>
     </section>
-  )
+  );
 }

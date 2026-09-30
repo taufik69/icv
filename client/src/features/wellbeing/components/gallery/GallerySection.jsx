@@ -1,15 +1,22 @@
-import { galleryContent as content } from '@/features/wellbeing/data/careerContent'
-import { ImageIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { galleryContent as content } from "@/features/wellbeing/data/careerContent";
+import { ImageIcon } from "@/shared/components/icons";
+import { Container, Reveal, SectionEyebrow } from "@/shared/components/ui";
 
 // Wide photo banner with the gallery intro on a navy gradient.
 export function GallerySection() {
-  const { image } = content
+  const { image } = content;
 
   return (
-    <section id="student-gallery" aria-labelledby="gallery-title" className="scroll-mt-24 bg-surface py-20 md:py-28">
+    <section
+      id="student-gallery"
+      aria-labelledby="gallery-title"
+      className="scroll-mt-24 bg-surface py-20 md:py-28"
+    >
       <Container>
-        <Reveal from="zoom" className="group relative isolate overflow-hidden rounded-3xl bg-secondary shadow-brand">
+        <Reveal
+          from="zoom"
+          className="group relative isolate overflow-hidden rounded-3xl bg-secondary shadow-brand"
+        >
           <img
             src={image.src}
             alt={image.alt}
@@ -19,7 +26,10 @@ export function GallerySection() {
             decoding="async"
             className="absolute inset-0 -z-10 size-full object-cover object-right transition duration-1000 ease-out group-hover:scale-105"
           />
-          <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-secondary via-secondary/80 to-transparent md:bg-linear-to-r md:via-secondary/80 md:to-transparent" />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 -z-10 bg-linear-to-t from-secondary via-secondary/80 to-transparent md:bg-linear-to-r md:via-secondary/80 md:to-transparent"
+          />
 
           <div className="max-w-xl p-8 pt-40 md:p-14">
             <span className="grid size-14 place-items-center rounded-2xl bg-white text-secondary shadow-card">
@@ -28,17 +38,17 @@ export function GallerySection() {
             <SectionEyebrow tone="light" accent="muted" className="mt-6">
               {content.eyebrow}
             </SectionEyebrow>
-            <h2 id="gallery-title" className="mt-5 text-3xl leading-tight text-white md:text-4xl">
-              {content.title} <span className="text-white/90">{content.highlight}</span>
+            <h2
+              id="gallery-title"
+              className="mt-5 text-3xl leading-tight text-white md:text-4xl"
+            >
+              {content.title}{" "}
+              <span className="text-white/90">{content.highlight}</span>
             </h2>
-<<<<<<< HEAD
-            <p className="mt-4 leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{content.text}</p>
-=======
             <p className="mt-4 leading-relaxed text-white/90">{content.text}</p>
->>>>>>> devlopement
           </div>
         </Reveal>
       </Container>
     </section>
-  )
+  );
 }

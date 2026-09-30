@@ -1,21 +1,25 @@
-import { ChevronDownIcon } from '@/shared/components/icons'
-import { Reveal } from '@/shared/components/ui'
-import { Parts } from '../common/Parts'
+import { ChevronDownIcon } from "@/shared/components/icons";
+import { Reveal } from "@/shared/components/ui";
+import { Parts } from "../common/Parts";
 
 // Work placement copy: first paragraph always visible, the rest in a native <details> so the page stays scannable.
 export function PlacementCard({ placement }) {
-  const [first, ...rest] = placement.paragraphs
+  const [first, ...rest] = placement.paragraphs;
 
   return (
     <Reveal className="mt-6">
       <article className="rounded-3xl bg-secondary p-6 text-white shadow-brand md:p-10">
-        {placement.title && <h3 className="font-condensed text-xl font-bold tracking-[0.2em] text-white/95">{placement.title}</h3>}
-        {placement.lead && <p className="mt-4 font-heading text-xl font-semibold text-white">{placement.lead}</p>}
-<<<<<<< HEAD
-        <p className="mt-4 leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{first}</p>
-=======
+        {placement.title && (
+          <h3 className="font-condensed text-xl font-bold tracking-[0.2em] text-white/95">
+            {placement.title}
+          </h3>
+        )}
+        {placement.lead && (
+          <p className="mt-4 font-heading text-xl font-semibold text-white">
+            {placement.lead}
+          </p>
+        )}
         <p className="mt-4 leading-relaxed text-white/95">{first}</p>
->>>>>>> devlopement
 
         <details className="group mt-2">
           <summary className="flex w-fit cursor-pointer list-none items-center gap-2 rounded-pill bg-white/10 px-4 py-2 text-sm font-semibold text-white ring-1 ring-white/20 transition hover:bg-white/20 [&::-webkit-details-marker]:hidden">
@@ -29,12 +33,18 @@ export function PlacementCard({ placement }) {
 
         {placement.list && (
           <div className="mt-6 rounded-2xl bg-white/5 p-5 ring-1 ring-white/10">
-            <p className="font-heading font-semibold text-white">{placement.listTitle}</p>
+            <p className="font-heading font-semibold text-white">
+              {placement.listTitle}
+            </p>
             <Parts parts={[{ list: placement.list }]} tone="dark" />
           </div>
         )}
-        {placement.note && <p className="mt-6 rounded-xl bg-white/10 px-4 py-3 font-semibold text-white ring-1 ring-white/15">{placement.note}</p>}
+        {placement.note && (
+          <p className="mt-6 rounded-xl bg-white/10 px-4 py-3 font-semibold text-white ring-1 ring-white/15">
+            {placement.note}
+          </p>
+        )}
       </article>
     </Reveal>
-  )
+  );
 }

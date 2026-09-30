@@ -1,9 +1,10 @@
-import { lazy, Suspense, useState } from 'react'
-import { PlayIcon } from '@/shared/components/icons'
-import { preconnect } from '@/shared/lib/preconnect'
+import { lazy, Suspense, useState } from "react";
+import { PlayIcon } from "@/shared/components/icons";
+import { preconnect } from "@/shared/lib/preconnect";
 
-const VideoModal = lazy(() => import('@/shared/components/media/VideoModal'))
-const warmUp = () => preconnect('https://www.youtube-nocookie.com', 'https://www.google.com')
+const VideoModal = lazy(() => import("@/shared/components/media/VideoModal"));
+const warmUp = () =>
+  preconnect("https://www.youtube-nocookie.com", "https://www.google.com");
 
 function Photo({ image }) {
   return (
@@ -16,19 +17,19 @@ function Photo({ image }) {
       decoding="async"
       className="absolute inset-0 size-full object-cover transition duration-700 group-hover:scale-105"
     />
-  )
+  );
 }
 
 // Card photo. With `video`, the photo becomes a facade: play button opens the YouTube lightbox (lazy chunk).
 export function PurposeMedia({ image, video, className }) {
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   if (!video) {
     return (
       <div className={`relative overflow-hidden ${className}`}>
         <Photo image={image} />
       </div>
-    )
+    );
   }
 
   return (
@@ -42,19 +43,10 @@ export function PurposeMedia({ image, video, className }) {
         className="group/play absolute inset-0 cursor-pointer"
       >
         <Photo image={image} />
-        <span aria-hidden="true" className="absolute inset-0 bg-secondary-dark/35 transition duration-500 group-hover/play:bg-secondary-dark/20" />
-<<<<<<< HEAD
-        {/* Play button + label stacked and centred together, so they never overlap on short phone cards. */}
-        <span className="absolute inset-0 flex flex-col items-center justify-center gap-3 sm:gap-4">
-          <span className="relative grid size-12 place-items-center sm:size-18">
-            <span className="absolute inset-0 rounded-full bg-primary/60 motion-safe:animate-ping" />
-            <span className="relative grid size-12 place-items-center rounded-full bg-primary text-white shadow-elevated ring-3 ring-white/30 transition group-hover/play:scale-110 sm:size-18 sm:ring-4">
-              <PlayIcon className="ml-0.5 size-5 sm:ml-1 sm:size-8" />
-            </span>
-          </span>
-          <span className="flex items-center gap-2 rounded-full bg-white px-4 py-1.5 font-heading text-xs font-semibold text-secondary shadow-card sm:px-5 sm:py-2 sm:text-sm">
-            <PlayIcon className="size-3 text-primary sm:size-3.5" />
-=======
+        <span
+          aria-hidden="true"
+          className="absolute inset-0 bg-secondary-dark/35 transition duration-500 group-hover/play:bg-secondary-dark/20"
+        />
         <span className="absolute top-1/2 left-1/2 grid size-18 -translate-1/2 place-items-center">
           <span className="absolute inset-0 rounded-full bg-white/50 motion-safe:animate-ping" />
           <span className="relative grid size-18 place-items-center rounded-full bg-white text-secondary shadow-elevated ring-4 ring-white/30 transition group-hover/play:scale-110">
@@ -64,7 +56,6 @@ export function PurposeMedia({ image, video, className }) {
         <span className="absolute inset-x-0 bottom-5 flex justify-center">
           <span className="flex items-center gap-2 rounded-full bg-white px-5 py-2 font-heading text-sm font-semibold text-secondary shadow-card">
             <PlayIcon className="size-3.5 text-secondary" />
->>>>>>> devlopement
             {video.label}
           </span>
         </span>
@@ -72,9 +63,13 @@ export function PurposeMedia({ image, video, className }) {
 
       {open && (
         <Suspense fallback={null}>
-          <VideoModal videoId={video.videoId} title={video.title} onClose={() => setOpen(false)} />
+          <VideoModal
+            videoId={video.videoId}
+            title={video.title}
+            onClose={() => setOpen(false)}
+          />
         </Suspense>
       )}
     </div>
-  )
+  );
 }

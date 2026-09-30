@@ -1,26 +1,40 @@
-import { wellbeingContent as content } from '@/features/wellbeing/data/wellbeingContent'
-import { ArrowRightIcon, HeartIcon } from '@/shared/components/icons'
-import { AppLink, Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { wellbeingContent as content } from "@/features/wellbeing/data/wellbeingContent";
+import { ArrowRightIcon, HeartIcon } from "@/shared/components/icons";
+import {
+  AppLink,
+  Container,
+  Reveal,
+  SectionEyebrow,
+} from "@/shared/components/ui";
 
 // Navy band: copy left, group photo right with a floating "confidential" badge; photo zooms on hover.
 export function WellbeingSection() {
-  const { image } = content
+  const { image } = content;
 
   return (
-    <section id="student-wellbeing" aria-labelledby="wellbeing-title" className="relative isolate scroll-mt-24 overflow-hidden bg-secondary py-20 md:py-28">
-      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-32 -left-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl" />
+    <section
+      id="student-wellbeing"
+      aria-labelledby="wellbeing-title"
+      className="relative isolate scroll-mt-24 overflow-hidden bg-secondary py-20 md:py-28"
+    >
+      <span
+        aria-hidden="true"
+        className="parallax-up pointer-events-none absolute -top-32 -left-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl"
+      />
 
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal from="left">
-          <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
-          <h2 id="wellbeing-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-white/90">{content.highlight}</span>
+          <SectionEyebrow tone="light" accent="muted">
+            {content.eyebrow}
+          </SectionEyebrow>
+          <h2
+            id="wellbeing-title"
+            className="mt-5 text-3xl leading-tight text-white md:text-5xl"
+          >
+            {content.title}{" "}
+            <span className="text-white/90">{content.highlight}</span>
           </h2>
-<<<<<<< HEAD
-          <div className="mt-6 space-y-4 leading-relaxed text-white/75 max-md:text-justify max-md:hyphens-auto">
-=======
           <div className="mt-6 space-y-4 leading-relaxed text-white/90">
->>>>>>> devlopement
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}
@@ -52,10 +66,12 @@ export function WellbeingSection() {
             <span className="grid size-10 place-items-center rounded-full bg-secondary text-white">
               <HeartIcon className="size-5" />
             </span>
-            <p className="font-heading text-sm font-bold text-secondary">Confidential &amp; supportive</p>
+            <p className="font-heading text-sm font-bold text-secondary">
+              Confidential &amp; supportive
+            </p>
           </div>
         </Reveal>
       </Container>
     </section>
-  )
+  );
 }

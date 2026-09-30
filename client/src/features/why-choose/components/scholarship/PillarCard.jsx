@@ -8,11 +8,7 @@ export function PillarCard({ pillar: { title, text, Icon } }) {
         </span>
         <h3 className="font-condensed text-lg font-bold uppercase">{title}</h3>
       </div>
-<<<<<<< HEAD
-      <p className="mt-3 text-sm leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{text}</p>
-=======
       <p className="mt-3 text-sm leading-relaxed text-secondary/90">{text}</p>
->>>>>>> devlopement
     </div>
-  )
+  );
 }

@@ -1,15 +1,19 @@
-import { campusContent as content } from '@/features/why-choose/data/campusContent'
-import { MapPinIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
-import { useDoodleBackground } from '@/shared/hooks/useDoodleBackground'
-import { CampusPhoto } from './CampusPhoto'
+import { campusContent as content } from "@/features/why-choose/data/campusContent";
+import { MapPinIcon } from "@/shared/components/icons";
+import { Container, Reveal, SectionEyebrow } from "@/shared/components/ui";
+import { useDoodleBackground } from "@/shared/hooks/useDoodleBackground";
+import { CampusPhoto } from "./CampusPhoto";
 
 // Doodle-pattern section (as on icv.edu.au): Melbourne photo + campus story.
 export function CampusSection() {
-  const [ref, doodle] = useDoodleBackground()
+  const [ref, doodle] = useDoodleBackground();
 
   return (
-    <section ref={ref} aria-labelledby="campus-title" className={`relative overflow-hidden bg-surface py-20 md:py-28 ${doodle}`}>
+    <section
+      ref={ref}
+      aria-labelledby="campus-title"
+      className={`relative overflow-hidden bg-surface py-20 md:py-28 ${doodle}`}
+    >
       <Container className="grid items-center gap-12 lg:grid-cols-[6fr_5fr] lg:gap-16">
         <Reveal from="left">
           <CampusPhoto image={content.image} />
@@ -17,14 +21,14 @@ export function CampusSection() {
 
         <Reveal from="right" delay={100}>
           <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
-          <h2 id="campus-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
+          <h2
+            id="campus-title"
+            className="mt-5 text-3xl leading-tight md:text-5xl"
+          >
+            {content.title}{" "}
+            <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-<<<<<<< HEAD
-          <div className="mt-6 space-y-4 leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">
-=======
           <div className="mt-6 space-y-4 leading-relaxed text-secondary/90">
->>>>>>> devlopement
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}
@@ -36,5 +40,5 @@ export function CampusSection() {
         </Reveal>
       </Container>
     </section>
-  )
+  );
 }

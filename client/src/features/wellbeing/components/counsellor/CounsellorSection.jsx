@@ -1,12 +1,12 @@
-import { counsellorContent as content } from '@/features/wellbeing/data/wellbeingContent'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
-import { useDoodleBackground } from '@/shared/hooks/useDoodleBackground'
-import { CounsellorPortrait } from './CounsellorPortrait'
-import { TagList } from './TagList'
+import { counsellorContent as content } from "@/features/wellbeing/data/wellbeingContent";
+import { Container, Reveal, SectionEyebrow } from "@/shared/components/ui";
+import { useDoodleBackground } from "@/shared/hooks/useDoodleBackground";
+import { CounsellorPortrait } from "./CounsellorPortrait";
+import { TagList } from "./TagList";
 
 // Tall portrait (sticky on lg) beside the counsellor's introduction and what she helps with.
 export function CounsellorSection() {
-  const [ref, doodle] = useDoodleBackground()
+  const [ref, doodle] = useDoodleBackground();
 
   return (
     <section
@@ -22,24 +22,27 @@ export function CounsellorSection() {
 
         <Reveal from="right" delay={100}>
           <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
-          <h2 id="counsellor-title" className="mt-5 text-3xl leading-tight md:text-5xl">
+          <h2
+            id="counsellor-title"
+            className="mt-5 text-3xl leading-tight md:text-5xl"
+          >
             Meet <span className="text-secondary-muted">{content.name}</span>
           </h2>
-<<<<<<< HEAD
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">
-=======
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-secondary/90">
->>>>>>> devlopement
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             <TagList title={content.topicsTitle} items={content.topics} />
-            <TagList title={content.formatsTitle} items={content.formats} tone="navy" />
+            <TagList
+              title={content.formatsTitle}
+              items={content.formats}
+              tone="navy"
+            />
           </div>
         </Reveal>
       </Container>
     </section>
-  )
+  );
 }

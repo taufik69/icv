@@ -2,16 +2,20 @@
 export function CeoQuote({ quote }) {
   return (
     <figure className="my-10">
-<<<<<<< HEAD
-      <p className="mb-4 text-lg leading-relaxed text-ink-muted max-md:text-justify max-md:hyphens-auto">{quote.lead}</p>
-=======
-      <p className="mb-4 text-lg leading-relaxed text-secondary/90">{quote.lead}</p>
->>>>>>> devlopement
+      <p className="mb-4 text-lg leading-relaxed text-secondary/90">
+        {quote.lead}
+      </p>
       <div className="relative overflow-hidden rounded-2xl bg-secondary p-7 shadow-brand md:p-9">
-        <span aria-hidden="true" className="absolute -top-6 right-4 font-heading text-9xl leading-none font-extrabold text-white/5">
+        <span
+          aria-hidden="true"
+          className="absolute -top-6 right-4 font-heading text-9xl leading-none font-extrabold text-white/5"
+        >
           &rdquo;
         </span>
-        <span aria-hidden="true" className="block font-heading text-6xl leading-none font-extrabold text-white/30">
+        <span
+          aria-hidden="true"
+          className="block font-heading text-6xl leading-none font-extrabold text-white/30"
+        >
           &ldquo;
         </span>
         <blockquote className="relative -mt-3 font-heading text-2xl leading-snug font-bold text-white md:text-3xl">
@@ -23,5 +27,5 @@ export function CeoQuote({ quote }) {
         </figcaption>
       </div>
     </figure>
-  )
+  );
 }

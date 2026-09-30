@@ -1,14 +1,33 @@
-import { BlueprintGrid, Container, SectionEyebrow } from '@/shared/components/ui'
-import { Breadcrumbs } from './Breadcrumbs'
+import {
+  BlueprintGrid,
+  Container,
+  SectionEyebrow,
+} from "@/shared/components/ui";
+import { Breadcrumbs } from "./Breadcrumbs";
 
 // Inner-page banner: full-bleed photo (the page's LCP image) under a navy scrim, breadcrumb, h1, lead.
 // Routes under `heroSections` (shared/config/navigation.js) get a transparent header over this banner.
 // `children` render below the lead (e.g. a stats strip). `grid` adds the animated blueprint grid. `accent="muted"` swaps the green glow, eyebrow
 // underline and highlight for white tones on pages that keep green to their CTAs.
-export function PageHero({ id, eyebrow, title, highlight, lead, image, trail, current, accent = 'green', grid = false, children }) {
-  const muted = accent === 'muted'
+export function PageHero({
+  id,
+  eyebrow,
+  title,
+  highlight,
+  lead,
+  image,
+  trail,
+  current,
+  accent = "green",
+  grid = false,
+  children,
+}) {
+  const muted = accent === "muted";
   return (
-    <section aria-labelledby={id} className="relative isolate overflow-hidden bg-secondary-dark">
+    <section
+      aria-labelledby={id}
+      className="relative isolate overflow-hidden bg-secondary-dark"
+    >
       <img
         src={image.src}
         srcSet={image.srcSet}
@@ -19,26 +38,43 @@ export function PageHero({ id, eyebrow, title, highlight, lead, image, trail, cu
         fetchPriority="high"
         className="absolute inset-0 -z-10 size-full object-cover object-top"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-secondary-dark via-secondary/75 to-secondary/45" />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 bg-linear-to-t from-secondary-dark via-secondary/75 to-secondary/45"
+      />
       {grid && <BlueprintGrid />}
-      <span aria-hidden="true" className={`parallax-down pointer-events-none absolute -bottom-32 -left-24 -z-10 size-96 rounded-full blur-3xl ${muted ? 'bg-white/5' : 'bg-primary/20'}`} />
+      <span
+        aria-hidden="true"
+        className={`parallax-down pointer-events-none absolute -bottom-32 -left-24 -z-10 size-96 rounded-full blur-3xl ${muted ? "bg-white/5" : "bg-primary/20"}`}
+      />
 
       <Container className="pt-32 pb-12 md:pt-44 md:pb-16">
         <Breadcrumbs trail={trail} current={current} />
-<<<<<<< HEAD
-        <div className="max-w-3xl md:mt-8 motion-safe:animate-[fade-in_700ms_ease-out]">
-          {eyebrow && <SectionEyebrow tone="light">{eyebrow}</SectionEyebrow>}
-=======
         <div className="mt-8 max-w-3xl motion-safe:animate-[fade-in_700ms_ease-out]">
-          {eyebrow && <SectionEyebrow tone="light" accent={accent}>{eyebrow}</SectionEyebrow>}
->>>>>>> devlopement
-          <h1 id={id} className={`${eyebrow ? 'mt-5' : ''} text-4xl leading-tight text-white md:text-6xl`}>
-            {title} {highlight && <span className={muted ? 'text-white/90' : 'text-primary'}>{highlight}</span>}
+          {eyebrow && (
+            <SectionEyebrow tone="light" accent={accent}>
+              {eyebrow}
+            </SectionEyebrow>
+          )}
+          <h1
+            id={id}
+            className={`${eyebrow ? "mt-5" : ""} text-4xl leading-tight text-white md:text-6xl`}
+          >
+            {title}{" "}
+            {highlight && (
+              <span className={muted ? "text-white/90" : "text-primary"}>
+                {highlight}
+              </span>
+            )}
           </h1>
-          {lead && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/95">{lead}</p>}
+          {lead && (
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/95">
+              {lead}
+            </p>
+          )}
         </div>
         {children}
       </Container>
     </section>
-  )
+  );
 }

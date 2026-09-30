@@ -1,14 +1,22 @@
-import { whyContent as content } from '@/features/about/data/aboutContent'
-import { ArrowRightIcon, MapPinIcon } from '@/shared/components/icons'
-import { AppLink, Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
-import { WhyPoint } from './WhyPoint'
+import { whyContent as content } from "@/features/about/data/aboutContent";
+import { ArrowRightIcon, MapPinIcon } from "@/shared/components/icons";
+import {
+  AppLink,
+  Container,
+  Reveal,
+  SectionEyebrow,
+} from "@/shared/components/ui";
+import { WhyPoint } from "./WhyPoint";
 
 // Navy band: copy + 6 highlights on the left, student photo bleeding off the right edge (stacked on top below lg).
 export function WhyIcvSection() {
-  const { image } = content
+  const { image } = content;
 
   return (
-    <section aria-labelledby="why-icv-title" className="relative isolate overflow-hidden bg-secondary">
+    <section
+      aria-labelledby="why-icv-title"
+      className="relative isolate overflow-hidden bg-secondary"
+    >
       <div className="group/media relative aspect-video overflow-hidden lg:absolute lg:inset-y-0 lg:right-0 lg:aspect-auto lg:w-5/12">
         <img
           src={image.src}
@@ -21,7 +29,10 @@ export function WhyIcvSection() {
           decoding="async"
           className="absolute inset-0 size-full object-cover object-[70%_center] transition duration-1000 ease-out group-hover/media:scale-105"
         />
-        <div aria-hidden="true" className="absolute inset-0 bg-linear-to-t from-secondary to-transparent to-40% lg:bg-linear-to-r lg:to-30%" />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-linear-to-t from-secondary to-transparent to-40% lg:bg-linear-to-r lg:to-30%"
+        />
         <span className="absolute right-5 bottom-5 flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 font-heading text-sm font-semibold text-white ring-1 ring-white/30 backdrop-blur-md">
           <MapPinIcon className="size-4 text-white" />
           {image.caption}
@@ -29,16 +40,23 @@ export function WhyIcvSection() {
       </div>
 
       <Container className="relative py-16 md:py-24 lg:pointer-events-none">
-        <Reveal from="left" className="lg:pointer-events-auto lg:w-7/12 lg:pr-12">
-          <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
-          <h2 id="why-icv-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-white/90">{content.highlight}</span>
+        <Reveal
+          from="left"
+          className="lg:pointer-events-auto lg:w-7/12 lg:pr-12"
+        >
+          <SectionEyebrow tone="light" accent="muted">
+            {content.eyebrow}
+          </SectionEyebrow>
+          <h2
+            id="why-icv-title"
+            className="mt-5 text-3xl leading-tight text-white md:text-5xl"
+          >
+            {content.title}{" "}
+            <span className="text-white/90">{content.highlight}</span>
           </h2>
-<<<<<<< HEAD
-          <p className="mt-5 max-w-xl leading-relaxed text-white/75 max-md:text-justify max-md:hyphens-auto">{content.text}</p>
-=======
-          <p className="mt-5 max-w-xl leading-relaxed text-white/95">{content.text}</p>
->>>>>>> devlopement
+          <p className="mt-5 max-w-xl leading-relaxed text-white/95">
+            {content.text}
+          </p>
 
           <ul className="mt-10 grid gap-3 sm:grid-cols-2">
             {content.points.map((point, i) => (
@@ -56,5 +74,5 @@ export function WhyIcvSection() {
         </Reveal>
       </Container>
     </section>
-  )
+  );
 }
