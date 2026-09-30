@@ -30,4 +30,3 @@ client/src/routeTree.gen.js
 # env files
 .env
 
-server
