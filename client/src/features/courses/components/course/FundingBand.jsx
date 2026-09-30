@@ -11,7 +11,7 @@ export function FundingBand({ funding }) {
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-r from-secondary-dark/95 via-secondary/80 to-secondary-dark/95" />
       <Container>
         <Reveal from="zoom">
-          <h2 id="funding-title" className="font-condensed text-lg font-bold tracking-[0.3em] text-primary">{funding.title}</h2>
+          <h2 id="funding-title" className="font-condensed text-lg font-bold tracking-[0.3em] text-white/75">{funding.title}</h2>
           <p className="mt-4 font-heading text-6xl leading-none font-extrabold tracking-tight text-white md:text-8xl">{funding.headline}</p>
           <div className="mx-auto mt-8 flex max-w-2xl flex-wrap justify-center gap-3">
             {funding.lines.map((line) => (

@@ -5,7 +5,7 @@ import { CheckCircleIcon, ChevronDownIcon } from '@/shared/components/icons'
 // List items may be strings or { before?, text, href, after? } for an inline link.
 // `accent` picks the highlight colour: 'green' (course pages) or 'navy' (course finder detail pages).
 const accents = {
-  green: { icon: 'text-primary-hover', chip: 'bg-primary-soft text-secondary ring-primary/25', link: 'decoration-primary hover:text-primary-hover' },
+  green: { icon: 'text-secondary-muted', chip: 'bg-secondary/6 text-secondary ring-secondary/15', link: 'decoration-secondary/40 hover:text-secondary-muted' },
   navy: { icon: 'text-secondary-muted', chip: 'bg-surface-muted text-secondary ring-line', link: 'decoration-secondary/40 hover:text-secondary' },
 }
 
@@ -24,13 +24,13 @@ function Item({ item, link }) {
 
 export function Parts({ parts, tone = 'light', accent = 'green' }) {
   const a = accents[accent]
-  const text = tone === 'dark' ? 'text-white/75' : 'text-ink-muted'
+  const text = tone === 'dark' ? 'text-white/75' : 'text-secondary/80'
   const strong = tone === 'dark' ? 'text-white' : 'text-ink'
 
   return parts.map((part, i) => {
     if (typeof part === 'string') return <p key={i} className={`mt-4 leading-relaxed first:mt-0 ${text}`}>{part}</p>
     if (part.heading) return <h4 key={i} className={`mt-6 font-heading text-lg font-bold ${tone === 'dark' ? 'text-white' : 'text-secondary'}`}>{part.heading}</h4>
-    if (part.sep) return <p key={i} className="my-4 flex items-center gap-3 font-condensed text-sm font-bold tracking-[0.3em] text-primary-hover"><span className="h-px flex-1 bg-line" />{part.sep}<span className="h-px flex-1 bg-line" /></p>
+    if (part.sep) return <p key={i} className="my-4 flex items-center gap-3 font-condensed text-sm font-bold tracking-[0.3em] text-secondary-muted"><span className="h-px flex-1 bg-line" />{part.sep}<span className="h-px flex-1 bg-line" /></p>
     if (part.more) {
       return (
         <details key={i} className="group mt-4 rounded-2xl bg-surface-muted/70 ring-1 ring-line-soft open:bg-surface open:shadow-raised">

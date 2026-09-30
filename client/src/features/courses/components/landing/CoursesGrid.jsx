@@ -13,7 +13,7 @@ export function CoursesGrid({ content }) {
       <Container>
         <Reveal className="text-center">
           <h2 id="dom-courses-title" className="text-3xl md:text-5xl">{content.title}</h2>
-          <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-pill bg-primary" />
+          <span aria-hidden="true" className="mx-auto mt-5 block h-1 w-16 rounded-pill bg-secondary" />
         </Reveal>
 
         {hasFilters && (
@@ -24,7 +24,7 @@ export function CoursesGrid({ content }) {
               type="button"
               aria-pressed={filter === f.id}
               onClick={() => setFilter(f.id)}
-              className={`shrink-0 rounded-pill px-5 py-2.5 font-condensed text-sm font-bold tracking-wider ring-1 transition ${filter === f.id ? 'bg-secondary text-white ring-secondary shadow-brand' : 'bg-surface text-secondary ring-line hover:ring-primary'}`}
+              className={`shrink-0 rounded-pill px-5 py-2.5 font-condensed text-sm font-bold tracking-wider ring-1 transition ${filter === f.id ? 'bg-secondary text-white ring-secondary shadow-brand' : 'bg-surface text-secondary ring-line hover:ring-secondary/40'}`}
             >
               {f.label}
             </button>

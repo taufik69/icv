@@ -13,14 +13,14 @@ export function OverviewSection({ course }) {
     <section ref={ref} aria-labelledby="overview-title" className={`relative overflow-clip bg-surface py-16 md:py-24 ${doodle}`}>
       <Container className="grid items-start gap-10 lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:gap-14">
         <Reveal from="left">
-          <SectionEyebrow>
+          <SectionEyebrow accent="muted">
             <span id="overview-title">OVERVIEW</span>
           </SectionEyebrow>
           <div className="mt-6 text-lg">
             <Parts parts={parts} />
           </div>
           <div className="mt-10">
-            <PhotoFrame image={{ ...course.images.overview, sizes: '(min-width: 1024px) 700px, 100vw' }} />
+            <PhotoFrame accent="muted" image={{ ...course.images.overview, sizes: '(min-width: 1024px) 700px, 100vw' }} />
           </div>
         </Reveal>
         <Reveal from="right" delay={100} className="lg:sticky lg:top-28">

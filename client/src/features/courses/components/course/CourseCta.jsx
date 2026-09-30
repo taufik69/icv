@@ -10,7 +10,7 @@ export function CourseCta({ cta, image }) {
       <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-b from-secondary-dark/90 via-secondary/85 to-secondary-dark/95" />
       <Container>
         <Reveal from="zoom" className="mx-auto max-w-3xl">
-          {cta.title && <p className="mb-4 font-condensed text-lg font-bold tracking-[0.25em] text-primary uppercase">{cta.title}</p>}
+          {cta.title && <p className="mb-4 font-condensed text-lg font-bold tracking-[0.25em] text-white/75 uppercase">{cta.title}</p>}
           <h2 id="cta-title" className="font-heading text-4xl leading-tight font-extrabold text-white md:text-6xl">{cta.headline}</h2>
           <div className="mt-6 space-y-2">
             {cta.lines.map((line) => (
