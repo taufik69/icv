@@ -5,10 +5,10 @@ import { ArrowRightIcon, CoinsIcon } from '@/shared/components/icons'
 export function ScholarshipCard({ content }) {
   return (
     <div className="relative isolate overflow-hidden rounded-3xl bg-secondary p-7 shadow-brand md:p-10">
-      <span aria-hidden="true" className="absolute -top-20 -right-20 -z-10 size-64 rounded-full bg-primary/25 blur-3xl" />
+      <span aria-hidden="true" className="absolute -top-20 -right-20 -z-10 size-64 rounded-full bg-white/8 blur-3xl" />
       <CoinsIcon aria-hidden="true" className="absolute -right-6 -bottom-6 -z-10 size-48 text-white/5" />
 
-      <span className="grid size-16 place-items-center rounded-2xl bg-primary text-on-primary shadow-card">
+      <span className="grid size-16 place-items-center rounded-2xl bg-white text-secondary shadow-card">
         <CoinsIcon className="size-8" />
       </span>
       <p className="mt-6 font-heading text-2xl leading-snug font-bold text-white md:text-3xl">
@@ -18,9 +18,9 @@ export function ScholarshipCard({ content }) {
       <dl className="mt-8 space-y-3">
         {content.highlights.map(({ label, value, Icon }) => (
           <div key={label} className="flex items-center gap-4 rounded-2xl bg-white/5 px-4 py-3 ring-1 ring-white/10">
-            <Icon className="size-5 shrink-0 text-primary" />
+            <Icon className="size-5 shrink-0 text-white/85" />
             <div className="flex flex-col-reverse">
-              <dt className="font-condensed text-xs tracking-[0.2em] text-white/60 uppercase">{label}</dt>
+              <dt className="font-condensed text-xs tracking-[0.2em] text-white/80 uppercase">{label}</dt>
               <dd className="font-heading font-semibold text-white">{value}</dd>
             </div>
           </div>

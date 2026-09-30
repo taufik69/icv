@@ -17,9 +17,9 @@ export function AgentsTable({ columns, agents, caption }) {
         </thead>
         <tbody className="divide-y divide-line-soft">
           {agents.map((agent, i) => (
-            <tr key={agent.company} className="group transition hover:bg-primary-soft/60">
+            <tr key={agent.company} className="group transition hover:bg-secondary/4">
               <td className="relative px-7 py-5">
-                <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-primary transition duration-300 group-hover:scale-y-100" />
+                <span aria-hidden="true" className="absolute inset-y-0 left-0 w-1 origin-top scale-y-0 bg-secondary transition duration-300 group-hover:scale-y-100" />
                 <span className="grid size-9 place-items-center rounded-full bg-surface-muted font-heading text-sm font-bold text-secondary">
                   {String(i + 1).padStart(2, '0')}
                 </span>
@@ -27,8 +27,8 @@ export function AgentsTable({ columns, agents, caption }) {
               <td className="px-7 py-5 font-heading font-semibold text-secondary">{agent.givenName}</td>
               <td className="px-7 py-5 font-heading font-semibold text-secondary">{agent.lastName}</td>
               <td className="px-7 py-5">
-                <span className="inline-flex items-center gap-3 text-ink">
-                  <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-primary-soft text-primary-hover">
+                <span className="inline-flex items-center gap-3 text-secondary">
+                  <span className="grid size-9 shrink-0 place-items-center rounded-xl bg-secondary/8 text-secondary">
                     <BriefcaseIcon className="size-4" />
                   </span>
                   {agent.company}

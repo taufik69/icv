@@ -3,18 +3,20 @@ import { Container, Reveal } from '@/shared/components/ui'
 import { ActionLink } from '../common/ActionLink'
 
 // Closing band: course photo under a navy scrim, big headline, fine print, and the page's final actions.
+// On lg+ the photo is pinned to the viewport (clip-path keeps it inside the band) for a fixed-background effect.
 export function CourseCta({ cta, image }) {
   return (
-    <section aria-labelledby="cta-title" className="relative isolate overflow-hidden bg-secondary-dark py-20 text-center md:py-28">
-      <img {...image} sizes="100vw" loading="lazy" decoding="async" alt="" className="absolute inset-0 -z-10 size-full object-cover" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-b from-secondary-dark/90 via-secondary/85 to-secondary-dark/95" />
+    <section aria-labelledby="cta-title" className="relative isolate overflow-hidden bg-secondary-dark py-24 text-center [clip-path:inset(0)] md:py-32">
+      <img {...image} sizes="100vw" loading="lazy" decoding="async" alt="" className="absolute inset-0 -z-10 size-full object-cover lg:fixed lg:h-screen" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-r from-secondary-dark/95 via-secondary/75 to-secondary-dark/95" />
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 -z-10 h-px bg-linear-to-r from-transparent via-white/30 to-transparent" />
       <Container>
         <Reveal from="zoom" className="mx-auto max-w-3xl">
-          {cta.title && <p className="mb-4 font-condensed text-lg font-bold tracking-[0.25em] text-primary uppercase">{cta.title}</p>}
+          {cta.title && <p className="mb-4 font-condensed text-lg font-bold tracking-[0.25em] text-white/95 uppercase">{cta.title}</p>}
           <h2 id="cta-title" className="font-heading text-4xl leading-tight font-extrabold text-white md:text-6xl">{cta.headline}</h2>
           <div className="mt-6 space-y-2">
             {cta.lines.map((line) => (
-              <p key={line} className="leading-relaxed text-white/75">{line}</p>
+              <p key={line} className="leading-relaxed text-white/95">{line}</p>
             ))}
           </div>
           <div className="mt-10 flex flex-wrap justify-center gap-3">

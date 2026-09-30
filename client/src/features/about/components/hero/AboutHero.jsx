@@ -5,7 +5,7 @@ import { HeroStats } from './HeroStats'
 // Banner = the icv.edu.au/about header photo, plus a key-facts strip.
 export function AboutHero() {
   return (
-    <PageHero id="about-title" current="About us" {...content}>
+    <PageHero id="about-title" accent="muted" grid current="About us" {...content}>
       <HeroStats stats={content.stats} />
     </PageHero>
   )

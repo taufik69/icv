@@ -9,13 +9,13 @@ export function DocLayout({ id, current, hero, heading, sections, ids, numbered,
 
   return (
     <>
-      <PageHero id={id} current={current} {...hero} />
+      <PageHero accent="muted" grid id={id} current={current} {...hero} />
       <div ref={ref} className={`relative bg-surface-muted py-14 md:py-20 ${doodle}`}>
         <Container>
           {heading && (
             <Reveal className="mb-10 md:mb-12">
               <p className="font-heading text-2xl leading-tight font-bold text-secondary md:text-4xl">{heading}</p>
-              <span aria-hidden="true" className="mt-4 block h-1 w-16 rounded-pill bg-primary" />
+              <span aria-hidden="true" className="mt-4 block h-1 w-16 rounded-pill bg-secondary" />
             </Reveal>
           )}
           <div className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">

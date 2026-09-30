@@ -6,7 +6,7 @@ import { AgentsSection } from './AgentsSection'
 export function AgentsPage() {
   return (
     <>
-      <PageHero id="agents-page-title" current="Education agents" {...heroContent} />
+      <PageHero id="agents-page-title" accent="muted" grid current="Education agents" {...heroContent} />
       <AgentsSection />
       <ContactCta id="agents-cta-title" content={agentsCta} className="bg-surface-muted py-16 md:py-20" />
     </>

@@ -8,7 +8,7 @@ import { ValuesSection } from './values/ValuesSection'
 export function WhyChoosePage() {
   return (
     <>
-      <PageHero id="why-choose-title" current="Why choose ICV" {...heroContent} />
+      <PageHero id="why-choose-title" accent="muted" grid current="Why choose ICV" {...heroContent} />
       <OfferSection />
       <ValuesSection />
       <CampusSection />

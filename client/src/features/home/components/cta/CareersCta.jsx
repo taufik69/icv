@@ -21,12 +21,12 @@ export function CareersCta() {
 
       <Container className="grid items-center gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,30rem)] lg:gap-16">
         <Reveal from="left">
-          <SectionEyebrow tone="light">{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="careers-cta-title" className="mt-5 text-4xl leading-none text-white uppercase sm:text-5xl lg:text-6xl">
             {line1}
-            <span className="block text-primary">{line2}</span>
+            <span className="block text-white/85">{line2}</span>
           </h2>
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 md:text-lg">{content.subtitle}</p>
+          <p className="mt-6 max-w-xl text-base leading-relaxed text-white/95 md:text-lg">{content.subtitle}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <AppLink
               href={content.action.href}

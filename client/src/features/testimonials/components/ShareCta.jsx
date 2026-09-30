@@ -14,11 +14,11 @@ export function ShareCta() {
           <StarIcon className="absolute top-1/3 right-[12%] -z-10 size-14 text-warning/35 motion-safe:animate-float-slow" />
           <StarIcon className="absolute bottom-10 left-[22%] -z-10 size-6 text-warning/40 motion-safe:animate-float-slow" />
 
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="share-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-md leading-relaxed text-ink-muted">{content.text}</p>
+          <p className="mx-auto mt-4 max-w-md leading-relaxed text-secondary/90">{content.text}</p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a

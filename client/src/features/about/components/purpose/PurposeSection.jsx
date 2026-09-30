@@ -10,13 +10,13 @@ export function PurposeSection() {
 
   return (
     <section ref={ref} aria-labelledby="purpose-title" className={`relative overflow-hidden bg-surface-muted py-20 md:py-28 ${doodle}`}>
-      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-primary/10 blur-3xl" />
+      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-secondary/5 blur-3xl" />
 
       <Container className="relative">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="purpose-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
         </Reveal>
 

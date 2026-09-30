@@ -12,7 +12,7 @@ import { WellbeingSection } from './wellbeing/WellbeingSection'
 export function WellbeingPage() {
   return (
     <>
-      <PageHero id="wellbeing-page-title" current="Student Wellbeing Centre" {...heroContent}>
+      <PageHero id="wellbeing-page-title" accent="muted" grid current="Student Wellbeing Centre" {...heroContent}>
         <JumpLinks links={heroContent.jumpLinks} />
       </PageHero>
       <CounsellorSection />

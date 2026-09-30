@@ -10,9 +10,9 @@ export function ReportsSection() {
     <section ref={ref} aria-labelledby="reports-title" className={`relative overflow-hidden bg-surface py-20 md:py-28 ${doodle}`}>
       <Container>
         <Reveal className="max-w-2xl">
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="reports-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
         </Reveal>
 

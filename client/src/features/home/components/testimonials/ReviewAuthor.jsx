@@ -4,7 +4,7 @@ export function ReviewAuthor({ review }) {
 
   return (
     <div className="flex items-center justify-center gap-3 md:justify-start">
-      <span className="grid size-11 shrink-0 place-items-center rounded-full bg-primary-soft font-heading text-sm font-bold text-secondary">
+      <span className="grid size-11 shrink-0 place-items-center rounded-full bg-secondary/8 font-heading text-sm font-bold text-secondary">
         {initials}
       </span>
       <div className="flex min-w-0 flex-col items-start">
@@ -14,7 +14,7 @@ export function ReviewAuthor({ review }) {
         <svg aria-hidden="true" viewBox="0 -2 14 12" width="14" height="10" className="-my-px ml-3 block fill-current text-surface-muted">
           <path d="M0 -2V0C0 0 5.09 .5 5.09 4C5.09 7.5 0 8 0 8V10H14V8C14 8 8.91 7.5 8.91 4C8.91 .5 14 0 14 0V-2Z" />
         </svg>
-        <span className="max-w-full truncate rounded-md bg-surface-muted px-2.5 py-1 text-xs text-ink-muted">
+        <span className="max-w-full truncate rounded-md bg-surface-muted px-2.5 py-1 text-xs text-secondary-muted">
           {review.course}
         </span>
       </div>

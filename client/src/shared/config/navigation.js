@@ -10,7 +10,6 @@ import {
   HeartIcon,
   HomeIcon,
   InfoIcon,
-  LayoutGridIcon,
   PhoneIcon,
   PlaneIcon,
   PresentationIcon,
@@ -23,12 +22,13 @@ import { domesticCourses, internationalCourses } from './courseNav'
 
 // Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
 // the header starts transparent over them.
-const heroSections = ['/about', '/student-info', '/domestic', '/international', '/contact', '/enquire-now']
+const heroSections = ['/about', '/student-info', '/courses', '/domestic', '/international', '/contact', '/enquire-now']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 export const mainNav = [
   {
     label: 'About Us',
+    to: '/about',
     Icon: HomeIcon,
     children: [
       { label: 'About ICV', to: '/about', Icon: InfoIcon },
@@ -41,16 +41,7 @@ export const mainNav = [
       { label: 'Testimonials', to: '/about/testimonials', Icon: StarIcon },
     ],
   },
-  {
-    label: 'Courses',
-    Icon: BookOpenIcon,
-    passive: true, // its links duplicate Domestic / International, so it never shows as the current section
-    children: [
-      { label: 'Domestic Courses', to: '/domestic', Icon: GlobeIcon },
-      { label: 'International Courses', to: '/international', Icon: PlaneIcon },
-      { label: 'All Courses', to: '/', hash: 'courses', Icon: LayoutGridIcon },
-    ],
-  },
+  { label: 'Courses', to: '/courses', Icon: BookOpenIcon },
   {
     label: 'Student Info',
     Icon: GraduationCapIcon,
@@ -66,11 +57,13 @@ export const mainNav = [
   },
   {
     label: 'Domestic',
+    to: '/domestic',
     Icon: GlobeIcon,
     children: domesticCourses,
   },
   {
     label: 'International',
+    to: '/international',
     Icon: PlaneIcon,
     children: internationalCourses,
   },

@@ -22,16 +22,20 @@ export function GallerySection() {
           <div aria-hidden="true" className="absolute inset-0 -z-10 bg-linear-to-t from-secondary via-secondary/80 to-transparent md:bg-linear-to-r md:via-secondary/80 md:to-transparent" />
 
           <div className="max-w-xl p-8 pt-40 md:p-14">
-            <span className="grid size-14 place-items-center rounded-2xl bg-primary text-on-primary shadow-card">
+            <span className="grid size-14 place-items-center rounded-2xl bg-white text-secondary shadow-card">
               <ImageIcon className="size-7" />
             </span>
-            <SectionEyebrow tone="light" className="mt-6">
+            <SectionEyebrow tone="light" accent="muted" className="mt-6">
               {content.eyebrow}
             </SectionEyebrow>
             <h2 id="gallery-title" className="mt-5 text-3xl leading-tight text-white md:text-4xl">
-              {content.title} <span className="text-primary">{content.highlight}</span>
+              {content.title} <span className="text-white/90">{content.highlight}</span>
             </h2>
+<<<<<<< HEAD
             <p className="mt-4 leading-relaxed text-white/80 max-md:text-justify max-md:hyphens-auto">{content.text}</p>
+=======
+            <p className="mt-4 leading-relaxed text-white/90">{content.text}</p>
+>>>>>>> devlopement
           </div>
         </Reveal>
       </Container>

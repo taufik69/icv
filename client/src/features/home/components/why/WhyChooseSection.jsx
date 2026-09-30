@@ -7,15 +7,15 @@ import { WhyFeatureCard } from './WhyFeatureCard'
 export function WhyChooseSection() {
   return (
     <section aria-labelledby="why-title" className="relative overflow-hidden bg-surface-alt py-20 md:py-28">
-      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-primary/10 blur-3xl" />
+      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-24 -right-24 size-96 rounded-full bg-secondary/5 blur-3xl" />
 
       <Container className="relative grid items-center gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16">
         <Reveal from="left">
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="why-title" className="mt-5 text-3xl leading-tight capitalize sm:text-4xl md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <div className="mt-6 space-y-4 text-justify leading-relaxed text-ink-muted hyphens-auto">
+          <div className="mt-6 space-y-4 text-justify leading-relaxed text-secondary/90 hyphens-auto">
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}

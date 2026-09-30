@@ -11,7 +11,7 @@
 
   --color-secondary: #0a2449; /* ICV navy */
   --color-secondary-dark: #06233e;
-  --color-secondary-muted: #49687e;
+  --color-secondary-muted: #3b5a70; /* darkened from #49687e so heading highlights read clearly */
   --color-on-secondary: #ffffff;
 
   --color-accent: #92278f; /* purple */
@@ -23,8 +23,8 @@
   /* Text */
   --color-ink: #212121;
   --color-ink-strong: #101010;
-  --color-ink-muted: #505050;
-  --color-ink-subtle: #777777;
+  --color-ink-muted: #3d3d3d; /* darkened from #505050 for readability */
+  --color-ink-subtle: #5c5c5c; /* darkened from #777777 for readability */
   --color-ink-disabled: #999999;
 
   /* Surfaces */

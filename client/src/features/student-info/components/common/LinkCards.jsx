@@ -10,13 +10,13 @@ export function LinkCards({ links, cols = 'md:grid-cols-3' }) {
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex h-full items-center justify-between gap-4 rounded-2xl bg-surface p-5 ring-1 ring-line-soft transition hover:-translate-y-0.5 hover:shadow-card hover:ring-primary"
+            className="group flex h-full items-center justify-between gap-4 rounded-2xl bg-surface p-5 ring-1 ring-line-soft transition hover:-translate-y-0.5 hover:shadow-card hover:ring-secondary/30"
           >
             <span className="min-w-0">
               <span className="block font-heading font-semibold text-secondary">{link.label}</span>
-              {link.note && <span className="mt-1 block truncate text-sm text-ink-subtle">{link.note}</span>}
+              {link.note && <span className="mt-1 block truncate text-sm text-secondary-muted">{link.note}</span>}
             </span>
-            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-surface-muted text-secondary transition group-hover:bg-primary group-hover:text-on-primary">
+            <span className="grid size-10 shrink-0 place-items-center rounded-full bg-surface-muted text-secondary transition group-hover:bg-secondary group-hover:text-white">
               <ArrowUpRightIcon className="size-4" />
               <span className="sr-only">(opens in a new tab)</span>
             </span>

@@ -1,11 +1,18 @@
+import { BrandLogo } from '@/shared/components/ui'
 import { legal, socialLinks } from '@/shared/config/footer'
 
 export function FooterBrand() {
   return (
     <div>
+<<<<<<< HEAD
       <img src="/images/icv-logo-white.webp" alt="International College of Victoria" width="240" height="110" loading="lazy" className="h-16 w-auto" />
       <p className="mt-6 text-sm leading-relaxed text-white/60 max-md:text-justify max-md:hyphens-auto">{legal.acknowledgement}</p>
       <p className="mt-3 text-sm leading-relaxed text-white/60 max-md:text-justify max-md:hyphens-auto">{legal.welcome}</p>
+=======
+      <BrandLogo className="text-[0.875rem] text-white" />
+      <p className="mt-6 text-sm leading-relaxed text-white/80">{legal.acknowledgement}</p>
+      <p className="mt-3 text-sm leading-relaxed text-white/80">{legal.welcome}</p>
+>>>>>>> devlopement
       <ul className="mt-6 flex gap-2">
         {socialLinks.map(({ label, href, Icon }) => (
           <li key={label}>

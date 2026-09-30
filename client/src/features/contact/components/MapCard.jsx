@@ -16,7 +16,7 @@ export function MapCard({ map, address }) {
         rel="noopener noreferrer"
         className="absolute inset-x-4 bottom-4 flex items-center gap-3 rounded-2xl bg-secondary/90 px-5 py-4 text-white shadow-brand backdrop-blur-md transition hover:bg-secondary hover:text-white"
       >
-        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-on-primary">
+        <span className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary text-white">
           <MapPinIcon className="size-5" />
         </span>
         <span className="font-heading font-semibold">{address.label}</span>

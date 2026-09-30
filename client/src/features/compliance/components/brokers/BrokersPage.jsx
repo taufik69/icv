@@ -9,7 +9,7 @@ export function BrokersPage() {
 
   return (
     <>
-      <PageHero id="brokers-page-title" current="Brokers and subcontractors" {...brokersHero} />
+      <PageHero id="brokers-page-title" accent="muted" grid current="Brokers and subcontractors" {...brokersHero} />
       <section ref={ref} aria-labelledby="statement-title" className={`relative overflow-hidden bg-surface py-20 md:py-28 ${doodle}`}>
         <Container>
           <Reveal from="zoom" className="mx-auto max-w-5xl">

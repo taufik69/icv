@@ -6,7 +6,7 @@ export function NewsCard({ post, hidden = false, className = '' }) {
     <a
       href={post.href}
       tabIndex={hidden ? -1 : undefined}
-      className={`group block rounded-2xl bg-surface p-3 shadow-raised ring-1 ring-line-soft transition duration-300 hover:shadow-card hover:ring-primary/60 ${className}`}
+      className={`group block rounded-2xl bg-surface p-3 shadow-raised ring-1 ring-line-soft transition duration-300 hover:shadow-card hover:ring-secondary/30 ${className}`}
     >
       <div className="aspect-16/10 overflow-hidden rounded-xl bg-surface-muted">
         <img
@@ -24,7 +24,7 @@ export function NewsCard({ post, hidden = false, className = '' }) {
         <h3 className="mt-2 line-clamp-2 text-base leading-snug font-semibold transition-colors group-hover:text-secondary-muted">
           {post.title}
         </h3>
-        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-ink-muted">{post.excerpt}</p>
+        <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-secondary/90">{post.excerpt}</p>
       </div>
     </a>
   )

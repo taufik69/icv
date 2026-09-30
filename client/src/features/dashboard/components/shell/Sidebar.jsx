@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { LogOutIcon } from '@/shared/components/icons'
+import { BrandLogo } from '@/shared/components/ui'
 import { dashboardNav, siteLink, staffUser } from '../../data/dashboardNav'
 import { applicationCounts } from '../../data/applications'
 import { SidebarLink } from './SidebarLink'
@@ -10,7 +11,7 @@ export function Sidebar() {
   return (
     <aside className="sticky top-0 hidden h-svh w-64 shrink-0 flex-col bg-secondary px-6 py-7 lg:flex">
       <Link to="/dashboard/courses" aria-label="Course admin home">
-        <img src="/images/icv-logo-white.webp" alt="International College of Victoria" width="240" height="110" className="h-11 w-auto" />
+        <BrandLogo className="text-[0.625rem] text-white" />
       </Link>
 
       <nav aria-label="Dashboard" className="mt-10 grid gap-1">
@@ -25,9 +26,9 @@ export function Sidebar() {
           </span>
           <span className="min-w-0 flex-1">
             <span className="block truncate font-heading text-sm font-semibold text-white">{staffUser.name}</span>
-            <span className="block truncate text-xs text-white/55">{staffUser.email}</span>
+            <span className="block truncate text-xs text-white/85">{staffUser.email}</span>
           </span>
-          <Link to="/dashboard/login" aria-label="Sign out" className="grid size-8 place-items-center rounded-lg text-white/60 hover:bg-white/10 hover:text-white">
+          <Link to="/dashboard/login" aria-label="Sign out" className="grid size-8 place-items-center rounded-lg text-white/80 hover:bg-white/10 hover:text-white">
             <LogOutIcon className="size-4" />
           </Link>
         </div>

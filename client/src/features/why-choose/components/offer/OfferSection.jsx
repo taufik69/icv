@@ -8,9 +8,9 @@ export function OfferSection() {
     <section aria-labelledby="offer-title" className="bg-surface-muted py-20 md:py-28">
       <Container>
         <Reveal className="max-w-2xl">
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="offer-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
         </Reveal>
 

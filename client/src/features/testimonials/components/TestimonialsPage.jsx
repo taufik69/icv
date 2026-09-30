@@ -7,7 +7,7 @@ import { ShareCta } from './ShareCta'
 export function TestimonialsPage() {
   return (
     <>
-      <PageHero id="testimonials-page-title" current="Testimonials" {...heroContent} />
+      <PageHero id="testimonials-page-title" accent="muted" grid current="Testimonials" {...heroContent} />
       <RatingSpotlight />
       <ReviewsWall />
       <ShareCta />

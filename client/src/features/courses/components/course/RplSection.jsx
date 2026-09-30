@@ -12,7 +12,7 @@ export function RplSection({ rpl, image }) {
             <details key={i} className="group rounded-2xl bg-surface ring-1 ring-line-soft open:shadow-card">
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-heading font-semibold text-secondary [&::-webkit-details-marker]:hidden">
                 {section.title}
-                <ChevronDownIcon className="size-5 text-primary-hover transition group-open:rotate-180" />
+                <ChevronDownIcon className="size-5 text-secondary-muted transition group-open:rotate-180" />
               </summary>
               <div className="px-5 pb-5">
                 <Parts parts={section.parts} />

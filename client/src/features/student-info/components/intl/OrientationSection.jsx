@@ -2,16 +2,16 @@ import { orientationSection as content } from '@/features/student-info/data/intl
 import { CheckCircleIcon, PhoneIcon } from '@/shared/components/icons'
 import { DocSection } from '../common/DocSection'
 
-const Paras = ({ items }) => items.map((t) => <p key={t.slice(0, 24)} className="mt-4 leading-relaxed text-ink-muted">{t}</p>)
+const Paras = ({ items }) => items.map((t) => <p key={t.slice(0, 24)} className="mt-4 leading-relaxed text-secondary/90">{t}</p>)
 
 function CheckGrid({ title, items }) {
   return (
-    <div className="mt-8 rounded-2xl bg-primary-soft/60 p-5 ring-1 ring-primary/20 md:p-6">
+    <div className="mt-8 rounded-2xl bg-secondary/5 p-5 ring-1 ring-secondary/10 md:p-6">
       <h3 className="text-lg leading-snug">{title}</h3>
       <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-3 rounded-xl bg-surface px-4 py-3 font-medium text-ink shadow-raised">
-            <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-primary-hover" />
+          <li key={item} className="flex items-start gap-3 rounded-xl bg-surface px-4 py-3 font-medium text-secondary shadow-raised">
+            <CheckCircleIcon className="mt-0.5 size-5 shrink-0 text-secondary-muted" />
             {item}
           </li>
         ))}
@@ -24,7 +24,7 @@ function CheckGrid({ title, items }) {
 export function OrientationSection() {
   return (
     <DocSection section={content}>
-      <p className="mt-2 font-condensed text-sm font-bold tracking-[0.2em] text-primary-hover uppercase">{content.subtitle}</p>
+      <p className="mt-2 font-condensed text-sm font-bold tracking-[0.2em] text-secondary-muted uppercase">{content.subtitle}</p>
       <Paras items={content.intro} />
       <CheckGrid title={content.kitTitle} items={content.kit} />
       <Paras items={content.middle} />
@@ -35,11 +35,11 @@ export function OrientationSection() {
         {content.counselling.map((c) => (
           <li key={c.name}>
             <a href={`tel:${c.tel}`} className="group flex h-full items-center gap-3 rounded-2xl bg-secondary p-4 text-white shadow-brand transition hover:-translate-y-0.5 hover:bg-secondary-dark hover:text-white">
-              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-on-primary transition group-hover:scale-110">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white text-secondary transition group-hover:scale-110">
                 <PhoneIcon className="size-4" />
               </span>
               <span>
-                <span className="block text-sm text-white/75">{c.name}</span>
+                <span className="block text-sm text-white/90">{c.name}</span>
                 <span className="block font-heading text-lg font-bold">{c.phone}</span>
               </span>
             </a>
@@ -47,7 +47,7 @@ export function OrientationSection() {
         ))}
       </ul>
 
-      <p className="mt-5 rounded-xl border-l-4 border-primary bg-surface-muted px-4 py-3 leading-relaxed text-ink">{content.legal}</p>
+      <p className="mt-5 rounded-xl border-l-4 border-secondary bg-surface-muted px-4 py-3 leading-relaxed text-secondary">{content.legal}</p>
       <p className="mt-6 font-heading text-lg leading-snug font-semibold text-secondary">{content.closing}</p>
     </DocSection>
   )

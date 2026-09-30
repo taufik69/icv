@@ -8,15 +8,19 @@ export function WellbeingSection() {
 
   return (
     <section id="student-wellbeing" aria-labelledby="wellbeing-title" className="relative isolate scroll-mt-24 overflow-hidden bg-secondary py-20 md:py-28">
-      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-32 -left-24 -z-10 size-96 rounded-full bg-primary/20 blur-3xl" />
+      <span aria-hidden="true" className="parallax-up pointer-events-none absolute -top-32 -left-24 -z-10 size-96 rounded-full bg-white/5 blur-3xl" />
 
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         <Reveal from="left">
-          <SectionEyebrow tone="light">{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="wellbeing-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-primary">{content.highlight}</span>
+            {content.title} <span className="text-white/90">{content.highlight}</span>
           </h2>
+<<<<<<< HEAD
           <div className="mt-6 space-y-4 leading-relaxed text-white/75 max-md:text-justify max-md:hyphens-auto">
+=======
+          <div className="mt-6 space-y-4 leading-relaxed text-white/90">
+>>>>>>> devlopement
             {content.paragraphs.map((text) => (
               <p key={text.slice(0, 24)}>{text}</p>
             ))}
@@ -45,7 +49,7 @@ export function WellbeingSection() {
             />
           </div>
           <div className="absolute -bottom-6 left-6 flex items-center gap-3 rounded-2xl bg-surface px-5 py-3 shadow-elevated">
-            <span className="grid size-10 place-items-center rounded-full bg-primary text-on-primary">
+            <span className="grid size-10 place-items-center rounded-full bg-secondary text-white">
               <HeartIcon className="size-5" />
             </span>
             <p className="font-heading text-sm font-bold text-secondary">Confidential &amp; supportive</p>

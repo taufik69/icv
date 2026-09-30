@@ -10,15 +10,15 @@ export function StatementCard({ content }) {
       />
 
       <span className="relative mx-auto grid size-24 place-items-center">
-        <span aria-hidden="true" className="absolute inset-0 rounded-full bg-primary/25 motion-safe:animate-ping [animation-duration:2.4s]" />
-        <span aria-hidden="true" className="absolute inset-2 rounded-full bg-primary-soft" />
-        <span className="relative grid size-16 place-items-center rounded-full bg-secondary text-primary shadow-brand">
+        <span aria-hidden="true" className="absolute inset-0 rounded-full bg-secondary/15 motion-safe:animate-ping [animation-duration:2.4s]" />
+        <span aria-hidden="true" className="absolute inset-2 rounded-full bg-secondary/8" />
+        <span className="relative grid size-16 place-items-center rounded-full bg-secondary text-white shadow-brand">
           <ShieldCheckIcon className="size-8" />
         </span>
       </span>
 
-      <p className="mt-8 inline-flex items-center gap-2 rounded-pill bg-surface-muted px-4 py-1.5 font-condensed text-sm tracking-[0.2em] text-ink-subtle uppercase ring-1 ring-line-soft">
-        <span className="size-2 rounded-full bg-primary" />
+      <p className="mt-8 inline-flex items-center gap-2 rounded-pill bg-surface-muted px-4 py-1.5 font-condensed text-sm tracking-[0.2em] text-secondary-muted uppercase ring-1 ring-line-soft">
+        <span className="size-2 rounded-full bg-secondary" />
         {content.label} · {content.year}
       </p>
 
@@ -29,8 +29,8 @@ export function StatementCard({ content }) {
       <dl className="mx-auto mt-12 grid max-w-md grid-cols-2 gap-4">
         {content.counts.map((c) => (
           <div key={c.label} className="flex flex-col-reverse rounded-2xl bg-secondary px-6 py-5 shadow-brand">
-            <dt className="font-condensed text-xs tracking-[0.2em] text-white/60 uppercase">{c.label}</dt>
-            <dd className="font-heading text-5xl leading-none font-extrabold text-primary md:text-6xl">{c.value}</dd>
+            <dt className="font-condensed text-xs tracking-[0.2em] text-white/90 uppercase">{c.label}</dt>
+            <dd className="font-heading text-5xl leading-none font-extrabold text-white md:text-6xl">{c.value}</dd>
           </div>
         ))}
       </dl>

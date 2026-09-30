@@ -25,9 +25,9 @@ export function ReviewsWall() {
       <Container>
         <Reveal className="flex flex-wrap items-end justify-between gap-6">
           <div>
-            <SectionEyebrow>Google reviews</SectionEyebrow>
+            <SectionEyebrow accent="muted">Google reviews</SectionEyebrow>
             <h2 id="wall-title" className="mt-5 text-3xl leading-tight md:text-5xl">
-              In their <span className="text-primary-hover">own words</span>
+              In their <span className="text-secondary-muted">own words</span>
             </h2>
           </div>
           <TrainerFilter trainers={TRAINERS} counts={counts} total={reviews.length} active={trainer} onChange={setTrainer} />

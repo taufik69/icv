@@ -13,11 +13,11 @@ export function NewsSection() {
     <section aria-labelledby="news-title" className="bg-surface py-20 md:py-28">
       <Container className="grid gap-12 lg:grid-cols-[5fr_6fr] lg:gap-16">
         <Reveal from="left">
-          <SectionEyebrow>{content.eyebrow}</SectionEyebrow>
+          <SectionEyebrow accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="news-title" className="mt-5 text-3xl leading-tight capitalize sm:text-4xl md:text-5xl">
-            {content.title} <span className="text-primary-hover">{content.highlight}</span>
+            {content.title} <span className="text-secondary-muted">{content.highlight}</span>
           </h2>
-          <p className="mt-4 max-w-md leading-relaxed text-ink-muted">{content.intro}</p>
+          <p className="mt-4 max-w-md leading-relaxed text-secondary/90">{content.intro}</p>
           <div className="mt-10">
             <NewsFeatured post={content.featured} />
           </div>

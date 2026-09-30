@@ -1,5 +1,5 @@
 const tones = {
-  light: { box: 'bg-primary-soft ring-primary/30', title: 'text-secondary', chip: 'bg-surface text-secondary ring-line-soft' },
+  light: { box: 'bg-secondary/5 ring-secondary/15', title: 'text-secondary', chip: 'bg-surface text-secondary ring-line-soft' },
   navy: { box: 'bg-secondary ring-secondary', title: 'text-white', chip: 'bg-white/10 text-white ring-white/15' },
 }
 

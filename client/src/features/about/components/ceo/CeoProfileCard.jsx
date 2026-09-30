@@ -7,12 +7,12 @@ export function CeoProfileCard({ profile }) {
 
   return (
     <div className="mx-auto max-w-sm rounded-3xl bg-surface p-5 shadow-card ring-1 ring-line-soft lg:max-w-none">
-      <PhotoFrame image={image} aspect="aspect-square" className="mt-2 ml-2" />
+      <PhotoFrame image={image} aspect="aspect-square" accent="muted" className="mt-2 ml-2" />
 
       <div className="mt-8 text-center">
         <p className="font-heading text-2xl font-bold text-secondary">{profile.name}</p>
-        <p className="mt-1 font-condensed text-sm tracking-[0.2em] text-primary-hover uppercase">{profile.role}</p>
-        <p className="mt-1 text-sm text-ink-subtle">{profile.org}</p>
+        <p className="mt-1 font-condensed text-sm tracking-[0.2em] text-secondary-muted uppercase">{profile.role}</p>
+        <p className="mt-1 text-sm text-secondary-muted">{profile.org}</p>
         <a
           href={profile.linkedin}
           target="_blank"

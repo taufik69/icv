@@ -7,7 +7,7 @@ import { ReportsSection } from './ReportsSection'
 export function CompliancePage() {
   return (
     <>
-      <PageHero id="compliance-page-title" current="Compliance and reports" {...heroContent} />
+      <PageHero id="compliance-page-title" accent="muted" grid current="Compliance and reports" {...heroContent} />
       <ReportsSection />
       <RegistrationBand />
       <ContactCta id="compliance-cta-title" content={complianceCta} className="bg-surface py-16 md:py-20" />

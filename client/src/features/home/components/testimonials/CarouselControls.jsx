@@ -1,7 +1,7 @@
 import { ArrowRightIcon } from '@/shared/components/icons'
 
 const arrow =
-  'grid size-11 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm transition hover:bg-primary hover:text-on-primary'
+  'grid size-11 place-items-center rounded-full bg-white/10 text-white ring-1 ring-white/20 backdrop-blur-sm transition hover:bg-white hover:text-secondary'
 const pause =
   'group-hover/carousel:[animation-play-state:paused] group-has-focus-visible/carousel:[animation-play-state:paused]'
 
@@ -27,7 +27,7 @@ export function CarouselControls({ reviews, active, page, paused, onPrev, onNext
               <span
                 key={page}
                 onAnimationEnd={onNext}
-                className={`block h-full origin-left rounded-full bg-primary animate-progress-fill [--progress-duration:7s] motion-reduce:animate-none ${paused ? '[animation-play-state:paused]' : ''} ${pause}`}
+                className={`block h-full origin-left rounded-full bg-white animate-progress-fill [--progress-duration:7s] motion-reduce:animate-none ${paused ? '[animation-play-state:paused]' : ''} ${pause}`}
               />
             )}
           </button>

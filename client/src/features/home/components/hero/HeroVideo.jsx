@@ -22,7 +22,7 @@ function buildSrc({ vimeoId, hash }) {
 
 export default function HeroVideo({ video, containerRef }) {
   const iframeRef = useRef(null)
-  const isPlaying = useVimeoPlayback(iframeRef, containerRef)
+  const isPlaying = useVimeoPlayback(iframeRef, containerRef, video.trimEnd)
 
   return (
     <div

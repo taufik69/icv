@@ -1,14 +1,15 @@
 // Shared photo card: soft green block offset behind (bottom-right), faint green dot grid peeking out
 // top-left, rounded photo that zooms slowly on hover. `overlay` renders on top of the photo (e.g. a name plate).
-// Pass the <img> as `image` props; `aspect` sets the photo box ratio.
-export function PhotoFrame({ image, aspect = 'aspect-3/2', imgClassName = '', overlay, className = '' }) {
+// Pass the <img> as `image` props; `aspect` sets the photo box ratio; `accent="muted"` uses navy instead of green.
+export function PhotoFrame({ image, aspect = 'aspect-3/2', imgClassName = '', overlay, accent = 'green', className = '' }) {
+  const muted = accent === 'muted'
   return (
     <div className={`group relative mr-4 mb-4 sm:mr-6 sm:mb-6 ${className}`}>
       <span
         aria-hidden="true"
-        className="absolute -top-5 -left-5 size-28 rounded-2xl bg-[radial-gradient(var(--color-primary)_1.5px,transparent_1.5px)] bg-size-[12px_12px] opacity-40"
+        className={`absolute -top-5 -left-5 size-28 rounded-2xl bg-size-[12px_12px] ${muted ? 'bg-[radial-gradient(var(--color-secondary)_1.5px,transparent_1.5px)] opacity-20' : 'bg-[radial-gradient(var(--color-primary)_1.5px,transparent_1.5px)] opacity-40'}`}
       />
-      <span aria-hidden="true" className="absolute inset-0 translate-x-4 translate-y-4 rounded-3xl bg-primary-soft sm:translate-x-6 sm:translate-y-6" />
+      <span aria-hidden="true" className={`absolute inset-0 translate-x-4 translate-y-4 rounded-3xl sm:translate-x-6 sm:translate-y-6 ${muted ? 'bg-secondary/6' : 'bg-primary-soft'}`} />
       <div className={`relative overflow-hidden rounded-3xl bg-surface-sunken shadow-card ${aspect}`}>
         <img
           loading="lazy"

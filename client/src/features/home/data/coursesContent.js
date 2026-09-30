@@ -9,8 +9,8 @@ const categories = {
 }
 const course = (code, title, audience, category, overview, path, image) => ({
   code, title, audience, category: categories[category], overview,
-  // Pages rebuilt in this app are internal routes; the rest still link to icv.edu.au.
-  ...(/^\/(domestic|international)\//.test(path) ? { to: path } : { href: `${ICV}${path}` }),
+  // Rebuilt courses open their course detail page (/courses/$market/$slug); the rest still link to icv.edu.au.
+  ...(/^\/(domestic|international)\//.test(path) ? { to: `/courses${path}` } : { href: `${ICV}${path}` }),
   image: { portrait: `/images/${image}.webp`, wide: `/images/${image}-wide.webp` },
 })
 
@@ -22,7 +22,7 @@ export const coursesContent = {
     { id: 'domestic', label: 'Domestic' },
     { id: 'international', label: 'International' },
   ],
-  viewAll: { label: 'View all courses', to: '/domestic' },
+  viewAll: { label: 'View all courses', to: '/courses' },
   courses: [
     course('CPC30220', 'Certificate III in Carpentry', 'international', 'building',
       'This qualification provides a trade outcome in carpentry, covering work in residential and commercial applications.',

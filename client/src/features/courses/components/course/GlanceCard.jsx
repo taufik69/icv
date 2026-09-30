@@ -5,13 +5,13 @@ import { ActionLink } from '../common/ActionLink'
 export function GlanceCard({ glance, actions }) {
   return (
     <aside aria-labelledby="glance-title" className="overflow-hidden rounded-3xl bg-secondary text-white shadow-brand">
-      <h2 id="glance-title" className="flex items-center gap-3 bg-primary px-7 py-4 font-condensed text-lg font-bold tracking-[0.2em] text-on-primary">
+      <h2 id="glance-title" className="flex items-center gap-3 bg-white/10 px-7 py-4 font-condensed text-lg font-bold tracking-[0.2em] text-white">
         AT A GLANCE
       </h2>
       <dl className="divide-y divide-white/10 px-7">
         {glance.map(([label, value]) => (
           <div key={label} className="grid grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)] items-baseline gap-4 py-3.5">
-            <dt className="text-sm text-white/65">{label}</dt>
+            <dt className="text-sm text-white/95">{label}</dt>
             <dd className="text-right font-heading font-semibold text-white">{value}</dd>
           </div>
         ))}

@@ -1,5 +1,5 @@
 // Labelled control with required marker and inline error (linked via aria-describedby).
-const control = 'mt-2 w-full rounded-xl bg-surface-muted px-4 py-3 text-ink ring-1 ring-line-soft transition placeholder:text-ink-subtle focus:bg-surface focus:ring-2 focus:ring-primary focus:outline-none aria-invalid:ring-2 aria-invalid:ring-danger'
+const control = 'mt-2 w-full rounded-xl bg-surface-muted px-4 py-3 text-secondary ring-1 ring-line-soft transition placeholder:text-secondary-muted focus:bg-surface focus:ring-2 focus:ring-secondary/40 focus:outline-none aria-invalid:ring-2 aria-invalid:ring-danger'
 
 export function Field({ name, label, error, as = 'input', className = '', children, ...props }) {
   const Tag = as

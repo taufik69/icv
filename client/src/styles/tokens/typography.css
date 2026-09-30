@@ -1,10 +1,21 @@
 /*
  * Font loaded from Google Fonts in index.html. The whole site uses Roboto Condensed;
  * the three utilities stay so components keep their roles (body / heading / label) if a family changes later.
- * Utilities: font-sans (body), font-heading, font-condensed.
+ * font-logo: Old English Text MT (installed copy or public/fonts/old-english-text-mt.woff2),
+ * else the free UnifrakturMaguntia lookalike from Google Fonts.
+ * Utilities: font-sans (body), font-heading, font-condensed, font-logo (BrandLogo wordmark only).
  */
+@font-face {
+  font-family: 'Old English Text MT';
+  src: local('Old English Text MT'), local('OldEnglishTextMT'), url('/fonts/old-english-text-mt.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --font-sans: 'Roboto Condensed', 'Arial Narrow', sans-serif;
   --font-heading: 'Roboto Condensed', 'Arial Narrow', sans-serif;
   --font-condensed: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-logo: 'Old English Text MT', 'UnifrakturMaguntia', serif;
 }

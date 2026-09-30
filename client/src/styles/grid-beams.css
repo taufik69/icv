@@ -1,0 +1,20 @@
+/*
+ * Course detail hero: light beams travelling along the blueprint grid lines. The beam layer is a size
+ * container, so 100cqw / 100cqh = the hero's width / height and every beam crosses it fully.
+ */
+@keyframes beam-x {
+  from { translate: -100% 0; }
+  to { translate: 100cqw 0; }
+}
+
+@keyframes beam-y {
+  from { translate: 0 -100%; }
+  to { translate: 0 100cqh; }
+}
+
+/* "On this page" nav: the section card you jumped to lifts in softly with a brief navy ring. */
+@keyframes section-land {
+  0% { transform: translateY(14px); box-shadow: 0 0 0 0 transparent; }
+  45% { transform: none; box-shadow: 0 0 0 4px color-mix(in oklab, var(--color-secondary) 14%, transparent); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}

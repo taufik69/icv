@@ -15,7 +15,7 @@ export function EsosPage() {
           {section.items?.length > 0 && (
             <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2">
               {section.items.map((item) => (
-                <div key={item.label} className="rounded-2xl border-l-4 border-primary bg-surface-muted/60 p-5 ring-1 ring-line-soft md:p-6">
+                <div key={item.label} className="rounded-2xl border-l-4 border-secondary bg-surface-muted/60 p-5 ring-1 ring-line-soft md:p-6">
                   <h3 className="text-lg leading-snug">{item.label}</h3>
                   <div className="mt-3 space-y-3">
                     {item.paragraphs.map((parts, j) => (

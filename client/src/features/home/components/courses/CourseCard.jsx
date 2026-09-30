@@ -2,7 +2,7 @@ import { ArrowRightIcon } from '@/shared/components/icons'
 import { AppLink } from '@/shared/components/ui'
 
 const audienceStyles = {
-  domestic: 'bg-primary text-on-primary',
+  domestic: 'bg-secondary text-white ring-1 ring-white/30',
   international: 'bg-white text-secondary',
 }
 const reveal =
@@ -11,7 +11,8 @@ const reveal =
 // Image card that fills its bento cell (sm+) or keeps a 3:4 ratio in the mobile carousel.
 // Hover (mouse only) reveals the overview + CTA; touch devices always see them.
 // Featured (2×2) cards show the overview permanently and use larger type.
-export function CourseCard({ course, featured = false }) {
+// Compact (single lg cell) cards drop the overview on lg so the CTA always fits.
+export function CourseCard({ course, featured = false, compact = false }) {
   const { Icon, label } = course.category
 
   return (
@@ -42,17 +43,17 @@ export function CourseCard({ course, featured = false }) {
         </div>
 
         <div className={featured ? 'max-w-lg' : ''}>
-          <p className="font-condensed text-sm tracking-wider text-primary">{course.code}</p>
+          <p className="font-condensed text-sm tracking-wider text-white/90">{course.code}</p>
           <h3 className={`mt-1 leading-snug font-semibold text-white ${featured ? 'text-xl sm:text-2xl md:text-3xl' : 'text-lg'}`}>
             {course.title}
           </h3>
-          <p className="mt-1 text-xs text-white/70">{label}</p>
-          {featured && <p className="mt-3 text-sm leading-relaxed text-white/80 md:text-base">{course.overview}</p>}
+          <p className="mt-1 text-xs text-white/95">{label}</p>
+          {featured && <p className="mt-3 text-sm leading-relaxed text-white/95 md:text-base">{course.overview}</p>}
 
           <div className={reveal}>
             <div className="overflow-hidden">
-              {!featured && <p className="mt-3 line-clamp-3 text-sm leading-relaxed text-white/80">{course.overview}</p>}
-              <span className="btn-shine mt-4 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-heading text-sm font-semibold text-secondary">
+              {!featured && <p className={`mt-3 line-clamp-2 text-sm leading-relaxed text-white/95 ${compact ? 'lg:hidden' : ''}`}>{course.overview}</p>}
+              <span className="btn-shine mt-3 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 font-heading text-sm font-semibold text-secondary">
                 View course
                 <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
               </span>

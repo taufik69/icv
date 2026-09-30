@@ -43,6 +43,7 @@ export function PurposeMedia({ image, video, className }) {
       >
         <Photo image={image} />
         <span aria-hidden="true" className="absolute inset-0 bg-secondary-dark/35 transition duration-500 group-hover/play:bg-secondary-dark/20" />
+<<<<<<< HEAD
         {/* Play button + label stacked and centred together, so they never overlap on short phone cards. */}
         <span className="absolute inset-0 flex flex-col items-center justify-center gap-3 sm:gap-4">
           <span className="relative grid size-12 place-items-center sm:size-18">
@@ -53,6 +54,17 @@ export function PurposeMedia({ image, video, className }) {
           </span>
           <span className="flex items-center gap-2 rounded-full bg-white px-4 py-1.5 font-heading text-xs font-semibold text-secondary shadow-card sm:px-5 sm:py-2 sm:text-sm">
             <PlayIcon className="size-3 text-primary sm:size-3.5" />
+=======
+        <span className="absolute top-1/2 left-1/2 grid size-18 -translate-1/2 place-items-center">
+          <span className="absolute inset-0 rounded-full bg-white/50 motion-safe:animate-ping" />
+          <span className="relative grid size-18 place-items-center rounded-full bg-white text-secondary shadow-elevated ring-4 ring-white/30 transition group-hover/play:scale-110">
+            <PlayIcon className="ml-1 size-8" />
+          </span>
+        </span>
+        <span className="absolute inset-x-0 bottom-5 flex justify-center">
+          <span className="flex items-center gap-2 rounded-full bg-white px-5 py-2 font-heading text-sm font-semibold text-secondary shadow-card">
+            <PlayIcon className="size-3.5 text-secondary" />
+>>>>>>> devlopement
             {video.label}
           </span>
         </span>

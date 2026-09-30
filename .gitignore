@@ -30,5 +30,3 @@ client/src/routeTree.gen.js
 # env files
 .env
 
-# Backend is not deployed yet (UI-only demo on Vercel)
-server/

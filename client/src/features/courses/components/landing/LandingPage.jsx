@@ -10,20 +10,21 @@ import { WelcomeSection } from './WelcomeSection'
 import { WhyChooseBlock } from './WhyChooseBlock'
 
 // Shared landing for /domestic and /international. Optional blocks (why, claim) render only when present.
+// `summaries` (from the route loader) turns the course grid into finder-style cards.
 // "OUR STUDENTS LOVE US" reuses the home page testimonials slider (same reviews on icv.edu.au).
-export function LandingPage({ content }) {
+export function LandingPage({ content, summaries }) {
   const { hero, enquire } = content
 
   return (
     <>
-      <PageHero id="landing-title" current={hero.title} title={hero.title} image={hero.image}>
+      <PageHero accent="muted" grid id="landing-title" current={hero.title} title={hero.title} image={hero.image}>
         <AppLink href={enquire.href} className="group btn-shine mt-8 inline-flex items-center gap-2 rounded-md bg-primary px-7 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary">
           {enquire.label}
           <ArrowUpRightIcon className="size-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
         </AppLink>
       </PageHero>
       <WelcomeSection welcome={content.welcome} enquire={enquire} />
-      <CoursesGrid content={content.courses} />
+      <CoursesGrid content={content.courses} summaries={summaries} />
       {content.why && <WhyChooseBlock why={content.why} />}
       <EnrolBand enrol={content.enrol} />
       <TestimonialsSection />

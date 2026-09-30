@@ -32,6 +32,6 @@ export const heroContent = {
     small: '/images/hero-poster-640.webp',
     large: '/images/hero-poster-1280.webp',
   },
-  // Background-mode Vimeo embed (muted, looped, no controls)
-  video: { vimeoId: '560150239', hash: '9290a15a9f' },
+  // Background-mode Vimeo embed (muted, looped, no controls); trimEnd = seconds cut off the end (loops back early)
+  video: { vimeoId: '560150239', hash: '9290a15a9f', trimEnd: 10 },
 }

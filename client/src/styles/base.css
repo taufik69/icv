@@ -20,4 +20,36 @@
   :focus-visible {
     @apply shadow-focus outline-none;
   }
+
+  /*
+   * Paragraphs are justified site-wide (hyphens keep the word spacing even in narrow cards).
+   * Copy inside a centred / right-aligned block keeps that alignment, including the responsive
+   * variants used in the codebase. A class on the <p> itself (text-center…) still wins: utilities
+   * sit in a later layer.
+   */
+  p {
+    text-align: justify;
+    hyphens: auto;
+  }
+  .text-center p {
+    text-align: center;
+  }
+  .text-right p {
+    text-align-last: right;
+  }
+  @media (width >= 40rem) {
+    .sm\:text-center p {
+      text-align: center;
+    }
+  }
+  @media (width >= 48rem) {
+    .md\:text-left p {
+      text-align: justify;
+    }
+  }
+  @media (width >= 64rem) {
+    .lg\:text-right p {
+      text-align-last: right;
+    }
+  }
 }

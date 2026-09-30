@@ -1,3 +1,5 @@
+import { CalendarIcon, ClockIcon, CoinsIcon, LightbulbIcon, UsersIcon } from '@/shared/components/icons'
+
 export const launchContent = {
   eyebrow: 'Launch your career',
   title: 'Launch your career to a',
@@ -7,11 +9,11 @@ export const launchContent = {
     'ICV provides a myriad of courses to both Domestic and International students.',
   ],
   benefits: [
-    'Gain Skills and Knowledge to work',
-    'Flexible Part time- Full time',
-    'Evening and Weekend Classes',
-    'Dedicated Trainers and After-Hours Support Available',
-    'Government funding* and interest-free payment plans available',
+    { text: 'Gain Skills and Knowledge to work', Icon: LightbulbIcon },
+    { text: 'Flexible Part time- Full time', Icon: ClockIcon },
+    { text: 'Evening and Weekend Classes', Icon: CalendarIcon },
+    { text: 'Dedicated Trainers and After-Hours Support Available', Icon: UsersIcon },
+    { text: 'Government funding* and interest-free payment plans available', Icon: CoinsIcon },
   ],
   action: { label: 'Enquire Now', href: 'https://icv.edu.au/contact/' },
   recognition: {

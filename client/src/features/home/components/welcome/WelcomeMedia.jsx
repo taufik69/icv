@@ -17,7 +17,7 @@ export function WelcomeMedia({ image }) {
       />
       <span className="absolute inset-0 bg-linear-to-t from-secondary via-secondary/10 to-transparent lg:bg-linear-to-r lg:via-transparent" />
       <span className="absolute right-5 bottom-5 flex items-center gap-2 rounded-full bg-white/15 px-4 py-2 font-heading text-sm font-semibold text-white ring-1 ring-white/30 backdrop-blur-md">
-        <MapPinIcon className="size-4 text-primary" />
+        <MapPinIcon className="size-4 text-white" />
         {image.caption}
       </span>
     </div>

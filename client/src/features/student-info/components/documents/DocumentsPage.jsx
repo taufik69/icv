@@ -10,7 +10,7 @@ export function DocumentsPage({ id, current, content }) {
 
   return (
     <>
-      <PageHero id={id} current={current} {...content.hero} />
+      <PageHero accent="muted" grid id={id} current={current} {...content.hero} />
       <section ref={ref} aria-labelledby={content.heading ? `${id}-list` : id} className={`relative overflow-hidden bg-surface py-16 md:py-24 ${doodle}`}>
         <Container>
           {content.heading && (
@@ -18,7 +18,7 @@ export function DocumentsPage({ id, current, content }) {
               <h2 id={`${id}-list`} className="text-3xl leading-tight md:text-4xl">
                 {content.heading}
               </h2>
-              <span aria-hidden="true" className="mt-4 block h-1 w-16 rounded-pill bg-primary" />
+              <span aria-hidden="true" className="mt-4 block h-1 w-16 rounded-pill bg-secondary" />
             </Reveal>
           )}
           <ul className={`grid gap-4 lg:grid-cols-2 ${content.heading ? 'mt-10' : ''}`}>
