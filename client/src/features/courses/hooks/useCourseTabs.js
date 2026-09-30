@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
+import { smoothScrollTo } from '../lib/smoothScrollTo'
+import { useTabIndicator } from './useTabIndicator'
 
 const SPY_LINE = 200 // px from the top: just under the site header + sticky tab bar
 
-// Section tabs that scroll instead of switching: clicking smooth-scrolls to the section and writes the
-// hash; while you scroll, the tab of the section under the tab bar lights up (scroll-spy). A hash in
+// Section tabs that scroll instead of switching: clicking eases the page to the section (scroll-spy
+// paused until it lands) and writes the hash; a navy pill slides to the active tab; while you scroll, the tab of the section under the tab bar lights up (scroll-spy). A hash in
 // the URL (#fees) scrolls there on load. The active tab is kept centred in the bar on phones.
 export function useCourseTabs(ids) {
   const [active, setActive] = useState(ids[0])
@@ -33,15 +35,19 @@ export function useCourseTabs(ids) {
   useEffect(() => {
     const list = listRef.current
     const tab = tabRefs.current[active]
-    if (list && tab) list.scrollTo({ left: tab.offsetLeft - list.clientWidth / 2 + tab.clientWidth / 2, behavior: 'smooth' })
+    if (list && tab) list.scrollTo({ left: tab.parentElement.offsetLeft - list.clientWidth / 2 + tab.clientWidth / 2, behavior: 'smooth' })
   }, [active])
+
+  useTabIndicator(listRef, tabRefs, active)
 
   const go = (id) => (e) => {
     e.preventDefault()
     setActive(id)
-    lockUntil.current = Date.now() + 900
     window.history.replaceState(null, '', `#${id}`)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    const section = document.getElementById(id)
+    if (!section) return
+    lockUntil.current = Infinity
+    smoothScrollTo(section).then(() => (lockUntil.current = 0))
   }
 
   return { active, go, listRef, tabRef: (id) => (el) => (tabRefs.current[id] = el) }

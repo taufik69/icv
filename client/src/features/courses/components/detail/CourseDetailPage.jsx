@@ -8,6 +8,7 @@ import { CourseSidebar } from './CourseSidebar'
 import { CourseSections } from './CourseSections'
 import { DetailHero } from './DetailHero'
 import { FeeTiles } from './FeeTiles'
+import { OverviewPhoto } from './OverviewPhoto'
 import { RelatedCourses } from './RelatedCourses'
 import { UnitsGrid } from './UnitsGrid'
 
@@ -23,7 +24,15 @@ export function CourseDetailPage({ course, summary, catalogue }) {
   const { titles } = content
 
   const panels = {
-    overview: { title: titles.overview, content: <Parts parts={course.overview.paragraphs} accent="navy" /> },
+    overview: {
+      title: titles.overview,
+      content: (
+        <>
+          {course.images.overview && <OverviewPhoto image={course.images.overview} />}
+          <Parts parts={course.overview.paragraphs} accent="navy" />
+        </>
+      ),
+    },
     units: units?.length && { count: units.length, title: titles.units, content: <UnitsGrid units={units} /> },
     entry: entry && { title: titles.entry, content: <Parts parts={entry} accent="navy" /> },
     fees: fees.length > 0 && { title: titles.fees, content: <FeeTiles rows={fees} note={content.feesNote} /> },
