@@ -2,13 +2,48 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Favicon: the ICV crest -->
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0a2449" />
-    <meta
-      name="description"
-      content="International College of Victoria (ICV) is a registered training organisation delivering hands-on training to local and international students."
-    />
+
+    <!-- SEO: title, description and social tags match the live icv.edu.au home page -->
+    <meta name="description" content="International College of Victoria (ICV) is a leading RTO delivering hands on training to both local and international students from Certificate to Diploma courses in various industry." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://icv.edu.au/" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="International College of Victoria – Study at ICV" />
+    <meta property="og:description" content="International College of Victoria (ICV) is a leading RTO delivering hands on training to both local and international students from Certificate to Diploma courses in various industry." />
+    <meta property="og:url" content="https://icv.edu.au/" />
+    <meta property="og:site_name" content="ICV" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://icv.edu.au/",
+            "url": "https://icv.edu.au/",
+            "name": "International College of Victoria – Study at ICV",
+            "isPartOf": { "@id": "https://icv.edu.au/#website" },
+            "description": "International College of Victoria (ICV) is a leading RTO delivering hands on training to both local and international students from Certificate to Diploma courses in various industry.",
+            "inLanguage": "en-US"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://icv.edu.au/#website",
+            "url": "https://icv.edu.au/",
+            "name": "ICV",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+    </script>
 
     <!-- Hero: poster is the LCP image, fetched before JS runs -->
     <link
@@ -39,7 +74,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&text=InternationalCollegeofVictoria&display=swap"
     />
-    <title>International College of Victoria | ICV</title>
+    <title>International College of Victoria – Study at ICV</title>
   </head>
   <body>
     <div id="root"></div>
