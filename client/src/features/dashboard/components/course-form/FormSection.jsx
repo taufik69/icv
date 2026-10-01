@@ -7,7 +7,7 @@ export function FormSection({ id, title, description, optional, children }) {
         {optional && <span className="text-xs text-ink-subtle">Optional, hidden on the page when empty</span>}
       </div>
       {description && <p className="-mt-4 mb-6 text-sm text-ink-muted">{description}</p>}
-      <div className="grid gap-5">{children}</div>
+      <div className="grid grid-cols-1 gap-5">{children}</div>
     </section>
   )
 }

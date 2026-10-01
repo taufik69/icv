@@ -25,7 +25,7 @@ export function ImageField({ label, hint, value, onChange }) {
 
   const src = preview ?? value.src
   return (
-    <div className="grid content-start gap-3">
+    <div className="grid grid-cols-1 content-start gap-3">
       <p id={id} className="font-heading text-sm font-semibold text-secondary">{label}</p>
       {src ? (
         <div className="relative aspect-video overflow-hidden rounded-xl bg-surface-sunken ring-1 ring-line">

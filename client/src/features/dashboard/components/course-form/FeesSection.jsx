@@ -15,6 +15,7 @@ export function FeesSection({ values, set, bind }) {
   return (
     <FormSection id="fees" title="Fees" description="Tuition sets the headline price; fee for service is used when tuition isn't a dollar amount.">
       <RowList
+        itemLabel="Fee"
         columns={columns}
         rows={values.fees}
         onChange={(rows) => set('fees', rows)}

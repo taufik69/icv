@@ -22,8 +22,8 @@ export function CourseCard({ course, featured = false, compact = false }) {
       className="group relative block aspect-3/4 h-full overflow-hidden rounded-2xl bg-secondary-dark shadow-card transition duration-300 hover:-translate-y-1.5 hover:shadow-elevated focus-visible:-translate-y-1.5 sm:aspect-auto"
     >
       <img
-        src={course.image.portrait}
-        srcSet={`${course.image.portrait} 480w, ${course.image.wide} 900w`}
+        src={course.image.src}
+        srcSet={course.image.srcSet}
         sizes={featured ? '(min-width: 640px) 50vw, 80vw' : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 80vw'}
         alt=""
         loading="lazy"

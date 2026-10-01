@@ -25,6 +25,7 @@ export function toCoursePayload(v, original = {}) {
   const units = v.units.core.length || v.units.elective.length || v.units.title
   return {
     ...blankToUndef({ title: v.title, code: v.code, slug: v.slug, market: v.market, studyArea: v.studyArea, level: v.level }),
+    featured: v.featured,
     ...Object.fromEntries(['applyCode', 'category', 'tagline', 'summary', 'externalUrl', 'paymentOptions'].map((k) => [k, v[k]])),
     images: { ...original.images, hero: image(v.images.hero), card: image(v.images.card) },
     overview: { ...original.overview, html: v.overviewHtml },

@@ -7,8 +7,9 @@ import { Course } from './course.model.js'
 const ACTIVE = { status: 'active' }
 
 export const courseService = {
-  async list({ market, area } = {}) {
-    const query = { ...ACTIVE, ...(market && { market }), ...(area && { studyArea: area }) }
+  // ?featured=true → only the courses picked for the home page's "Our popular courses".
+  async list({ market, area, featured } = {}) {
+    const query = { ...ACTIVE, ...(market && { market }), ...(area && { studyArea: area }), ...(featured && { featured: featured === 'true' }) }
     const items = await Course.find(query).select(CARD_FIELDS).sort({ market: 1, order: 1, title: 1 }).lean()
     return items.map(toDto)
   },

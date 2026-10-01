@@ -22,6 +22,7 @@ const courseSchema = new Schema(
     category: String,
     status: { type: String, enum: STATUSES, default: 'draft' },
     order: { type: Number, default: 0 },
+    featured: { type: Boolean, default: false }, // shown in "Our popular courses" on the home page
     summary: { type: String, maxlength: 300 },
     tagline: String,
     externalUrl: String,
@@ -65,6 +66,7 @@ courseSchema.index({ market: 1, slug: 1 }, { unique: true })
 courseSchema.index({ market: 1, code: 1 }, { unique: true })
 courseSchema.index({ code: 1, status: 1 })
 courseSchema.index({ status: 1, market: 1, order: 1 })
+courseSchema.index({ status: 1, featured: 1, market: 1, order: 1 })
 courseSchema.index({ status: 1, studyArea: 1, level: 1 })
 courseSchema.index({ title: 'text', code: 'text', summary: 'text' }, { weights: { title: 10, code: 10, summary: 2 } })
 

@@ -9,6 +9,6 @@ export const FEE_KINDS = ['tuition', 'ffs', 'application', 'material', 'other']
 export const UNIT_TYPES = ['core', 'elective']
 
 // Projections. Card = landing grids; finder adds the typed facts and fees.
-export const CARD_FIELDS = 'market slug code title level studyArea category summary images.card images.hero order externalUrl'
+export const CARD_FIELDS = 'market slug code title level studyArea category summary images.card images.hero order featured externalUrl'
 export const FINDER_FIELDS = `${CARD_FIELDS} facts fees`
 export const ADMIN_LIST_FIELDS = `${CARD_FIELDS} status updatedAt`

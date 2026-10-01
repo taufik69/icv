@@ -1,17 +1,19 @@
-import { BadgeCheckIcon, HammerIcon, HeartIcon, SmileIcon } from '@/shared/components/icons'
+import { BadgeCheckIcon, BriefcaseIcon, HammerIcon, HeartIcon, SmileIcon } from '@/shared/components/icons'
 
 const ICV = 'https://icv.edu.au'
-const categories = {
+// Card icon + label per study area (keys match the course API's `studyArea`).
+export const categories = {
   building: { label: 'Building & Construction', Icon: HammerIcon },
   whiteCard: { label: 'White Card', Icon: BadgeCheckIcon },
   community: { label: 'Community Services', Icon: HeartIcon },
   ecec: { label: 'Early Childhood Education & Care', Icon: SmileIcon },
+  management: { label: 'Management', Icon: BriefcaseIcon },
 }
 const course = (code, title, audience, category, overview, path, image) => ({
   code, title, audience, category: categories[category], overview,
   // Rebuilt courses open their course detail page (/courses/$market/$slug); the rest still link to icv.edu.au.
   ...(/^\/(domestic|international)\//.test(path) ? { to: `/courses${path}` } : { href: `${ICV}${path}` }),
-  image: { portrait: `/images/${image}.webp`, wide: `/images/${image}-wide.webp` },
+  image: { src: `/images/${image}.webp`, srcSet: `/images/${image}.webp 480w, /images/${image}-wide.webp 900w` },
 })
 
 export const coursesContent = {
@@ -23,6 +25,7 @@ export const coursesContent = {
     { id: 'international', label: 'International' },
   ],
   viewAll: { label: 'View all courses', to: '/courses' },
+  // Fallback only: the section reads the featured courses from the API and shows these if it can't reach it.
   courses: [
     course('CPC30220', 'Certificate III in Carpentry', 'international', 'building',
       'This qualification provides a trade outcome in carpentry, covering work in residential and commercial applications.',

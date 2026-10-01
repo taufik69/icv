@@ -15,6 +15,7 @@ export function toFormValues(course = emptyCourse) {
     market: course.market,
     studyArea: course.studyArea,
     level: course.level,
+    featured: Boolean(course.featured),
     images: { hero: image(course.images?.hero), card: image(course.images?.card) },
     overviewHtml: overviewHtml(course.overview),
     facts: Object.fromEntries(

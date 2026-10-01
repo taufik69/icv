@@ -25,7 +25,7 @@ const glanceColumns = [
 export function GlanceSection({ values, set }) {
   return (
     <FormSection id="glance" title="At a glance" description="The fact table on the course page, word for word. The finder reads the typed facts above instead.">
-      <RowList columns={glanceColumns} rows={values.glance} onChange={(rows) => set('glance', rows)} blank={{ label: '', value: '' }} addLabel="Add a fact" />
+      <RowList itemLabel="Fact" columns={glanceColumns} rows={values.glance} onChange={(rows) => set('glance', rows)} blank={{ label: '', value: '' }} addLabel="Add a fact" />
     </FormSection>
   )
 }

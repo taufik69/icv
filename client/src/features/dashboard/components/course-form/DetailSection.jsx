@@ -18,7 +18,7 @@ export function DetailSection({ values, set, bind }) {
         value={values.detail.entryHtml}
         onChange={(html) => set('detail.entryHtml', html)}
       />
-      <div className="grid gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)]">
         <InputField label="Additional requirements heading" placeholder="Before starting work placement" {...bind('detail.additionalTitle')} />
         <TextAreaField label="Additional requirements" rows={3} hint="One per line." placeholder="Working with children check" {...bind('detail.additionalText')} />
       </div>

@@ -24,6 +24,7 @@ const courseBody = z.object({
   category: z.string().optional(),
   status: z.enum(STATUSES).optional(),
   order: z.number().int().optional(),
+  featured: z.boolean().optional(),
   summary: z.string().max(300).optional(),
   tagline: z.string().optional(),
   externalUrl: z.url().optional().or(z.literal('')),
@@ -31,7 +32,9 @@ const courseBody = z.object({
 })
 
 export const courseValidation = {
-  list: { query: z.object({ market: market.optional(), area: z.enum(STUDY_AREAS).optional() }) },
+  list: {
+    query: z.object({ market: market.optional(), area: z.enum(STUDY_AREAS).optional(), featured: z.enum(['true', 'false']).optional() }),
+  },
   bySlug: { params: z.object({ market, slug }) },
   byId: { params: z.object({ id }) },
   adminList: {
