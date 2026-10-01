@@ -11,6 +11,10 @@ export const applicationController = {
     res.json({ data: items, meta: { counts } })
   },
 
+  async counts(req, res) {
+    res.json({ data: await applicationService.counts() })
+  },
+
   async getById(req, res) {
     res.json({ data: await applicationService.getById(req.valid.params.id) })
   },

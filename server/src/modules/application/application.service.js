@@ -20,9 +20,15 @@ export const applicationService = {
     }
     const [items, counts] = await Promise.all([
       Application.find(filter).sort({ createdAt: -1 }).limit(500).lean(),
-      Application.aggregate([{ $group: { _id: '$status', count: { $sum: 1 } } }]),
+      this.counts(),
     ])
-    return { items: items.map(toDto), counts: Object.fromEntries(counts.map((c) => [c._id, c.count])) }
+    return { items: items.map(toDto), counts }
+  },
+
+  // Applications per status, for the dashboard tabs and sidebar badge.
+  async counts() {
+    const rows = await Application.aggregate([{ $group: { _id: '$status', count: { $sum: 1 } } }])
+    return Object.fromEntries(rows.map((r) => [r._id, r.count]))
   },
 
   async getById(id) {

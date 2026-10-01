@@ -21,8 +21,8 @@ export function describeError(error) {
   if (error?.status === 404) {
     return {
       Icon: FileSearchIcon, tone: tones.neutral,
-      title: "We couldn't find that course",
-      text: 'It may have been archived, or its page address changed. Open it again from the course list.',
+      title: "We couldn't find that",
+      text: 'It may have been deleted or archived, or its address changed. Open it again from the list.',
     }
   }
   if (error?.status >= 500) {

@@ -1,16 +1,16 @@
-import { createFileRoute, notFound } from '@tanstack/react-router'
-import { ApplicationViewPage, findApplication } from '@/features/dashboard'
+import { createFileRoute } from '@tanstack/react-router'
+import { applicationQuery, ApplicationViewPage, ApplicationViewSkeleton, DashboardError } from '@/features/dashboard'
 
-// Demo lookup (UI only).
+// One application from the API (404 → the dashboard error page).
 export const Route = createFileRoute('/dashboard/_panel/applications/$applicationId')({
-  loader: ({ params }) => {
-    const item = findApplication(params.applicationId)
-    if (!item) throw notFound()
-    return item
-  },
+  loader: ({ context: { queryClient }, params }) => queryClient.ensureQueryData(applicationQuery(params.applicationId)),
+  pendingComponent: ApplicationViewSkeleton,
+  pendingMs: 150,
+  pendingMinMs: 400,
+  errorComponent: DashboardError,
   component: ApplicationRoute,
 })
 
 function ApplicationRoute() {
-  return <ApplicationViewPage item={Route.useLoaderData()} />
+  return <ApplicationViewPage id={Route.useParams().applicationId} />
 }

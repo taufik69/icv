@@ -9,6 +9,7 @@ export const applicationRouter = Router()
 
 applicationRouter.post('/', validate(v.create), c.create)
 applicationRouter.get('/', validate(v.list), c.list)
+applicationRouter.get('/counts', c.counts)
 applicationRouter.get('/:id', validate(v.byId), c.getById)
 applicationRouter.patch('/:id', validate({ ...v.byId, ...v.update }), c.update)
 applicationRouter.delete('/:id', validate(v.byId), c.remove)

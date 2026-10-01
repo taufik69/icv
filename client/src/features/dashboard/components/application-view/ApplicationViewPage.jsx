@@ -1,7 +1,11 @@
 import { courseOptions } from '@/features/apply'
-import { MailIcon, TrashIcon } from '@/shared/components/icons'
+import { useNavigate } from '@tanstack/react-router'
+import { MailIcon } from '@/shared/components/icons'
 import { Button } from '@/shared/components/ui'
+import { useApplication } from '../../hooks/useApplications'
+import { useDeleteApplication } from '../../hooks/useApplicationMutations'
 import { formatDate } from '../../lib/formatDate'
+import { DeleteApplication } from './DeleteApplication'
 import { ViewCard } from '../course-view/ViewCard'
 import { PageHeader } from '../shell/PageHeader'
 import { DetailList } from './DetailList'
@@ -12,8 +16,13 @@ const courseName = (code) => {
   return c ? `${c.code} - ${c.title}` : ''
 }
 
-// One application, grouped the way the apply form asks for it. UI only: status and delete don't save.
-export function ApplicationViewPage({ item }) {
+// One application from the API, grouped the way the apply form asks for it. Status saves from the side panel;
+// delete asks once, then returns to the list.
+export function ApplicationViewPage({ id }) {
+  const item = useApplication(id)
+  const remove = useDeleteApplication()
+  const navigate = useNavigate()
+  const onDelete = () => remove.mutate(id, { onSuccess: () => navigate({ to: '/dashboard/applications' }) })
   const name = `${item.firstName} ${item.lastName}`
   const address = [item.street, item.city, item.state, item.postcode, item.country].filter(Boolean).join(', ')
 
@@ -23,9 +32,7 @@ export function ApplicationViewPage({ item }) {
         <Button as="a" href={`mailto:${item.email}`} variant="secondary">
           <MailIcon className="size-4.5" /> Email {item.firstName}
         </Button>
-        <button type="button" className="inline-flex items-center gap-2 rounded-pill bg-danger-soft px-5 py-2.5 font-heading font-semibold text-danger-ink">
-          <TrashIcon className="size-4.5" /> Delete
-        </button>
+        <DeleteApplication pending={remove.isPending} onConfirm={onDelete} />
       </PageHeader>
 
       <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">

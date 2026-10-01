@@ -9,7 +9,7 @@ const heardChoices = heardOptions.map((o) => ({ value: o, label: o }))
 
 // Fields and order follow the live icv.edu.au "Course Enquiry" form.
 export function ApplyForm({ form }) {
-  const { values, errors, set, submit } = form
+  const { values, errors, set, submit, sending, sendError } = form
   const field = (name) => ({ name, value: values[name], onChange: set(name), error: errors[name] })
 
   return (
@@ -42,9 +42,14 @@ export function ApplyForm({ form }) {
         <ApplySelect {...field('heard')} label="How did you hear about us?" options={heardChoices} className="sm:col-span-2" />
       </FormGroup>
 
-      <div className="flex justify-end border-t border-line-soft pt-6">
-        <button type="submit" className="btn-shine w-full rounded-pill bg-primary px-8 py-3 font-heading font-semibold text-on-primary transition hover:bg-primary-hover sm:w-auto">
-          Submit application
+      <div className="flex flex-wrap items-center justify-end gap-4 border-t border-line-soft pt-6">
+        {sendError && (
+          <p role="alert" className="mr-auto max-w-md text-sm text-danger-ink">
+            {sendError.status ? `We couldn't send your application: ${sendError.message}.` : "We couldn't reach our server. Check your connection and try again."}
+          </p>
+        )}
+        <button type="submit" disabled={sending} className="btn-shine w-full rounded-pill bg-primary px-8 py-3 font-heading font-semibold text-on-primary transition hover:bg-primary-hover disabled:cursor-wait disabled:opacity-70 sm:w-auto">
+          {sending ? 'Sending…' : 'Submit application'}
         </button>
       </div>
     </form>

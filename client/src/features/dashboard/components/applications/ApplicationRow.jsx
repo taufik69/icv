@@ -1,17 +1,20 @@
 import { Link } from '@tanstack/react-router'
 import { courseOptions } from '@/features/apply'
-import { EyeIcon, TrashIcon } from '@/shared/components/icons'
+import { EyeIcon } from '@/shared/components/icons'
+import { useDeleteApplication } from '../../hooks/useApplicationMutations'
 import { formatDate, formatTime } from '../../lib/formatDate'
+import { ArchiveButton } from '../courses/ArchiveButton'
 import { appGrid } from './appGrid'
 import { StatusBadge } from './StatusBadge'
 
 const courseTitle = Object.fromEntries(courseOptions.map((c) => [c.code, c.title]))
 
 // Applicant, course, student type, received date, status, actions. Stacks into a card below md.
-// Delete is UI only for now.
+// Delete asks once, then removes the application for good.
 export function ApplicationRow({ item }) {
   const { id, firstName, lastName, email, course, studentType, receivedAt, status } = item
   const name = `${firstName} ${lastName}`
+  const remove = useDeleteApplication()
 
   return (
     <li className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-5 py-4 transition hover:bg-surface-alt ${appGrid} ${status === 'New' ? 'bg-primary-soft/40' : ''}`}>
@@ -36,13 +39,11 @@ export function ApplicationRow({ item }) {
       <div className="pl-13 md:pl-0">
         <StatusBadge status={status} />
       </div>
-      <div className="flex items-center justify-end gap-1">
-        <Link to="/dashboard/applications/$applicationId" params={{ applicationId: id }} aria-label={`View application from ${name}`} title="View" className="grid size-9 place-items-center rounded-lg text-ink-subtle transition hover:bg-surface-muted hover:text-secondary">
+      <div className="flex items-center justify-end gap-1.5">
+        <Link to="/dashboard/applications/$applicationId" params={{ applicationId: id }} aria-label={`View application from ${name}`} title="View" className="grid size-9 place-items-center rounded-lg bg-secondary/8 text-secondary transition hover:bg-secondary hover:text-white">
           <EyeIcon className="size-4.5" />
         </Link>
-        <button type="button" aria-label={`Delete application from ${name}`} title="Delete" className="grid size-9 place-items-center rounded-lg bg-danger-soft text-danger-ink">
-          <TrashIcon className="size-4.5" />
-        </button>
+        <ArchiveButton title={`application from ${name}`} pending={remove.isPending} onConfirm={() => remove.mutate(id)} />
       </div>
     </li>
   )

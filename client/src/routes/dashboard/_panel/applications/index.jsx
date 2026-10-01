@@ -1,12 +1,21 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { ApplicationsPage, applicationStatuses } from '@/features/dashboard'
+import { ApplicationsPage, ApplicationsSkeleton, applicationsQuery, applicationStatuses, DashboardError } from '@/features/dashboard'
 
-// ?status=New&q=mia filters the demo list.
+const parseSearch = (search) => ({
+  status: applicationStatuses.includes(search.status) ? search.status : undefined,
+  q: typeof search.q === 'string' && search.q.trim() ? search.q.trim() : undefined,
+})
+
+// ?status=New&q=mia filters the list (server-side). Like the course list, the loader only warms the first
+// visit; tab and search changes are fetched by the page itself, so typing never swaps the page out.
 export const Route = createFileRoute('/dashboard/_panel/applications/')({
-  validateSearch: (search) => ({
-    status: applicationStatuses.includes(search.status) ? search.status : undefined,
-    q: typeof search.q === 'string' && search.q.trim() ? search.q.trim() : undefined,
-  }),
+  validateSearch: parseSearch,
+  loader: ({ context: { queryClient }, location }) => queryClient.ensureQueryData(applicationsQuery(parseSearch(location.search))),
+  pendingComponent: ApplicationsSkeleton,
+  // Always show the skeleton on the first visit (even when the API is quick), for at least 300ms.
+  pendingMs: 0,
+  pendingMinMs: 300,
+  errorComponent: DashboardError,
   component: ApplicationsRoute,
 })
 

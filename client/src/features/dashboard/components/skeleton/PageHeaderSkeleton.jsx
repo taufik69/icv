@@ -1,9 +1,9 @@
 import { DashboardBreadcrumbs } from '../shell/DashboardBreadcrumbs'
 
-const trail = [{ label: 'Courses', to: '/dashboard/courses' }]
+const courses = [{ label: 'Courses', to: '/dashboard/courses' }]
 
-// PageHeader while a course loads: the real breadcrumb trail, a title bar and button-shaped blocks.
-export function PageHeaderSkeleton({ actions = ['w-32', 'w-40'] }) {
+// PageHeader while a page loads (`trail` defaults to Courses): the real breadcrumb trail, a title bar and button-shaped blocks.
+export function PageHeaderSkeleton({ actions = ['w-32', 'w-40'], trail = courses }) {
   return (
     <header>
       <DashboardBreadcrumbs trail={trail} current="Loading…" />

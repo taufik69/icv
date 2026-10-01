@@ -2,12 +2,12 @@ import { Link } from '@tanstack/react-router'
 import { LogOutIcon } from '@/shared/components/icons'
 import { BrandLogo } from '@/shared/components/ui'
 import { dashboardNav, siteLink, staffUser } from '../../data/dashboardNav'
-import { applicationCounts } from '../../data/applications'
+import { useNewApplicationCount } from '../../hooks/useApplications'
 import { SidebarLink } from './SidebarLink'
 
 // Navy rail, desktop only (phones get MobileTabs). Sticky so it stays put while the form scrolls.
 export function Sidebar() {
-  const counts = { newApplications: applicationCounts.New ?? 0 }
+  const counts = { newApplications: useNewApplicationCount() }
   return (
     <aside className="sticky top-0 hidden h-svh w-64 shrink-0 flex-col bg-secondary px-6 py-7 lg:flex">
       <Link to="/dashboard/courses" aria-label="Course admin home">

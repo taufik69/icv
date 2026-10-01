@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TrashIcon } from '@/shared/components/icons'
 
-// Two-step delete: the first click asks, the second archives (the course leaves the site and this list).
+// Two-step delete: the first click asks, the second confirms (courses are archived, applications removed).
 export function ArchiveButton({ title, onConfirm, pending }) {
   const [asking, setAsking] = useState(false)
 
