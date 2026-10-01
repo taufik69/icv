@@ -9,6 +9,8 @@ import { RowField } from './RowField'
 export function RowList({ columns, rows, onChange, addLabel, blank, itemLabel = 'Row', widths = 'sm:grid-cols-[12rem_minmax(0,1fr)]' }) {
   const update = (i, key, value) => onChange(rows.map((row, j) => (j === i ? { ...row, [key]: value } : row)))
   const remove = (i) => onChange(rows.filter((_, j) => j !== i))
+  // A row counts as started once any text cell has a value; only then are its required cells enforced.
+  const started = (row) => columns.some((c) => !c.options && String(row[c.key] ?? '').trim())
 
   return (
     <div>
@@ -26,7 +28,7 @@ export function RowList({ columns, rows, onChange, addLabel, blank, itemLabel = 
               </button>
             </div>
             <div className={`grid min-w-0 flex-1 grid-cols-1 gap-2 ${widths}`}>
-              {columns.map((c) => <RowField key={c.key} column={c} value={row[c.key]} onChange={(v) => update(i, c.key, v)} />)}
+              {columns.map((c) => <RowField key={c.key} column={c} rowStarted={started(row)} value={row[c.key]} onChange={(v) => update(i, c.key, v)} />)}
             </div>
             <button type="button" onClick={() => remove(i)} aria-label={`Remove ${itemLabel.toLowerCase()} ${i + 1}`} className="mt-1 hidden size-9 shrink-0 place-items-center rounded-lg bg-danger-soft text-danger-ink transition hover:bg-danger hover:text-white sm:grid">
               <TrashIcon className="size-4" />

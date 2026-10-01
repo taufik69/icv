@@ -4,6 +4,8 @@ import { linesToList, textToParts } from './partsText'
 const num = (v) => (v === '' || v === undefined ? undefined : Number(v))
 const blankToUndef = (obj) => Object.fromEntries(Object.entries(obj).map(([k, v]) => [k, v === '' ? undefined : v]))
 const CODE = /\b[A-Z]{3,5}\d{5}\b/g
+// Rows the user never filled in (e.g. the starter row) are left out.
+const hasText = (row, keys) => keys.some((k) => String(row[k] ?? '').trim())
 
 // The form holds the whole image object (from the course or a fresh upload); empty src = no image.
 const image = (img) => (img.src ? img : undefined)
@@ -22,7 +24,9 @@ function detail(d, original = {}) {
 }
 
 export function toCoursePayload(v, original = {}) {
-  const units = v.units.core.length || v.units.elective.length || v.units.title
+  const core = v.units.core.filter((u) => hasText(u, ['code', 'title']))
+  const elective = v.units.elective.filter((u) => hasText(u, ['code', 'title']))
+  const units = core.length || elective.length || v.units.title
   return {
     ...blankToUndef({ title: v.title, code: v.code, slug: v.slug, market: v.market, studyArea: v.studyArea, level: v.level }),
     featured: v.featured,
@@ -30,7 +34,7 @@ export function toCoursePayload(v, original = {}) {
     images: { ...original.images, hero: image(v.images.hero), card: image(v.images.card) },
     overview: { ...original.overview, html: v.overviewHtml },
     facts: blankToUndef({ ...v.facts, durationWeeks: num(v.facts.durationWeeks), placementHours: num(v.facts.placementHours) }),
-    fees: v.fees.map((f) => blankToUndef({ ...f, amount: undefined, amountCents: f.amount === '' ? undefined : Math.round(Number(f.amount) * 100) })),
+    fees: v.fees.filter((f) => hasText(f, ['label', 'amount', 'text'])).map((f) => blankToUndef({ ...f, amount: undefined, amountCents: f.amount === '' ? undefined : Math.round(Number(f.amount) * 100) })),
     detail: detail(v.detail, original.detail),
     glance: v.glance.filter((g) => g.label && g.value),
     units: units
@@ -39,7 +43,7 @@ export function toCoursePayload(v, original = {}) {
           title: v.units.title,
           html: v.units.rulesHtml,
           display: v.units.display,
-          items: [...v.units.core.map((u) => ({ ...u, type: 'core' })), ...v.units.elective.map((u) => ({ ...u, type: 'elective' }))],
+          items: [...core.map((u) => ({ ...u, type: 'core' })), ...elective.map((u) => ({ ...u, type: 'elective' }))],
         }
       : undefined,
   }

@@ -5,10 +5,12 @@ import { PageHeader } from '../shell/PageHeader'
 import { BasicsSection } from './BasicsSection'
 import { BlocksRail } from './BlocksRail'
 import { GlanceSection, OverviewSection } from './ContentSections'
-import { DetailSection } from './DetailSection'
+import { CareersSection } from './CareersSection'
+import { EntrySection } from './EntrySection'
 import { FactsSection } from './FactsSection'
 import { FeesSection } from './FeesSection'
 import { ImportedBlocks } from './ImportedBlocks'
+import { MediaSection } from './MediaSection'
 import { MobileOutline } from './MobileOutline'
 import { SaveError } from './SaveError'
 import { UnitsSection } from './UnitsSection'
@@ -31,7 +33,7 @@ export function CourseFormPage({ course }) {
       <PageHeader
         title={editing ? `Edit ${course.title}` : 'Add course'}
         crumbs={{ trail, current: editing ? 'Edit' : 'Add course' }}
-        description={editing ? `Status: ${course.status}. Change it from the course list.` : 'Fill in the blocks you need. Empty optional blocks are left off the page.'}
+        description={editing ? `Status: ${course.status}. Change it from the course list.` : 'Work through the parts in order. Fields marked * are required; empty optional parts are left off the page.'}
       >
         {!editing && (
           <Button variant="ghost" type="button" form="course-form" disabled={form.saving} onClick={(e) => e.currentTarget.form.reportValidity() && form.submit('draft')}>
@@ -49,10 +51,12 @@ export function CourseFormPage({ course }) {
           <BasicsSection {...form} />
           <OverviewSection {...form} />
           <FactsSection bind={form.bind} />
-          <FeesSection {...form} />
-          <DetailSection {...form} />
-          <GlanceSection {...form} />
           <UnitsSection {...form} />
+          <EntrySection {...form} />
+          <FeesSection {...form} />
+          <CareersSection {...form} />
+          <MediaSection {...form} />
+          <GlanceSection {...form} />
           <ImportedBlocks course={course} />
         </form>
         {/* self-stretch: the rail is sticky, so its column must run the full height of the form */}

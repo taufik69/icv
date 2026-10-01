@@ -13,7 +13,8 @@ const columns = [
 // Fee lines for the Fees section, sidebar price and finder "From $X" (tuition first, then fee for service).
 export function FeesSection({ values, set, bind }) {
   return (
-    <FormSection id="fees" title="Fees" description="Tuition sets the headline price; fee for service is used when tuition isn't a dollar amount.">
+    <FormSection id="fees">
+      <p className="-mt-1 text-sm text-ink-muted">Tuition sets the headline price; fee for service is used when tuition isn't a dollar amount.</p>
       <RowList
         itemLabel="Fee"
         columns={columns}

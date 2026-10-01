@@ -5,12 +5,13 @@ import { RequiredMark } from './fields/RequiredMark'
 
 // One cell of a RowList row: a dropdown (column has `options`) or a text input. Its label shows on phones,
 // where rows are stacked cards; from sm up the column heading above the table labels it instead.
-export function RowField({ column: c, value, onChange }) {
+export function RowField({ column: c, rowStarted, value, onChange }) {
   const id = useId()
+  const required = c.required && rowStarted // an untouched (blank) row doesn't block saving
   const control = c.options ? (
     <SelectMenu id={id} size="sm" value={value} options={c.options} onChange={onChange} aria-labelledby={`${id}-label`} />
   ) : (
-    <input id={id} required={c.required} value={value ?? ''} onChange={(e) => onChange(e.target.value)} placeholder={c.placeholder} inputMode={c.inputMode} className={`${controlClass} text-sm`} />
+    <input id={id} required={required} value={value ?? ''} onChange={(e) => onChange(e.target.value)} placeholder={c.placeholder} inputMode={c.inputMode} className={`${controlClass} text-sm`} />
   )
 
   return (

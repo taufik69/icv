@@ -6,7 +6,7 @@ import { SelectField } from './fields/SelectField'
 // Typed facts: hero tiles on the course detail page, finder cards, filters and sorting.
 export function FactsSection({ bind }) {
   return (
-    <FormSection id="facts" title="Key facts" description="Hero tiles on the course detail page and the course finder's cards and filters.">
+    <FormSection id="facts">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <InputField label="Duration" placeholder="48 Weeks" {...bind('facts.durationText')} />
         <InputField label="Duration in weeks" type="number" min="0" hint="Longest end of the range; 0 for courses measured in hours." {...bind('facts.durationWeeks')} />

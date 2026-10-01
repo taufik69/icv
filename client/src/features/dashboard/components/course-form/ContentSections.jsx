@@ -4,7 +4,7 @@ import { RowList } from './RowList'
 
 export function OverviewSection({ values, set }) {
   return (
-    <FormSection id="overview" title="Overview">
+    <FormSection id="overview">
       <RichTextField
         label="Course description"
         placeholder="This qualification reflects the role of…"
@@ -24,7 +24,7 @@ const glanceColumns = [
 // Verbatim "at a glance" table on the icv.edu.au-style course page.
 export function GlanceSection({ values, set }) {
   return (
-    <FormSection id="glance" title="At a glance" description="The fact table on the course page, word for word. The finder reads the typed facts above instead.">
+    <FormSection id="glance" optional>
       <RowList itemLabel="Fact" columns={glanceColumns} rows={values.glance} onChange={(rows) => set('glance', rows)} blank={{ label: '', value: '' }} addLabel="Add a fact" />
     </FormSection>
   )
