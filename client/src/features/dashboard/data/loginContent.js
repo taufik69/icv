@@ -12,8 +12,8 @@ export const loginAside = {
   highlight: 'clarity.',
   lead: 'Update fees, intakes, units and student pathways from one secure workspace.',
   features: [
-    { label: 'Course management', Icon: BookOpenIcon, tone: 'bg-secondary' },
-    { label: 'Secure', Icon: LockIcon, tone: 'bg-primary/15' },
-    { label: 'Centralised', Icon: LayersIcon, tone: 'bg-primary/30' },
+    { label: 'Course management', Icon: BookOpenIcon },
+    { label: 'Secure', Icon: LockIcon },
+    { label: 'Centralised', Icon: LayersIcon },
   ],
 }
