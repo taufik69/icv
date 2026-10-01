@@ -13,7 +13,6 @@ export function BasicsSection({ values, set, bind }) {
       <InputField label="Course title" required placeholder="Certificate IV in Building and Construction" {...bind('title')} />
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <InputField label="Course code" required placeholder="CPC40120" {...bind('code')} />
-        <InputField label="Page address" required placeholder="cert-iv-building-and-construction" hint="Lowercase words joined by dashes." {...bind('slug')} />
         <SelectField label="Market" required options={marketOptions} {...bind('market')} />
         <TaxonomyField type="study-areas" label="Study area" required {...bind('studyArea')} />
         <TaxonomyField type="levels" label="Level" required {...bind('level')} />

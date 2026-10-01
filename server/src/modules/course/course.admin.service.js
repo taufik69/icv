@@ -26,6 +26,17 @@ async function checkTaxonomies({ studyArea, level }) {
   if (Object.keys(details).length) throw ApiError.badRequest('Invalid body', details)
 }
 
+// The page address follows the course title; when another course in the same market already has it,
+// add -2, -3… so saving never fails on a duplicate address.
+async function uniqueSlug(market, slug, excludeId) {
+  if (!slug) return slug
+  let candidate = slug
+  for (let n = 2; await Course.exists({ market, slug: candidate, ...(excludeId && { _id: { $ne: excludeId } }) }); n++) {
+    candidate = `${slug}-${n}`
+  }
+  return candidate
+}
+
 async function findOrThrow(id) {
   const course = await Course.findById(id)
   if (!course) throw ApiError.notFound('Course not found')
@@ -57,13 +68,15 @@ export const courseAdminService = {
 
   async create(data) {
     await checkTaxonomies(data)
-    const course = await Course.create(clean(data))
+    const slug = await uniqueSlug(data.market, data.slug)
+    const course = await Course.create(clean({ ...data, slug }))
     return toDto(course.toObject())
   },
 
   async update(id, data) {
     await checkTaxonomies(data)
     const course = await findOrThrow(id)
+    if (data.slug || data.market) data.slug = await uniqueSlug(data.market ?? course.market, data.slug ?? course.slug, course._id)
     course.set(clean(data))
     await course.save()
     return toDto(course.toObject())
