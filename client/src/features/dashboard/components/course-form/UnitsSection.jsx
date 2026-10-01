@@ -9,7 +9,10 @@ const columns = [
   { key: 'code', label: 'Code', placeholder: 'CPCCBC4001', required: true },
   { key: 'title', label: 'Unit title', required: true },
 ]
-const displayOptions = [{ value: 'tabs', label: 'Core / elective tabs' }, { value: 'table', label: 'Table with hours' }]
+const displayOptions = [
+  { value: 'tabs', label: 'Core / elective tabs', hint: 'Two tabs on the course page' },
+  { value: 'table', label: 'Table with hours', hint: 'One table with training hours' },
+]
 
 // Packaging rules + core and elective unit lists.
 export function UnitsSection({ values, set, bind }) {

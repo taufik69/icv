@@ -1,19 +1,21 @@
 import { useId } from 'react'
-import { ChevronDownIcon } from '@/shared/components/icons'
 import { FieldShell } from './FieldShell'
-import { controlClass } from './fieldStyles'
+import { SelectMenu } from './SelectMenu'
 
-// options = [{ value, label }]
-export function SelectField({ label, hint, className, required, options, ...props }) {
+// Labelled dashboard dropdown. options = [{ value, label, hint?, Icon? }]. Calls onChange({ target: { value } })
+// so it plugs into the form's bind() like a native field.
+export function SelectField({ label, hint, className, required, options, value, onChange, placeholder }) {
   const id = useId()
   return (
     <FieldShell id={id} label={label} hint={hint} required={required} className={className}>
-      <div className="relative">
-        <select id={id} required={required} className={`${controlClass} appearance-none pr-10`} {...props}>
-          {options.map((o) => <option key={o.value} value={o.value}>{o.label}</option>)}
-        </select>
-        <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-3.5 size-4 -translate-y-1/2 text-ink-subtle" />
-      </div>
+      <SelectMenu
+        id={id}
+        value={value}
+        options={options}
+        placeholder={placeholder}
+        onChange={(v) => onChange({ target: { value: v } })}
+        aria-describedby={hint ? `${id}-hint` : undefined}
+      />
     </FieldShell>
   )
 }
