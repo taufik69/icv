@@ -28,6 +28,3 @@ client/src/routeTree.gen.js
 
 .early.coverage
 # env files
-.env
-
-server
