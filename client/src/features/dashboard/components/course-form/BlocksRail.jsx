@@ -1,29 +1,26 @@
-import { CheckCircleIcon } from '@/shared/components/icons'
+import { useActiveSection } from '@/shared/hooks/useActiveSection'
+import { courseBlockIds } from '../../data/courseFormBlocks'
+import { OutlineList } from './OutlineList'
 
-// The course page as a spine of blocks, top to bottom. Filled blocks are green and will show on the page;
-// empty optional blocks stay hollow because the page skips them. With `linked`, each item jumps to its section.
+// lg+ sidebar: the course page as a spine of blocks, pinned while the page scrolls (its column must stretch
+// to the page height — see `self-stretch` on the aside). With `linked`, the section on screen is highlighted
+// and each step jumps to its section. Scrolls inside itself on short screens.
 export function BlocksRail({ blocks, caption = 'Green blocks appear on the course page.', linked = true }) {
+  const active = useActiveSection(courseBlockIds)
+  const filled = blocks.filter((b) => b.filled).length
+
   return (
-    <nav aria-label="Page outline" className="sticky top-8 rounded-2xl bg-secondary p-5 text-white">
-      <h2 className="font-heading text-base text-white">Page outline</h2>
-      <p className="mt-1 text-xs text-white/80">{caption}</p>
-      <ol className="relative mt-5 grid gap-1 before:absolute before:inset-y-3 before:left-[0.6875rem] before:w-px before:bg-white/15">
-        {blocks.map(({ id, label, required, filled }) => (
-          <li key={id}>
-            <a href={linked ? `#${id}` : undefined} className="group relative flex items-center gap-3 rounded-lg py-1.5 pr-2 text-sm text-white/85 hover:text-white">
-              {filled ? (
-                <CheckCircleIcon className="size-6 shrink-0 rounded-full bg-secondary text-primary" />
-              ) : (
-                <span className="grid size-6 shrink-0 place-items-center rounded-full bg-secondary">
-                  <span className="size-3 rounded-full border-2 border-white/35 group-hover:border-white/70" />
-                </span>
-              )}
-              <span className={filled ? 'text-white' : ''}>{label}</span>
-              {required && <span className="ml-auto text-xs text-white/80">Required</span>}
-            </a>
-          </li>
-        ))}
-      </ol>
+    <nav aria-label="Page outline" className="sticky top-8 flex max-h-[calc(100svh-4rem)] flex-col rounded-2xl bg-secondary text-white shadow-brand">
+      <div className="border-b border-white/10 p-5 pb-4">
+        <div className="flex items-baseline justify-between gap-2">
+          <h2 className="font-heading text-base text-white">Page outline</h2>
+          <span className="text-xs text-white/80 tabular-nums">{filled} of {blocks.length} filled</span>
+        </div>
+        <p className="mt-2.5 text-xs text-white/80">{caption}</p>
+      </div>
+      <div className="overflow-y-auto p-5 pt-4">
+        <OutlineList blocks={blocks} active={linked ? active : null} linked={linked} />
+      </div>
     </nav>
   )
 }

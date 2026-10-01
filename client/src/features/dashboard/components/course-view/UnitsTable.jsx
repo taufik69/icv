@@ -1,7 +1,9 @@
 import { unitRows } from '../../lib/courseUnits'
+import { packagingHtml } from '../../lib/partsToHtml'
+import { RichText } from '../rich-text/RichText'
 import { ViewCard } from './ViewCard'
 
-// All units in one table; core units are tagged green.
+// Packaging rules, then all units in one table; core units are tagged green.
 export function UnitsTable({ units }) {
   const rows = unitRows(units)
   if (!rows.length) return null
@@ -9,6 +11,7 @@ export function UnitsTable({ units }) {
 
   return (
     <ViewCard id="units" title="Units" aside={`${rows.length} units, ${core} core`}>
+      {packagingHtml(units) && <RichText html={packagingHtml(units)} className="mb-6 max-w-3xl" />}
       <div className="-mx-5 overflow-x-auto sm:-mx-7">
         <table className="w-full min-w-xl text-left text-sm">
           <thead className="border-y border-line bg-surface-alt text-ink-subtle">

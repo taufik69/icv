@@ -1,33 +1,31 @@
-import { sampleGlance } from '../../data/courseFormBlocks'
+import { RichTextField } from '../rich-text/RichTextField'
 import { FormSection } from './FormSection'
 import { RowList } from './RowList'
-import { InputField } from './fields/InputField'
-import { TextAreaField } from './fields/TextAreaField'
 
-export function OverviewSection() {
+export function OverviewSection({ values, set }) {
   return (
     <FormSection id="overview" title="Overview">
-      <TextAreaField label="Course description" rows={6} placeholder="This qualification reflects the role of…" hint="Leave a blank line between paragraphs." />
+      <RichTextField
+        label="Course description"
+        placeholder="This qualification reflects the role of…"
+        hint="Use the toolbar for headings, lists and links. The course view shows it exactly as it looks here."
+        value={values.overviewHtml}
+        onChange={(html) => set('overviewHtml', html)}
+      />
     </FormSection>
   )
 }
 
-export function GlanceSection() {
-  return (
-    <FormSection id="glance" title="At a glance" description="The fact list beside the overview: fees, intake, duration, delivery.">
-      <RowList columns={['Label', 'Value']} rows={sampleGlance} addLabel="Add a fact" />
-    </FormSection>
-  )
-}
+const glanceColumns = [
+  { key: 'label', label: 'Label', placeholder: 'Duration', required: true },
+  { key: 'value', label: 'Value', placeholder: '48 Weeks', required: true },
+]
 
-export function FundingSection() {
+// Verbatim "at a glance" table on the icv.edu.au-style course page.
+export function GlanceSection({ values, set }) {
   return (
-    <FormSection id="funding" title="Funding band" optional>
-      <div className="grid gap-5 sm:grid-cols-2">
-        <InputField label="Title" placeholder="Skills First" />
-        <InputField label="Headline" placeholder="Government funded places available" />
-      </div>
-      <TextAreaField label="Details" rows={3} placeholder="This training is delivered with Victorian and Commonwealth Government funding…" />
+    <FormSection id="glance" title="At a glance" description="The fact table on the course page, word for word. The finder reads the typed facts above instead.">
+      <RowList columns={glanceColumns} rows={values.glance} onChange={(rows) => set('glance', rows)} blank={{ label: '', value: '' }} addLabel="Add a fact" />
     </FormSection>
   )
 }

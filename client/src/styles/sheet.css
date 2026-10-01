@@ -1,0 +1,6 @@
+/* Bottom sheets (dashboard mobile outline): slide up from the screen edge. Used as
+   motion-safe:animate-[sheet-up_250ms_ease-out]; the backdrop reuses fade-in from animations.css. */
+@keyframes sheet-up {
+  from { transform: translateY(100%); }
+  to { transform: none; }
+}

@@ -1,7 +1,3 @@
-// Flattens a course's units (core/elective tuple lists, or table mode) into { code, title, type } rows.
-export function unitRows(units) {
-  if (!units) return []
-  if (units.table) return units.table.rows.map(([code, title, type]) => ({ code, title, type }))
-  const tag = (list = [], type) => list.map(([code, title]) => ({ code, title, type }))
-  return [...tag(units.core, 'Core'), ...tag(units.elective, 'Elective')]
-}
+// A course's unit list as table rows: { code, title, type } with the verbatim type label when there is one.
+export const unitRows = (units) =>
+  (units?.items ?? []).map((u) => ({ code: u.code, title: u.title, type: u.typeLabel ?? (u.type === 'core' ? 'Core' : 'Elective') }))

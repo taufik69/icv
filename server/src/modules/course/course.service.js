@@ -1,33 +1,37 @@
 import { ApiError } from '../../shared/utils/ApiError.js'
-import { CARD_FIELDS } from './course.constants.js'
+import { CARD_FIELDS, FINDER_FIELDS } from './course.constants.js'
+import { rankRelated, toDto } from './course.mapper.js'
 import { Course } from './course.model.js'
 
-// Data access for courses. Public reads only return published courses.
+// Public reads: only `active` courses are visible on the website.
+const ACTIVE = { status: 'active' }
+
 export const courseService = {
-  list({ market, filter } = {}) {
-    const query = { published: true, ...(market && { market }), ...(filter && { filter }) }
-    return Course.find(query).select(CARD_FIELDS).sort({ market: 1, order: 1, title: 1 }).lean()
+  async list({ market, area } = {}) {
+    const query = { ...ACTIVE, ...(market && { market }), ...(area && { studyArea: area }) }
+    const items = await Course.find(query).select(CARD_FIELDS).sort({ market: 1, order: 1, title: 1 }).lean()
+    return items.map(toDto)
   },
 
-  async getBySlug(market, slug) {
-    const course = await Course.findOne({ market, slug, published: true }).lean()
+  async finder() {
+    const items = await Course.find(ACTIVE).select(FINDER_FIELDS).sort({ order: 1, title: 1 }).lean()
+    return items.map(toDto)
+  },
+
+  // Everything the course detail page needs in one response: the course, its markets and two related courses.
+  async getPage(market, slug) {
+    const course = await Course.findOne({ ...ACTIVE, market, slug }).lean()
     if (!course) throw ApiError.notFound(`Course not found: ${market}/${slug}`)
-    return course
-  },
 
-  async create(data) {
-    const course = await Course.create(data)
-    return course.toObject()
-  },
+    const [markets, pool] = await Promise.all([
+      Course.distinct('market', { ...ACTIVE, code: course.code }),
+      Course.find({ ...ACTIVE, code: { $ne: course.code } }).select(FINDER_FIELDS).lean(),
+    ])
+    const picked = course.detail?.related?.map(String) ?? []
+    const manual = pool.filter((c) => picked.includes(String(c._id)))
+    const related = manual.length ? manual : rankRelated(course, pool)
 
-  async update(id, data) {
-    const course = await Course.findByIdAndUpdate(id, data, { new: true, runValidators: true }).lean()
-    if (!course) throw ApiError.notFound('Course not found')
-    return course
-  },
-
-  async remove(id) {
-    const course = await Course.findByIdAndDelete(id).lean()
-    if (!course) throw ApiError.notFound('Course not found')
+    const { status, order, ...page } = course
+    return { ...toDto(page), markets, related: related.map(toDto) }
   },
 }

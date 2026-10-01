@@ -1,11 +1,13 @@
 import { Outlet } from '@tanstack/react-router'
 import { MobileTabs } from './MobileTabs'
+import { RouteProgress } from './RouteProgress'
 import { Sidebar } from './Sidebar'
 
 // Signed-in frame: sidebar on lg+, top tabs below. Pages render their own PageHeader inside.
 export function DashboardShell() {
   return (
     <div className="flex min-h-svh bg-surface-muted">
+      <RouteProgress />
       <Sidebar />
       <div className="min-w-0 flex-1">
         <MobileTabs />

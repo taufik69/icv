@@ -1,3 +1,4 @@
+import multer from 'multer'
 import mongoose from 'mongoose'
 import { env } from '../../config/env.js'
 import { ApiError } from '../utils/ApiError.js'
@@ -11,6 +12,9 @@ function toApiError(err) {
   }
   if (err instanceof mongoose.Error.CastError) return ApiError.badRequest(`Invalid ${err.path}`)
   if (err?.code === 11000) return ApiError.conflict(`Duplicate value: ${JSON.stringify(err.keyValue)}`)
+  if (err instanceof multer.MulterError) {
+    return ApiError.badRequest(err.code === 'LIMIT_FILE_SIZE' ? 'Image is too large (max 8 MB)' : `Upload failed: ${err.message}`)
+  }
   if (err?.type === 'entity.parse.failed') return ApiError.badRequest('Malformed JSON body')
   return new ApiError(500, 'Internal server error')
 }

@@ -1,10 +1,12 @@
 import { env } from '@/shared/config/env'
 
 async function request(path, { method = 'GET', body, headers } = {}) {
+  // FormData (file uploads) goes as-is so the browser sets the multipart boundary.
+  const isForm = body instanceof FormData
   const res = await fetch(`${env.apiBaseUrl}${path}`, {
     method,
-    headers: { 'Content-Type': 'application/json', ...headers },
-    body: body ? JSON.stringify(body) : undefined,
+    headers: isForm ? headers : { 'Content-Type': 'application/json', ...headers },
+    body: isForm ? body : body ? JSON.stringify(body) : undefined,
   })
   if (!res.ok) {
     // The ICV API answers errors as { error: { message, details? } }.

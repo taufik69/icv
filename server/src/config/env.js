@@ -12,6 +12,8 @@ const schema = z.object({
   PORT: z.coerce.number().int().positive().default(4000),
   MONGODB_URI: z.string().min(1),
   CORS_ORIGIN: z.string().default('http://localhost:5173'),
+  // Public address of this server; uploaded image URLs are built from it.
+  PUBLIC_URL: z.url().optional(),
 })
 
 const parsed = schema.safeParse(process.env)
@@ -24,4 +26,5 @@ export const env = {
   ...parsed.data,
   corsOrigins: parsed.data.CORS_ORIGIN.split(',').map((o) => o.trim()),
   isProd: parsed.data.NODE_ENV === 'production',
+  publicUrl: (parsed.data.PUBLIC_URL ?? `http://localhost:${parsed.data.PORT}`).replace(/\/$/, ''),
 }

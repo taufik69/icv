@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { PlusIcon } from '@/shared/components/icons'
 import { Button } from '@/shared/components/ui'
-import { courseRows } from '../../data/courseRows'
+import { useAdminCourses } from '../../hooks/useAdminCourses'
 import { PageHeader } from '../shell/PageHeader'
 import { CourseRow } from './CourseRow'
 import { rowGrid } from './rowGrid'
@@ -9,8 +9,10 @@ import { CoursesToolbar } from './CoursesToolbar'
 
 const head = `hidden gap-4 border-b border-line px-5 py-3 text-xs font-semibold text-ink-subtle md:grid ${rowGrid}`
 
-// Course catalogue list. Static rows for now; search and tabs are visual only.
-export function CoursesPage() {
+// Course catalogue from the API: market tabs + search in the URL, live status switch, archive.
+export function CoursesPage({ filters }) {
+  const { courses, counts } = useAdminCourses(filters)
+
   return (
     <>
       <PageHeader title="Courses" crumbs={{ current: 'Courses' }} description="Everything listed on the domestic and international course pages.">
@@ -20,13 +22,19 @@ export function CoursesPage() {
       </PageHeader>
 
       <section aria-label="Course list" className="mt-8 overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
-        <CoursesToolbar />
+        <CoursesToolbar filters={filters} counts={counts} />
         <div className={head}>
           <span>Course</span><span>Market</span><span>Status</span><span className="text-right">Actions</span>
         </div>
-        <ul className="divide-y divide-line-soft">
-          {courseRows.map((course) => <CourseRow key={course.to} course={course} />)}
-        </ul>
+        {courses.length ? (
+          <ul className="divide-y divide-line-soft">
+            {courses.map((course) => <CourseRow key={course.id} course={course} />)}
+          </ul>
+        ) : (
+          <p className="px-5 py-12 text-center text-ink-muted">
+            {filters.q ? `No courses match "${filters.q}". Try a title or a code like CPC40120.` : 'No courses yet. Add one to get started.'}
+          </p>
+        )}
       </section>
     </>
   )
