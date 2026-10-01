@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { LEVELS, MARKETS, STATUSES, STUDY_AREAS } from './course.constants.js'
+import { MARKETS, STATUSES } from './course.constants.js'
 
 // Request-shape checks for identity fields; nested blocks (facts, fees, units…) are enforced by the Mongoose schema.
 const market = z.enum(MARKETS)
@@ -19,8 +19,8 @@ const courseBody = z.object({
   code: required('Course code'),
   applyCode: z.string().trim().optional(),
   title: required('Course title'),
-  level: z.enum(LEVELS),
-  studyArea: z.enum(STUDY_AREAS),
+  level: required('Level'),
+  studyArea: required('Study area'),
   category: z.string().optional(),
   status: z.enum(STATUSES).optional(),
   order: z.number().int().optional(),
@@ -33,7 +33,7 @@ const courseBody = z.object({
 
 export const courseValidation = {
   list: {
-    query: z.object({ market: market.optional(), area: z.enum(STUDY_AREAS).optional(), featured: z.enum(['true', 'false']).optional() }),
+    query: z.object({ market: market.optional(), area: z.string().trim().max(60).optional(), featured: z.enum(['true', 'false']).optional() }),
   },
   bySlug: { params: z.object({ market, slug }) },
   byId: { params: z.object({ id }) },

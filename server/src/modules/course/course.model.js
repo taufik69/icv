@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose'
-import { LEVELS, MARKETS, STATUSES, STUDY_AREAS } from './course.constants.js'
+import { MARKETS, STATUSES } from './course.constants.js'
 import {
   actionSchema, blockSchema, criteriaSchema, ctaSchema, detailSchema, factsSchema, feeSchema, fundingSchema,
   glanceSchema, imageSchema, Parts, placementSchema, rplSectionSchema, seoSchema, unitsSchema,
@@ -17,8 +17,9 @@ const courseSchema = new Schema(
     code: { type: String, required: true, trim: true },
     applyCode: { type: String, trim: true },
     title: { type: String, required: true, trim: true },
-    level: { type: String, enum: LEVELS, required: true },
-    studyArea: { type: String, enum: STUDY_AREAS, required: true },
+    // Keys from the dashboard-managed taxonomies (study-areas / levels); checked in course.admin.service.
+    level: { type: String, required: true, trim: true },
+    studyArea: { type: String, required: true, trim: true },
     category: String,
     status: { type: String, enum: STATUSES, default: 'draft' },
     order: { type: Number, default: 0 },

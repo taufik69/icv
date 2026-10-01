@@ -2,6 +2,7 @@ import { ApiError } from '../../shared/utils/ApiError.js'
 import { sanitizeRichText } from '../../shared/utils/sanitizeRichText.js'
 import { ADMIN_LIST_FIELDS } from './course.constants.js'
 import { searchFilter, toDto } from './course.mapper.js'
+import { taxonomyService } from '../taxonomy/taxonomy.service.js'
 import { Course } from './course.model.js'
 
 // Dashboard data access: every status is visible; "delete" archives instead of removing.
@@ -14,6 +15,16 @@ const clean = (data) =>
     const html = out[block]?.[key]
     return typeof html === 'string' ? { ...out, [block]: { ...out[block], [key]: sanitizeRichText(html) } } : out
   }, data)
+
+// Study area and level must be items staff created under Study areas / Levels.
+async function checkTaxonomies({ studyArea, level }) {
+  const checks = [['study-areas', studyArea, 'studyArea', 'study area'], ['levels', level, 'level', 'level']]
+  const details = {}
+  for (const [type, key, field, noun] of checks) {
+    if (key !== undefined && !(await taxonomyService.keys(type)).includes(key)) details[field] = [`Choose a ${noun} from the list`]
+  }
+  if (Object.keys(details).length) throw ApiError.badRequest('Invalid body', details)
+}
 
 async function findOrThrow(id) {
   const course = await Course.findById(id)
@@ -45,11 +56,13 @@ export const courseAdminService = {
   },
 
   async create(data) {
+    await checkTaxonomies(data)
     const course = await Course.create(clean(data))
     return toDto(course.toObject())
   },
 
   async update(id, data) {
+    await checkTaxonomies(data)
     const course = await findOrThrow(id)
     course.set(clean(data))
     await course.save()

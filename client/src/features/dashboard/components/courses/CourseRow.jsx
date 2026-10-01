@@ -1,6 +1,7 @@
 import { Link } from '@tanstack/react-router'
 import { ArrowUpRightIcon, EyeIcon, PenLineIcon } from '@/shared/components/icons'
-import { marketLabel, studyAreaLabel } from '../../data/courseOptions'
+import { marketLabel } from '../../data/courseOptions'
+import { useTaxonomyLabel } from '../../hooks/useTaxonomy'
 import { useArchiveCourse, useSetCourseStatus } from '../../hooks/useCourseMutations'
 import { ArchiveButton } from './ArchiveButton'
 import { rowGrid } from './rowGrid'
@@ -21,6 +22,7 @@ export function CourseRow({ course }) {
   const { id, title, code, studyArea, market, slug, status, images, externalUrl } = course
   const setStatus = useSetCourseStatus()
   const archive = useArchiveCourse()
+  const studyAreaLabel = useTaxonomyLabel('study-areas')
   const image = images?.card ?? images?.hero
   const active = status === 'active'
   const params = { market, slug }

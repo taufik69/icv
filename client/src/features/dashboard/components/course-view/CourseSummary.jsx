@@ -1,4 +1,5 @@
-import { marketLabel, statusLabels, studyAreaLabel } from '../../data/courseOptions'
+import { marketLabel, statusLabels } from '../../data/courseOptions'
+import { useTaxonomyLabel } from '../../hooks/useTaxonomy'
 
 const badge = {
   active: 'bg-success-soft text-success-ink',
@@ -9,6 +10,7 @@ const badge = {
 
 // Hero photo with the facts staff check first: status, code, market, area, level, page address.
 export function CourseSummary({ course }) {
+  const studyAreaLabel = useTaxonomyLabel('study-areas')
   const { images, code, market, studyArea, level, slug, tagline, status } = course
   const facts = [
     ['Course code', code],
