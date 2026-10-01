@@ -1,6 +1,13 @@
 import { formsContent } from '@/features/student-info/data/documentsContent'
-import { DocumentsPage } from './DocumentsPage'
+import { PageHero } from '@/shared/components/layout'
+import { DocumentsBlueprint } from './DocumentsBlueprint'
 
+// Forms: banner, then the international student forms as a blueprint bento.
 export function FormsPage() {
-  return <DocumentsPage id="forms-title" current="Forms" content={formsContent} />
+  return (
+    <>
+      <PageHero accent="muted" grid id="forms-title" current="Forms" {...formsContent.hero} />
+      <DocumentsBlueprint id="forms-list" content={formsContent} />
+    </>
+  )
 }

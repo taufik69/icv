@@ -8,10 +8,11 @@ const tones = {
 
 // Blueprint-style bento card: dashed outline with a plus mark on each corner (they turn a quarter on hover).
 // Adapted from the Ruixen "bento cards" pattern to ICV tokens. `tone` = dark (on navy) | light.
-export function PlusCard({ children, tone = 'dark', as: Tag = 'div', className = '' }) {
+// Extra props go to the element, so `as="a"` + `href` makes the whole card a link.
+export function PlusCard({ children, tone = 'dark', as: Tag = 'div', className = '', ...props }) {
   const t = tones[tone]
   return (
-    <Tag className={`group/plus relative rounded-lg border border-dashed p-6 transition duration-300 ${t.card} ${className}`}>
+    <Tag className={`group/plus relative rounded-lg border border-dashed p-6 transition duration-300 ${t.card} ${className}`} {...props}>
       {corners.map((c) => (
         <PlusIcon
           key={c}
