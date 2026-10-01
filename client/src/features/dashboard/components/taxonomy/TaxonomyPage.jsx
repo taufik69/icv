@@ -1,4 +1,4 @@
-import { taxonomyPages } from '../../data/taxonomyIcons'
+import { taxonomyPages } from '../../data/taxonomyPages'
 import { useTaxonomy } from '../../hooks/useTaxonomy'
 import { useTaxonomyMutations } from '../../hooks/useTaxonomyMutations'
 import { PageHeader } from '../shell/PageHeader'
@@ -27,7 +27,6 @@ export function TaxonomyPage({ type }) {
           <ul aria-hidden="true" className="divide-y divide-line-soft">
             {[0, 1, 2, 3].map((i) => (
               <li key={i} className="flex items-center gap-3 px-5 py-4 sm:px-7">
-                {page.icons && <span className="skeleton size-10 rounded-xl" />}
                 <span className="grid flex-1 gap-2"><span className="skeleton h-4 w-48 rounded-md" /><span className="skeleton h-3 w-20 rounded-md" /></span>
               </li>
             ))}
@@ -35,7 +34,7 @@ export function TaxonomyPage({ type }) {
         ) : items.length ? (
           <ul className={`divide-y divide-line-soft transition-opacity ${mutations.reorder.isPending ? 'opacity-60' : ''}`}>
             {items.map((item, i) => (
-              <TaxonomyRow key={`${item.id}-${item.label}-${item.icon}`} item={item} page={page} first={i === 0} last={i === items.length - 1} onMove={(step) => move(i, step)} mutations={mutations} />
+              <TaxonomyRow key={`${item.id}-${item.label}`} item={item} first={i === 0} last={i === items.length - 1} onMove={(step) => move(i, step)} mutations={mutations} />
             ))}
           </ul>
         ) : (

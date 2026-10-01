@@ -1,5 +1,5 @@
 import { model, Schema } from 'mongoose'
-import { ICONS, TAXONOMY_TYPES } from './taxonomy.constants.js'
+import { TAXONOMY_TYPES } from './taxonomy.constants.js'
 
 // One item of a course classification list (a study area or a level). Courses store the `key`, so it never
 // changes once created; the `label` can be renamed freely.
@@ -9,7 +9,6 @@ const taxonomySchema = new Schema(
     key: { type: String, required: true, trim: true, maxlength: 60 },
     label: { type: String, required: true, trim: true, maxlength: 80 },
     order: { type: Number, default: 0 },
-    icon: { type: String, enum: ICONS },
   },
   { timestamps: true },
 )

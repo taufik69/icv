@@ -1,17 +1,15 @@
 import { useState } from 'react'
 import { PlusIcon } from '@/shared/components/icons'
 import { controlClass } from '../course-form/fields/fieldStyles'
-import { IconPicker } from './IconPicker'
 
-// "Add a study area / level": name (+ icon for study areas), Enter or the button adds it.
+// "Add a study area / level": type a name; Enter or the button adds it.
 export function AddTaxonomyForm({ page, mutation }) {
   const [label, setLabel] = useState('')
-  const [icon, setIcon] = useState('layers')
 
   const submit = (e) => {
     e.preventDefault()
     if (!label.trim()) return
-    mutation.mutate({ label: label.trim(), ...(page.icons && { icon }) }, { onSuccess: () => setLabel('') })
+    mutation.mutate({ label: label.trim() }, { onSuccess: () => setLabel('') })
   }
 
   return (
@@ -25,7 +23,6 @@ export function AddTaxonomyForm({ page, mutation }) {
           <PlusIcon className="size-4" /> {mutation.isPending ? 'Adding…' : `Add ${page.noun}`}
         </button>
       </div>
-      {page.icons && <IconPicker value={icon} onChange={setIcon} label={`Icon for the new ${page.noun}`} />}
       {mutation.isError && <p role="alert" className="text-sm text-danger-ink">{mutation.error.message}</p>}
     </form>
   )

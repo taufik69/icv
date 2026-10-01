@@ -35,9 +35,9 @@ export const taxonomyService = {
     return Taxonomy.distinct('key', { type })
   },
 
-  async create(type, { label, icon, order }) {
+  async create(type, { label, order }) {
     const last = await Taxonomy.findOne({ type }).sort({ order: -1 }).lean()
-    const item = await Taxonomy.create({ type, label, icon, key: await uniqueKey(type, label), order: order ?? (last?.order ?? 0) + 1 })
+    const item = await Taxonomy.create({ type, label, key: await uniqueKey(type, label), order: order ?? (last?.order ?? 0) + 1 })
     return { ...toDto(item.toObject()), courses: 0 }
   },
 

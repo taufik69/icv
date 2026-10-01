@@ -1,16 +1,13 @@
 import { marketOptions } from '../../data/courseOptions'
-import { useTaxonomyOptions } from '../../hooks/useTaxonomy'
 import { FeaturedToggle } from './FeaturedToggle'
 import { FormSection } from './FormSection'
+import { TaxonomyField } from './TaxonomyField'
 import { InputField } from './fields/InputField'
 import { SelectField } from './fields/SelectField'
 import { TextAreaField } from './fields/TextAreaField'
 
 // Part 1: what the course is and where it's listed. Fields marked * are required.
 export function BasicsSection({ values, set, bind }) {
-  // Study areas and levels are managed by staff (sidebar: Study areas / Levels).
-  const studyAreaOptions = useTaxonomyOptions('study-areas')
-  const levelOptions = useTaxonomyOptions('levels')
   return (
     <FormSection id="basics">
       <InputField label="Course title" required placeholder="Certificate IV in Building and Construction" {...bind('title')} />
@@ -18,8 +15,8 @@ export function BasicsSection({ values, set, bind }) {
         <InputField label="Course code" required placeholder="CPC40120" {...bind('code')} />
         <InputField label="Page address" required placeholder="cert-iv-building-and-construction" hint="Lowercase words joined by dashes." {...bind('slug')} />
         <SelectField label="Market" required options={marketOptions} {...bind('market')} />
-        <SelectField label="Study area" required options={studyAreaOptions} hint="Manage the list under Study areas in the sidebar." {...bind('studyArea')} />
-        <SelectField label="Level" required options={levelOptions} hint="Manage the list under Levels in the sidebar." {...bind('level')} />
+        <TaxonomyField type="study-areas" label="Study area" required {...bind('studyArea')} />
+        <TaxonomyField type="levels" label="Level" required {...bind('level')} />
         <InputField label="Category label" placeholder="Building and Construction" hint="Text shown on the course page." {...bind('category')} />
         <InputField label="Apply form code" placeholder="Leave empty to use the course code" hint="Only if the apply form lists the course under another code." {...bind('applyCode')} />
         <InputField label="External page" placeholder="https://icv.edu.au/…" hint="Only for courses without a page on this site." {...bind('externalUrl')} />

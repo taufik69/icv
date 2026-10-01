@@ -8,7 +8,7 @@ const sizes = { md: 'h-11 rounded-xl px-3.5', sm: 'h-10 rounded-xl px-3 text-sm'
 // Dashboard dropdown (replaces the native <select>): a field-styled trigger and a floating option panel,
 // keyboard-driven by the shared useListbox (arrows, Home/End, Enter, Escape). Opens upwards near the
 // bottom of the screen. options = [{ value, label, hint?, Icon? }]; onChange receives the new value.
-export function SelectMenu({ id, value, options, onChange, placeholder = 'Choose…', size = 'md', ...aria }) {
+export function SelectMenu({ id, value, options, onChange, placeholder = 'Choose…', emptyText = 'Nothing to choose yet', size = 'md', ...aria }) {
   const { open, active, setActive, rootRef, triggerRef, listRef, toggle, pick, onTriggerKeyDown, onListKeyDown } =
     useListbox({ options, value, onSelect: onChange })
   const [up, setUp] = useState(false)
@@ -47,6 +47,7 @@ export function SelectMenu({ id, value, options, onChange, placeholder = 'Choose
           onKeyDown={onListKeyDown}
           className={`absolute inset-x-0 z-30 max-h-72 min-w-56 overflow-y-auto overscroll-contain rounded-xl bg-surface p-1.5 shadow-elevated ring-1 ring-line focus:outline-none motion-safe:animate-[fade-in_120ms_ease-out] ${up ? 'bottom-full mb-2' : 'top-full mt-2'}`}
         >
+          {!options.length && <li role="presentation" className="px-3 py-2.5 text-sm text-ink-subtle">{emptyText}</li>}
           {options.map((o, i) => (
             <SelectMenuOption
               key={o.value}

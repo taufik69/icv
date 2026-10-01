@@ -5,12 +5,12 @@ import { Taxonomy } from '../modules/taxonomy/taxonomy.model.js'
 
 const defaults = [
   ...[
-    ['building', 'Building and construction', 'hammer'],
-    ['whiteCard', 'White card', 'badge'],
-    ['ecec', 'Early childhood', 'smile'],
-    ['community', 'Community services', 'heart'],
-    ['management', 'Management', 'briefcase'],
-  ].map(([key, label, icon], order) => ({ type: 'study-areas', key, label, icon, order })),
+    ['building', 'Building and construction'],
+    ['whiteCard', 'White card'],
+    ['ecec', 'Early childhood'],
+    ['community', 'Community services'],
+    ['management', 'Management'],
+  ].map(([key, label], order) => ({ type: 'study-areas', key, label, order })),
   ...['Short course', 'Certificate III', 'Certificate IV', 'Diploma', 'Graduate Diploma'].map((label, order) => ({ type: 'levels', key: label, label, order })),
 ]
 
