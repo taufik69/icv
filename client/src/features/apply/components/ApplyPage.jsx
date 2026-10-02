@@ -20,7 +20,7 @@ export function ApplyPage({ initial }) {
 
   return (
     <>
-      <PageHero id="apply-page-title" current="Apply Now" title="Apply" highlight="Now" image={hero}
+      <PageHero id="apply-page-title" grid current="Apply Now" title="Apply" highlight="Now" image={hero}
         lead="Tell us about yourself and the course you're interested in. Our admissions team will get back to you." />
       <section ref={ref} aria-label="Application form" className={`relative overflow-clip bg-surface-muted py-14 md:py-20 ${doodle}`}>
         <Container className="grid grid-cols-1 items-start gap-8 lg:grid-cols-[minmax(0,7fr)_minmax(0,4fr)] lg:gap-10">

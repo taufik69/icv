@@ -6,19 +6,16 @@ import { useScrolled } from '@/shared/hooks/useScrolled'
 import { DesktopNav } from './DesktopNav'
 import { HeaderActions } from './HeaderActions'
 import { Logo } from './Logo'
-import { TopStrip } from './TopStrip'
 
 // Full-width bar at the top; on scroll it becomes a light floating pill, 98% wide.
-// Home page: lg+ TopStrip utility row (folds away on scroll) + `edge` nav (logo left | nav + actions right).
-// Other pages: `classic` nav (icon + label, underline) centred between logo and actions.
+// Every page (home included) uses the `classic` nav: icon + label items with an underline, centred
+// between the logo and the actions. No utility row above it.
 // data-floating drives child styles via `group-data-[floating=true]/header:*`.
 // Phones get the same floating pill (logo + menu button); BottomNav adds quick tabs at the bottom.
 export function SiteHeader({ onOpenMenu }) {
   const floating = useScrolled()
   const path = useRouterState({ select: (s) => s.location.pathname })
   const overHero = hasHeroBanner(path)
-  const edge = path === '/'
-  const variant = edge ? 'edge' : 'classic'
 
   const bar = overHero ? 'bg-transparent' : 'bg-secondary'
   const shell = floating
@@ -34,14 +31,13 @@ export function SiteHeader({ onOpenMenu }) {
         <div className="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-secondary-dark/60 to-transparent" />
       )}
       <div className={`relative mx-auto transition-all duration-700 ease-in-out ${shell}`}>
-        {edge && <TopStrip />}
-        <Container className={`flex gap-4 ${edge ? 'items-stretch' : 'items-center'} ${edge && !floating ? 'xl:border-b xl:border-white/15' : ''}`}>
-          <div className={`flex items-center transition-[padding] duration-700 ease-in-out ${floating ? 'py-1.5 md:py-2' : 'py-3 md:py-3.5'}`}>
+        <Container className="flex items-center gap-4">
+          <div className={`flex items-center transition-[padding] duration-700 ease-in-out ${floating ? 'py-1.5 md:py-2' : 'py-3 md:py-4'}`}>
             <Logo />
           </div>
-          <DesktopNav floating={floating} variant={variant} />
-          <div className={`ml-auto flex items-center gap-2 ${edge ? 'xl:ml-2' : 'xl:ml-0'}`}>
-            <HeaderActions edge={edge} />
+          <DesktopNav floating={floating} variant="classic" />
+          <div className="ml-auto flex items-center gap-2 xl:ml-0">
+            <HeaderActions />
             <button
               type="button"
               onClick={onOpenMenu}

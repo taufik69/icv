@@ -2,7 +2,7 @@ import { valuesContent as content } from '@/features/why-choose/data/whyChooseCo
 import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { ValueCard } from './ValueCard'
 
-// Navy band: centred eyebrow + title on top, then the values as blueprint cells (1 → 2 → 3 cols).
+// Navy band with glow decor; 6 value tiles (1 → 2 → 3 cols).
 export function ValuesSection() {
   return (
     <section aria-labelledby="values-title" className="relative isolate overflow-hidden bg-secondary py-20 md:py-28">
@@ -13,15 +13,17 @@ export function ValuesSection() {
         <Reveal className="mx-auto max-w-2xl text-center">
           <SectionEyebrow tone="light" accent="muted">{content.eyebrow}</SectionEyebrow>
           <h2 id="values-title" className="mt-5 text-3xl leading-tight text-white md:text-5xl">
-            {content.title} <span className="text-white/90">{content.highlight}</span>
+            {content.title} <span className="text-white/75">{content.highlight}</span>
           </h2>
         </Reveal>
 
-        <ul className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {content.items.map((item, i) => (
-            <Reveal as="li" key={item.title} delay={(i % 3) * 100}>
-              <ValueCard item={item} />
-            </Reveal>
+            <li key={item.title}>
+              <Reveal delay={(i % 3) * 100} from="zoom" className="h-full">
+                <ValueCard item={item} />
+              </Reveal>
+            </li>
           ))}
         </ul>
       </Container>

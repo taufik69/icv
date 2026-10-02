@@ -22,7 +22,7 @@ export function EnrolmentPage({ course }) {
 
   return (
     <>
-      <PageHero id="enrol-page-title" current="Apply Now" title="Enrolment application" accent="muted" image={hero}
+      <PageHero id="enrol-page-title" grid current="Apply Now" title="Enrolment application" accent="muted" image={hero}
         lead="Apply for an international course at ICV. Your answers are saved on this device after each step, so you can finish later." />
       <section ref={topRef} aria-label="Enrolment application form" className="scroll-mt-24 [&_p]:text-left bg-surface-muted py-10 md:py-16">
         <Container className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8 xl:gap-10">
