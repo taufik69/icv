@@ -8,7 +8,7 @@ API for the online **Enrolment Application Form – International** (V8.0), the 
 - Errors are `{ "error": { "message", "details"? } }`. `details` maps a field path to a list of messages, e.g. `{ "personal.dob": ["use YYYY-MM-DD"] }`.
 - Dates are always `YYYY-MM-DD` strings.
 
-> **Auth:** only `POST /enrolments` is meant to be public. The other routes are for staff, but they have **no auth yet**, the same as `/applications`. Add staff auth before going live, especially for the file downloads, because they contain passports and visas.
+> **Auth:** only `POST /enrolments` is public. Every other route, including the file downloads (passports, visas…), needs a signed-in staff session: the `icv_session` httpOnly cookie set by `POST /auth/login` (send requests with `credentials: 'include'`). Without it the API answers `401 { error: { message: 'Please sign in.' } }`.
 
 ## Endpoints
 

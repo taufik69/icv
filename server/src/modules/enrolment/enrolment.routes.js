@@ -1,15 +1,17 @@
 import { Router } from 'express'
 import { validate } from '../../shared/middleware/validate.js'
+import { requireAuth } from '../auth/auth.middleware.js'
 import { enrolmentController as c } from './enrolment.controller.js'
 import { parseData, receiveFiles } from './enrolment.files.js'
 import { enrolmentValidation as v, validateEnrolmentBody } from './enrolment.validation.js'
 
-// POST is public (the website's enrolment form, multipart: "data" JSON + files). TODO: guard the
-// GET/PATCH/DELETE routes (and the file downloads, which hold passports) with staff auth once it exists,
-// and add rate limiting / spam protection to POST before going live.
+// POST is public (the website's enrolment form, multipart: "data" JSON + files); every other route,
+// including the file downloads (passports…), needs a staff session (requireAuth). TODO:
+// add rate limiting / spam protection to POST before going live.
 export const enrolmentRouter = Router()
 
 enrolmentRouter.post('/', receiveFiles, parseData, validateEnrolmentBody, c.create)
+enrolmentRouter.use(requireAuth) // every route below is for signed-in staff
 enrolmentRouter.get('/', validate(v.list), c.list)
 enrolmentRouter.get('/counts', c.counts)
 enrolmentRouter.get('/:id', validate(v.byId), c.getById)

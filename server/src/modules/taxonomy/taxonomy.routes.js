@@ -3,7 +3,7 @@ import { validate } from '../../shared/middleware/validate.js'
 import { taxonomyService as svc } from './taxonomy.service.js'
 import { taxonomyValidation as v } from './taxonomy.validation.js'
 
-// /admin/taxonomies/:type — type = study-areas | levels. TODO: guard with staff auth.
+// /admin/taxonomies/:type — type = study-areas | levels. Staff only (requireAuth on /admin).
 export const taxonomyRouter = Router()
 
 taxonomyRouter.get('/:type', validate(v.byType), async (req, res) => {

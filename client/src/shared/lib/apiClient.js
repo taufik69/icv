@@ -3,8 +3,10 @@ import { env } from '@/shared/config/env'
 async function request(path, { method = 'GET', body, headers } = {}) {
   // FormData (file uploads) goes as-is so the browser sets the multipart boundary.
   const isForm = body instanceof FormData
+  // credentials: the staff session cookie goes with every call (the API is on another port/origin).
   const res = await fetch(`${env.apiBaseUrl}${path}`, {
     method,
+    credentials: 'include',
     headers: isForm ? headers : { 'Content-Type': 'application/json', ...headers },
     body: isForm ? body : body ? JSON.stringify(body) : undefined,
   })

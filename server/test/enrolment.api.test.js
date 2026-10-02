@@ -7,13 +7,15 @@ import { createApp } from '../src/app.js'
 import { env } from '../src/config/env.js'
 import { STORAGE_ROOT } from '../src/modules/enrolment/enrolment.constants.js'
 import { Enrolment } from '../src/modules/enrolment/enrolment.model.js'
+import { signIn } from './signIn.js'
 import { enrolmentForm, PDF, PNG, validData } from './fixtures.js'
 
 // Real HTTP against the app, on a separate database ("icv_test", emptied before and after) so dev data is untouched.
 let server
 let base
-const call = async (path, init) => {
-  const res = await fetch(`${base}/api/v1/enrolments${path}`, init)
+let cookie // staff session for every route except the public submit
+const call = async (path, init = {}) => {
+  const res = await fetch(`${base}/api/v1/enrolments${path}`, { ...init, headers: { cookie, ...init.headers } })
   const type = res.headers.get('content-type') ?? ''
   return { status: res.status, headers: res.headers, body: type.includes('json') ? await res.json() : Buffer.from(await res.arrayBuffer()) }
 }
@@ -26,10 +28,12 @@ before(async () => {
   await Enrolment.deleteMany({})
   server = createApp().listen(0)
   base = `http://localhost:${server.address().port}`
+  cookie = await signIn(base)
 })
 
 after(async () => {
   await Enrolment.deleteMany({}).catch(() => {})
+  await signIn.cleanUp()
   await mongoose.disconnect()
   server?.closeAllConnections()
   server?.close()
@@ -142,6 +146,11 @@ describe('an enrolment from submit to delete', () => {
     assert.equal((await call(`/${created.id}`, { method: 'DELETE' })).status, 204)
     assert.equal(await exists(join(STORAGE_ROOT, created.id)), false)
     assert.equal((await call(`/${created.id}`)).status, 404)
+  })
+
+  it('refuses staff routes without a session', async () => {
+    const res = await fetch(`${base}/api/v1/enrolments`)
+    assert.equal(res.status, 401)
   })
 
   it('answers 400 for a malformed id', async () => {

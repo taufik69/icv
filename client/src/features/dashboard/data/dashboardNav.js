@@ -14,5 +14,3 @@ export const dashboardNav = [
 
 export const siteLink = { label: 'View website', to: '/', Icon: HomeIcon }
 
-// Placeholder signed-in user until auth exists.
-export const staffUser = { name: 'Course admin', email: 'admin@icv.edu.au', initials: 'CA' }

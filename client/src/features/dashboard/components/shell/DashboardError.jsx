@@ -1,18 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useQueryErrorResetBoundary } from '@tanstack/react-query'
-import { Link, useRouter } from '@tanstack/react-router'
+import { Link, useLocation, useNavigate, useRouter } from '@tanstack/react-router'
 import { ArrowRightIcon, ChevronDownIcon, RefreshIcon } from '@/shared/components/icons'
 import { describeError } from '../../lib/describeError'
 
 const action = 'btn-shine inline-flex h-11 items-center justify-center gap-2 rounded-pill px-5 font-heading text-sm font-semibold transition'
 
 // Route errorComponent for dashboard pages: a plain-language reason, a retry that refetches,
-// a way back to the course list, and the raw error tucked under "Technical details".
+// a way back to the course list, and the raw error tucked under "Technical details". A 401 (the session
+// ended, e.g. the password was changed elsewhere) goes to sign in instead, coming back here afterwards.
 export function DashboardError({ error }) {
   const router = useRouter()
+  const navigate = useNavigate()
+  const href = useLocation({ select: (l) => l.href })
+  const signedOut = error?.status === 401
+  useEffect(() => {
+    if (signedOut) navigate({ to: '/dashboard/login', search: { redirect: href }, replace: true })
+  }, [signedOut, href, navigate])
   const { reset } = useQueryErrorResetBoundary()
   const [retrying, setRetrying] = useState(false)
   const { Icon, tone, title, text } = describeError(error)
+  if (signedOut) return null
 
   const retry = async () => {
     setRetrying(true)

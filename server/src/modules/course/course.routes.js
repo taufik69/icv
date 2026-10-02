@@ -10,7 +10,7 @@ courseRouter.get('/', validate(v.list), c.list)
 courseRouter.get('/finder', c.finder)
 courseRouter.get('/:market/:slug', validate(v.bySlug), c.getPage)
 
-// Dashboard (every status). TODO: guard with staff auth once an auth module exists.
+// Dashboard (every status). Staff only (requireAuth on /admin).
 export const courseAdminRouter = Router()
 
 courseAdminRouter.get('/', validate(v.adminList), a.list)

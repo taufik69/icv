@@ -1,7 +1,7 @@
 import { Link } from '@tanstack/react-router'
-import { LogOutIcon } from '@/shared/components/icons'
 import { BrandLogo } from '@/shared/components/ui'
 import { dashboardNav } from '../../data/dashboardNav'
+import { SignOutButton } from './SignOutButton'
 
 // Phones/tablets: navy top bar + a scrollable tab row in place of the sidebar (no drawer state needed).
 export function MobileTabs() {
@@ -9,9 +9,7 @@ export function MobileTabs() {
     <div className="sticky top-0 z-20 bg-secondary lg:hidden">
       <div className="flex items-center justify-between px-5 py-3">
         <BrandLogo className="text-[0.5625rem] text-white" />
-        <Link to="/dashboard/login" aria-label="Sign out" className="grid size-9 place-items-center rounded-lg text-white/85 hover:bg-white/10 hover:text-white">
-          <LogOutIcon className="size-4.5" />
-        </Link>
+        <SignOutButton className="size-9 text-white/85 hover:bg-white/10 hover:text-white" iconClass="size-4.5" />
       </div>
       <nav aria-label="Dashboard" className="flex gap-1 overflow-x-auto px-3">
         {dashboardNav.map(({ label, to, Icon, exact }) => (

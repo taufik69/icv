@@ -15,15 +15,18 @@
     "seed:courses": "node src/scripts/seedCourses.js",
     "seed:taxonomies": "node src/scripts/seedTaxonomies.js",
     "test": "node --test --test-concurrency=1 'test/**/*.test.js'",
-    "seed:enrolments": "node src/scripts/seedEnrolments.js"
+    "seed:enrolments": "node src/scripts/seedEnrolments.js",
+    "seed:admin": "node src/scripts/seedAdmin.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.10.2",
     "morgan": "^1.12.1",
     "multer": "^2.4.0",
+    "nodemailer": "^10.0.13",
     "sanitize-html": "^2.18.0",
     "sharp": "^0.35.5",
     "zod": "^4.6.5"

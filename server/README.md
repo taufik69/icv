@@ -38,31 +38,44 @@ Errors always respond as `{ error: { message, details? } }`; success as `{ data 
 | GET | `/courses?market=&area=` | active course cards |
 | GET | `/courses/finder` | active courses with `facts` + `fees` for the course finder |
 | GET | `/courses/:market/:slug` | full active course + `markets` (student types) + two `related` courses |
-| GET | `/admin/courses?market=&status=&q=` | dashboard list, every status but archived unless asked; `meta.counts` per market (no auth yet) |
-| GET | `/admin/courses/page/:market/:slug` | one course, any status (no auth yet) |
-| POST | `/admin/courses` | create (no auth yet) |
-| PATCH | `/admin/courses/:id` | update; nested blocks are replaced whole (no auth yet) |
-| PATCH | `/admin/courses/:id/status` | `{ status }` — draft / active / inactive / archived (no auth yet) |
-| DELETE | `/admin/courses/:id` | archive (soft delete) (no auth yet) |
-| GET / POST | `/admin/taxonomies/:type` | `type` = `study-areas` \| `levels`: list (with `courses` count per item) / create `{ label, icon? }` (no auth yet) |
-| PATCH / DELETE | `/admin/taxonomies/:type/:id` | rename / re-icon; delete answers 409 while any course uses the item (no auth yet) |
-| PUT | `/admin/taxonomies/:type/order` | `{ ids }` in the new order (no auth yet) |
-| POST | `/admin/uploads/images?folder=courses` | multipart field `image` (JPG/PNG/WebP/AVIF, ≤ 8 MB) → WebP at 640/1280/1920 px in `public/uploads/<folder>/`, served at `/uploads/…`; returns `{ src, srcSet, width, height, alt }` (no auth yet) |
+| GET | `/admin/courses?market=&status=&q=` | dashboard list, every status but archived unless asked; `meta.counts` per market |
+| GET | `/admin/courses/page/:market/:slug` | one course, any status |
+| POST | `/admin/courses` | create |
+| PATCH | `/admin/courses/:id` | update; nested blocks are replaced whole |
+| PATCH | `/admin/courses/:id/status` | `{ status }` — draft / active / inactive / archived |
+| DELETE | `/admin/courses/:id` | archive (soft delete) |
+| GET / POST | `/admin/taxonomies/:type` | `type` = `study-areas` \| `levels`: list (with `courses` count per item) / create `{ label, icon? }` |
+| PATCH / DELETE | `/admin/taxonomies/:type/:id` | rename / re-icon; delete answers 409 while any course uses the item |
+| PUT | `/admin/taxonomies/:type/order` | `{ ids }` in the new order |
+| POST | `/admin/uploads/images?folder=courses` | multipart field `image` (JPG/PNG/WebP/AVIF, ≤ 8 MB) → WebP at 640/1280/1920 px in `public/uploads/<folder>/`, served at `/uploads/…`; returns `{ src, srcSet, width, height, alt }` |
 | POST | `/applications` | public, from the website's apply form |
-| GET | `/applications?status=&q=` | list, newest first; `meta.counts` per status (no auth yet) |
-| GET | `/applications/:id` | one application (no auth yet) |
-| PATCH | `/applications/:id` | `{ status }` — New / Contacted / Enrolled / Closed (no auth yet) |
-| DELETE | `/applications/:id` | delete (no auth yet) |
+| GET | `/applications?status=&q=` | list, newest first; `meta.counts` per status |
+| GET | `/applications/:id` | one application |
+| PATCH | `/applications/:id` | `{ status }` — New / Contacted / Enrolled / Closed |
+| DELETE | `/applications/:id` | delete |
 | POST | `/enrolments` | public, the website's enrolment form (multipart: `data` JSON + files) |
-| GET | `/enrolments?status=&q=&page=&limit=` | list, newest first; `meta` = total, pages, counts (no auth yet) |
-| GET | `/enrolments/counts` · `/enrolments/:id` · `/enrolments/:id/files/:fileId` | counts, one application, one uploaded file (no auth yet) |
-| PATCH / DELETE | `/enrolments/:id` | `{ status, staffNote }` / delete with its files (no auth yet) |
+| GET | `/enrolments?status=&q=&page=&limit=` | list, newest first; `meta` = total, pages, counts |
+| GET | `/enrolments/counts` · `/enrolments/:id` · `/enrolments/:id/files/:fileId` | counts, one application, one uploaded file |
+| PATCH / DELETE | `/enrolments/:id` | `{ status, staffNote }` / delete with its files |
 
 Demo enrolments: `npm run seed:enrolments` (8 students with drawn demo files: signature, agent's stamp, passport scan marked SPECIMEN, test-result PDFs; skips if enrolments exist, `-- --force` replaces them and their files).
 
 Tests: `npm test` (node:test; validation unit tests + real HTTP tests against the `icv_test` database, emptied before and after).
 
-Dashboard overview numbers: `GET /admin/stats?days=7|30|90|365` (`src/modules/stats`; totals vs the previous period, a day-by-day or month-by-month timeline in Melbourne time, enrolment status, top courses / nationalities / sources, enquiry student types, recent activity; no auth yet).
+Staff sign-in (`src/modules/auth`): every `/admin/*` route and every applications / enrolments route except the public `POST` needs a session cookie (`icv_session`, httpOnly, 7 days).
+
+| Method | Path | Notes |
+|---|---|---|
+| POST | `/auth/login` | `{ email, password }` → sets the cookie; 5 wrong tries lock the account 15 min |
+| POST | `/auth/logout` | clears the cookie |
+| GET | `/auth/me` | the signed-in user, or 401 |
+| POST | `/auth/forgot-password` | `{ email }` → 202 `{ expiresAt }`; emails a 6-digit code (5 min) in the background, 3 retries; same answer for unknown emails; no new code while one is live |
+| POST | `/auth/verify-code` | `{ email, code }` → `{ resetToken }` (10 min); 5 wrong codes cancel it |
+| POST | `/auth/reset-password` | `{ resetToken, password }` (10+ chars); ends every older session |
+
+`npm run seed:admin` creates the admin from `ADMIN_EMAIL` / `ADMIN_PASSWORD` (`-- --reset-password` sets it again). Mail uses `SMTP_*` (Gmail: an App Password in `SMTP_PASS`); without it, in development the code is printed in the server console.
+
+Dashboard overview numbers: `GET /admin/stats?days=7|30|90|365` (`src/modules/stats`; totals vs the previous period, a day-by-day or month-by-month timeline in Melbourne time, enrolment status, top courses / nationalities / sources, enquiry student types, recent activity).
 
 Full enrolment API with payloads: [`docs/enrolment-api.md`](docs/enrolment-api.md). Uploaded enrolment files are private, in `storage/enrolments/` (git-ignored).
 

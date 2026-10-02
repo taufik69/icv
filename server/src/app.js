@@ -14,7 +14,8 @@ export function createApp() {
   app.disable('x-powered-by')
   // Images are loaded by the site on another origin, so allow cross-origin reads.
   app.use(helmet({ crossOriginResourcePolicy: { policy: 'cross-origin' } }))
-  app.use(cors({ origin: env.corsOrigins }))
+  // credentials: the dashboard's session cookie goes with its API calls.
+  app.use(cors({ origin: env.corsOrigins, credentials: true }))
   app.use(express.json({ limit: '1mb' }))
   if (!env.isProd) app.use(morgan('dev'))
 

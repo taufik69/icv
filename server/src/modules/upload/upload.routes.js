@@ -14,7 +14,7 @@ const upload = multer({
     IMAGE_TYPES.includes(file.mimetype) ? cb(null, true) : cb(ApiError.badRequest('Use a JPG, PNG, WebP or AVIF image')),
 })
 
-// POST /admin/uploads/images?folder=courses  (multipart, field "image"). TODO: guard with staff auth.
+// POST /admin/uploads/images?folder=courses  (multipart, field "image"). Staff only (requireAuth on /admin).
 export const uploadRouter = Router()
 
 uploadRouter.post(
