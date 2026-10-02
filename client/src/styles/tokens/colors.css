@@ -19,6 +19,21 @@
   --color-highlight-alt: #fc7f0c;
   --color-coral: #e84b3a;
   --color-sky: #33aaff;
+  /* Chart series, in fixed order (validated for colour-blind separation on white; green needs labels or
+     a table view, which every dashboard chart has). chart-1 also fills single-series bars. */
+  --color-chart-1: #1f6fb2;
+  --color-chart-2: #8cc542;
+  /* More series for part-to-whole charts. Donut order (neighbours validated, incl. last↔first):
+     chart-1, chart-3, chart-4, chart-2, chart-5, chart-6. */
+  --color-chart-3: #ff6d00;
+  --color-chart-4: #92278f;
+  --color-chart-5: #e84b3a;
+  --color-chart-6: #14a3a3;
+  /* Ordered stages (enrolment pipeline): one hue, light → dark, validated as an ordinal ramp. */
+  --color-stage-1: #86b4df;
+  --color-stage-2: #4d8dca;
+  --color-stage-3: #1f6fb2;
+  --color-stage-4: #0f4478;
 
   /* Text */
   --color-ink: #212121;

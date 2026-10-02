@@ -19,6 +19,8 @@ Source scrape: `design/design-system.source.json` (icv.edu.au). **Never use raw 
 | Surfaces | `bg-surface` `bg-surface-muted` (#f4f8fa sections) `bg-surface-alt` | |
 | Borders | `border-line` `border-line-soft` `border-line-strong` | |
 | Links | `text-link` `hover:text-link-hover` | |
+| Chart series (fixed order) | `bg-chart-1` / `stroke-chart-1` (enrolments, single-series marks) · `chart-2` (enquiries) · `chart-3…6` (donut: order 1, 3, 4, 2, 5, 6) | #1f6fb2 #8cc542 #ff6d00 #92278f #e84b3a #14a3a3 |
+| Ordered stages | `bg-stage-1` … `bg-stage-4` (light → dark blue) | #86b4df → #0f4478 |
 | Status | `success` / `danger` / `warning` / `info` + `-soft` (bg) + `-ink` (text) | |
 
 Green is a fill color, never body text on white.

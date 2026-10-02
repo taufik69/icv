@@ -62,6 +62,8 @@ Demo enrolments: `npm run seed:enrolments` (8 students with drawn demo files: si
 
 Tests: `npm test` (node:test; validation unit tests + real HTTP tests against the `icv_test` database, emptied before and after).
 
+Dashboard overview numbers: `GET /admin/stats?days=7|30|90|365` (`src/modules/stats`; totals vs the previous period, a day-by-day or month-by-month timeline in Melbourne time, enrolment status, top courses / nationalities / sources, enquiry student types, recent activity; no auth yet).
+
 Full enrolment API with payloads: [`docs/enrolment-api.md`](docs/enrolment-api.md). Uploaded enrolment files are private, in `storage/enrolments/` (git-ignored).
 
 Uploaded images live in `server/public/uploads/` (gitignored) — the host needs a persistent disk, and back it up with the database. URLs are absolute, built from `PUBLIC_URL` (defaults to `http://localhost:PORT`), so set it before uploading in production.

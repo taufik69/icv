@@ -14,7 +14,7 @@ export function DashboardBreadcrumbs({ trail = [], current }) {
     <nav aria-label="Breadcrumb" className="mb-3 hidden md:block">
       <ol className="flex flex-wrap items-center gap-2 text-sm leading-none text-ink-subtle">
         <li className="flex">
-          <Link to="/dashboard/courses" className="inline-flex items-center gap-1.5 text-ink-subtle transition hover:text-secondary">
+          <Link to="/dashboard" search={{}} className="inline-flex items-center gap-1.5 text-ink-subtle transition hover:text-secondary">
             <LayoutGridIcon className="size-4" />
             Dashboard
           </Link>

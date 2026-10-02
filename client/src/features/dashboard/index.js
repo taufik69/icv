@@ -23,3 +23,7 @@ export { EnrolmentViewPage } from './components/enrolment-view/EnrolmentViewPage
 export { EnrolmentViewSkeleton } from './components/enrolment-view/EnrolmentViewSkeleton'
 export { enrolmentQuery, enrolmentsQuery } from './api/enrolmentAdminQueries'
 export { enrolmentStatuses } from './data/enrolmentStatus'
+export { OverviewPage } from './components/overview/OverviewPage'
+export { OverviewSkeleton } from './components/overview/OverviewSkeleton'
+export { overviewStatsQuery } from './api/statsQueries'
+export { DEFAULT_DAYS, overviewRanges } from './data/overviewRanges'
