@@ -1,5 +1,5 @@
 import { courseColumns } from '../../../data/enrolment/enrolmentForm'
-import { ApplyField } from '../../ApplyField'
+import { Field } from './Field'
 
 const REQUIRED = ['course', 'courseTitle']
 
@@ -18,7 +18,7 @@ export function CourseDetailsRow({ apiRow, values, errors, onEdit }) {
                 <p className="mt-1.5 font-heading text-lg leading-snug font-semibold text-ink-strong">{fixed}</p>
               </>
             ) : (
-              <ApplyField
+              <Field
                 name={key} label={label} placeholder={placeholder} required={REQUIRED.includes(key)}
                 value={values[key]} error={errors[key]} onChange={(e) => onEdit(key, e.target.value)}
                 className="[&>input]:mt-1"

@@ -24,8 +24,8 @@ export function EnrolmentPage({ course }) {
     <>
       <PageHero id="enrol-page-title" current="Apply Now" title="Enrolment application" accent="muted" image={hero}
         lead="Apply for an international course at ICV. Your answers are saved on this device after each step, so you can finish later." />
-      <section ref={topRef} aria-label="Enrolment application form" className="apple-type scroll-mt-24 bg-surface-muted py-10 md:py-16">
-        <Container className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[17rem_minmax(0,1fr)] lg:gap-10">
+      <section ref={topRef} aria-label="Enrolment application form" className="scroll-mt-24 [&_p]:text-left bg-surface-muted py-10 md:py-16">
+        <Container className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8 xl:gap-10">
           {form.submitted ? (
             <div className="min-w-0 rounded-3xl bg-surface p-6 shadow-card ring-1 ring-line-soft md:p-10 lg:col-span-2">
               <EnrolmentSuccess values={form.values} onRestart={form.restart} />
@@ -36,7 +36,7 @@ export function EnrolmentPage({ course }) {
                 <EnrolmentStepRail form={form} />
                 <EnrolmentStepBar form={form} />
               </div>
-              <div className="min-w-0 rounded-3xl bg-surface p-6 shadow-card ring-1 ring-line-soft md:p-10">
+              <div className="min-w-0 rounded-3xl bg-surface p-5 shadow-card ring-1 ring-line-soft sm:p-8 xl:p-10">
                 <EnrolmentStepForm form={form} />
               </div>
             </>

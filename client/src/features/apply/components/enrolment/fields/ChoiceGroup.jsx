@@ -1,9 +1,9 @@
 import { CheckIcon } from '@/shared/components/icons'
 
-const option = 'cursor-pointer rounded-xl px-4 py-2.5 text-center font-heading font-semibold text-ink-muted ring-1 ring-line transition hover:text-secondary hover:ring-line-strong has-checked:bg-secondary has-checked:text-white has-checked:ring-secondary has-focus-visible:shadow-focus-success'
+const option = 'cursor-pointer grid min-h-12 place-items-center rounded-xl px-4 py-2.5 text-center font-heading font-semibold text-ink-muted ring-1 ring-line transition hover:text-secondary hover:ring-line-strong has-checked:bg-secondary has-checked:text-white has-checked:ring-secondary has-focus-visible:shadow-focus-success'
 
 // Chip with a marker beside the label (circle = radio dot, check = ticked square like the CheckList chips).
-const chip = 'flex cursor-pointer items-center gap-2.5 rounded-xl px-4 py-2.5 font-heading font-semibold text-secondary ring-1 ring-line transition hover:ring-line-strong has-checked:bg-surface-muted has-checked:ring-secondary has-focus-visible:shadow-focus-success'
+const chip = 'flex min-h-12 cursor-pointer items-center gap-2.5 rounded-xl px-4 py-2.5 font-heading font-semibold text-secondary ring-1 ring-line transition hover:ring-line-strong has-checked:bg-surface-muted has-checked:ring-secondary has-focus-visible:shadow-focus-success'
 
 const markers = {
   circle: () => <span aria-hidden="true" className="size-5 shrink-0 rounded-full ring-1 ring-line-strong ring-inset peer-checked:ring-6 peer-checked:ring-secondary" />,

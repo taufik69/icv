@@ -1,7 +1,7 @@
 import { RefreshIcon } from '@/shared/components/icons'
 import { useEnrolmentCourses } from '../../../hooks/useEnrolmentCourses'
-import { ApplySelect } from '../../ApplySelect'
 import { CourseDetailsRow } from './CourseDetailsRow'
+import { Select } from './Select'
 
 const OTHER = 'other'
 const blankRow = { course: '', courseTitle: '', duration: '', applicationFee: '', tuitionFee: '', materialFee: '' }
@@ -26,7 +26,7 @@ export function CourseChoice({ form }) {
   return (
     <div className="grid gap-4 sm:col-span-2">
       {!failed && (
-        <ApplySelect
+        <Select
           name={manual ? 'courseSource' : 'course'} label="Course" required options={options} onChange={pick}
           value={values.courseManual ? OTHER : values.course} disabled={loading} error={manual ? undefined : errors.course}
           placeholder={loading ? 'Loading courses…' : 'Choose a course'}

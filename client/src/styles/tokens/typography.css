@@ -1,10 +1,9 @@
 /*
- * Fonts loaded from Google Fonts in index.html: Inter for body text, Plus Jakarta Sans for headings and
- * labels (font-condensed keeps its role for breadcrumbs / small labels). font-mono = JetBrains Mono, used
- * nowhere yet, so it isn't loaded; add it to the Google Fonts link if a component starts using it.
+ * Font loaded from Google Fonts in index.html. The whole site uses Roboto Condensed;
+ * the three utilities stay so components keep their roles (body / heading / label) if a family changes later.
  * font-logo: Old English Text MT (installed copy or public/fonts/old-english-text-mt.woff2),
  * else the free UnifrakturMaguntia lookalike from Google Fonts.
- * Utilities: font-sans (body), font-heading, font-display, font-condensed, font-mono, font-logo (BrandLogo wordmark only).
+ * Utilities: font-sans (body), font-heading, font-condensed, font-logo (BrandLogo wordmark only).
  */
 @font-face {
   font-family: 'Old English Text MT';
@@ -15,27 +14,8 @@
 }
 
 @theme {
-  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-  --font-condensed: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
-  /* Apple system type (SF Pro on Apple devices); Inter, its closest free match, everywhere else. */
-  --font-system: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', 'Inter', ui-sans-serif, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-sans: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-heading: 'Roboto Condensed', 'Arial Narrow', sans-serif;
+  --font-condensed: 'Roboto Condensed', 'Arial Narrow', sans-serif;
   --font-logo: 'Old English Text MT', 'UnifrakturMaguntia', serif;
-}
-
-/* `apple-type` on a wrapper switches everything inside (body, headings, labels) to the system font,
-   with SF-style tight tracking, and sets paragraphs ragged-left instead of the site-wide justify.
-   Used by the enrolment form. */
-@utility apple-type {
-  --font-sans: var(--font-system);
-  --font-heading: var(--font-system);
-  --font-condensed: var(--font-system);
-  font-family: var(--font-system);
-  letter-spacing: -0.011em;
-  & p {
-    text-align: left;
-    hyphens: manual;
-  }
 }

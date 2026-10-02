@@ -7,7 +7,8 @@ const trigger = 'mt-1.5 flex w-full items-center gap-3 rounded-xl border border-
 // Styled single-select for the apply form. options = [{ value, label, badge?, group? }]. Optional `error`
 // (shown under it), `required` marker and `disabled` (e.g. while options load).
 // Calls onChange({ target: { value } }) so it plugs into the same `set(key)` handler as native fields.
-export function ApplySelect({ name, label, value, options, placeholder = 'Please select', onChange, error, required, disabled, className = '' }) {
+// `triggerClass` swaps the button look (the enrolment form passes its own).
+export function ApplySelect({ name, label, value, options, placeholder = 'Please select', onChange, error, required, disabled, triggerClass = trigger, className = '' }) {
   const { open, active, setActive, rootRef, triggerRef, listRef, toggle, pick, onTriggerKeyDown, onListKeyDown } =
     useListbox({ options, value, onSelect: (v) => onChange({ target: { value: v } }) })
   const selected = options.find((o) => o.value === value)
@@ -33,7 +34,7 @@ export function ApplySelect({ name, label, value, options, placeholder = 'Please
           aria-describedby={error ? `${id}-error` : undefined}
           onClick={toggle}
           onKeyDown={onTriggerKeyDown}
-          className={trigger}
+          className={triggerClass}
         >
           {selected?.badge && <span className="shrink-0 rounded-md bg-primary-soft px-2 py-0.5 font-heading text-xs font-bold text-secondary">{selected.badge}</span>}
           <span className={`min-w-0 flex-1 truncate ${selected ? 'text-ink' : 'text-ink-disabled'}`}>{selected?.label ?? placeholder}</span>
