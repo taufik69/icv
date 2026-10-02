@@ -45,7 +45,8 @@ const rules = {
   },
   declaration: (v, e) => {
     if (!v.declaration) e.declaration = 'Tick the declaration to send your application.'
-    need(v, e, [['signature', 'Type your full name as your signature.'], ['signedDate', 'Enter the date.']])
+    if (!v.signature?.startsWith('data:image')) e.signature = 'Upload an image of your signature.'
+    need(v, e, [['signedDate', 'Enter the date.']])
   },
 }
 

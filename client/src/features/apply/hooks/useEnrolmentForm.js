@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { enrolmentSteps as steps } from '../data/enrolment/enrolmentSteps'
 import { clearDraft, emptyEnrolment, loadDraft, saveDraft } from '../lib/enrolmentDraft'
+import { useDraftAutosave } from './useDraftAutosave'
 import { validateEnrolmentStep } from '../lib/validateEnrolmentStep'
 
 const startState = (course) => {
@@ -18,6 +19,7 @@ export function useEnrolmentForm(course, topRef) {
   const [submitted, setSubmitted] = useState(false)
   const { values, saved, step } = state
   const current = steps[step]
+  useDraftAutosave(state, (savedAt) => setState((s) => ({ ...s, savedAt })))
 
   const update = (patch) => {
     const next = { ...values, ...patch }

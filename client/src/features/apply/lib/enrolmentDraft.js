@@ -1,4 +1,5 @@
 import { emptyEnglishTest, emptyQualification } from '../data/enrolment/enrolmentOptions'
+import { clearFiles } from './fileStore'
 
 const KEY = 'icv-enrolment-draft'
 const today = () => new Date().toISOString().slice(0, 10)
@@ -15,11 +16,11 @@ export const emptyEnrolment = () => ({
   disability: '', disabilityTypes: [], otherMedical: '',
   qualifications: [{ ...emptyQualification }], creditTransfer: '', englishTests: [{ ...emptyEnglishTest }],
   holdsVisa: '', visaType: '', visaSubclass: '', visaExpiry: '', immigrationOffice: '', visaApplicationDate: '',
-  heard: '', heardOther: '', agentCompany: '', agentName: '', agentEmail: '', agentPhone: '',
+  heard: '', heardOther: '', agentCompany: '', agentName: '', agentEmail: '', agentPhone: '', agentStamp: '',
   attachments: [], attachmentOther: '', declaration: false, signature: '', signedDate: today(),
 })
 
-// The draft lives in this browser only (UI only, no backend yet). Storage can be blocked, so every
+// The draft lives in this browser only (UI only, no backend yet); uploaded files sit in IndexedDB (`fileStore`). Storage can be blocked, so every
 // access is guarded and the form still works without it.
 export function loadDraft() {
   try {
@@ -40,6 +41,7 @@ export function saveDraft(draft) {
 }
 
 export function clearDraft() {
+  clearFiles()
   try {
     localStorage.removeItem(KEY)
   } catch {

@@ -19,7 +19,7 @@ export function AgentStep({ form }) {
         <Field {...field('agentName')} label="Agent's name" placeholder="e.g. Rahul Mehta" required={viaAgent} />
         <Field {...field('agentEmail')} label="Email address" placeholder="agent@example.com" type="email" />
         <Field {...field('agentPhone')} label="Contact number" placeholder="e.g. +61 400 123 456" type="tel" />
-        <AgentStamp className="sm:col-span-2" />
+        <AgentStamp {...field('agentStamp')} className="sm:col-span-2" />
       </Section>
     </>
   )

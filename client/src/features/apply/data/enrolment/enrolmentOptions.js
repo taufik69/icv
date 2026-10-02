@@ -24,6 +24,10 @@ export const attachments = [
   'Certified copies of documents to be assessed for Recognition of Prior Learning (RPL) if required',
 ]
 
+// Short names for the upload buttons, in the same order as `attachments` ("Upload passport").
+export const attachmentShort = ['English test results', 'Year 11 or equivalent', 'passport', 'visa', 'release letter', 'health cover', 'RPL documents']
+export const OTHER_ATTACHMENT = 'Other'
+
 // (L) Enrolment Procedure, step 2
 // (L) Enrolment Procedure, part 1: the ways to send the form (verbatim; `href` makes a link).
 export const submitWays = [

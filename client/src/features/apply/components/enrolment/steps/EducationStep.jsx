@@ -14,13 +14,13 @@ const creditOptions = [
 export function EducationStep({ form }) {
   return (
     <>
-      <Section wide id="qualifications" title="Qualifications" description="Please provide details of your qualifications.">
+      <Section id="qualifications" title="Qualifications" description="Please provide details of your qualifications.">
         <div className="grid gap-6 sm:col-span-2">
           <QualificationList form={form} />
           <ChoiceCards {...form.field('creditTransfer')} label="Do you want to apply for credit transfer or RPL?" options={creditOptions} required />
         </div>
       </Section>
-      <Section wide id="english" title="English proficiency" description="Please provide details any English test / course taken.">
+      <Section id="english" title="English proficiency" description="Please provide details any English test / course taken.">
         <div className="sm:col-span-2">
           <EnglishTestList form={form} />
         </div>
