@@ -59,5 +59,5 @@ export function useListbox({ options, value, onSelect }) {
     }
   }
 
-  return { open, active, setActive, rootRef, triggerRef, listRef, toggle: () => (open ? close() : show()), pick, onTriggerKeyDown, onListKeyDown }
+  return { open, active, setActive, rootRef, triggerRef, listRef, show, toggle: () => (open ? close() : show()), pick, onTriggerKeyDown, onListKeyDown }
 }

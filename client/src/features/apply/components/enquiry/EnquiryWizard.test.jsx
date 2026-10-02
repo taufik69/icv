@@ -23,14 +23,20 @@ describe('EnquiryWizard', () => {
     expect(screen.getByText('Step 2 of 5 — Course interest')).toBeInTheDocument()
   })
 
-  it('lists an area\'s courses, and picks the only course of a one-course area', () => {
+  it("filters the course dropdown to the chosen area, and picks a one-course area's course", () => {
     renderWithQuery(<Harness initial={{ studentType: 'Domestic' }} />)
     cont()
     fireEvent.click(screen.getByLabelText('Building & Construction'))
-    expect(screen.getByLabelText(/Certificate III in Stonemasonry/)).toBeInTheDocument()
+    const list = screen.getByRole('listbox', { hidden: true })
+    const names = [...list.querySelectorAll('[role=option]')].map((o) => o.textContent)
+    expect(names).toHaveLength(4)
+    expect(names.join(' ')).toContain('Certificate III in Stonemasonry')
+    expect(names.join(' ')).not.toContain('Carpentry')
+    expect(screen.getByRole('button', { name: /Course in Building & Construction/ })).toHaveTextContent('Choose one of 4 courses')
     fireEvent.click(screen.getByLabelText('Carpentry'))
-    expect(screen.queryByText('Which course?')).not.toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /Or choose a course/ })).toHaveTextContent('Certificate III in Carpentry')
+    expect(screen.getByRole('button', { name: /Course in Carpentry/ })).toHaveTextContent('Certificate III in Carpentry')
+    fireEvent.click(screen.getByRole('button', { name: 'Show all courses' }))
+    expect(screen.getByRole('listbox', { hidden: true }).querySelectorAll('[role=option]')).toHaveLength(10)
   })
 
   it('opens with the area of a course from the link already picked', () => {

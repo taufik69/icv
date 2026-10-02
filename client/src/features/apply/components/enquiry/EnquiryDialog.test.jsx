@@ -41,7 +41,7 @@ describe('EnquiryDialog', () => {
     setup('NOPE123')
     fireEvent.click(screen.getByRole('button', { name: 'Enquire' }))
     toCourseStep()
-    expect(screen.getByRole('button', { name: /Or choose a course/ })).toHaveTextContent('Any course from the list')
+    expect(screen.getByRole('button', { name: /^Course/ })).toHaveTextContent('Pick an area above, or any course here')
   })
 
   it('closes with the × button and the page can scroll again', () => {

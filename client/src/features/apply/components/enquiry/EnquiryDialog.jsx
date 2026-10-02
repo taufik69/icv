@@ -30,6 +30,8 @@ function EnquiryPopup({ course, onClose }) {
   return (
     <dialog
       ref={ref} aria-label="Enquire to ICV" onClose={onClose}
+      // Esc in an open dropdown closes just the dropdown; the next Esc closes the popup.
+      onCancel={(e) => ref.current.querySelector('[aria-expanded="true"]') && e.preventDefault()}
       onClick={(e) => e.target === ref.current && onClose()}
       className="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-2xl overflow-y-auto overscroll-contain rounded-3xl bg-transparent p-0 backdrop:bg-secondary-dark/70 backdrop:backdrop-blur-sm motion-safe:animate-[fade-in_200ms_ease-out]"
     >
