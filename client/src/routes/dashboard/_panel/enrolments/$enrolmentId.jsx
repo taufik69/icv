@@ -1,16 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { DashboardError, enrolmentQuery, EnrolmentViewPage, EnrolmentViewSkeleton } from '@/features/dashboard'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 
-// One enrolment application from the API (404 → the dashboard error page).
+// Old address of one application (it was called an enrolment); sends it to the same record's new address.
 export const Route = createFileRoute('/dashboard/_panel/enrolments/$enrolmentId')({
-  loader: ({ context: { queryClient }, params }) => queryClient.ensureQueryData(enrolmentQuery(params.enrolmentId)),
-  pendingComponent: EnrolmentViewSkeleton,
-  pendingMs: 150,
-  pendingMinMs: 400,
-  errorComponent: DashboardError,
-  component: EnrolmentRoute,
+  beforeLoad: ({ params }) => {
+    throw redirect({ to: '/dashboard/applications/$applicationId', params: { applicationId: params.enrolmentId }, replace: true })
+  },
 })
-
-function EnrolmentRoute() {
-  return <EnrolmentViewPage id={Route.useParams().enrolmentId} />
-}

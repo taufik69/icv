@@ -20,11 +20,11 @@ export function EnrolmentsPage({ filters }) {
   return (
     <>
       <PageHeader
-        title="Enrolments"
-        crumbs={{ current: 'Enrolments' }}
+        title="Applications"
+        crumbs={{ current: 'Applications' }}
         description={`International enrolment applications from the website. ${waiting ? `${waiting} new, not yet reviewed.` : 'Every application has been picked up.'}`}
       />
-      <section aria-label="Enrolment list" aria-busy={showSkeleton} className="mt-8 overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
+      <section aria-label="Application list" aria-busy={showSkeleton} className="mt-8 overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
         <EnrolmentsToolbar filters={filters} counts={counts} />
         <div className={head}>
           <span>Student</span><span>Course</span><span>Nationality</span><span>Submitted</span><span>Status</span>
@@ -38,7 +38,7 @@ export function EnrolmentsPage({ filters }) {
           </ul>
         ) : (
           <p className="px-5 py-12 text-center text-ink-muted">
-            {filters.status || filters.q ? 'No enrolments match these filters.' : 'No enrolments yet. They appear here as soon as a student submits the enrolment form.'}
+            {filters.status || filters.q ? 'No applications match these filters.' : 'No applications yet. They appear here as soon as a student submits the enrolment form.'}
           </p>
         )}
         <ListPager paging={paging} filters={filters} />

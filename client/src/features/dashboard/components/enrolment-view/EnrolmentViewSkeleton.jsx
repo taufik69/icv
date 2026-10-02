@@ -1,7 +1,7 @@
 import { CardSkeleton } from '../skeleton/CardSkeleton'
 import { PageHeaderSkeleton } from '../skeleton/PageHeaderSkeleton'
 
-const trail = [{ label: 'Enrolments', to: '/dashboard/enrolments' }]
+const trail = [{ label: 'Applications', to: '/dashboard/applications' }]
 const pairs = (n) => (
   <div className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
     {Array.from({ length: n }, (_, i) => (
@@ -17,7 +17,7 @@ const pairs = (n) => (
 export function EnrolmentViewSkeleton() {
   return (
     <div aria-busy="true">
-      <p className="sr-only" role="status">Loading enrolment…</p>
+      <p className="sr-only" role="status">Loading application…</p>
       <PageHeaderSkeleton trail={trail} actions={['w-36', 'w-28']} />
       <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_19rem]">
         <div className="grid min-w-0 grid-cols-1 gap-6">

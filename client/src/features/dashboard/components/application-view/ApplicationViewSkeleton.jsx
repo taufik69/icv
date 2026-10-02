@@ -1,7 +1,7 @@
 import { CardSkeleton } from '../skeleton/CardSkeleton'
 import { PageHeaderSkeleton } from '../skeleton/PageHeaderSkeleton'
 
-const trail = [{ label: 'Applications', to: '/dashboard/applications' }]
+const trail = [{ label: 'Enquiries', to: '/dashboard/enquiries' }]
 const pairs = (n) => Array.from({ length: n }, (_, i) => (
   <div key={i} className="grid gap-2">
     <span className="skeleton h-3 w-24 rounded-md" />
@@ -13,7 +13,7 @@ const pairs = (n) => Array.from({ length: n }, (_, i) => (
 export function ApplicationViewSkeleton() {
   return (
     <div aria-busy="true">
-      <p className="sr-only" role="status">Loading application…</p>
+      <p className="sr-only" role="status">Loading enquiry…</p>
       <PageHeaderSkeleton trail={trail} actions={['w-36', 'w-28']} />
       <div className="mt-8 grid grid-cols-1 items-start gap-6 lg:grid-cols-[minmax(0,1fr)_18rem]">
         <div className="grid min-w-0 grid-cols-1 gap-6">

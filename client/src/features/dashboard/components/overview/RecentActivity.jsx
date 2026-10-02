@@ -5,11 +5,11 @@ import { StatusBadge } from '../applications/StatusBadge'
 import { EnrolmentStatusBadge } from '../enrolments/EnrolmentStatusBadge'
 
 const kinds = {
-  enrolment: { Icon: PenLineIcon, label: 'Enrolment', to: '/dashboard/enrolments/$enrolmentId', param: 'enrolmentId', Badge: EnrolmentStatusBadge },
-  application: { Icon: FileTextIcon, label: 'Enquiry', to: '/dashboard/applications/$applicationId', param: 'applicationId', Badge: StatusBadge },
+  enrolment: { Icon: PenLineIcon, label: 'Application', to: '/dashboard/applications/$applicationId', param: 'applicationId', Badge: EnrolmentStatusBadge },
+  application: { Icon: FileTextIcon, label: 'Enquiry', to: '/dashboard/enquiries/$enquiryId', param: 'enquiryId', Badge: StatusBadge },
 }
 
-// Latest enrolments and enquiries together, newest first; each row opens the record.
+// Latest applications and enquiries together, newest first; each row opens the record.
 export function RecentActivity({ items }) {
   if (!items.length) return <p className="py-8 text-center text-sm text-ink-subtle">Nothing submitted yet.</p>
   return (

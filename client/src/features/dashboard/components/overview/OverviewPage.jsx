@@ -14,7 +14,7 @@ export function OverviewPage({ days }) {
   // Left-aligned paragraphs here (the site justifies them, which gaps short notes badly).
   return (
     <div className="[&_p]:text-left">
-      <PageHeader title="Dashboard" crumbs={{ current: 'Overview' }} description="How enrolments and course enquiries are going, from live website submissions.">
+      <PageHeader title="Dashboard" crumbs={{ current: 'Overview' }} description="How applications and enquiries are going, from live website submissions.">
         <RangePicker days={days} />
       </PageHeader>
       <div aria-busy={updating} className={`mt-8 grid gap-4 transition-opacity duration-300 ${updating ? 'opacity-60' : ''}`}>

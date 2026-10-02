@@ -18,7 +18,7 @@ export function EnrolmentsToolbar({ filters, counts }) {
   const search = useCallback(
     (value) => {
       const q = value.trim() || undefined
-      if (q !== filters.q) navigate({ to: '/dashboard/enrolments', search: { ...filters, q, page: undefined }, replace: true })
+      if (q !== filters.q) navigate({ to: '/dashboard/applications', search: { ...filters, q, page: undefined }, replace: true })
     },
     [filters, navigate],
   )
@@ -32,14 +32,14 @@ export function EnrolmentsToolbar({ filters, counts }) {
     <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line px-5 py-4">
       <nav aria-label="Filter by status" className="flex max-w-full gap-1 overflow-x-auto rounded-xl bg-surface-muted p-1">
         {tabs.map((tab) => (
-          <Link key={tab.label} to="/dashboard/enrolments" search={{ q: filters.q, status: tab.status }} aria-current={tab.status === filters.status ? 'page' : undefined} className={`${tabClass} ${tabState(tab.status === filters.status)}`}>
+          <Link key={tab.label} to="/dashboard/applications" search={{ q: filters.q, status: tab.status }} aria-current={tab.status === filters.status ? 'page' : undefined} className={`${tabClass} ${tabState(tab.status === filters.status)}`}>
             {tab.label}
             <span className="rounded-pill bg-surface-sunken px-2 text-xs text-ink-subtle">{tab.count}</span>
           </Link>
         ))}
       </nav>
       <form role="search" onSubmit={(e) => { e.preventDefault(); search(text) }} className="relative w-full xl:w-80">
-        <label htmlFor="enrolments-q" className="sr-only">Search enrolments</label>
+        <label htmlFor="enrolments-q" className="sr-only">Search applications</label>
         <SearchIcon className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-ink-subtle" />
         <input
           id="enrolments-q" name="q" type="search" value={text} onChange={(e) => setText(e.target.value)} autoComplete="off"

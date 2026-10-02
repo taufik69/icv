@@ -17,7 +17,7 @@ describe('overview parts', () => {
     expect(screen.getByRole('img', { name: /Offer sent 0/ })).toBeInTheDocument()
     expect([...container.querySelectorAll('[role=img] span')].map((el) => el.style.width)).toEqual(['50%', '16.666666666666664%', '16.666666666666664%', '16.666666666666664%'])
     render(<PipelineChart status={{}} />)
-    expect(screen.getByText('No enrolment applications yet.')).toBeInTheDocument()
+    expect(screen.getByText('No applications yet.')).toBeInTheDocument()
   })
 
   it('RankList numbers the rows and shows each share', () => {

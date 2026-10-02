@@ -14,7 +14,7 @@ export function OverviewSkeleton() {
   return (
     <div aria-busy="true">
       <p className="sr-only" role="status">Loading overview…</p>
-      <PageHeader title="Dashboard" crumbs={{ current: 'Overview' }} description="How enrolments and course enquiries are going, from live website submissions." />
+      <PageHeader title="Dashboard" crumbs={{ current: 'Overview' }} description="How applications and enquiries are going, from live website submissions." />
       <div aria-hidden="true" className="mt-8 grid gap-4">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {[1, 2, 3, 4].map((i) => (

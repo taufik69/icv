@@ -8,8 +8,8 @@ export const dashboardNav = [
   { label: 'Courses', to: '/dashboard/courses', Icon: BookOpenIcon, exact: true },
   { label: 'Study areas', to: '/dashboard/study-areas', Icon: LayersIcon },
   { label: 'Levels', to: '/dashboard/levels', Icon: GraduationCapIcon },
-  { label: 'Applications', to: '/dashboard/applications', Icon: FileTextIcon, badge: 'newApplications' },
-  { label: 'Enrolments', to: '/dashboard/enrolments', Icon: PenLineIcon, badge: 'newEnrolments' },
+  { label: 'Enquiries', to: '/dashboard/enquiries', Icon: FileTextIcon, badge: 'newApplications' },
+  { label: 'Applications', to: '/dashboard/applications', Icon: PenLineIcon, badge: 'newEnrolments' },
 ]
 
 export const siteLink = { label: 'View website', to: '/', Icon: HomeIcon }

@@ -13,7 +13,7 @@ export function EnrolmentRow({ item }) {
   const { id, reference, course, personal, status, submittedAt } = item
   const name = fullName(item)
   const remove = useDeleteEnrolment()
-  const view = { to: '/dashboard/enrolments/$enrolmentId', params: { enrolmentId: id } }
+  const view = { to: '/dashboard/applications/$applicationId', params: { applicationId: id } }
 
   return (
     <li className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-5 py-4 transition hover:bg-surface-alt ${enrolGrid} ${status === 'New' ? 'bg-primary-soft/40' : ''}`}>
@@ -39,10 +39,10 @@ export function EnrolmentRow({ item }) {
         <EnrolmentStatusBadge status={status} />
       </div>
       <div className="flex items-center justify-end gap-1.5">
-        <Link {...view} aria-label={`View enrolment from ${name}`} title="View" className="grid size-9 place-items-center rounded-lg bg-secondary/8 text-secondary transition hover:bg-secondary hover:text-white">
+        <Link {...view} aria-label={`View application from ${name}`} title="View" className="grid size-9 place-items-center rounded-lg bg-secondary/8 text-secondary transition hover:bg-secondary hover:text-white">
           <EyeIcon className="size-4.5" />
         </Link>
-        <ArchiveButton title={`enrolment from ${name}`} pending={remove.isPending} onConfirm={() => remove.mutate(id)} />
+        <ArchiveButton title={`application from ${name}`} pending={remove.isPending} onConfirm={() => remove.mutate(id)} />
       </div>
     </li>
   )

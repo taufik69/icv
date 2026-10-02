@@ -18,11 +18,11 @@ export function ApplicationsPage({ filters }) {
   return (
     <>
       <PageHeader
-        title="Applications"
-        crumbs={{ current: 'Applications' }}
-        description={`Sent from the Apply now form on the website. ${waiting ? `${waiting} waiting for a first reply.` : 'Nothing waiting for a reply.'}`}
+        title="Enquiries"
+        crumbs={{ current: 'Enquiries' }}
+        description={`Course enquiries sent from the enquiry form on the website. ${waiting ? `${waiting} waiting for a first reply.` : 'Nothing waiting for a reply.'}`}
       />
-      <section aria-label="Application list" aria-busy={showSkeleton} className="mt-8 overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
+      <section aria-label="Enquiry list" aria-busy={showSkeleton} className="mt-8 overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
         <ApplicationsToolbar filters={filters} counts={counts} />
         <div className={head}>
           <span>Applicant</span><span>Course</span><span>Student</span><span>Received</span><span>Status</span>
@@ -36,7 +36,7 @@ export function ApplicationsPage({ filters }) {
           </ul>
         ) : (
           <p className="px-5 py-12 text-center text-ink-muted">
-            {filters.status || filters.q ? 'No applications match these filters.' : 'No applications yet. They appear here as soon as someone submits the Apply now form.'}
+            {filters.status || filters.q ? 'No enquiries match these filters.' : 'No enquiries yet. They appear here as soon as someone sends the enquiry form.'}
           </p>
         )}
       </section>

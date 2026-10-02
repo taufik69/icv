@@ -15,7 +15,7 @@ const STAGES = [
 // segmented bar for the whole flow (2px white gaps), and a cell per status with count and share.
 export function PipelineChart({ status }) {
   const total = STAGES.reduce((n, s) => n + (status[s.label] ?? 0), 0)
-  if (!total) return <p className="py-8 text-center text-sm text-ink-subtle">No enrolment applications yet.</p>
+  if (!total) return <p className="py-8 text-center text-sm text-ink-subtle">No applications yet.</p>
   const share = (n) => Math.round((n / total) * 100)
   const enrolled = status.Enrolled ?? 0
 

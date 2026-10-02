@@ -1,9 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { DashboardError, enrolmentQuery, EnrolmentViewPage, EnrolmentViewSkeleton } from '@/features/dashboard'
 
-// One enrolment application ("Application" in the dashboard) from the API (404 → the dashboard error page).
+// One enrolment application from the API (404 → the dashboard error page).
 export const Route = createFileRoute('/dashboard/_panel/applications/$applicationId')({
-  loader: ({ context: { queryClient }, params }) => queryClient.ensureQueryData(enrolmentQuery(params.applicationId)),
+  loader: ({ context: { queryClient }, params }) => queryClient.ensureQueryData(enrolmentQuery(params.enrolmentId)),
   pendingComponent: EnrolmentViewSkeleton,
   pendingMs: 150,
   pendingMinMs: 400,
@@ -12,5 +12,5 @@ export const Route = createFileRoute('/dashboard/_panel/applications/$applicatio
 })
 
 function EnrolmentRoute() {
-  return <EnrolmentViewPage id={Route.useParams().applicationId} />
+  return <EnrolmentViewPage id={Route.useParams().enrolmentId} />
 }

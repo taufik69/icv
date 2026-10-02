@@ -22,13 +22,13 @@ export function ApplicationViewPage({ id }) {
   const item = useApplication(id)
   const remove = useDeleteApplication()
   const navigate = useNavigate()
-  const onDelete = () => remove.mutate(id, { onSuccess: () => navigate({ to: '/dashboard/applications' }) })
+  const onDelete = () => remove.mutate(id, { onSuccess: () => navigate({ to: '/dashboard/enquiries' }) })
   const name = `${item.firstName} ${item.lastName}`
   const address = [item.street, item.city, item.state, item.postcode, item.country].filter(Boolean).join(', ')
 
   return (
     <>
-      <PageHeader title={name} crumbs={{ trail: [{ label: 'Applications', to: '/dashboard/applications' }] }} description={`${item.studentType} student`}>
+      <PageHeader title={name} crumbs={{ trail: [{ label: 'Enquiries', to: '/dashboard/enquiries' }] }} description={`${item.studentType} student`}>
         <Button as="a" href={`mailto:${item.email}`} variant="secondary">
           <MailIcon className="size-4.5" /> Email {item.firstName}
         </Button>

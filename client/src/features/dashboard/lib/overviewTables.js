@@ -8,12 +8,12 @@ export function overviewTables(stats) {
   return {
     timeline: {
       caption: 'Submissions over time',
-      columns: [{ key: 'date', label: stats.range.grouping === 'month' ? 'Month' : 'Day' }, { key: 'enrolments', label: 'Enrolments', numeric: true }, { key: 'applications', label: 'Enquiries', numeric: true }],
+      columns: [{ key: 'date', label: stats.range.grouping === 'month' ? 'Month' : 'Day' }, { key: 'enrolments', label: 'Applications', numeric: true }, { key: 'applications', label: 'Enquiries', numeric: true }],
       rows: [...stats.timeline].reverse().map((d) => ({ ...d, date: bucketLabel(d.date, true) })),
     },
-    pipeline: list('Enrolments by status', 'Status', Object.entries(stats.enrolmentStatus).map(([label, n]) => ({ label, count: n }))),
-    courses: list('Enrolments by course', 'Course', stats.topCourses.map((c) => ({ label: `${c.code} ${c.label}`, count: c.count }))),
-    nationalities: list('Enrolments by nationality', 'Nationality', stats.nationalities),
+    pipeline: list('Applications by status', 'Status', Object.entries(stats.enrolmentStatus).map(([label, n]) => ({ label, count: n }))),
+    courses: list('Applications by course', 'Course', stats.topCourses.map((c) => ({ label: `${c.code} ${c.label}`, count: c.count }))),
+    nationalities: list('Applications by nationality', 'Nationality', stats.nationalities),
     heard: list('How students heard about ICV', 'Source', stats.heard),
     studentTypes: list('Enquiries by student type', 'Student type', Object.entries(stats.studentTypes).map(([label, n]) => ({ label, count: n }))),
   }

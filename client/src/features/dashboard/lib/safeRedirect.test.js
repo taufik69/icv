@@ -3,7 +3,7 @@ import { safeRedirect } from './safeRedirect'
 
 describe('safeRedirect', () => {
   it('keeps dashboard paths, with their search', () => {
-    expect(safeRedirect('/dashboard/enrolments?status=New')).toBe('/dashboard/enrolments?status=New')
+    expect(safeRedirect('/dashboard/applications?status=New')).toBe('/dashboard/applications?status=New')
     expect(safeRedirect('/dashboard')).toBe('/dashboard')
   })
 

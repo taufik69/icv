@@ -17,7 +17,7 @@ export function ApplicationsToolbar({ filters, counts }) {
   const search = useCallback(
     (value) => {
       const q = value.trim() || undefined
-      if (q !== filters.q) navigate({ to: '/dashboard/applications', search: { ...filters, q }, replace: true })
+      if (q !== filters.q) navigate({ to: '/dashboard/enquiries', search: { ...filters, q }, replace: true })
     },
     [filters, navigate],
   )
@@ -31,14 +31,14 @@ export function ApplicationsToolbar({ filters, counts }) {
     <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line px-5 py-4">
       <nav aria-label="Filter by status" className="flex max-w-full gap-1 overflow-x-auto rounded-xl bg-surface-muted p-1">
         {tabs.map((tab) => (
-          <Link key={tab.label} to="/dashboard/applications" search={{ ...filters, status: tab.status }} activeOptions={{ exact: true }} className={tabClass}>
+          <Link key={tab.label} to="/dashboard/enquiries" search={{ ...filters, status: tab.status }} activeOptions={{ exact: true }} className={tabClass}>
             {tab.label}
             <span className="rounded-pill bg-surface-sunken px-2 text-xs text-ink-subtle">{tab.count}</span>
           </Link>
         ))}
       </nav>
       <form role="search" onSubmit={(e) => { e.preventDefault(); search(text) }} className="relative w-full sm:w-72">
-        <label htmlFor="applications-q" className="sr-only">Search applications</label>
+        <label htmlFor="applications-q" className="sr-only">Search enquiries</label>
         <SearchIcon className="pointer-events-none absolute top-1/2 left-3.5 size-4 -translate-y-1/2 text-ink-subtle" />
         <input
           id="applications-q"

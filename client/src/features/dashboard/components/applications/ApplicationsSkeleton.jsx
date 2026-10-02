@@ -5,8 +5,8 @@ import { ApplicationRowsSkeleton } from './ApplicationRowsSkeleton'
 export function ApplicationsSkeleton() {
   return (
     <div aria-busy="true">
-      <p className="sr-only" role="status">Loading applications…</p>
-      <PageHeader title="Applications" crumbs={{ current: 'Applications' }} description="Sent from the Apply now form on the website." />
+      <p className="sr-only" role="status">Loading enquiries…</p>
+      <PageHeader title="Enquiries" crumbs={{ current: 'Enquiries' }} description="Course enquiries sent from the enquiry form on the website." />
       <section aria-hidden="true" className="mt-8 overflow-hidden rounded-2xl bg-surface ring-1 ring-line">
         <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line px-5 py-4">
           <div className="flex gap-1 rounded-xl bg-surface-muted p-1">

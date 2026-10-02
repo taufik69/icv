@@ -20,7 +20,7 @@ export function EnrolmentViewPage({ id }) {
   const item = useEnrolment(id)
   const remove = useDeleteEnrolment()
   const navigate = useNavigate()
-  const onDelete = () => remove.mutate(id, { onSuccess: () => navigate({ to: '/dashboard/enrolments' }) })
+  const onDelete = () => remove.mutate(id, { onSuccess: () => navigate({ to: '/dashboard/applications' }) })
   const [course, personal, contact, health, visa, agent] = enrolmentSections(item)
 
   return (
@@ -48,8 +48,8 @@ export function EnrolmentViewPage({ id }) {
 
 function PageHeaderBlock({ item, pending, onDelete }) {
   return (
-    <PageHeader title={fullName(item)} crumbs={{ trail: [{ label: 'Enrolments', to: '/dashboard/enrolments' }] }} description={courseLine(item)}>
-      <Button as="a" href={`mailto:${item.contact.email}?subject=${encodeURIComponent(`Your ICV enrolment ${item.reference}`)}`} variant="secondary">
+    <PageHeader title={fullName(item)} crumbs={{ trail: [{ label: 'Applications', to: '/dashboard/applications' }] }} description={courseLine(item)}>
+      <Button as="a" href={`mailto:${item.contact.email}?subject=${encodeURIComponent(`Your ICV application ${item.reference}`)}`} variant="secondary">
         <MailIcon className="size-4.5" /> Email {item.personal.givenNames}
       </Button>
       <DeleteApplication pending={pending} onConfirm={onDelete} />

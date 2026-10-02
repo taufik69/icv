@@ -2,7 +2,7 @@
 // shares beneath. parts = [{ label, count, bg }] (bg = Tailwind fill class, in series order).
 export function SplitBar({ parts }) {
   const total = parts.reduce((n, p) => n + p.count, 0)
-  if (!total) return <p className="py-8 text-center text-sm text-ink-subtle">No applications in this period.</p>
+  if (!total) return <p className="py-8 text-center text-sm text-ink-subtle">No enquiries in this period.</p>
   const pct = (n) => Math.round((n / total) * 100)
   return (
     <div className="grid gap-5">

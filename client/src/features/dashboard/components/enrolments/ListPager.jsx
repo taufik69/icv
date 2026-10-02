@@ -9,7 +9,7 @@ export function ListPager({ paging, filters }) {
   const { page, pages, limit, total } = paging
   const from = (page - 1) * limit + 1
   const to = Math.min(page * limit, total)
-  const go = (p) => ({ to: '/dashboard/enrolments', search: { ...filters, page: p > 1 ? p : undefined } })
+  const go = (p) => ({ to: '/dashboard/applications', search: { ...filters, page: p > 1 ? p : undefined } })
 
   return (
     <nav aria-label="Pages" className="flex flex-wrap items-center justify-between gap-3 border-t border-line px-5 py-3.5 text-sm text-ink-muted">

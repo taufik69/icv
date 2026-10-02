@@ -1,27 +1,8 @@
-import { createFileRoute } from '@tanstack/react-router'
-import { DashboardError, EnrolmentsPage, EnrolmentsSkeleton, enrolmentsQuery, enrolmentStatuses } from '@/features/dashboard'
+import { createFileRoute, redirect } from '@tanstack/react-router'
 
-const parseSearch = (search) => {
-  const page = Number(search.page)
-  return {
-    status: enrolmentStatuses.includes(search.status) ? search.status : undefined,
-    q: typeof search.q === 'string' && search.q.trim() ? search.q.trim() : undefined,
-    page: Number.isInteger(page) && page > 1 ? page : undefined,
-  }
-}
-
-// ?status=New&q=priya&page=2 filters the list (server-side). Like applications, the loader only warms the
-// first visit; tab, search and page changes are fetched by the page itself, so typing never swaps the page out.
+// Old address of the Applications list (it was called Enrolments); keeps bookmarks and links working.
 export const Route = createFileRoute('/dashboard/_panel/enrolments/')({
-  validateSearch: parseSearch,
-  loader: ({ context: { queryClient }, location }) => queryClient.ensureQueryData(enrolmentsQuery(parseSearch(location.search))),
-  pendingComponent: EnrolmentsSkeleton,
-  pendingMs: 0,
-  pendingMinMs: 300,
-  errorComponent: DashboardError,
-  component: EnrolmentsRoute,
+  beforeLoad: ({ search }) => {
+    throw redirect({ to: '/dashboard/applications', search, replace: true })
+  },
 })
-
-function EnrolmentsRoute() {
-  return <EnrolmentsPage filters={Route.useSearch()} />
-}

@@ -18,7 +18,7 @@ export function ApplicationRow({ item }) {
 
   return (
     <li className={`grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 gap-y-2 px-5 py-4 transition hover:bg-surface-alt ${appGrid} ${status === 'New' ? 'bg-primary-soft/40' : ''}`}>
-      <Link to="/dashboard/applications/$applicationId" params={{ applicationId: id }} className="col-span-2 flex min-w-0 items-center gap-3 md:col-span-1">
+      <Link to="/dashboard/enquiries/$enquiryId" params={{ enquiryId: id }} className="col-span-2 flex min-w-0 items-center gap-3 md:col-span-1">
         <span className="grid size-10 shrink-0 place-items-center rounded-full bg-secondary font-heading text-sm font-bold text-white">
           {firstName[0]}{lastName[0]}
         </span>
@@ -40,10 +40,10 @@ export function ApplicationRow({ item }) {
         <StatusBadge status={status} />
       </div>
       <div className="flex items-center justify-end gap-1.5">
-        <Link to="/dashboard/applications/$applicationId" params={{ applicationId: id }} aria-label={`View application from ${name}`} title="View" className="grid size-9 place-items-center rounded-lg bg-secondary/8 text-secondary transition hover:bg-secondary hover:text-white">
+        <Link to="/dashboard/enquiries/$enquiryId" params={{ enquiryId: id }} aria-label={`View enquiry from ${name}`} title="View" className="grid size-9 place-items-center rounded-lg bg-secondary/8 text-secondary transition hover:bg-secondary hover:text-white">
           <EyeIcon className="size-4.5" />
         </Link>
-        <ArchiveButton title={`application from ${name}`} pending={remove.isPending} onConfirm={() => remove.mutate(id)} />
+        <ArchiveButton title={`enquiry from ${name}`} pending={remove.isPending} onConfirm={() => remove.mutate(id)} />
       </div>
     </li>
   )
