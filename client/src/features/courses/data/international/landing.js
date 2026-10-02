@@ -1,3 +1,4 @@
+import { BriefcaseIcon, HeartIcon, SmileIcon, SparklesIcon, UsersIcon } from '@/shared/components/icons'
 import { images } from '../images'
 import { links } from '../links'
 import { domesticContent } from '../domestic/landing'
@@ -38,7 +39,13 @@ export const internationalContent = {
     title: 'SCHOLARSHIP AVAILABLE FOR INTERNATIONAL STUDENTS',
     subtitle: 'Explore courses available at ICV.',
     launchTitle: 'LAUNCH YOUR CAREER TO A NEW LEVEL!',
-    list: ['State-of-the-Art Facilities', 'Supportive Faculty and Staff', 'Gain Skills and Knowledge to work', 'Vibrant Campus Life', 'Student Support and Well being Centre'],
+    list: [
+      { text: 'State-of-the-Art Facilities', Icon: SparklesIcon },
+      { text: 'Supportive Faculty and Staff', Icon: UsersIcon },
+      { text: 'Gain Skills and Knowledge to work', Icon: BriefcaseIcon },
+      { text: 'Vibrant Campus Life', Icon: SmileIcon },
+      { text: 'Student Support and Well being Centre', Icon: HeartIcon },
+    ],
     action: { label: 'ENQUIRE NOW', href: links.enquire },
   },
   study: domesticContent.study,

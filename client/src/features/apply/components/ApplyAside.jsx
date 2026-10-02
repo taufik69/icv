@@ -11,7 +11,7 @@ export function ApplyAside({ courseCode }) {
     <aside className="relative overflow-hidden rounded-3xl bg-secondary p-7 text-white shadow-brand md:p-9">
       <div aria-hidden="true" className="absolute -right-24 -bottom-24 size-72 rounded-full border-[3rem] border-primary/10" />
       <div className="relative" aria-live="polite">
-        <p className="text-sm text-white/80">{course ? "You're applying for" : 'No course picked yet'}</p>
+        <p className="text-sm text-white/80">{course ? "You're enquiring about" : 'No course picked yet'}</p>
         <p className="mt-2 font-heading text-2xl leading-tight font-bold md:text-3xl">
           {course ? course.title : 'Choose a course in the form, or tell us what you want to study.'}
         </p>

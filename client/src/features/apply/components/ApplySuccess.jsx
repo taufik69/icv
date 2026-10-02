@@ -1,12 +1,12 @@
 import { Link } from '@tanstack/react-router'
 import { CheckCircleIcon } from '@/shared/components/icons'
 
-// Shown after the API accepts the application. Names the next step rather than celebrating.
+// Shown after the API accepts the enquiry. Names the next step rather than celebrating.
 export function ApplySuccess({ name }) {
   return (
     <div role="status" className="flex min-h-96 flex-col items-start justify-center">
       <CheckCircleIcon className="size-12 text-primary-hover" />
-      <h2 className="mt-5 text-3xl">Application received</h2>
+      <h2 className="mt-5 text-3xl">Enquiry received</h2>
       <p className="mt-2 max-w-md text-ink-muted">
         Thanks, {name}. Our admissions team will contact you by email or phone about your next steps.
       </p>

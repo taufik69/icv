@@ -1,3 +1,4 @@
+import { BriefcaseIcon, CalendarIcon, ClockIcon, CoinsIcon, UsersIcon } from '@/shared/components/icons'
 import { images } from '../images'
 import { links } from '../links'
 
@@ -46,7 +47,13 @@ export const domesticContent = {
     title: 'ENROL TODAY RISK FREE',
     subtitle: 'Explore Our Government funded courses available at 0* Tuition Fee.',
     launchTitle: 'LAUNCH YOUR CAREER TO A NEW LEVEL!',
-    list: ['Gain Skills and Knowledge to work', 'Flexible Part time- Full time', 'Evening and Weekend Classes', 'Dedicated Trainers and After-Hours Support Available', 'Government funding* and interest-free payment plans available'],
+    list: [
+      { text: 'Gain Skills and Knowledge to work', Icon: BriefcaseIcon },
+      { text: 'Flexible Part time- Full time', Icon: ClockIcon },
+      { text: 'Evening and Weekend Classes', Icon: CalendarIcon },
+      { text: 'Dedicated Trainers and After-Hours Support Available', Icon: UsersIcon },
+      { text: 'Government funding* and interest-free payment plans available', Icon: CoinsIcon },
+    ],
     action: { label: 'ENQUIRE NOW', href: links.enquire },
   },
   study: {
