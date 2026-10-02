@@ -18,7 +18,7 @@ export const heroContent = {
     {
       title: 'Enrol Now',
       cta: 'Apply now',
-      href: '/enquire-now',
+      href: '/apply',
       image: '/images/card-carpentry.webp',
     },
     {

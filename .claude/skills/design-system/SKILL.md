@@ -24,7 +24,7 @@ Source scrape: `design/design-system.source.json` (icv.edu.au). **Never use raw 
 Green is a fill color, never body text on white.
 
 ## Typography
-The whole site uses **Roboto Condensed**; all three utilities map to it (kept as roles, not families).
+Body text is **Inter**; headings, buttons, nav and labels are **Plus Jakarta Sans** (`font-display` is an alias). `font-mono` = JetBrains Mono (not loaded until something uses it).
 - `font-sans` — body (default on `html`).
 - `font-heading` — h1–h6 (auto, bold, navy via `base.css`), buttons, nav.
 - `font-condensed` — labels/eyebrows.

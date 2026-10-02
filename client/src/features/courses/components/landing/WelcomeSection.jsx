@@ -11,15 +11,8 @@ import { legal } from "@/shared/config/footer";
 // "Melbourne's Best RTO ( Registered Training organization)" → main line + quieter aside (same words).
 const splitTitle = (title) => {
   const at = title.indexOf("(");
-  return at > 0
-    ? [
-        title.slice(0, at).trim(),
-        `(${title
-          .slice(at + 1)
-          .replace(")", "")
-          .trim()})`,
-      ]
-    : [title];
+  const aside = title.slice(at + 1).replace(")", "").trim();
+  return at > 0 ? [title.slice(0, at).trim(), `(${aside})`] : [title];
 };
 // First sentence as a lead, the rest as body copy (verbatim text, only split for emphasis).
 const splitLead = (text) => {

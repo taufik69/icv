@@ -73,5 +73,7 @@ export function summariseCourse(course) {
     image: course.images.hero,
     ...(course.href ? { href: course.href } : { to: `/courses/${course.market}/${course.slug}` }),
     enquire: `/enquire-now?course=${toFormCode(course.code)}`,
+    // The enrolment form lists international courses only; domestic "Apply" stays on the enquiry form.
+    apply: course.market === 'international' ? `/apply?course=${course.code}` : `/enquire-now?course=${toFormCode(course.code)}`,
   }
 }

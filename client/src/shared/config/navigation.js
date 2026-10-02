@@ -22,7 +22,7 @@ import { domesticCourses, internationalCourses } from './courseNav'
 
 // Pages that open with a full-bleed hero (home, and every inner page using PageHero under these sections):
 // the header starts transparent over them.
-const heroSections = ['/about', '/student-info', '/courses', '/domestic', '/international', '/contact', '/enquire-now']
+const heroSections = ['/about', '/student-info', '/courses', '/domestic', '/international', '/contact', '/enquire-now', '/apply']
 export const hasHeroBanner = (path) => path === '/' || heroSections.some((p) => path === p || path.startsWith(`${p}/`))
 
 export const mainNav = [
@@ -75,5 +75,5 @@ export const portalLinks = [
   { label: 'Trainer Login', href: 'https://admin.axcelerate.com.au/management/', Icon: PresentationIcon },
 ]
 
-export const applyLink = { label: 'Apply Now', href: '/enquire-now' }
+export const applyLink = { label: 'Apply Now', href: '/apply' }
 export const portalLabel = 'Portal'

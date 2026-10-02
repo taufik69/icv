@@ -5,7 +5,7 @@ const pill = 'btn-shine inline-flex w-full cursor-pointer items-center justify-c
 const outline = `${pill} bg-white text-secondary ring-1 ring-line-strong hover:bg-surface-muted hover:text-secondary`
 
 // Sidebar price + actions card, the same on every course detail page. UI only: Download, Compare and
-// Save are buttons without behaviour yet; Enquire / Apply open the enquiry form with this course picked.
+// Save are buttons without behaviour yet; Enquire opens the enquiry form, Apply the enrolment form (international) with this course picked.
 export function EnrolCard({ course, content }) {
   const { fee } = course
 
@@ -26,7 +26,7 @@ export function EnrolCard({ course, content }) {
           <SendIcon className="size-4" />
           {content.enquire}
         </AppLink>
-        <AppLink href={course.enquire} className={outline}>
+        <AppLink href={course.apply} className={outline}>
           {content.apply}
           <ArrowRightIcon className="size-4" />
         </AppLink>

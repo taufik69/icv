@@ -6,7 +6,7 @@ export const welcomeContent = {
   highlight: 'welcome to ICV',
   text: 'Are you planning to study in Australia? At International College of Victoria (ICV) based in Melbourne, we help you achieve your full potential and get the skills you need to succeed, no matter which path you choose.',
   actions: [
-    { label: 'Apply Now', href: '/enquire-now', variant: 'primary' },
+    { label: 'Apply Now', href: '/apply', variant: 'primary' },
     { label: 'International courses', href: 'https://icv.edu.au/international/', variant: 'outline' },
   ],
   facts: [
