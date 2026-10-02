@@ -149,7 +149,7 @@ Paper form section letters are in brackets. **Bold** = always required. Any opti
 | health.oshc.type | `""` or `Single` · `Couple` · `Family` |
 | health.oshc.expiry | `""` or date |
 | **health.arrangeOshc.wanted** | boolean. If `true`, **duration** and **type** are required |
-| health.arrangeOshc.duration | `""` or `12 Months` · `Other`. If `Other`, **durationOther** is required |
+| health.arrangeOshc.duration | `""` or `12 Months` · `Other`. If `wanted` and `Other`, **durationOther** is required |
 | **health.disability.has** | boolean. If `true`, give at least one of `types` or `otherMedical` |
 | health.disability.types | array of `Hearing` · `Vision` · `Learning` · `Mobility` |
 | education.qualifications (F) | up to 6 × `{ qualification, year, country }` |

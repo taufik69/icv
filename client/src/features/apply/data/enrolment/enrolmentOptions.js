@@ -27,6 +27,8 @@ export const attachments = [
 // Short names for the upload buttons, in the same order as `attachments` ("Upload passport").
 export const attachmentShort = ['English test results', 'Year 11 or equivalent', 'passport', 'visa', 'release letter', 'health cover', 'RPL documents']
 export const OTHER_ATTACHMENT = 'Other'
+// API names of the documents, same order as `attachments` (server ATTACHMENT_TYPES); "Other" is `other`.
+export const attachmentKeys = ['english', 'year11', 'passport', 'visa', 'releaseLetter', 'oshc', 'rpl']
 
 // (L) Enrolment Procedure, step 2
 // (L) Enrolment Procedure, part 1: the ways to send the form (verbatim; `href` makes a link).

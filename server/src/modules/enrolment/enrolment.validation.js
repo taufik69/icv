@@ -24,7 +24,7 @@ const personal = z.object({
 
 const contact = z.object({
   home: z.object({ address: need(300), city: need(80), country: need(80), postcode: text(20) }),
-  australia: z.object({ address: text(300), suburb: text(80), state: blankOr(AUSTRALIAN_STATES), postcode: text(10) }).optional().default({}),
+  australia: z.object({ address: text(300), suburb: text(80), state: blankOr(AUSTRALIAN_STATES), postcode: text(10) }).prefault({}),
   phone: text(40), mobile: need(40), email: z.email().max(200),
 })
 
@@ -51,7 +51,7 @@ const visa = z.object({
 })
 
 const marketing = z.object({ heard: z.enum(HEARD_OPTIONS), heardOther: text() })
-const agent = z.object({ company: text(), name: text(120), email: z.union([z.literal(''), z.email()]).optional().default(''), phone: text(40) }).optional().default({})
+const agent = z.object({ company: text(), name: text(120), email: z.union([z.literal(''), z.email()]).optional().default(''), phone: text(40) }).prefault({})
 const attachment = z.object({ key: z.enum(ATTACHMENT_KEYS), name: text(120) })
 const declaration = z.object({ agreed: z.literal(true, 'tick the declaration'), signedDate: date })
 
@@ -63,7 +63,7 @@ const followUps = (d, ctx) => {
   req(oshc.has && !oshc.membershipNumber, ['health', 'oshc', 'membershipNumber'])
   req(arrangeOshc.wanted && !arrangeOshc.duration, ['health', 'arrangeOshc', 'duration'])
   req(arrangeOshc.wanted && !arrangeOshc.type, ['health', 'arrangeOshc', 'type'])
-  req(arrangeOshc.duration === 'Other' && !arrangeOshc.durationOther, ['health', 'arrangeOshc', 'durationOther'])
+  req(arrangeOshc.wanted && arrangeOshc.duration === 'Other' && !arrangeOshc.durationOther, ['health', 'arrangeOshc', 'durationOther'])
   req(disability.has && !disability.types.length && !disability.otherMedical, ['health', 'disability', 'types'], 'choose one or describe the condition')
   req(d.visa.holds && !d.visa.type, ['visa', 'type'])
   req(d.marketing.heard === 'Agent' && !d.agent.company, ['agent', 'company'])

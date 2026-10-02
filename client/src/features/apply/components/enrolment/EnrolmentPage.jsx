@@ -28,7 +28,7 @@ export function EnrolmentPage({ course }) {
         <Container className="grid grid-cols-1 items-start gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:gap-8 xl:gap-10">
           {form.submitted ? (
             <div className="min-w-0 rounded-3xl bg-surface p-6 shadow-card ring-1 ring-line-soft md:p-10 lg:col-span-2">
-              <EnrolmentSuccess values={form.values} onRestart={form.restart} />
+              <EnrolmentSuccess values={form.values} receipt={form.receipt} onRestart={form.restart} />
             </div>
           ) : (
             <>

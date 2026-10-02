@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { enrolmentSteps as steps } from '../data/enrolment/enrolmentSteps'
 import { clearDraft, emptyEnrolment, loadDraft, saveDraft } from '../lib/enrolmentDraft'
 import { useDraftAutosave } from './useDraftAutosave'
+import { useSubmitEnrolment } from './useSubmitEnrolment'
 import { validateEnrolmentStep } from '../lib/validateEnrolmentStep'
 
 const startState = (course) => {
@@ -16,7 +17,8 @@ export function useEnrolmentForm(course, topRef) {
   const [state, setState] = useState(() => startState(course))
   const [errors, setErrors] = useState({})
   const [tried, setTried] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const [receipt, setReceipt] = useState(null)
+  const submit = useSubmitEnrolment()
   const { values, saved, step } = state
   const current = steps[step]
   useDraftAutosave(state, (savedAt) => setState((s) => ({ ...s, savedAt })))
@@ -55,25 +57,39 @@ export function useEnrolmentForm(course, topRef) {
       values, saved: saved.includes(current.id) ? saved : [...saved, current.id],
       step: last ? step : step + 1, savedAt: new Date().toISOString(),
     }
-    if (last) {
-      clearDraft()
-      setSubmitted(true)
-      return requestAnimationFrame(() => topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
-    }
+    if (last) return send()
     saveDraft(next)
     setState(next)
     show(next.step)
   }
 
+  // Last step: POST to the API. Success clears the draft and shows the receipt; field errors from the
+  // server open the earliest step that has one, with the messages on its fields.
+  const send = () => submit.mutate(values, {
+    onSuccess: (data) => {
+      clearDraft()
+      setReceipt(data)
+      requestAnimationFrame(() => topRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' }))
+    },
+    onError: (err) => {
+      if (err.step < 0 || err.step === undefined) return
+      if (err.step !== step) show(err.step)
+      setTried(true)
+      setErrors(err.errors)
+    },
+  })
+
   const restart = () => {
     clearDraft()
+    submit.reset()
     setState(startState())
-    setSubmitted(false)
+    setReceipt(null)
     show(0)
   }
 
   return {
-    steps, step, current, values, errors, saved, savedAt: state.savedAt, submitted,
+    steps, step, current, values, errors, saved, savedAt: state.savedAt, submitted: Boolean(receipt), receipt,
+    sending: submit.isPending, sendError: submit.error,
     field: (name) => ({ name, value: values[name], onChange: set(name), error: errors[name] }),
     set, setValue, patch: update, toggle, setRow, addRow, removeRow, canOpen, goTo, save, restart,
     back: () => step > 0 && show(step - 1),

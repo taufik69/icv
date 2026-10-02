@@ -58,6 +58,8 @@ Errors always respond as `{ error: { message, details? } }`; success as `{ data 
 | GET | `/enrolments/counts` · `/enrolments/:id` · `/enrolments/:id/files/:fileId` | counts, one application, one uploaded file (no auth yet) |
 | PATCH / DELETE | `/enrolments/:id` | `{ status, staffNote }` / delete with its files (no auth yet) |
 
+Tests: `npm test` (node:test; validation unit tests + real HTTP tests against the `icv_test` database, emptied before and after).
+
 Full enrolment API with payloads: [`docs/enrolment-api.md`](docs/enrolment-api.md). Uploaded enrolment files are private, in `storage/enrolments/` (git-ignored).
 
 Uploaded images live in `server/public/uploads/` (gitignored) — the host needs a persistent disk, and back it up with the database. URLs are absolute, built from `PUBLIC_URL` (defaults to `http://localhost:PORT`), so set it before uploading in production.

@@ -13,7 +13,8 @@
     "lint": "oxlint src",
     "seed:applications": "node src/scripts/seedApplications.js",
     "seed:courses": "node src/scripts/seedCourses.js",
-    "seed:taxonomies": "node src/scripts/seedTaxonomies.js"
+    "seed:taxonomies": "node src/scripts/seedTaxonomies.js",
+    "test": "node --test --test-concurrency=1 'test/**/*.test.js'"
   },
   "dependencies": {
     "cors": "^2.8.6",
