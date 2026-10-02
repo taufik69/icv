@@ -58,6 +58,8 @@ Errors always respond as `{ error: { message, details? } }`; success as `{ data 
 | GET | `/enrolments/counts` · `/enrolments/:id` · `/enrolments/:id/files/:fileId` | counts, one application, one uploaded file (no auth yet) |
 | PATCH / DELETE | `/enrolments/:id` | `{ status, staffNote }` / delete with its files (no auth yet) |
 
+Demo enrolments: `npm run seed:enrolments` (8 students with drawn demo files: signature, agent's stamp, passport scan marked SPECIMEN, test-result PDFs; skips if enrolments exist, `-- --force` replaces them and their files).
+
 Tests: `npm test` (node:test; validation unit tests + real HTTP tests against the `icv_test` database, emptied before and after).
 
 Full enrolment API with payloads: [`docs/enrolment-api.md`](docs/enrolment-api.md). Uploaded enrolment files are private, in `storage/enrolments/` (git-ignored).

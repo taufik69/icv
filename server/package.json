@@ -14,7 +14,8 @@
     "seed:applications": "node src/scripts/seedApplications.js",
     "seed:courses": "node src/scripts/seedCourses.js",
     "seed:taxonomies": "node src/scripts/seedTaxonomies.js",
-    "test": "node --test --test-concurrency=1 'test/**/*.test.js'"
+    "test": "node --test --test-concurrency=1 'test/**/*.test.js'",
+    "seed:enrolments": "node src/scripts/seedEnrolments.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
