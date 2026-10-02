@@ -4,10 +4,10 @@ import { SelectMenu } from './SelectMenu'
 
 // Labelled dashboard dropdown. options = [{ value, label, hint?, Icon? }]. Calls onChange({ target: { value } })
 // so it plugs into the form's bind() like a native field.
-export function SelectField({ label, hint, className, required, options, value, onChange, placeholder }) {
+export function SelectField({ label, hint, className, required, error, options, value, onChange, placeholder }) {
   const id = useId()
   return (
-    <FieldShell id={id} label={label} hint={hint} required={required} className={className}>
+    <FieldShell id={id} label={label} hint={hint} required={required} error={error} className={className}>
       <SelectMenu
         id={id}
         value={value}

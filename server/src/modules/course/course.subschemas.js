@@ -51,7 +51,8 @@ export const detailSchema = new Schema(
     pathways: Parts,
     pathwayCodes: list(String),
     careers: list(String),
-    guideUrl: String,
+    // Shown as a link, so only http(s) web addresses (never javascript: or data: URLs).
+    guideUrl: { type: String, match: [/^https?:\/\/\S+$/i, 'Course guide link: enter a full web address starting with http:// or https://'] },
     related: list({ type: Schema.Types.ObjectId, ref: 'Course' }),
   },
   opts,

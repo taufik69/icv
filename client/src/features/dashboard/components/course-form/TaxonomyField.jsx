@@ -8,7 +8,7 @@ import { QuickAddTaxonomy } from './QuickAddTaxonomy'
 
 // Study area / Level dropdown, loaded from the API, with a "+" button to create a new item right here.
 // The new item is selected straight away. onChange gets ({ target: { value } }) like the form's bind().
-export function TaxonomyField({ type, label, required, value, onChange }) {
+export function TaxonomyField({ type, label, required, error, value, onChange }) {
   const id = useId()
   const page = taxonomyPages[type]
   const { loading } = useTaxonomy(type)
@@ -17,7 +17,7 @@ export function TaxonomyField({ type, label, required, value, onChange }) {
   const close = useCallback(() => setAdding(false), [])
 
   return (
-    <FieldShell id={id} label={label} required={required} hint={`Pick one, or press + to add a new ${page.noun}.`}>
+    <FieldShell id={id} label={label} required={required} error={error} hint={`Pick one, or press + to add a new ${page.noun}.`}>
       <div className="relative flex gap-2">
         <div className="min-w-0 flex-1">
           <SelectMenu

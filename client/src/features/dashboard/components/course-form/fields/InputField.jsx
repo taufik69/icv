@@ -3,16 +3,17 @@ import { FieldShell } from './FieldShell'
 import { controlClass } from './fieldStyles'
 
 // Text input with optional leading icon and trailing slot (e.g. a show-password button).
-export function InputField({ label, hint, className, required, icon: LeadIcon, trailing, ...props }) {
+export function InputField({ label, hint, className, required, error, icon: LeadIcon, trailing, ...props }) {
   const id = useId()
   return (
-    <FieldShell id={id} label={label} hint={hint} required={required} className={className}>
+    <FieldShell id={id} label={label} hint={hint} required={required} error={error} className={className}>
       <div className="relative flex items-center">
         {LeadIcon && <LeadIcon className="pointer-events-none absolute left-3.5 size-4.5 text-ink-subtle" />}
         <input
           id={id}
           required={required}
-          aria-describedby={hint ? `${id}-hint` : undefined}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={[error && `${id}-error`, hint && `${id}-hint`].filter(Boolean).join(' ') || undefined}
           className={`${controlClass} ${LeadIcon ? 'pl-10' : ''} ${trailing ? 'pr-12' : ''}`}
           {...props}
         />

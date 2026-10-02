@@ -27,7 +27,8 @@ const courseBody = z.object({
   featured: z.boolean().optional(),
   summary: z.string().max(300).optional(),
   tagline: z.string().optional(),
-  externalUrl: z.url().optional().or(z.literal('')),
+  // Shown as a link on the public site, so only web addresses (never javascript: or data: URLs).
+  externalUrl: z.url({ protocol: /^https?$/, error: 'External page: enter a full web address starting with http:// or https://' }).optional().or(z.literal('')),
   ...Object.fromEntries(BLOCKS.map((key) => [key, block])),
 })
 
