@@ -13,7 +13,7 @@ export const launchContent = {
     'Dedicated Trainers and After-Hours Support Available',
     'Government funding* and interest-free payment plans available',
   ],
-  action: { label: 'Enquire Now', href: 'https://icv.edu.au/contact/' },
+  action: { label: 'Enquire Now', to: '/enquire-now' },
   recognition: {
     title: 'This course is nationally recognised training.',
     image: '/images/aqf-nrt-logos.webp',

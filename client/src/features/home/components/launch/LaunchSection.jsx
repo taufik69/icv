@@ -1,6 +1,6 @@
 import { launchContent as content } from '@/features/home/data/launchContent'
 import { ArrowRightIcon, CheckCircleIcon } from '@/shared/components/icons'
-import { Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
+import { AppLink, Container, Reveal, SectionEyebrow } from '@/shared/components/ui'
 import { RecognitionCard } from './RecognitionCard'
 
 export function LaunchSection() {
@@ -25,13 +25,13 @@ export function LaunchSection() {
               </li>
             ))}
           </ul>
-          <a
-            href={content.action.href}
+          <AppLink
+            to={content.action.to}
             className="group btn-shine mt-10 inline-flex items-center gap-2 rounded-md bg-primary px-8 py-3.5 font-heading font-semibold text-on-primary transition hover:bg-primary-hover hover:text-on-primary"
           >
             {content.action.label}
             <ArrowRightIcon className="size-4 transition group-hover:translate-x-1" />
-          </a>
+          </AppLink>
         </Reveal>
         <Reveal from="right" delay={100}>
           <RecognitionCard recognition={content.recognition} />
